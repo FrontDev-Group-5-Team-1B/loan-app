@@ -1,4 +1,73 @@
 
 .aboutContainer{
-  width: 90%;
+  margin:0 auto;
+  max-width: 1440px;
+  height: 1751px;
+}
+
+.aboutContainer .topic{
+  color: #67A4FF;
+
+}
+.mission{
+  height: 530px;
+  background-color: #F1FBF8;
+  padding: 10px;
+     
+}
+.mission h4{
+  background-color: #012966;
+  color: white;
+  width: 100px;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+.mission p{
+  width: 80%;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding-top: 80px;
+}
+.vision{
+  height: 530px;
+  background-color: #013E99;
+  padding: 10px;
+  border-radius: 5px;
+}
+.vision h5{
+  background-color: #E6F0FF;
+  width: 100px;
+  padding: 15px;
+  font-size: 1.2rem;
+}
+.vision p{
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  padding-top: 80px;
+}
+.coreValues{
+  height: 530px;
+  background-color: #67A4FF;
+  padding: 10px;
+  
+}
+.coreValues h6{
+  background-color: #012966;
+  color: white;
+  width: 150px;
+  padding: 15px;
+  font-size: 1.2rem;
+  
+}
+.coreValues ul{
+  margin: 0 auto;
+  width: 60%;
+ font-size: 2.5rem;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content:space-between;
+ padding-top: 80px;
+
 }
