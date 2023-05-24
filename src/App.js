@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
+import './components/pages/About.css';
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -44,6 +46,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+     
     </>
   );
 }
