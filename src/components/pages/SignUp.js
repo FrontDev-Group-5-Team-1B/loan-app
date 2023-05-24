@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
+import modimg from "../../assets/5568706 1.png"
 import { BsEyeSlash } from "react-icons/bs";
 import {FaEnvelope} from "react-icons/fa"
 import {FaApple} from "react-icons/fa"
@@ -9,7 +10,15 @@ import google from '../../assets/logos_google-icon.png'
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const closeref = useRef()
+  const modref = useRef()
+
+  const handleClose =()=>{
+    modref.current.style.display = "none"
+  }
+
   return (
+    <>
     <div className="signup-container">
       <div className="login-left-box">
         <p className="arrow">
@@ -21,7 +30,7 @@ const SignUp = () => {
         <p className="logsign">
           Already have an account?{" "}
           <span>
-            <b>Log in</b>
+            <Link to="/login"><b>Log in</b></Link>
           </span>
         </p>
         <form>
@@ -71,6 +80,15 @@ const SignUp = () => {
         <img src={logimg} alt="woman" />
       </div>
     </div>
+    <div className='modal-container' ref={modref}>
+      <p className='close' ref={closeref} onClick={handleClose}>X</p>
+      <div className='modal-sign'>
+        <img src={modimg} alt="" className='mod-img'/>
+        <p className='mod-text'>You now have an account, please go ahead to Log into your account</p>
+        <Link to="/login"><button className='mod-btn'>Log In</button></Link>
+      </div>
+    </div>
+    </>
   )
 }
 
