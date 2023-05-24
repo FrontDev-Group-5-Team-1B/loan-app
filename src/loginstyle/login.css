@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+.login-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #012966;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+.login-left-box{
+    width: 100%;
+    padding: 0 4rem;
+}
+.login-right-box{
+    width: 100%;
+    height: 100%;
+}
+.login-right-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.logwel{
+    text-align: center;
+    color: #FFFEFE;
+    font-weight: 600;
+}
+.logacc{
+    color: #E5E5E5;
+    text-align: center;
+}
+.logsign{
+    color: #F2F2F2;
+    text-align: center;
+}
+.logsign a{
+    color: #F2F2F2;
+    text-decoration: none;
+}
+.loginput{
+    padding: 0.8rem 1rem;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    font-size: 17px;
+    outline-color: #4e82d2;
+    outline-offset: 5px;
+    background-color: inherit;
+    color: #FFFEFE;
+}
+.pa{
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    outline-color: #4e82d2;
+    outline-offset: 5px;
+    background-color: inherit;
+    padding: 0.8rem 0;
+    color: #dfdada;
+    border-radius: 4px;
+    text-indent: 1rem;
+}
+.loginput::placeholder, .pa::placeholder{
+    color: #fffdfd;
+
+}
+.pass{
+    width: 100%;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+    position: relative;
+}
+.eye{
+    position: absolute;
+    top: 30%;
+    right: 4%;
+}
+.forgot{
+    display: flex;
+    justify-content: end;
+    color: #FFFEFE;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+.log-btn{
+    padding: 0.8rem 0;
+    border-radius: 4px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #012966;
+    margin: 3rem 0 0 0;
+}
+hr{
+    width: 100%;
+    height: 0;
+    border: 2px solid #013E99;
+}
+.continue{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+}
+.continue span{
+    text-align: center;
+    width: 100%;
+}
+.login-icons{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding: 2rem 0;
+}
+.login-icons a{
+    color: #ffffff;
+    font-size: 35px;
+}
+.arrow{
+    padding-top: 1.5rem;
+}
+.arrow a{
+    color: #F2F2F2;
+}
+.signup-container{
+    width: 100%;
+    display: flex;
+    height: 120vh;
+    background-color: #012966;
+    color: #ffffff;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+.modal-container, .fgcontainer{
+    width: 100%;
+    background-color: rgba(1, 20, 46, 0.5);
+    position: absolute;
+    top: 0;
+    height: 140%;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    align-items: center;
+}
+.fgcontainer{
+    height: 100%;
+}
+.modal-sign{
+    width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #FAFCFF;
+    text-align: center;
+    font-weight: 500;
+    box-sizing: border-box;
+    font-size: 22px;
+    color: #4D4D4D;
+    padding: 3rem 0;
+    border-radius: 10px;
+}
+.mod-img{
+    display: inline-flex;
+    justify-content: center;
+    width: 50%;
+}
+.fgimg{
+    width: 70px;
+}
+.mod-text{
+    width: 450px;
+    margin: auto;
+}
+.mod-btn, .fg-btn{
+    width: 350px;
+    padding: 1rem 0;
+    border-radius: 4px;
+    background-color: #0267FF;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+.fg-btn{
+    width: 90%;
+    padding: 0.7rem 0;
+}
+.fptxt{
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+    font-size: 16px;
+}
+.bk{
+    font-size: 16px;
+    text-decoration: none;
+    color: #0267FF;
+    cursor: pointer;
+}
+.pp{
+    color: #0267FF;
+}
+.close{
+    font-size: 30px;
+    font-weight: 600;
+    top:15%;
+    right: 20%;
+    position: absolute;
+    color: #dfdada;
+    cursor: pointer;
+}
+.fgform{
+    width: 80%;
+    box-shadow: 0 0 5px #0267FF;
+    border-radius: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin: auto;
+}
+.inpt{
+    width: 90%;
+    padding: 0.7rem 1rem;
+    font-size: 16px;
+}
+
+@media (max-width:997px) {
+    .login-container, .signup-container{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .login-left-box{
+        width: 100%;
+        padding: 0;
+    }
+    .login-right-box{
+        display: none;
+    }
+    form{
+        padding: 0 1.5rem;
+    }
+    .arrow{
+        padding-left: 1rem;
+    }
+    .modal-container{
+        height: 115%;
+    }
+    .fgcontainer{
+        height: 109%;
+    }
+    .modal-sign{
+        width: 80%;
+    }
+    .mod-text{
+        width: 100%;
+    }
+    .mod-btn{
+        width: 90%;
+    }
+    .close{
+    right: 6%;
+    }
+    .fgform{
+        width: 90%;
+    padding: 1rem;
+    }
+    .inpt{
+        width: 100%;
+    }
+    .fptxt{
+        width: 100%;
+    }
+    .fg-btn{
+        width: 100%;
+    }
+    
+
+}
