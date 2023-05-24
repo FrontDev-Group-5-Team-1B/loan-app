@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
+import './components/pages/About.css';
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -25,7 +27,7 @@ import Borrow from "./components/dashboard/Borrow.dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Header />}>
+    <Route path="/" >
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="services" element={<Services />} />
@@ -44,6 +46,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+     
     </>
   );
 }
