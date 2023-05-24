@@ -1,0 +1,128 @@
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+@media (max-width: 84em) {
+  html {
+    font-size: 52.25%;
+  }
+
+  .contact-info {
+    padding: 4rem;
+    height: 52rem;
+  }
+
+  .contact-info-icons {
+    padding-top: 4rem;
+  }
+
+  .info-icon-img img {
+    height: 25px;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+  .contact-content-holder {
+    margin-left: 4rem;
+  }
+
+  .contact-text {
+    font-size: 2rem;
+  }
+  .info-icon-img img {
+    height: 15px;
+  }
+
+  .contact-info-icons p {
+    font-size: 1.7rem;
+  }
+
+  .contact-info-icons {
+    padding-top: 2rem;
+  }
+  .contact-info {
+    height: auto;
+    padding: 2rem 0.8rem 2rem 2rem;
+  }
+
+  .contact-form {
+    padding: 3rem 3rem 1rem;
+  }
+  .input,
+  .form-textarea {
+    margin-top: 3rem;
+    padding-left: 1.3rem;
+  }
+
+  .form-textarea {
+    height: 100px;
+    padding: 2.8rem 0 0 1.3rem;
+    margin-bottom: 3.5rem;
+  }
+  .input::placeholder,
+  .form-textarea::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .contact-btn {
+    margin-top: 6rem;
+    padding: 1rem 7.4rem;
+    font-size: 2rem;
+  }
+
+  .contact-social-links {
+    padding-bottom: 5.8rem;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  .contact-content-holder {
+    margin-left: 0;
+    padding: 1rem;
+    height: auto;
+    /* position: static; */
+  }
+
+  .contact-heading {
+    padding-top: 0;
+  }
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-text {
+    margin-bottom: 3.2rem;
+  }
+  .contact-btn {
+    margin-bottom: 2rem;
+  }
+  .contact-info {
+    width: 100%;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    top: 100%;
+  }
+  .info-heading {
+    display: none;
+  }
+
+  .info-icon-text {
+    padding-left: 1rem;
+  }
+  .contact-social-links {
+    display: none;
+  }
+}

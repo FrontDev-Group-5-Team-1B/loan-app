@@ -16,6 +16,10 @@ body {
 img {
   max-width: 100%;
 }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
 :root {
   --container-color: linear-gradient(0deg, #F2F2F2, #F2F2F2),
