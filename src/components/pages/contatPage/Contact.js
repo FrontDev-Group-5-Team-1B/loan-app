@@ -12,6 +12,7 @@ import mail from "../../../assets/Email.svg";
 import phone from "../../../assets/phone-icon.svg";
 import clock from "../../../assets/clock-icon.svg";
 import address from "../../../assets/address-icon.svg";
+import Footer from "../../layouts/Footer"
 
 const initialValues = {
   name: "",
@@ -188,6 +189,7 @@ const Contact = () => {
           </aside>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

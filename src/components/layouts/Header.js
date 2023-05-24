@@ -2,26 +2,26 @@ import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/Loan logo 1.png";
 
+// styles
+import "../../styles/header.css"
+
 const Header = () => {
   return (
     <>
-    <header>
-      <div>
+    <header className="header">
+      <div className="header-img">
         <img src={logo} alt="logo"/>
       </div>
-      <nav>
+      <nav className="navbar">
         <NavLink to="/">Home</NavLink>
         <NavLink to="about">About Us</NavLink>
-        <NavLink to="services">Services</NavLink>
+        <a href="/#services">Services</a>
         <NavLink to="contact">Contact</NavLink>
       </nav>
-      <div>
-        <NavLink to="login">
-          <button>Log In</button>
-        </NavLink>
-        <NavLink to="signup">
-          <button>Sign Up</button>
-        </NavLink>
+
+      <div className="btn">
+        <NavLink to="login">Log In</NavLink>
+        <NavLink to="signup" className="signup">Sign Up</NavLink>
       </div>
     </header>
 

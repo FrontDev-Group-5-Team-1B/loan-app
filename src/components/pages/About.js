@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../layouts/Header'
-
+import Footer from '../layouts/Footer'
 
 const About = () => {
   return (
     <>
-    {/* <Header /> */}
     <div className='aboutContainer'>
     <h3 className='topic'>About Us</h3>
     <div className='wrapper'>
@@ -42,6 +40,8 @@ decision  making accuracy which leads to customer satisfaction.
     </div>
 
   
+    <p>About</p>
+    <Footer/>
     </>
   )
 }
