@@ -4,6 +4,7 @@ import logimg from "../../assets/Rectangle 762-min.png";
 import { BsEyeSlash } from "react-icons/bs";
 import {FaEnvelope} from "react-icons/fa"
 import {FaApple} from "react-icons/fa"
+import {FaArrowLeft} from 'react-icons/fa'
 import google from '../../assets/logos_google-icon.png'
 import { Link } from "react-router-dom";
 
@@ -11,6 +12,10 @@ const LogIn = () => {
   return (
     <div className="login-container">
       <div className="login-left-box">
+        <p className="arrow">
+
+        <Link to="#" className=""><FaArrowLeft /></Link>
+        </p>
         <h2 className="logwel">Welcome Back</h2>
         <p className="logacc">Log into your account</p>
         <p className="logsign">

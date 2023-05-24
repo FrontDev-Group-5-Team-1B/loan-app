@@ -26,7 +26,7 @@
 form{
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .logwel{
     text-align: center;
@@ -65,7 +65,7 @@ form{
     border-radius: 4px;
     text-indent: 1rem;
 }
-.loginput::placeholder .pa::placeholder{
+.loginput::placeholder, .pa::placeholder{
     color: #fffdfd;
 
 }
@@ -121,6 +121,21 @@ hr{
 .login-icons a{
     color: #ffffff;
     font-size: 35px;
+}
+.arrow{
+    padding-top: 1.5rem;
+}
+.arrow a{
+    color: #F2F2F2;
+}
+.signup-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #012966;
+    color: #ffffff;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 @media (max-width:997px) {
