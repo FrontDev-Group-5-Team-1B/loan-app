@@ -13,7 +13,7 @@ import {
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
-import Contact from "./components/pages/Contact";
+import Contact from "./components/pages/contatPage/Contact";
 
 //  RootLayouts
 import Header from "./components/layouts/Header";
