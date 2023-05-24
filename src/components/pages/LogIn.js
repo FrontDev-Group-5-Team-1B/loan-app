@@ -4,7 +4,7 @@ import logimg from "../../assets/Rectangle 762-min.png";
 import { BsEyeSlash } from "react-icons/bs";
 import {FaEnvelope} from "react-icons/fa"
 import {FaApple} from "react-icons/fa"
-import {FaGoogle} from "react-icons/fa"
+import google from '../../assets/logos_google-icon.png'
 import { Link } from "react-router-dom";
 
 const LogIn = () => {
@@ -48,7 +48,7 @@ const LogIn = () => {
             <FaEnvelope/>
             </Link>
             <Link>
-            <FaGoogle/>
+            <img src={google} alt="google"/>
             </Link>
             <Link>
             <FaApple/>
