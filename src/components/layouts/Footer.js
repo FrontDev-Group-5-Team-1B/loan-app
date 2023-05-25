@@ -1,6 +1,7 @@
 import React from "react";
 import logo2 from "../../assets/Loan logo 2.png";
 import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/footer.css";
@@ -18,15 +19,15 @@ const Footer = () => {
               </p>
           <div className="subscribe">
           <form>
-            <input type="text" name="email" id="email" placeholder="enter your email address"/>
-            <button type="subscribe" class="btn-1">Subscribe</button>
+            <input className="form-field" type="text" name="email" id="email" placeholder="enter your email address"/>
+            <button type="subscribe" className="btn-1">Subscribe</button>
           </form>
           </div>
           </div>
 
           <div className="footer-links">
             <div className="header-img ">
-              <img src={logo2} alt="app-logo" className="footer-img"/>
+              <NavLink to="/"><img src={logo2} alt="app-logo" className="footer-img"/></NavLink>
             </div>
 
             <div className="footer">

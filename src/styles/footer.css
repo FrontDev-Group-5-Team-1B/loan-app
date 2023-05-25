@@ -6,7 +6,7 @@
 
 .footer-content {
     position: relative;
-    margin-top: 50px;
+    margin-top: 45px;
     width: 100%;
     padding: 50px;
 }
@@ -22,7 +22,7 @@
 .copyright {
     font-size: 12px;
     line-height: 14px;
-    margin-top: 20px;
+    margin-top: 18px;
 } 
 
 .footer-content-1 h3 {
@@ -34,6 +34,7 @@
  .footer-text {
     padding: 8px;
     margin-bottom: 20px;
+    font-size: 18px;
 }
 
 .footer-content-1 {
@@ -42,7 +43,7 @@
 
 .footer-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
     margin-top: 35px;
 }
@@ -50,7 +51,7 @@
 .footer-links ul li {
     list-style: none;
     text-decoration: none;
-    padding: 8px;
+    padding: 6px;
 }
 
 .footer-links ul li a {
@@ -61,9 +62,9 @@
 }
 
 .footer {
-    width: 22%;
+    width: 20%;
     display: inline-block;
-    padding: 10px 35px;
+    padding: 10px 30px;
 }
 
 form {
@@ -71,10 +72,10 @@ form {
     margin-bottom: 45px;
 }
 
-input[type="text"]{
+.form-field[type="text"]{
     border: none;
-    width: 700px;
-    height: 45px;
+    width: 750px;
+    height: 50px;
     padding: 0 16px;
     background: #9AC2FF;  
 }
@@ -91,7 +92,7 @@ input::placeholder{
     bottom: 0;
     background: var(--bg-color);
     color: var(--button-color);
-    padding: 0 55px;
+    padding: 0 60px;
     border: none;
     outline: none;
     font-size: 20px;
@@ -100,7 +101,7 @@ input::placeholder{
 }
 
 .btn-1:hover{
-    background: var(--button-color);
+    background: #013e99;
     color: var(--bg-color);
 }
 
