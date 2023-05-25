@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7be43d64-959b-4876-b76e-81c90be205e4/deploy-status)](https://app.netlify.com/sites/loan-prediction-app-group-1b/deploys)
+
 # Loan Prediction App
 ## Introduction
 A loan prediction application developed to aid financial service providers in thoroughly evaluating loan applicants with convenience, effectiveness, and precision.
