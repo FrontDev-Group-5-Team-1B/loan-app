@@ -23,7 +23,7 @@ const SignUp = () => {
       <div className="login-left-box">
         <p className="arrow">
 
-        <Link to="#" className=""><FaArrowLeft /></Link>
+        <Link to="/" className=""><FaArrowLeft /></Link>
         </p>
         <h2 className="logwel">Create an account</h2>
         <p className="logacc">Sign up to get an account</p>

@@ -70,14 +70,14 @@ const Home = () => {
                 </p>
                 </div>
               <div className="image">
-                <img src={image1} alt="services-image" />
+                <img src={image1} alt="services" />
               </div>
               </div>
 
              <div className="services-content">
               <span>2</span>
               <div className="image">
-                <img src={image2} alt="services-image" />
+                <img src={image2} alt="services" />
               </div>
               <div className="text">
                 <p>
@@ -98,7 +98,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="image">
-                <img src={image3} alt="services-images" />
+                <img src={image3} alt="services" />
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Home = () => {
           <div className="review-container">
             <div className="review-content">
               <div className="review-subcontent">
-                <img src={pexel1} className="user-img"/>
+                <img src={pexel1} className="user"/>
                   <span className="reviewer">Amaka Grace</span>
                   <span className="time">Tuesday 20 August 2023 by 12PM</span>
                 </div>
@@ -120,7 +120,7 @@ const Home = () => {
             
             <div className="review-content">
             <div className="review-subcontent">
-                <img src={pexel2} className="user-img"/>
+                <img src={pexel2} className="user"/>
                   <span className="reviewer">Matthew Luke</span>
                   <span className="time">Wednesday 24 March 2023 by 2AM</span>
                   </div>
@@ -131,7 +131,7 @@ const Home = () => {
 
                 <div className="review-content">
                 <div className="review-subcontent">
-                <img src={pexel3} className="user-img"/>
+                <img src={pexel3} className="user"/>
                   <span className="reviewer">Tazan Fred</span>
                   <span className="time">Monday 01 June 2023 by 4AM</span>
               </div>
@@ -143,7 +143,7 @@ const Home = () => {
 
                 <div className="review-content">
                 <div className="review-subcontent">
-                <img src={pexel4} className="user-img"/>
+                <img src={pexel4} className="user"/>
                   <span className="reviewer">Becky Tunde</span>
                   <span className="time">Friday 01 Feburary 2023 by 1PM</span>
               </div>
@@ -154,7 +154,7 @@ const Home = () => {
 
                 <div className="review-content">
                 <div className="review-subcontent">
-                <img src={pexel5} className="user-img"/>
+                <img src={pexel5} className="user"/>
                   <span className="reviewer">Scott Man</span>
                   <span className="time">Friday 01 Feburary 2023 by 1PM</span>
               </div>
