@@ -86,7 +86,7 @@ html {
 }
 
 .contact-btn {
-  padding: 1.6rem 12.4rem;
+  padding: 1.6rem 2.4rem;
   margin-top: 12rem;
   background: #0267ff;
   border-radius: 4px;
@@ -96,6 +96,7 @@ html {
   color: #ffffff;
   outline: none;
   border: none;
+  width: 308px;
 }
 
 .contact-info,

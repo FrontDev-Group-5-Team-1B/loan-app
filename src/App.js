@@ -23,6 +23,8 @@ import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
 import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
+import AdminPage from "./components/pages/admin/AdminPage";
+import AddAdmin from "./components/pages/admin/AddAdmin";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +40,8 @@ const router = createBrowserRouter(
       </Route>
       <Route path="login" element={<LogIn />} />
       <Route path="signup" element={<SignUp />} />
+      <Route path="admin" element={<AdminPage />} />
+      <Route path="addadmin" element={<AddAdmin />} />
     </>
   )
 );
