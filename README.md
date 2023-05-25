@@ -1,5 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7be43d64-959b-4876-b76e-81c90be205e4/deploy-status)](https://app.netlify.com/sites/loan-prediction-app-group-1b/deploys)
-[![Last Commit](https://badgen.net/github/last-commit/FrontDev-Group-5-Team-1B/loan-app/main)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/commit)
+[![Last Commit](https://badgen.net/github/last-commit/FrontDev-Group-5-Team-1B/loan-app/dev)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/commit)
 [![Stars](https://badgen.net/github/stars/FrontDev-Group-5-Team-1B/loan-app/)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/commit)
 [![License](https://badgen.net/github/license/FrontDev-Group-5-Team-1B/loan-app/)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/license)
 
