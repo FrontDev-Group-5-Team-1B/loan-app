@@ -1,0 +1,72 @@
+.dContainer{
+    padding: 10px;
+    
+    
+}
+.dHead ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+.dHead{
+    padding: 10px 20px;
+}
+.dHead h2{
+    color: #0267FF;
+    padding: 10px 0;
+
+}
+.dHead h3{
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.dCards{
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    width: 250px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+.fig-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.fig-flex p{
+    padding: 10px 0;
+    color: #0267FF;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.fig-flex img{
+    padding: 20px 0;
+}
+span{
+    color: #999999;
+}
+.percent-flex{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #CCCCCC;
+    background-color: #F2F2F2;
+    padding: 15px;
+}
+.fig-flex h4{
+    font-size: 1.5rem;
+}
+.dash-chart{
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+    width: 990px;
+    height: 488px;
+    padding: 20px;
+
+}
+.dash-chart p{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
