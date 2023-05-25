@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./components/pages/About.css";
+import "./components/dashboard/Dashboard.css";
 
 import {
   createBrowserRouter,
