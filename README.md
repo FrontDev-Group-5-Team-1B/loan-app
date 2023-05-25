@@ -1,4 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7be43d64-959b-4876-b76e-81c90be205e4/deploy-status)](https://app.netlify.com/sites/loan-prediction-app-group-1b/deploys)
+[![Last Commit](https://badgen.net/github/last-commit/FrontDev-Group-5-Team-1B/loan-app/main)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/commit)
+[![Stars](https://badgen.net/github/stars/FrontDev-Group-5-Team-1B/loan-app/)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/commit)
+[![License](https://badgen.net/github/license/FrontDev-Group-5-Team-1B/loan-app/)](https://github.com/FrontDev-Group-5-Team-1B/loan-app/license)
 
 # Loan Prediction App
 ## Introduction
@@ -7,11 +10,12 @@ A loan prediction application developed to aid financial service providers in th
 This readme file provides an overview of the app, its features, and instructions for installation and usage.
 
 ### Table of Contents
-- Features
-- Installation
-- Usage
-- Contributing
-- License
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Authors](#authors)
+- [Contributing](#contributing)
+- [License](#license)
 
 ### Features
 - **Data Input**: The app allows users to input relevant information about loan applicants, such as income, credit history, loan amount, and loan term.
@@ -76,3 +80,6 @@ We welcome contributions to enhance the Loan Prediction App. To contribute, plea
 - Push your changes to your forked repository.
 
 - Submit a pull request detailing your changes and their benefits.
+
+### License
+Project source code is licensed under the MIT license. You are free to fork this repository, edit the code, share and use it both for non-commercial and commercial purposes
