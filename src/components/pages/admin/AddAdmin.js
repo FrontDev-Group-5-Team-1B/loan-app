@@ -58,7 +58,7 @@ const AddAdmin = () => {
                 name="position"
                 type="text"
                 placeholder="Position in Company"
-                className="input"
+                className="input adnin-input"
               />
             </label>
           </div>
