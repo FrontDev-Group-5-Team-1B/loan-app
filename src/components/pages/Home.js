@@ -53,19 +53,16 @@ const Home = () => {
             <HiArrowSmRight />
           </button>
         </div>
-        {/* <div className="hero-images row">
-
-        </div> */}
         <ImageSlider/>
       </section>
 
       <main>
         <section className="services" id="services">
-          <h2>Our Services</h2>
           <div className="services-container">
+          <div className="content"><h2>Our Services</h2></div>
             <div className="services-content">
               <span>1</span>
-              <div className="text content">
+              <div className="text">
                 <p>
                   Help reduce the rate of loan default by using advanced
                   algorithms to analyze the borrowers data and giving

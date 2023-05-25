@@ -23,6 +23,8 @@ import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
 import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
+import History from "./components/dashboard/History";
+import LoanApplication from "./components/dashboard/LoanApplication";
 import AdminPage from "./components/pages/admin/AdminPage";
 import AddAdmin from "./components/pages/admin/AddAdmin";
 
@@ -33,13 +35,19 @@ const router = createBrowserRouter(
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+      </Route>
+
+      <Route path="login" element={<LogIn />} />
+      <Route path="signup" element={<SignUp />} />
+
         <Route path="dashboard" element={<DashBoardContainer />}>
           <Route index element={<Dashboard />} />
           <Route path="borrow" element={<Borrow />} />
+          <Route path="loan_application" element={<LoanApplication />} />
+          <Route path="history" element={<History />} />
+          {/* <Route path="admin" element={<Admin />} />
+          <Route path="settings" element={<Settings />} /> */}
         </Route>
-      </Route>
-      <Route path="login" element={<LogIn />} />
-      <Route path="signup" element={<SignUp />} />
       <Route path="admin" element={<AdminPage />} />
       <Route path="addadmin" element={<AddAdmin />} />
     </>
