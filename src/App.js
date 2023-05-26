@@ -1,4 +1,3 @@
-import "./App.css";
 import "./components/pages/About.css";
 import "./components/dashboard/Dashboard.css";
 

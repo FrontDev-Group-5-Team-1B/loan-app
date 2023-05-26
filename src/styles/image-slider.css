@@ -11,10 +11,8 @@
   opacity: 0;
   height: 485px;
   object-fit: cover;
-  /* top: 30.5%; */
   left: 7%;
   right: -8%;
-  /* bottom: 15%; */
   transition: opacity 0.5s ease-in-out;
 }
 
