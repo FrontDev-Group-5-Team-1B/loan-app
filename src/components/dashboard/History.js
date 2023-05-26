@@ -1,15 +1,18 @@
 import React from "react";
 import historyData from "../../data/historyData";
+import "../../styles/history.css"
+
 import { FiMenu } from "react-icons/fi";
 
 const History = () => {
   
   return (
-    <div>
-      <div>
+    <div className="history-wrapper">
+      <div className="history-title">
         <h2>History</h2>
-        <div>
-          <FiMenu /> Filter
+        <div className="filter-icon">
+          <FiMenu size="35px"/> 
+          <h3>Filter</h3>
         </div>
       </div>
       <table className="history-table">

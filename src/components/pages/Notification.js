@@ -4,6 +4,7 @@ import Buttons from '../layouts/Buttons'
 const Notification = () => {
   return (
     <div>
+      <h3>Notifications</h3>
         <h4>Notifications Settings</h4>
         <div>
             <ul>
