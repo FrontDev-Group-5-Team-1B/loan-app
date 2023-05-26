@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;700&family=Inter:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Lexend+Deca:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;700&family=Inter:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Lexend+Deca:wght@400;700&family=Poppins:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -9,8 +9,9 @@
 
 body {
   font-weight: 400;
-  width: 1440px;
-  font-family: 'Inter', sans-serif;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  max-width: 1440px;
 }
 
 img {
@@ -18,14 +19,14 @@ img {
 }
 
 :root {
-  --container-color: linear-gradient(0deg, #F2F2F2, #F2F2F2),
-  linear-gradient(0deg, #CCE1FF, #CCE1FF);
-  --heading-color: #0252CC;
+  --container-color: linear-gradient(0deg, #f2f2f2, #f2f2f2),
+    linear-gradient(0deg, #cce1ff, #cce1ff);
+  --heading-color: #0252cc;
   --bg-color: #fff;
-  --primary-color: #FAFCFF;
-  --secondary-color: #E6F0FF;
-  --text-color: #666666; 
-  --button-color: #0267FF;
-  --tertiary-color: #E6F0FF;
-  --border-color: #CCCCCC;
+  --primary-color: #fafcff;
+  --secondary-color: #e6f0ff;
+  --text-color: #666666;
+  --button-color: #0267ff;
+  --tertiary-color: #e6f0ff;
+  --border-color: #cccccc;
 }
