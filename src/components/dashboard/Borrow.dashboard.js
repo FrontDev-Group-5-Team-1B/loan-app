@@ -1,11 +1,19 @@
 import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Borrow = () => {
+  const navigate = useNavigate();
+  const handleClick =() => {
+    navigate(-1)
+  }
+
 
 
   return (
+  
+  
     <div>
-    <div>
+    <div className='b-header'>
       <h3>Input Borrower's Data</h3>
       <p>Carefully input the borrowers's details</p>
    </div>
@@ -28,7 +36,7 @@ const Borrow = () => {
  </div>
  <div className='b-data2'>
      <div> 
-      <input type='text' 
+      <input type='number' 
       placeholder='Phone Number'  className='placeholder' />
       </div>
      <div> 
@@ -45,7 +53,7 @@ const Borrow = () => {
       </div>
     </div>
     </div>
-    <button className='b-btn'>Previous</button>
+    <button className='b-btn' onClick={handleClick}>Next</button>
     </form>
     
     </div>
