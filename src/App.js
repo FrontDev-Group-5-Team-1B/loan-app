@@ -20,6 +20,7 @@ import Header from "./components/layouts/Header";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
+import BorrowerLoanInfo from "./components/dashboard/BorrowerLoanInfo";
 import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
 import History from "./components/dashboard/History";
