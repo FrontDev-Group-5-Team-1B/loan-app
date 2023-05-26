@@ -25,6 +25,8 @@ import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
 import History from "./components/dashboard/History";
 import LoanApplication from "./components/dashboard/LoanApplication";
+import AdminPage from "./components/pages/admin/AdminPage";
+import AddAdmin from "./components/pages/admin/AddAdmin";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,14 +40,16 @@ const router = createBrowserRouter(
       <Route path="login" element={<LogIn />} />
       <Route path="signup" element={<SignUp />} />
 
-        <Route path="dashboard" element={<DashBoardContainer />}>
-          <Route index element={<Dashboard />} />
-          <Route path="borrow" element={<Borrow />} />
-          <Route path="loan_application" element={<LoanApplication />} />
-          <Route path="history" element={<History />} />
-          {/* <Route path="admin" element={<Admin />} />
+      <Route path="dashboard" element={<DashBoardContainer />}>
+        <Route index element={<Dashboard />} />
+        <Route path="borrow" element={<Borrow />} />
+        <Route path="loan_application" element={<LoanApplication />} />
+        <Route path="history" element={<History />} />
+        {/* <Route path="admin" element={<Admin />} />
           <Route path="settings" element={<Settings />} /> */}
-        </Route>
+        <Route path="admin" element={<AdminPage />} />
+        <Route path="add_admin" element={<AddAdmin />} />
+      </Route>
     </>
   )
 );
