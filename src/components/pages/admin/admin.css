@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 132px 0 0 323px;
+html {
+  font-size: 62.5%;
 }
 
 .admin-container,
@@ -70,6 +70,18 @@ body {
   color: #333333;
 }
 
+.admin-card:nth-child(odd) {
+  border: 1px solid #0252cc;
+}
+
+.admin-card:nth-child(even) {
+  border: 1px solid #04ab33;
+}
+
+.admin-card:nth-child(3n-1) {
+  border: 1px solid #f29509;
+}
+
 .admin-card-info {
   display: flex;
   gap: 3rem;
@@ -123,7 +135,6 @@ body {
 .admin-message-btn {
   background: #cce1ff;
   width: 100%;
-  padding: 16.5px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,4 +175,133 @@ body {
   font-size: 16px;
   line-height: 19px;
   padding-bottom: 55px;
+}
+
+/* ADD ADMIN PAGE STYLES */
+.indicator {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+.indicator:first-child,
+.dash-bold {
+  font-size: 20px;
+  line-height: 24px;
+}
+.indicator:first-child {
+  font-weight: 400;
+  color: #808080;
+}
+
+.dash-bold {
+  font-weight: 500;
+  color: #333333;
+}
+.admin-form h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #4d4d4d;
+}
+
+.admin-form .h-sec {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #4d4d4d;
+  margin: 38px 0 58px 0;
+}
+.admin-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 10rem;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.admin-input {
+  width: 462px;
+  height: 60px;
+  background: #fafcff;
+  outline: none;
+  border: 1px solid #666666;
+}
+.admin-input::placeholder {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  padding-left: 3.3rem;
+}
+.admin-label {
+  width: 462px;
+}
+
+.upload-h-s {
+  padding-top: 60px;
+}
+
+.img-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-direction: column;
+}
+._btn-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 8px;
+  outline: none;
+  border: none;
+  background: #0267ff;
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.form-img {
+  padding: 60px 0 40px;
+}
+.form-img-text {
+  font-size: 24px;
+  line-height: 29px;
+  color: #666666;
+  text-align: center;
+}
+
+.text-italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.upload-btn {
+  width: 334px;
+  height: 61px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-top: 6.8rem;
+}
+/* .upload-btns {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid green;
+} */
+
+.save-upload-btn {
+  position: absolute;
+  right: 0;
+  width: 195px;
+  /* top: 110%; */
+  font-size: 24px;
+  font-weight: 600;
+  bottom: -16rem;
+}
+
+Link {
+  text-decoration: none;
 }

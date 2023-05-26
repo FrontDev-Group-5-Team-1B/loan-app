@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./admin.css";
 import "./adminQueries.css";
@@ -55,7 +56,12 @@ const AdminPage = () => {
           </h3>
         </div>
         <button className="add-admin-btn">
-          <span className="admin-plus">+</span> Add Admin
+          <Link
+            to="/dashboard/add_admin"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <span className="admin-plus">+</span> Add Admin
+          </Link>
         </button>
 
         <div className="admin-card-holder">{adminInfo}</div>
