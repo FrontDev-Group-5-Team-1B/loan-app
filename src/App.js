@@ -24,6 +24,11 @@ import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
 import History from "./components/dashboard/History";
 import LoanApplication from "./components/dashboard/LoanApplication";
+import Settings from "./components/dashboard/Settings";
+import HelpSupport from "./components/dashboard/HelpSupport";
+import Profile from "./components/pages/Profile";
+import Notification from "./components/pages/Notification";
+import Security from "./components/pages/Security";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,8 +47,14 @@ const router = createBrowserRouter(
           <Route path="borrow" element={<Borrow />} />
           <Route path="loan_application" element={<LoanApplication />} />
           <Route path="history" element={<History />} />
-          {/* <Route path="admin" element={<Admin />} />
-          <Route path="settings" element={<Settings />} /> */}
+          {/* <Route path="admin" element={<Admin />} /> */}
+           <Route path="settings" element={<Settings />}> 
+           <Route path="settings" element={<Profile />}/> 
+           <Route path="settings" element={<Notification />}/> 
+           <Route path="settings" element={<Security />}/> 
+           </Route>
+           
+           <Route path="help_support" element={<HelpSupport />} /> 
         </Route>
     </>
   )

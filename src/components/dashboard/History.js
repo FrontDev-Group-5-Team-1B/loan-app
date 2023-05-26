@@ -12,7 +12,7 @@ const History = () => {
           <FiMenu /> Filter
         </div>
       </div>
-      <table>
+      <table className="history-table">
         <thead>
           <tr>
             <th>Date</th>

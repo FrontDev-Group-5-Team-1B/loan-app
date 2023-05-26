@@ -1,5 +1,6 @@
 import React from 'react'
 import loanApplication from '../../data/loanApplication'
+import "../../styles/loan-application.css"
 import {FiMenu} from "react-icons/fi"
 
 const LoanApplication = () => {
@@ -9,7 +10,7 @@ const LoanApplication = () => {
         <div><h2>Loan Applications</h2>
       <div><FiMenu /> Filter</div>
       </div>
-          <table>
+          <table classname="loan-applications">
         <thead>
           <tr>
             <th>Borrower's Name</th>

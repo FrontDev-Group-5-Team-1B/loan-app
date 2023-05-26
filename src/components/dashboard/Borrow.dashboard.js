@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Borrow = () => {
+const BorrowerData = () => {
 
 
   return (
@@ -49,4 +49,4 @@ const Borrow = () => {
   )
 }
 
-export default Borrow;
+export default BorrowerData;

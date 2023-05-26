@@ -9,7 +9,7 @@ const DashBoardContainer = () => {
       <aside>
         <nav>
          <NavLink to="/dashboard"><RiDashboardFill/> Dashboard</NavLink>
-        <NavLink to="borrow"><TfiPieChart/> Borrow Data</NavLink>
+        <NavLink to="borrower's_data"><TfiPieChart/> Borrower's Data</NavLink>
         <NavLink to="loan_application">Loan Applications</NavLink>
         <NavLink to="history">History</NavLink>
         <NavLink to="admin">Admin</NavLink>
