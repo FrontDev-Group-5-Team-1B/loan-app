@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 
-const Borrow = () => {
+const BorrowerData = () => {
   const navigate = useNavigate();
   const handleClick =() => {
     navigate(-1)
@@ -63,4 +63,4 @@ const Borrow = () => {
   )
 }
 
-export default Borrow;
+export default BorrowerData;
