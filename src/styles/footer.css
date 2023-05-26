@@ -110,4 +110,10 @@ input::placeholder{
     justify-content: center;
     align-items: center;
 }
+.white-radius {
+    height: 400px;
+    width: 400px;
+    border: 5px solid #fff;
+    border-radius: 5000px;
+}
 

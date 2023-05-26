@@ -1,6 +1,7 @@
 import React from 'react'
 import { TfiVector } from 'react-icons/tfi'
 import {BiRectangle} from 'react-icons/bi'
+import BorrowerLoanInfo from './BorrowerLoanInfo'
 
 const loanData = [
   {id: '1', fig: '4,587,541.', name: 'Loans generated'},
@@ -18,15 +19,15 @@ const Dashboard = () => {
      <div className='dContainer'>
      <div className='dCards'>
       <div className='fig-flex'>
-        <div>
+        <div className='map-rect'>
         <p>{loanFig.name}</p>
         <h4>{loanFig.fig}<span>28</span></h4>
         </div>
-        <div><img src={TfiVector} alt='vector'/></div>
+        <div><TfiVector/></div>
       </div>
       <div className='percent-flex'>
         <div>
-          <p> <img src={BiRectangle} alt='rectangle' />2.15%<span>Last month</span></p>
+          <p><BiRectangle />2.15%<span>Last month</span></p>
         </div>
         <div>View more</div>
       </div>
@@ -42,12 +43,14 @@ const Dashboard = () => {
   <div className='dHead'>
   <h2>Dashboard</h2>
   <h3>Analysis</h3>
-    <ul>{dataList}</ul>
-    </div>
+  </div>
+   <ul>{dataList}</ul>
+   
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
 </div>
 
+<BorrowerLoanInfo/>
     </>
 
 
