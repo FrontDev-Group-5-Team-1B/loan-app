@@ -3,13 +3,15 @@
     
     
 }
-.dHead ul{
+ul{
+    max-width: 500px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 0.5fr);
 
 }
 .dHead{
-    padding: 10px 20px;
+    
+    padding: 10px;
 }
 .dHead h2{
     color: #0267FF;
@@ -48,12 +50,17 @@
 span{
     color: #999999;
 }
+.map-rect:nth-child(2){
+ color: red;
+    
+}
 .percent-flex{
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #CCCCCC;
     background-color: #F2F2F2;
     padding: 15px;
+    
 }
 .fig-flex h4{
     font-size: 1.5rem;
@@ -64,9 +71,65 @@ span{
     width: 990px;
     height: 488px;
     padding: 20px;
+    margin: 20px;
 
 }
 .dash-chart p{
     font-size: 1.5rem;
     font-weight: 700;
+}
+.placeholder::placeholder{
+ color: #808080;
+}
+.b-header{
+    margin: 0 auto;
+    width: 40%;
+    padding: 30px 0;
+}
+.b-header h3{
+    padding: 10px 0;
+    color: #0267FF;
+    font-size: 1.3rem;
+}
+.b-header p{
+    
+}
+.bor-data{
+ width: 80%;
+ margin: 0 auto;
+ padding: 10px;
+ border: 1px solid #CCE1FF;
+ background-color: #FAFCFF;
+ width: 600px;
+ height: 400px;
+ border-radius: 25px 0 25px 0;
+}
+.bor-data h5{
+    color: #4D4D4D;
+    font-size: 1.2rem;
+    margin: 0 25px;
+}
+.b-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    
+}
+.b-data input{
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    border-style: none;
+    border: 1px solid #0252CC;
+}
+.b-btn{
+    width: 120px;
+    padding: 10px;
+    align-self: flex-end;
+    background-color: #0267FF;
+    border-style: none;
+    margin-right: 30px;
+    color: white;
+    
 }
