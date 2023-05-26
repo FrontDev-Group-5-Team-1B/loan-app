@@ -22,11 +22,11 @@ const Dashboard = () => {
         <p>{loanFig.name}</p>
         <h4>{loanFig.fig}<span>28</span></h4>
         </div>
-        <div><img src={TfiVector} alt='vector'/></div>
+        <div><TfiVector/></div>
       </div>
       <div className='percent-flex'>
         <div>
-          <p> <img src={BiRectangle} alt='rectangle' />2.15%<span>Last month</span></p>
+          <p><BiRectangle/>2.15%<span>Last month</span></p>
         </div>
         <div>View more</div>
       </div>
@@ -42,8 +42,9 @@ const Dashboard = () => {
   <div className='dHead'>
   <h2>Dashboard</h2>
   <h3>Analysis</h3>
-    <ul>{dataList}</ul>
-    </div>
+  </div>
+   <ul>{dataList}</ul>
+   
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
 </div>
