@@ -1,18 +1,20 @@
+
 import React from 'react'
 import { CiWallet } from 'react-icons/ci'
 import {BiRectangle} from 'react-icons/bi'
 import BorrowerLoanInfo from './BorrowerLoanInfo'
 import { Link } from 'react-router-dom'
 
-const loanData = [
-  {id: '1', fig: '4,587,541.', name: 'Loans generated'},
-  {id: '2', fig: '824,458.', name: 'Loans refunded'},
-  {id: '3', fig: '21,500.', name: 'Loans declined'},
-  {id: '4', fig: '42,542.', name: 'Pending loans'}
-]
 
+const loanData = [
+  { id: "1", fig: "4,587,541.", name: "Loans generated" },
+  { id: "2", fig: "824,458.", name: "Loans refunded" },
+  { id: "3", fig: "21,500.", name: "Loans declined" },
+  { id: "4", fig: "42,542.", name: "Pending loans" },
+];
 
 const Dashboard = () => {
+
 
   const dataList = loanData.map((loanFig, index) =>
   
@@ -29,17 +31,14 @@ const Dashboard = () => {
       <div className='percent-flex'>
         <div>
           <p><BiRectangle />2.15%<span>Last month</span></p>
+
         </div>
-        <div>View more</div>
       </div>
-
     </div>
+  ));
 
-    </div>
-  </div>
-  );
- 
   return (
+
     <div className='main-wrap'>
   <div className='dHead'>
   <h2>Dashboard</h2>
@@ -55,7 +54,14 @@ const Dashboard = () => {
     </div>
 
 
-  )
-}
+        <div className="dash-chart">
+          <p>Loan Monthly Frequency</p>
+        </div>
 
-export default Dashboard
+        <BorrowerLoanInfo />
+      </div>
+    </>
+  );
+};
+
+export default Dashboard;

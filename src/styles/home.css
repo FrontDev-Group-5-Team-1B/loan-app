@@ -86,7 +86,6 @@
 
   .services-container .services-content .text {
     width: 620px;
-    /* margin: 0 auto; */
   }
 
   .services-content{
@@ -148,9 +147,7 @@
     align-items: center;
     text-align: center;
     gap: 15px;
-    padding-bottom: 8px;
-  
-    
+    padding-bottom: 8px; 
   }
   
   .review-subcontent .user-img {
@@ -233,7 +230,6 @@
   }
 
   /* Sponsor section */
-
 
   .sponsors {
     display: flex;

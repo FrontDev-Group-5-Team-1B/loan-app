@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.settings-wrapper {
+    max-width: 99.7rem;
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    right: 60px;
+}
+
+.settings-content {
+    display: flex;
+}

@@ -1,5 +1,4 @@
 import "./components/pages/About.css";
-import "./components/dashboard/Dashboard.css";
 
 import {
   createBrowserRouter,
@@ -27,6 +26,12 @@ import History from "./components/dashboard/History";
 import LoanApplication from "./components/dashboard/LoanApplication";
 import AdminPage from "./components/pages/admin/AdminPage";
 import AddAdmin from "./components/pages/admin/AddAdmin";
+import Settings from "./components/dashboard/Settings";
+import HelpSupport from "./components/dashboard/HelpSupport";
+import Profile from "./components/pages/Profile";
+import Notification from "./components/pages/Notification";
+import Security from "./components/pages/Security";
+import LogOut from "./components/dashboard/LogOut"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,15 +50,24 @@ const router = createBrowserRouter(
         <Route path="borrow" element={<Borrow />} />
         <Route path="loan_application" element={<LoanApplication />} />
         <Route path="history" element={<History />} />
-        {/* <Route path="admin" element={<Admin />} />
-          <Route path="settings" element={<Settings />} /> */}
         <Route path="admin" element={<AdminPage />} />
         <Route path="add_admin" element={<AddAdmin />} />
       </Route>
-      {/* <Route path="/" element={<Borrow.dashboard/>}>
-        <Route path="borrowerloaninfo" element={<BorrowerLoanInfo/>}/>
 
-      </Route> */}
+      <Route path="dashboard" element={<DashBoardContainer />}>
+        <Route index element={<Dashboard />} />
+        <Route path="borrow" element={<Borrow />} />
+        <Route path="loan" element={<LoanApplication />} />
+        <Route path="history" element={<History />} />
+        <Route path="settings" element={<Settings />}>
+          <Route index element={<Profile />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="security" element={<Security />} />
+        </Route>
+
+        <Route path="help" element={<HelpSupport />} />
+        <Route path="logout" element={<LogOut/>} />
+      </Route>
     </>
   )
 );

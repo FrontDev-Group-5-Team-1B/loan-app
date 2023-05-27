@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -13,48 +14,53 @@ ul{
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
 
+
+.dContainer {
+  padding: 10px;
 }
+
 .dHead{
     
     padding: 10px;
-}
-.dHead h2{
-    color: #0267FF;
-    padding: 10px 0;
 
 }
-.dHead h3{
-    font-weight: 600;
-    padding-bottom: 10px;
+.dHead {
+  padding: 10px;
+}
+.dHead h2 {
+  color: #0267ff;
+  padding: 10px 0;
+}
+.dHead h3 {
+  font-weight: 600;
+  padding-bottom: 10px;
 }
 
-.dCards{
-    border: 1px solid #CCCCCC;
-    border-radius: 3px;
-    width: 250px;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-.fig-flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
+.dCards {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  width: 250px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.fig-flex p{
-    padding: 10px 0;
-    color: #0267FF;
-    font-weight: bold;
-    font-size: 1.2rem;
+.fig-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
-.fig-flex img{
-    padding: 20px 0;
+.fig-flex p {
+  padding: 10px 0;
+  color: #0267ff;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
-span{
-    color: #999999;
+.fig-flex img {
+  padding: 20px 0;
 }
+
 
 .percent-flex{
     display: flex;
@@ -76,6 +82,18 @@ span{
     padding: 20px;
     margin: 20px;
 
+
+
+.borowers-container,
+.main-db-container,
+.db-loan-application-container,
+.db-history-container {
+  max-width: 98.7rem;
+  position: absolute;
+  top: 130px;
+  left: 300px;
+  right: 60px;
+  z-index: -1;
 }
 .dash-chart p{
     font-size: 1.5rem;
@@ -94,11 +112,13 @@ span{
     color: #0267FF;
     font-size: 1.3rem;
 }
+
 .b-header p{
     color: #4D4D4D;
     font-weight: bold;
 
 }
+
 .bor-data{
  width: 80%;
  margin: 0 auto;
@@ -107,6 +127,7 @@ span{
  background-color: #FAFCFF;
  width: 600px;
  height: 350px;
+
  border-radius: 25px 0 25px 0;
 }
 .bor-data h5{
@@ -141,10 +162,12 @@ span{
    
     width: 120px;
     padding: 10px;
+
     background-color: #0267FF;
     border-style: none;
     margin-right: 30px;
     color: white;
+
     
 }
 .loan-info-flex{

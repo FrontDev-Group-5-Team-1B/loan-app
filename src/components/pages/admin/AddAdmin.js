@@ -2,22 +2,33 @@ import React from "react";
 import rightArrow from "../../../assets/right-arrow.svg";
 import cloud from "../../../assets/cloud-computing.png";
 import { Link } from "react-router-dom";
+import { GrNext } from "react-icons/gr";
 
 const AddAdmin = () => {
+  const handleUpload = function (e) {
+    e.preventDefault();
+    console.log("hey");
+  };
+
+  const handleSubmit = function (e) {
+    e.preventDefault();
+    console.log("hello");
+  };
+
   return (
     <>
       <div className="add-admin-container">
         <div class="indicator">
-          <Link to="/dashboard/admin" style={{ textDecoration: "none" }}>
+          <Link to="/dashboard/admin" className="add-admin-link">
             <p>Admin Dashboard</p>
           </Link>
 
-          <img src={rightArrow} />
+          <GrNext />
 
           <p className="dash-bold">Add Admin</p>
         </div>
         <h2 className="admin-heading-primary">Add Admin</h2>
-        <form className="admin-form">
+        <form className="admin-form" onSubmit={handleSubmit}>
           <h2 className="h-sec">Admin Information</h2>
 
           <div className="admin-inputs">
@@ -82,7 +93,9 @@ const AddAdmin = () => {
                 </p>
               </div>
 
-              <button className="_btn-blue upload-btn">Uplad Image</button>
+              <button className="_btn-blue upload-btn" onClick={handleUpload}>
+                Uplad Image
+              </button>
             </div>
           </div>
           <button className="_btn-blue save-upload-btn">Save</button>
