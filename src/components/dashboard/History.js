@@ -3,9 +3,8 @@ import historyData from "../../data/historyData";
 import { FiMenu } from "react-icons/fi";
 
 const History = () => {
-  
   return (
-    <div>
+    <div className="db-history-container">
       <div>
         <h2>History</h2>
         <div>

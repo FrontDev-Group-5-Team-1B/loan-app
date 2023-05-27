@@ -5,7 +5,7 @@ import {FiMenu} from "react-icons/fi"
 const LoanApplication = () => {
  
   return (
-    <div>
+    <div className='db-loan-application-container'>
         <div><h2>Loan Applications</h2>
       <div><FiMenu /> Filter</div>
       </div>

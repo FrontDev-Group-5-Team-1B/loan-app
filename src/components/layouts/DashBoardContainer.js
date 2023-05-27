@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { RiDashboardFill } from "react-icons/ri";
+import { RiDashboardFill, RiAdminLine, RiHistoryFill } from "react-icons/ri";
 import { TfiPieChart } from "react-icons/tfi";
+import { TbCoins, TbLogout } from "react-icons/tb";
+import { FiSettings, FiHelpCircle } from "react-icons/fi";
 import DbNav from "./DbNav";
 
 const DashBoardContainer = () => {
@@ -17,25 +19,26 @@ const DashBoardContainer = () => {
             <TfiPieChart /> Borrow Data
           </NavLink>
           <NavLink to="loan_application" className="db-link">
-            Loan Applications
+            <TbCoins /> Loan Applications
           </NavLink>
           <NavLink to="history" className="db-link">
-            History
+            <RiHistoryFill /> History
           </NavLink>
           <NavLink to="admin" className="db-link">
-            Admin
+            <RiAdminLine /> Admin
           </NavLink>
           <NavLink to="settings" className="db-link">
-            Settings
+            <FiSettings /> Settings
           </NavLink>
           <NavLink to="help" className="db-link">
-            Help & Support
+            <FiHelpCircle /> Help & Support
           </NavLink>
         </nav>
         <div>
-          <NavLink to="logout">logout</NavLink>
+          <NavLink to="logout" className="db-link log-out">
+            <TbLogout /> logout
+          </NavLink>
         </div>
-
       </aside>
       <Outlet />
     </>
