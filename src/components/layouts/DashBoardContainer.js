@@ -21,7 +21,7 @@ const DashBoardContainer = () => {
           <NavLink to="borrow" className="db-link">
             <TfiPieChart /> Borrow Data
           </NavLink>
-          <NavLink to="loan_application" className="db-link">
+          <NavLink to="loan" className="db-link">
             <BsDatabase/> Loan Applications
           </NavLink>
           <NavLink to="history" className="db-link">
@@ -33,11 +33,11 @@ const DashBoardContainer = () => {
           <NavLink to="settings" className="db-link">
             <FiSettings/> Settings
           </NavLink>
-          <NavLink to="help_support" className="db-link">
+          <NavLink to="help" className="db-link">
             <MdHelpOutline/> Help & Support
           </NavLink>
         </nav>
-        <div><NavLink to="logout"><HiOutlineLogout/> logout</NavLink></div>
+        <div><NavLink to="logout" className="db-link"><HiOutlineLogout/> logout</NavLink></div>
       </aside>
       <Outlet />
     </>
