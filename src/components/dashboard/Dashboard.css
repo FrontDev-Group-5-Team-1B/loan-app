@@ -1,7 +1,5 @@
 .dContainer{
-    padding: 10px;
-    
-    
+    padding: 10px;  
 }
 ul{
     max-width: 500px;
@@ -91,9 +89,7 @@ span{
     color: #0267FF;
     font-size: 1.3rem;
 }
-.b-header p{
-    
-}
+
 .bor-data{
  width: 80%;
  margin: 0 auto;
