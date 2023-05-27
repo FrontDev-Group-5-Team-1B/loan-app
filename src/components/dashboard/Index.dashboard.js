@@ -31,14 +31,18 @@ const Dashboard = () => {
       <div className='percent-flex'>
         <div>
           <p><BiRectangle />2.15%<span>Last month</span></p>
-
         </div>
+        <div>View more</div>
       </div>
+
     </div>
-  ));
+    </div>
+    </div>
+  
+  );
 
   return (
-
+<div>
     <div className='main-wrap'>
   <div className='dHead'>
   <h2>Dashboard</h2>
@@ -49,18 +53,13 @@ const Dashboard = () => {
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
 </div>
-
-
     </div>
-
-
         <div className="dash-chart">
           <p>Loan Monthly Frequency</p>
         </div>
-
         <BorrowerLoanInfo />
       </div>
-    </>
+
   );
 };
 
