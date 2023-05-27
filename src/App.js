@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./components/pages/About.css";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -10,8 +10,7 @@ import {
 //pages
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
-import Services from "./components/pages/Services";
-import Contact from "./components/pages/Contact";
+import Contact from "./components/pages/contatPage/Contact";
 
 //  RootLayouts
 import Header from "./components/layouts/Header";
@@ -20,23 +19,54 @@ import Header from "./components/layouts/Header";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
-import Dashboard from "./components/dashboard/Dashboard";
+import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
+import History from "./components/dashboard/History";
+import LoanApplication from "./components/dashboard/LoanApplication";
+import AdminPage from "./components/pages/admin/AdminPage";
+import AddAdmin from "./components/pages/admin/AddAdmin";
+import Settings from "./components/dashboard/Settings";
+import HelpSupport from "./components/dashboard/HelpSupport";
+import Profile from "./components/pages/Profile";
+import Notification from "./components/pages/Notification";
+import Security from "./components/pages/Security";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Header />}>
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="services" element={<Services />} />
-      <Route path="contact" element={<Contact />} />
+
+    <>
+      <Route path="/" element={<Header />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+
       <Route path="login" element={<LogIn />} />
       <Route path="signup" element={<SignUp />} />
+
       <Route path="dashboard" element={<DashBoardContainer />}>
         <Route index element={<Dashboard />} />
         <Route path="borrow" element={<Borrow />} />
+        <Route path="loan_application" element={<LoanApplication />} />
+        <Route path="history" element={<History />} />
+        <Route path="admin" element={<AdminPage />} />
+        <Route path="add_admin" element={<AddAdmin />} />
       </Route>
-    </Route>
+
+      <Route path="dashboard" element={<DashBoardContainer />}>
+        <Route index element={<Dashboard />} />
+        <Route path="borrow" element={<Borrow />} />
+        <Route path="loan_application" element={<LoanApplication />} />
+        <Route path="history" element={<History />} />
+        <Route path="settings" element={<Settings />}>
+          <Route path="settings" element={<Profile />} />
+          <Route path="settings" element={<Notification />} />
+          <Route path="settings" element={<Security />} />
+        </Route>
+
+        <Route path="help_support" element={<HelpSupport />} />
+      </Route>
+    </>
   )
 );
 

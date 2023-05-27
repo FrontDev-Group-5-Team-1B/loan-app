@@ -1,0 +1,25 @@
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 374px;
+}
+
+.images {
+  position: absolute;
+  width: 650px;
+  opacity: 0;
+  height: 485px;
+  object-fit: cover;
+  left: 7%;
+  right: -8%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.images.fade-in {
+  opacity: 1;
+}
+
+.images.fade-out {
+  opacity: 0;
+}

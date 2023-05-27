@@ -1,24 +1,43 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import {RiDashboardFill} from 'react-icons/ri';
+import { RiDashboardFill } from "react-icons/ri";
 import { TfiPieChart } from "react-icons/tfi";
+import { MdHistory, MdHelpOutline } from "react-icons/md";
+import { FiSettings } from "react-icons/fi";
+import { RiAdminFill } from "react-icons/ri";
+import { HiOutlineLogout } from "react-icons/hi";
+import { BsDatabase } from "react-icons/bs"
+import DbNav from "./DbNav";
 
 const DashBoardContainer = () => {
   return (
     <>
-      <aside>
-        <nav>
-        <NavLink to="/dashboard"><RiDashboardFill/> Dashboard</NavLink>
-        <NavLink to="borrow"><TfiPieChart/> Borrow Data</NavLink>
-        <NavLink to="loan">Loan Applications</NavLink>
-        <NavLink to="history">History</NavLink>
-        <NavLink to="admin">Admin</NavLink>
-        <NavLink to="settings">Settings</NavLink>
-        <NavLink to="help">Help & Support</NavLink>
+      <aside className="db-s-nav">
+        <DbNav />
+        <nav className="db-links">
+          <NavLink to="/dashboard" className="db-link">
+            <RiDashboardFill /> Dashboard
+          </NavLink>
+          <NavLink to="borrow" className="db-link">
+            <TfiPieChart /> Borrow Data
+          </NavLink>
+          <NavLink to="loan_application" className="db-link">
+            <BsDatabase/> Loan Applications
+          </NavLink>
+          <NavLink to="history" className="db-link">
+            <MdHistory/> History
+          </NavLink>
+          <NavLink to="admin" className="db-link">
+            <RiAdminFill/> Admin
+          </NavLink>
+          <NavLink to="settings" className="db-link">
+            <FiSettings/> Settings
+          </NavLink>
+          <NavLink to="help_support" className="db-link">
+            <MdHelpOutline/> Help & Support
+          </NavLink>
         </nav>
-        <div>
-        <NavLink to="logout">logout</NavLink>
-        </div>
+        <div><NavLink to="logout"><HiOutlineLogout/> logout</NavLink></div>
       </aside>
       <Outlet />
     </>
