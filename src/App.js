@@ -30,6 +30,7 @@ import HelpSupport from "./components/dashboard/HelpSupport";
 import Profile from "./components/pages/Profile";
 import Notification from "./components/pages/Notification";
 import Security from "./components/pages/Security";
+import LogOut from "./components/dashboard/LogOut"
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -55,15 +56,16 @@ const router = createBrowserRouter(
       <Route path="dashboard" element={<DashBoardContainer />}>
         <Route index element={<Dashboard />} />
         <Route path="borrow" element={<Borrow />} />
-        <Route path="loan_application" element={<LoanApplication />} />
+        <Route path="loan" element={<LoanApplication />} />
         <Route path="history" element={<History />} />
         <Route path="settings" element={<Settings />}>
-          <Route path="settings" element={<Profile />} />
-          <Route path="settings" element={<Notification />} />
-          <Route path="settings" element={<Security />} />
+          <Route index element={<Profile />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="security" element={<Security />} />
         </Route>
 
-        <Route path="help_support" element={<HelpSupport />} />
+        <Route path="help" element={<HelpSupport />} />
+        <Route path="logout" element={<LogOut/>} />
       </Route>
     </>
   )

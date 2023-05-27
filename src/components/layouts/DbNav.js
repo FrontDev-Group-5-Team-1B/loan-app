@@ -3,6 +3,7 @@ import logo from "../../assets/Loan logo 1.png";
 import mail from "../../assets/mail-icon.svg";
 import bell from "../../assets/bell-icon.svg";
 import profile from "../../assets/profile-pic.png";
+import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/dashBoard.css";
@@ -13,9 +14,7 @@ const DbNav = () => {
     <>
       <div className="db-nav-container">
         <div className="db-logo header-img">
-          <Link to="/">
-            <img src={logo} />
-          </Link>
+          <NavLink to="/"><img src={logo} /></NavLink>
         </div>
         <div className="db-search">
           <input type="text" placeholder="Search" className="db-input-search" />
