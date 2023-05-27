@@ -3,9 +3,14 @@ import React from 'react'
 const BorrowerLoanInfo = () => {
 
   return (
-    <div>
+
+    <>
+    <div  className='bor-data'>
+        <h5>
         Loan Information
-        <div>
+        </h5>
+        <form>
+        <div className='loan-info-flex'>
 
         <div>
             <select>
@@ -16,7 +21,9 @@ const BorrowerLoanInfo = () => {
                 <option>Housing Loan</option>
                 <option>Others</option>
             </select>
-            <input type='text' placeholder='Upload Credit report' />
+
+            <input type='text' placeholder='Upload Credit report' className='placeholder' />
+
         </div>
         <div>
             <select>
@@ -27,13 +34,22 @@ const BorrowerLoanInfo = () => {
                 <option>Housing Loan</option>
                 <option>Others</option>
             </select>
-            <input type='text' placeholder='Upload Credit score' />
+    
+            <input type='text' placeholder='Upload Credit score' className='placeholder' />
 
         </div>
         </div>
-        <textarea type='text' placeholder='Purpose of Loan'/>
-
+        <textarea type='text' placeholder='Purpose of Loan' />
+        </form>
+       
     </div>
+     <div className='d-btn'>
+     <button className='l-btn'>Previous</button>
+     <button className='b-btn'>Next</button>
+
+ </div>
+ </>
+
   )
 }
 
