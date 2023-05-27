@@ -1,0 +1,124 @@
+.footer-wrapper {
+    width: 100%;
+    background: var(--button-color);
+    color: var(--bg-color);
+}
+
+.footer-content {
+    position: relative;
+    margin-top: 45px;
+    width: 100%;
+    padding: 50px;
+}
+
+.footer-last-text {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 5px;
+}
+
+.copyright {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 18px;
+} 
+
+.footer-content-1 h3 {
+    font-size: 32px;
+    line-height: 39px;
+    padding: 12px;
+}
+
+ .footer-text {
+    padding: 8px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-content-1 {
+    border-bottom: 1px solid ;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.footer-links ul li {
+    list-style: none;
+    text-decoration: none;
+    padding: 6px;
+}
+
+.footer-links ul li a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer {
+    width: 20%;
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+form {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.form-field[type="text"]{
+    border: none;
+    width: 750px;
+    height: 50px;
+    padding: 0 16px;
+    background: #9AC2FF;  
+}
+
+input::placeholder{
+    text-transform: capitalize;
+    color: white;
+}
+
+.btn-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-color);
+    color: var(--button-color);
+    padding: 0 60px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-1:hover{
+    background: #013e99;
+    color: var(--bg-color);
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .white-radius {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    border-radius: 5000px;
+    top: 1;
+    right: 0;
+    
+} */
+
