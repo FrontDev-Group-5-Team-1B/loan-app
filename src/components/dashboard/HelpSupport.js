@@ -26,24 +26,28 @@ const HelpSupport = () => {
               Kindly, pick from the options below, or use the search tool above
               to seek any assistance
             </p>
-          </div>
-          <table>
+            <table>
               <tr>
-              <th>Getting Started</th>
-              <th>User Account</th>
+              <td>Getting Started</td>
+              <td>User Account</td>
               </tr> 
               <tr>
                 <td>Loan Type</td>
-                <td>Interest</td>
-                <td>Special Loan Offer</td>
+                <td>Loan Agreement</td>
               </tr>
               <tr>
-                <td>Loan Agreement</td>
+                <td>Interest</td>
                 <td>Guarantor Details</td>
+              </tr>
+              <tr>
+                <td>Special Loan Offer</td>
                 <td>Coilateral</td>
               </tr>
             </table>
-        </div>
+          </div>
+          </div>
+        
+      
       </section>
 
       <section className="accordion-wrapper">
