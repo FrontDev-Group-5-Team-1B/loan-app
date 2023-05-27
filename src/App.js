@@ -25,7 +25,7 @@ import Borrow from "./components/dashboard/Borrow.dashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" >
+    <Route path="/" element={<Header />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="services" element={<Services />} />

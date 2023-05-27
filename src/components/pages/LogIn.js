@@ -25,7 +25,7 @@ const LogIn = () => {
       <div className="login-left-box">
         <p className="arrow">
 
-        <Link to="#" className=""><FaArrowLeft /></Link>
+        <Link to="/" className=""><FaArrowLeft /></Link>
         </p>
         <h2 className="logwel">Welcome Back</h2>
         <p className="logacc">Log into your account</p>
