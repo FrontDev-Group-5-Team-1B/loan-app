@@ -6,13 +6,16 @@ import profile from "../../assets/profile-pic.png";
 
 // styles
 import "../../styles/dashBoard.css";
+import { Link } from "react-router-dom";
 
 const DbNav = () => {
   return (
     <>
       <div className="db-nav-container">
         <div className="db-logo header-img">
-          <img src={logo} />
+          <Link to="/">
+            <img src={logo} />
+          </Link>
         </div>
         <div className="db-search">
           <input type="text" placeholder="Search" className="db-input-search" />

@@ -5,10 +5,9 @@ import "../../styles/history.css"
 import { FiMenu } from "react-icons/fi";
 
 const History = () => {
-  
   return (
-    <div className="history-wrapper">
-      <div className="history-title">
+    <div className="db-history-container">
+      <div>
         <h2>History</h2>
         <div className="filter-icon">
           <FiMenu size="35px"/> 
