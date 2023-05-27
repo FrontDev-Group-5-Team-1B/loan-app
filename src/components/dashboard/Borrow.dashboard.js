@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
-const Borrow = () => {
+const BorrowerData = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(-1);
@@ -83,5 +83,4 @@ const Borrow = () => {
     </div>
   );
 };
-
-export default Borrow;
+export default BorrowerData;
