@@ -1,8 +1,13 @@
-.dContainer{
-    padding: 10px;
-    
-    
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+.dContainer{
+    padding: 10px;  
+ 
+}
+
 ul{
     max-width: 500px;
     display: grid;
@@ -50,10 +55,7 @@ ul{
 span{
     color: #999999;
 }
-.map-rect:nth-child(2){
- color: red;
-    
-}
+
 .percent-flex{
     display: flex;
     justify-content: space-between;
@@ -62,14 +64,15 @@ span{
     padding: 15px;
     
 }
+
 .fig-flex h4{
     font-size: 1.5rem;
 }
 .dash-chart{
     border: 1px solid #E6F0FF;
     background-color: #F9F9F96B;
-    width: 990px;
-    height: 488px;
+    /* width: 990px;
+    height: 488px; */
     padding: 20px;
     margin: 20px;
 
@@ -92,7 +95,9 @@ span{
     font-size: 1.3rem;
 }
 .b-header p{
-    
+    color: #4D4D4D;
+    font-weight: bold;
+
 }
 .bor-data{
  width: 80%;
@@ -101,7 +106,7 @@ span{
  border: 1px solid #CCE1FF;
  background-color: #FAFCFF;
  width: 600px;
- height: 400px;
+ height: 350px;
  border-radius: 25px 0 25px 0;
 }
 .bor-data h5{
@@ -121,15 +126,72 @@ span{
     margin: 10px;
     width: 250px;
     border-style: none;
+    font-size: 11px;
     border: 1px solid #0252CC;
 }
+.s-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    width: 650px;
+    padding: 30px 0;
+    
+}
 .b-btn{
+   
     width: 120px;
     padding: 10px;
-    align-self: flex-end;
     background-color: #0267FF;
     border-style: none;
     margin-right: 30px;
     color: white;
     
+}
+.loan-info-flex{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.loan-info-flex input{
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    font-size: 11px;
+    border-style: none;
+    border: 1px solid #0252CC;
+
+}
+.loan-info-flex select{
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    font-size: 11px;
+    border-style: none;
+    border: 1px solid #0252CC;
+    color: #808080;
+}
+textarea{
+    padding: 20px;
+    margin: 10px;
+    font-size: 11px;
+    width: 500px;
+    align-self: center;
+    border: 1px solid #0252CC;
+}
+.d-btn{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 20px;
+
+}
+.l-btn{
+    width: 120px;
+    padding: 10px;
+    align-self: flex-end;
+    background-color: white;
+    border-color: #0267FF;
+    margin-right: 30px;
+    color: #0267FF;
 }

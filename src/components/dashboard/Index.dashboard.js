@@ -1,7 +1,8 @@
 import React from 'react'
-import { TfiVector } from 'react-icons/tfi'
+import { CiWallet } from 'react-icons/ci'
 import {BiRectangle} from 'react-icons/bi'
 import BorrowerLoanInfo from './BorrowerLoanInfo'
+import { Link } from 'react-router-dom'
 
 const loanData = [
   {id: '1', fig: '4,587,541.', name: 'Loans generated'},
@@ -20,10 +21,10 @@ const Dashboard = () => {
      <div className='dCards'>
       <div className='fig-flex'>
         <div className='map-rect'>
-        <p>{loanFig.name}</p>
+        <p className='fig-map'>{loanFig.name}</p>
         <h4>{loanFig.fig}<span>28</span></h4>
         </div>
-        <div><TfiVector/></div>
+        <div><CiWallet/></div>
       </div>
       <div className='percent-flex'>
         <div>
@@ -39,7 +40,7 @@ const Dashboard = () => {
   );
  
   return (
-    <>
+    <div className='main-wrap'>
   <div className='dHead'>
   <h2>Dashboard</h2>
   <h3>Analysis</h3>
@@ -50,8 +51,8 @@ const Dashboard = () => {
   <p>Loan Monthly Frequency</p>
 </div>
 
-<BorrowerLoanInfo/>
-    </>
+
+    </div>
 
 
   )

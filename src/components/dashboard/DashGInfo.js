@@ -1,27 +1,11 @@
 import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
-import BorrowerLoanInfo from './BorrowerLoanInfo';
-import DashCollaInfo from './DashCollaInfo';
-import DashGInfo from './DashGInfo';
 
-const Borrow = () => {
-  const navigate = useNavigate();
-  const handleClick =() => {
-    navigate(-1)
-  }
-
-
-
+const DashGInfo = () => {
   return (
-  <>
-  
     <div>
-    <div className='b-header'>
-      <h3>Input Borrower's Data</h3>
-      <p>Carefully input the borrowers's details</p>
-   </div>
+     <div>
    <div className='bor-data'>
-    <h5>Personal and contact information</h5>
+    <h5>Guarantor's Information</h5>
     <form>
       <div className='b-data'>
     <div className='b-data1'>
@@ -35,7 +19,10 @@ const Borrow = () => {
       placeholder='Address'  className='placeholder' /></div>
      <div> 
       <input type='text' 
-      placeholder='Employment'  className='placeholder' /></div>
+      placeholder='Relationship'  className='placeholder' /></div>
+       <div> 
+      <input type='text' 
+      placeholder='Other sources of Income'  className='placeholder' /></div>
  </div>
  <div className='b-data2'>
      <div> 
@@ -48,32 +35,30 @@ const Borrow = () => {
       </div>
       <div>
         <input type='number'
-         placeholder='National Identity Number'  className='placeholder' />
+         placeholder='Social Security Number'  className='placeholder' />
          </div>
          <div>
       <input type='number' 
-      placeholder='Income per month'  className='placeholder' />
+      placeholder='Employment'  className='placeholder' />
       </div>
+      <div> 
+      <input type='text' 
+      placeholder='Income per month'  className='placeholder' /></div>
     </div>
     </div>
     </form>
     
     </div>
-    <div className='s-btn'>
-    <button className='b-btn'>Next</button>
-    </div>
+    <div className='d-btn'>
+     <button className='l-btn'>Previous</button>
+     <button className='b-btn'>Next</button>
+
+ </div>
    
     </div>
 
-<BorrowerLoanInfo/>
-
-<DashCollaInfo />
-<DashGInfo />
-    
-   
-</>
-   
+    </div>
   )
 }
 
-export default Borrow;
+export default DashGInfo

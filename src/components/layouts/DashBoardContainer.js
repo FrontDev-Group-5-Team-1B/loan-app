@@ -8,13 +8,14 @@ const DashBoardContainer = () => {
     <>
       <aside>
         <nav>
-         <NavLink to="/dashboard"><RiDashboardFill/> Dashboard</NavLink>
+        <NavLink to="/dashboard"><RiDashboardFill/> Dashboard</NavLink>
         <NavLink to="borrow"><TfiPieChart/> Borrow Data</NavLink>
         <NavLink to="loan_application">Loan Applications</NavLink>
         <NavLink to="history">History</NavLink>
         <NavLink to="admin">Admin</NavLink>
         <NavLink to="settings">Settings</NavLink>
         <NavLink to="help">Help & Support</NavLink>
+      
         </nav>
         <div>
         <NavLink to="logout">logout</NavLink>
