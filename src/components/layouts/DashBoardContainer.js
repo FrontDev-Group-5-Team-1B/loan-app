@@ -31,8 +31,8 @@ const DashBoardContainer = () => {
           <NavLink to="settings" className="db-link">
             <FiSettings /> Settings
           </NavLink>
-          <NavLink to="help" className="db-link">Help & Support</NavLink>
-          <NavLink to="logout" className="db-link">LogOut</NavLink>
+          <NavLink to="help" className="db-link"><FiHelpCircle/>Help & Support</NavLink>
+          <NavLink to="logout" className="db-link"><TbLogout/>LogOut</NavLink>
             </nav>
 
       </aside>
