@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/dashBoard.css";
+import { Link } from "react-router-dom";
 
 const DbNav = () => {
   return (
