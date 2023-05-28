@@ -50,10 +50,7 @@ const router = createBrowserRouter(
         <Route path="admin" element={<AdminPage />} />
         <Route path="add_admin" element={<AddAdmin />} />
       </Route>
-      {/* <Route path="/" element={<Borrow.dashboard/>}>
-        <Route path="borrowerloaninfo" element={<BorrowerLoanInfo/>}/>
-
-      </Route> */}
+     
     </>
   )
 );

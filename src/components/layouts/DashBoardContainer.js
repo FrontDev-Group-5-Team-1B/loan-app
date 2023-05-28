@@ -7,7 +7,7 @@ const DashBoardContainer = () => {
   return (
     <>
       <aside>
-        <nav>
+        <>
         <NavLink to="/dashboard"><RiDashboardFill/> Dashboard</NavLink>
         <NavLink to="borrow"><TfiPieChart/> Borrow Data</NavLink>
         <NavLink to="loan_application">Loan Applications</NavLink>
@@ -16,7 +16,7 @@ const DashBoardContainer = () => {
         <NavLink to="settings">Settings</NavLink>
         <NavLink to="help">Help & Support</NavLink>
       
-        </nav>
+        </>
         <div>
         <NavLink to="logout">logout</NavLink>
         </div>

@@ -3,6 +3,7 @@ import { CiWallet } from 'react-icons/ci'
 import {BiRectangle} from 'react-icons/bi'
 import BorrowerLoanInfo from './BorrowerLoanInfo'
 import { Link } from 'react-router-dom'
+import DashBoardContainer from '../layouts/DashBoardContainer'
 
 const loanData = [
   {id: '1', fig: '4,587,541.', name: 'Loans generated'},
@@ -40,6 +41,7 @@ const Dashboard = () => {
   );
  
   return (
+    <div>
     <div className='main-wrap'>
   <div className='dHead'>
   <h2>Dashboard</h2>
@@ -50,10 +52,8 @@ const Dashboard = () => {
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
 </div>
-
-
     </div>
-
+    </div>
 
   )
 }
