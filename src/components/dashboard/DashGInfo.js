@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
+import {RxDotFilled} from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 
 const DashGInfo = () => {
   return (
-    <div>
-     <div>
-   <div className='bor-data'>
+
+    <div className='borrow-wrap'>
+     <div className='b-header'>
+      <h3>Input Borrower's Data</h3>
+      <p>Carefully input the borrower's details</p>
+     </div>
+     <div className='bor-data'>
     <h5>Guarantor's Information</h5>
     <form>
       <div className='b-data'>
@@ -46,18 +52,24 @@ const DashGInfo = () => {
       placeholder='Income per month'  className='placeholder' /></div>
     </div>
     </div>
+    <div className='car-dot'>
+      <p><RxDotFilled/></p>
+      <p><RxDotFilled/></p>
+      <Link to='/dashboard/collateral_info' style={{ textDecoration: "none" }}><p><RxDotFilled/></p></Link>
+      <p className='p1'><RxDotFilled/></p>
+    </div>
     </form>
     
     </div>
     <div className='d-btn'>
-     <button className='l-btn'>Previous</button>
-     <button className='b-btn'>Next</button>
+     <button className='l-btn'><Link to='/dashboard/collateral_info' style={{ textDecoration: "none", color: "blue" }}>Previous</Link></button>
+     <button className='b-btn'>Save Data</button>
 
  </div>
    
     </div>
 
-    </div>
+    
   )
 }
 

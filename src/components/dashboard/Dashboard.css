@@ -5,31 +5,28 @@
     padding: 0;
 }
 .dContainer{
-    padding: 10px;  
- 
-}
+    padding: 10px;
 
+}
+.main-wrap{
+    margin: 120px 0 50px 260px;
+}
+.dash-wallet{
+    margin-top: 25px;
+    font-size: 15px;
+    
+}
 ul{
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
 }
-
-.dContainer {
-  padding: 10px;
-}
-
-.dHead{
-    
-    padding: 10px;
-
-}
 .dHead {
-  padding: 10px;
+  padding: 15px;
 }
 .dHead h2 {
   color: #0267ff;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .dHead h3 {
   font-weight: 600;
@@ -53,15 +50,12 @@ ul{
 }
 .fig-flex p {
   padding: 10px 0;
-  color: #0267ff;
   font-weight: bold;
   font-size: 1.2rem;
 }
 .fig-flex img {
   padding: 20px 0;
 }
-
-
 .percent-flex{
     display: flex;
     justify-content: space-between;
@@ -70,10 +64,28 @@ ul{
     padding: 15px;
     
 }
-
+.percent-rect{
+    display: flex;
+    gap: 5px;
+}
 .fig-flex h4{
     font-size: 1.5rem;
 }
+.fig-map:nth-child(1){
+    color: blue;
+}
+.fig-map:nth-child(2){
+    color:#04AB33 ;
+}
+.fig-map:nth-child(3){
+    color:#FF2727 ;
+}
+.fig-map:nth-child(4){
+    color:#F29509 ;
+}
+
+
+
 .dash-chart{
     border: 1px solid #E6F0FF;
     background-color: #F9F9F96B;
@@ -82,9 +94,6 @@ ul{
     padding: 20px;
     margin: 20px;
 }
-
-
-
 .borowers-container,
 .main-db-container,
 .db-loan-application-container,
@@ -121,15 +130,32 @@ ul{
 }
 
 .bor-data{
- width: 80%;
+ width: 60%;
  margin: 0 auto;
  padding: 10px;
  border: 1px solid #CCE1FF;
  background-color: #FAFCFF;
  width: 600px;
  height: 350px;
-
  border-radius: 25px 0 25px 0;
+ 
+}
+.loan-data{
+ margin: 0 auto;
+ padding: 10px;
+ border: 1px solid #CCE1FF;
+ background-color: #FAFCFF;
+ width: 600px;
+ height: 350px;
+ border-radius: 25px 0 25px 0;
+
+
+}
+.loan-data h5{
+    color: #4D4D4D;
+    font-size: 1.2rem;
+    margin: 0 25px;
+
 }
 .bor-data h5{
     color: #4D4D4D;
@@ -140,7 +166,7 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     
 }
 .b-data input{
@@ -160,17 +186,18 @@ ul{
     
 }
 .b-btn{
-   
     width: 120px;
     padding: 10px;
-
     background-color: #0267FF;
     border-style: none;
     margin-right: 30px;
-    color: white;
-
+    font-weight: 750;
     
 }
+.b-btn:hover{
+    background-color: #4889eb;
+}
+
 .loan-info-flex{
     display: flex;
     justify-content: center;
@@ -218,4 +245,22 @@ textarea{
     border-color: #0267FF;
     margin-right: 30px;
     color: #0267FF;
+    font-weight: 750;
+}
+.l-btn:hover{
+    background-color: #4889eb;
+}
+.borrow-wrap{
+    margin-top: 100px;
+}
+.car-dot{
+    display: flex;
+    color: #839fc9;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 50px;
+    
+}
+.car-dot .p1{
+    color: #064ab1;
 }

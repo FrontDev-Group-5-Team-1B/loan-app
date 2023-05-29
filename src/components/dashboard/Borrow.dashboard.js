@@ -1,10 +1,11 @@
 
 import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import BorrowerLoanInfo from './BorrowerLoanInfo';
 import DashCollaInfo from './DashCollaInfo';
 import DashGInfo from './DashGInfo';
 import "./Dashboard.css";
+import {RxDotFilled} from 'react-icons/rx';
 
 
 const Borrow = () => {
@@ -14,12 +15,12 @@ const Borrow = () => {
   };
 
   return (
-  <>
+
   
-    <div>
+    <div className='borrow-wrap'>
     <div className='b-header'>
       <h3>Input Borrower's Data</h3>
-      <p>Carefully input the borrowers's details</p>
+      <p>Carefully input the borrower's details</p>
    </div>
    <div className='bor-data'>
     <h5>Personal and contact information</h5>
@@ -57,22 +58,24 @@ const Borrow = () => {
       </div>
     </div>
     </div>
+    <div className='car-dot'> 
+     <p className='p1'><RxDotFilled/></p>
+    <Link to='/dashboard/borrowerloan_info' style={{ textDecoration: "none" }} > <p><RxDotFilled/></p></Link>
+     <p><RxDotFilled/></p>
+     <p><RxDotFilled/></p>
+    </div>
     </form>
+
+    
     
     </div>
     <div className='s-btn'>
-    <button className='b-btn'>Next</button>
+    <button className='b-btn'><Link to='/dashboard/borrowerloan_info' style={{ textDecoration: "none", color: "white" }}>Next</Link></button>
     </div>
    
     </div>
-
-<BorrowerLoanInfo/>
-
-<DashCollaInfo />
-<DashGInfo />
-    
    
-</>
+
    
   )
 }
