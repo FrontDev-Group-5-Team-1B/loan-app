@@ -83,7 +83,7 @@ ul {
 .db-history-container {
   max-width: 98.7rem;
   position: absolute;
-  top: 130px;
+  top: 130px; 
   left: 300px;
   right: 60px;
   z-index: -1;
