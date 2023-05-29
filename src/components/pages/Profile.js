@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../assets/portrait-good-looking-tender-woman-keeps-hand-neck-smiles-gently-has-shy-expression-while-talks-with-boyfriend-rejoices-nice-moment-life-receives-heartwarming-compliment 2 (1).png";
+import profile from "../../assets/profile-pic.png";
 import Buttons from "../layouts/Buttons";
 
 function Profile() {
@@ -66,7 +66,7 @@ function Profile() {
       <section>
         <div>
           <h4>Profile Picture</h4>
-          <img src={profile} alt="" />
+          <img src={profile} alt="user-profile" />
           <a href="#">Change Profile Picture</a>
           <a href="#">Remove Profile Picture</a>
         </div>
