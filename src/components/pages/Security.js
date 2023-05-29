@@ -1,22 +1,46 @@
-import React from 'react'
+import React from "react";
 
 const Security = () => {
   return (
     <div>
-        <h3>Security</h3>
-        <h4>Password Settings</h4>
-        <p>Make sure a strong password is used, this is to ensure maximum security of your data</p>
+      <h4 className="profile-hp">Password Settings</h4>
+      <p className="sec-text">
+        Make sure a strong password is used, this is to ensure maximum security
+        of your data
+      </p>
+      <div>
+        <form className="sec-form">
+          <div className="sec-inputs">
+            <div>
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="Old Password"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="New Password"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="Confirm New Password"
+              />
+            </div>
+          </div>
+        </form>
+
         <div>
-            <form>
-            <div><input type="text"/></div>
-            <div><input type="text"/></div>
-            <div><input type="text"/></div>
-            </form>
-
-            <div><button>Change Password</button></div>
+          <button className="setings-pwd-btn">Change Password</button>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Security
+export default Security;
