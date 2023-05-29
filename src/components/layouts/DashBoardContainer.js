@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { RiDashboardFill } from "react-icons/ri";
+import { RiDashboardFill, RiAdminLine, RiHistoryFill } from "react-icons/ri";
 import { TfiPieChart } from "react-icons/tfi";
-import { MdHistory, MdHelpOutline } from "react-icons/md";
-import { FiSettings } from "react-icons/fi";
-import { RiAdminFill } from "react-icons/ri";
-import { HiOutlineLogout } from "react-icons/hi";
-import { BsDatabase } from "react-icons/bs"
+import { TbCoins, TbLogout } from "react-icons/tb";
+import { FiSettings, FiHelpCircle } from "react-icons/fi";
 import DbNav from "./DbNav";
 
 const DashBoardContainer = () => {
@@ -21,24 +18,26 @@ const DashBoardContainer = () => {
           <NavLink to="borrow" className="db-link">
             <TfiPieChart /> Borrow Data
           </NavLink>
-          <NavLink to="loan_application" className="db-link">
-            <BsDatabase/> Loan Applications
+          <NavLink to="loan" className="db-link">
+            <TbCoins /> Loan Applications
           </NavLink>
           <NavLink to="history" className="db-link">
-            <MdHistory/> History
+            <RiHistoryFill /> History
           </NavLink>
           <NavLink to="admin" className="db-link">
-            <RiAdminFill/> Admin
+            <RiAdminLine /> Admin
           </NavLink>
           <NavLink to="settings" className="db-link">
-            <FiSettings/> Settings
+            <FiSettings /> Settings
           </NavLink>
-          <NavLink to="help_support" className="db-link">
-            <MdHelpOutline/> Help & Support
-          </NavLink>
-        </nav>
-        <div><NavLink to="logout"><HiOutlineLogout/> logout</NavLink></div>
+          <NavLink to="help" className="db-link"><FiHelpCircle/>Help & Support</NavLink>
+            </nav>
+
+            <div>
+          <NavLink to="logout" className="db-link"><TbLogout/>LogOut</NavLink>
+          </div>
       </aside>
+
       <Outlet />
     </>
   );

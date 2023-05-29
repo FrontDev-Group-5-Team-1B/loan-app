@@ -1,3 +1,22 @@
+.help-support-container {
+    max-width: 98.7rem;
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    right: 60px;
+    z-index: -1;
+  }
+
+  .help-support-row1 {
+    display: flex;
+  }
+
+  .help-support-row1 img {
+    max-width: 100%;
+    width: 456px;
+    height:328px;
+  }
+
 .accordion-wrapper {
     display: flex;
     height: 100vh;
@@ -16,7 +35,7 @@
     padding: 10px 20px;
 }
 
-.question-title {
+.questions-title {
     color: #000;
     display: flex;
     justify-content: space-between;

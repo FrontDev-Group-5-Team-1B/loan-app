@@ -19,6 +19,7 @@ import Header from "./components/layouts/Header";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
+import BorrowerLoanInfo from "./components/dashboard/BorrowerLoanInfo";
 import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
 import History from "./components/dashboard/History";
@@ -30,6 +31,9 @@ import HelpSupport from "./components/dashboard/HelpSupport";
 import Profile from "./components/pages/Profile";
 import Notification from "./components/pages/Notification";
 import Security from "./components/pages/Security";
+import LogOut from "./components/dashboard/LogOut"
+import DashCollaInfo from "./components/dashboard/DashCollaInfo";
+import DashGInfo from "./components/dashboard/DashGInfo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,20 +55,27 @@ const router = createBrowserRouter(
         <Route path="history" element={<History />} />
         <Route path="admin" element={<AdminPage />} />
         <Route path="add_admin" element={<AddAdmin />} />
+        <Route path="borrowerloan_info" element={<BorrowerLoanInfo/>}/>
+        <Route path="collateral_info" element={<DashCollaInfo/>}/>.
+        <Route path="guarantor_info" element={<DashGInfo/>}/>
+
       </Route>
+
+    
 
       <Route path="dashboard" element={<DashBoardContainer />}>
         <Route index element={<Dashboard />} />
         <Route path="borrow" element={<Borrow />} />
-        <Route path="loan_application" element={<LoanApplication />} />
+        <Route path="loan" element={<LoanApplication />} />
         <Route path="history" element={<History />} />
         <Route path="settings" element={<Settings />}>
-          <Route path="settings" element={<Profile />} />
-          <Route path="settings" element={<Notification />} />
-          <Route path="settings" element={<Security />} />
+          <Route index element={<Profile />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="security" element={<Security />} />
         </Route>
 
-        <Route path="help_support" element={<HelpSupport />} />
+        <Route path="help" element={<HelpSupport />} />
+        <Route path="logout" element={<LogOut/>} />
       </Route>
     </>
   )

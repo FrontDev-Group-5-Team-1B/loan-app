@@ -2,6 +2,7 @@ import React from "react";
 import rightArrow from "../../../assets/right-arrow.svg";
 import cloud from "../../../assets/cloud-computing.png";
 import { Link } from "react-router-dom";
+import { GrNext } from "react-icons/gr";
 
 const AddAdmin = () => {
   const handleUpload = function (e) {
@@ -18,11 +19,11 @@ const AddAdmin = () => {
     <>
       <div className="add-admin-container">
         <div class="indicator">
-          <Link to="/dashboard/admin" style={{ textDecoration: "none" }}>
+          <Link to="/dashboard/admin" className="add-admin-link">
             <p>Admin Dashboard</p>
           </Link>
 
-          <img src={rightArrow} />
+          <GrNext />
 
           <p className="dash-bold">Add Admin</p>
         </div>
