@@ -69,14 +69,10 @@ Fill in the necessary information about the loan applicant in the provided input
 
 ### Authors
 The following students/learners contributed to the development of this project
-
-Blessing Dawodu <ibukunoluwadawodu@gmail.com>
-Rachel Opuba <ogbenirach@gmail.com>
-Anulika Nnedu <>
-Onyinye Chukwumee <>
-Balogun Damilola <>
-Rabi Ahmed <>
-Chiamaka Onyia <donnaogbu@gmail.com>
+<br/>
+<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=FrontDev-Group-5-Team-1B/loan-app"/>
+</a>
 
 ### Contributing
 We welcome contributions to enhance the Loan Prediction App. To contribute, please follow these steps:
