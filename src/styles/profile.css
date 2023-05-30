@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .profile-input {
-    display: flex;
+  display: flex;
 }
 
 .profile-hp {

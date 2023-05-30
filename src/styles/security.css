@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .sec-text {
   font-style: italic;
   font-weight: 400;
