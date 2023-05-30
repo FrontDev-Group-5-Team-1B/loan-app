@@ -226,7 +226,7 @@ html {
 .admin-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 38px;
+  gap: 35px;
   padding-bottom: 8rem;
   border-bottom: 1px solid #b3b3b3;
 }
@@ -242,7 +242,7 @@ html {
 .admin-input::placeholder {
   padding-top: 1.8rem;
   padding-bottom: 1.8rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .admin-label {
   width: 462px;

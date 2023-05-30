@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.notification-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.notification-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.notification-lists li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+
+  color: #4d4d4d;
+}
+
+.notifications-btn {
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notifications-btn button {
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #cce1ff;
+  padding: 8px;
+}
+
+.yes {
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+.no {
+  border-top-right-radius: 60%;
+  border-bottom-right-radius: 60%;
+}

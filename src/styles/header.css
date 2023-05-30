@@ -48,6 +48,18 @@
   background: var(--button-color);
 }
 
-.mobile-menu-icons {
+/* .mobile-menu {
   display: none;
 }
+
+.mobile-menu-icons {
+  display: block;
+  cursor: pointer;
+  font-size: 28px;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+} */
