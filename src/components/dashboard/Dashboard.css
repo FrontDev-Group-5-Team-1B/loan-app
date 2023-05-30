@@ -4,13 +4,6 @@
     margin: 0;
     padding: 0;
 }
-.dContainer{
-    padding: 10px;
-
-}
-.main-wrap{
-    margin: 120px 0 50px 260px;
-}
 .dash-wallet{
     margin-top: 25px;
     font-size: 15px;
@@ -20,9 +13,11 @@ ul{
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
+    list-style: none;
+    gap: 1.2rem;
 }
 .dHead {
-  padding: 15px;
+  padding: 15px 0;
 }
 .dHead h2 {
   color: #0267ff;
@@ -51,7 +46,7 @@ ul{
 .fig-flex p {
   padding: 10px 0;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .fig-flex img {
   padding: 20px 0;
@@ -69,35 +64,24 @@ ul{
     gap: 5px;
 }
 .fig-flex h4{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
-.fig-map:nth-child(1){
-    color: blue;
-}
-.fig-map:nth-child(2){
-    color:#04AB33 ;
-}
-.fig-map:nth-child(3){
-    color:#FF2727 ;
-}
-.fig-map:nth-child(4){
-    color:#F29509 ;
-}
-
-
-
 .dash-chart{
     border: 1px solid #E6F0FF;
     background-color: #F9F9F96B;
-    /* width: 990px;
-    height: 488px; */
     padding: 20px;
     margin: 20px;
+}
+.dash-wallet{
+    color: #666666;
+    
 }
 .borowers-container,
 .main-db-container,
 .db-loan-application-container,
-.db-history-container {
+.db-history-container,
+.borrow-wrap,
+.main-wrap {
   max-width: 98.7rem;
   position: absolute;
   top: 130px;
@@ -113,9 +97,7 @@ ul{
  color: #808080;
 }
 .b-header{
-    margin: 0 auto;
-    width: 40%;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .b-header h3{
     padding: 10px 0;
@@ -130,8 +112,6 @@ ul{
 }
 
 .bor-data{
- width: 60%;
- margin: 0 auto;
  padding: 10px;
  border: 1px solid #CCE1FF;
  background-color: #FAFCFF;
@@ -181,8 +161,8 @@ ul{
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
-    width: 650px;
-    padding: 30px 0;
+    width: 200px;
+    padding: 20px 0;
     
 }
 .b-btn{
@@ -231,8 +211,7 @@ textarea{
 }
 .d-btn{
     display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
+    justify-content: space-between;
     max-width: 550px;
     padding: 20px;
 
@@ -240,7 +219,6 @@ textarea{
 .l-btn{
     width: 120px;
     padding: 10px;
-    align-self: flex-end;
     background-color: white;
     border-color: #0267FF;
     margin-right: 30px;
@@ -249,9 +227,6 @@ textarea{
 }
 .l-btn:hover{
     background-color: #4889eb;
-}
-.borrow-wrap{
-    margin-top: 100px;
 }
 .car-dot{
     display: flex;

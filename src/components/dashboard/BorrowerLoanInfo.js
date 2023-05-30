@@ -11,7 +11,7 @@ const BorrowerLoanInfo = () => {
       <h3>Input Borrower's Data</h3>
       <p>Carefully input the borrower's details</p>
    </div>
-    <div  className='loan-data'>
+    <div className='bor-data'>
       <h5>
         Loan Information
         </h5>
