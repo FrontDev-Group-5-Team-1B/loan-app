@@ -16,6 +16,7 @@ const SignUp = () => {
   const handleClose =()=>{
     modref.current.style.display = "none"
   }
+  const url ="https://nodebt-application.onrender.com/api/users/create"
 
   return (
     <>
