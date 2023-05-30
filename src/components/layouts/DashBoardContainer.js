@@ -9,7 +9,6 @@ import DbNav from "./DbNav";
 const DashBoardContainer = () => {
   return (
     <>
-
       <aside className="db-s-nav">
         <DbNav />
         <nav className="db-links">
@@ -19,7 +18,7 @@ const DashBoardContainer = () => {
           <NavLink to="borrow" className="db-link">
             <TfiPieChart /> Borrow Data
           </NavLink>
-          <NavLink to="loan_application" className="db-link">
+          <NavLink to="loan" className="db-link">
             <TbCoins /> Loan Applications
           </NavLink>
           <NavLink to="history" className="db-link">
@@ -32,10 +31,13 @@ const DashBoardContainer = () => {
             <FiSettings /> Settings
           </NavLink>
           <NavLink to="help" className="db-link"><FiHelpCircle/>Help & Support</NavLink>
-          <NavLink to="logout" className="db-link"><TbLogout/>LogOut</NavLink>
             </nav>
 
+            <div>
+          <NavLink to="logout" className="db-link"><TbLogout/>LogOut</NavLink>
+          </div>
       </aside>
+
       <Outlet />
     </>
   );

@@ -1,8 +1,7 @@
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .dash-wallet{
     margin-top: 25px;
@@ -69,9 +68,10 @@ ul{
 .dash-chart{
     border: 1px solid #E6F0FF;
     background-color: #F9F9F96B;
-    padding: 20px;
-    margin: 20px;
+  padding: 20px;
+  margin: 20px;
 }
+
 .dash-wallet{
     color: #666666;
     
@@ -89,26 +89,29 @@ ul{
   right: 60px;
   z-index: -1;
 }
-.dash-chart p{
-    font-size: 1.5rem;
-    font-weight: 700;
+.dash-chart p {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
-.placeholder::placeholder{
- color: #808080;
-}
-.b-header{
-    padding: 20px 0;
-}
-.b-header h3{
-    padding: 10px 0;
-    color: #0267FF;
-    font-size: 1.3rem;
+.placeholder::placeholder {
+  color: #808080;
 }
 
-.b-header p{
-    color: #4D4D4D;
-    font-weight: bold;
+.b-header {
+  margin: 0 auto;
+  width: 40%;
+  padding: 20px 0;
+}
 
+.b-header h3 {
+  padding: 10px 0;
+  color: #0267ff;
+  font-size: 1.3rem;
+}
+
+.b-header p {
+  color: #4d4d4d;
+  font-weight: bold;
 }
 
 .bor-data{
@@ -137,10 +140,15 @@ ul{
     margin: 0 25px;
 
 }
-.bor-data h5{
-    color: #4D4D4D;
-    font-size: 1.2rem;
-    margin: 0 25px;
+.loan-data h5 {
+  color: #4d4d4d;
+  font-size: 1.2rem;
+  margin: 0 25px;
+}
+.bor-data h5 {
+  color: #4d4d4d;
+  font-size: 1.2rem;
+  margin: 0 25px;
 }
 .b-data{
     display: flex;
@@ -149,21 +157,21 @@ ul{
     padding: 10px;
     
 }
-.b-data input{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    border-style: none;
-    font-size: 11px;
-    border: 1px solid #0252CC;
+.b-data input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  border-style: none;
+  font-size: 11px;
+  border: 1px solid #0252cc;
 }
+  
 .s-btn{
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
     width: 200px;
     padding: 20px 0;
-    
 }
 .b-btn{
     width: 120px;
@@ -183,39 +191,40 @@ ul{
     justify-content: center;
     padding: 20px;
 }
-.loan-info-flex input{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    font-size: 11px;
-    border-style: none;
-    border: 1px solid #0252CC;
+.loan-info-flex input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 11px;
+  border-style: none;
+  border: 1px solid #0252cc;
+}
 
+.loan-info-flex select {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 11px;
+  border-style: none;
+  border: 1px solid #0252cc;
+  color: #808080;
 }
-.loan-info-flex select{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    font-size: 11px;
-    border-style: none;
-    border: 1px solid #0252CC;
-    color: #808080;
+textarea {
+  padding: 20px;
+  margin: 10px;
+  font-size: 11px;
+  width: 500px;
+  align-self: center;
+  border: 1px solid #0252cc;
 }
-textarea{
-    padding: 20px;
-    margin: 10px;
-    font-size: 11px;
-    width: 500px;
-    align-self: center;
-    border: 1px solid #0252CC;
+.d-btn {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 550px;
+  padding: 20px;
 }
-.d-btn{
-    display: flex;
-    justify-content: space-between;
-    max-width: 550px;
-    padding: 20px;
-
-}
+  
 .l-btn{
     width: 120px;
     padding: 10px;

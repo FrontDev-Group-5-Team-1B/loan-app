@@ -1,17 +1,39 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .settings-wrapper {
-    max-width: 99.7rem;
-    position: absolute;
-    top: 150px;
-    left: 300px;
-    right: 60px;
+  max-width: 99.7rem;
+  position: absolute;
+  top: 150px;
+  left: 300px;
+  right: 60px;
+  z-index: -1;
 }
 
 .settings-content {
-    display: flex;
+  display: flex;
 }
+.settings-links {
+  display: flex;
+  gap: 3rem;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.settings-links a {
+  text-decoration: none;
+  color: #b3b3b3;
+  padding-bottom: 0.8rem;
+}
+
+.settings-heading {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  color: #0267ff;
+}
+
+

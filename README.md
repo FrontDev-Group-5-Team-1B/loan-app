@@ -7,7 +7,7 @@
 ## Introduction
 A loan prediction application developed to aid financial service providers in thoroughly evaluating loan applicants with convenience, effectiveness, and precision.
 
-This readme file provides an overview of the app, its features, and instructions for installation and usage.
+This README.md file provides an overview of the app, its features, and instructions for installation and usage.
 
 ### Table of Contents
 - [Features](#features)
@@ -67,6 +67,12 @@ Open your browser and go to ['http://localhost:3000'] to access the Loan Predict
 
 Fill in the necessary information about the loan applicant in the provided input fields.
 
+### Authors
+The following students/learners contributed to the development of this project
+<br/>
+<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=FrontDev-Group-5-Team-1B/loan-app"/>
+</a>
 
 ### Contributing
 We welcome contributions to enhance the Loan Prediction App. To contribute, please follow these steps:
@@ -82,4 +88,4 @@ We welcome contributions to enhance the Loan Prediction App. To contribute, plea
 - Submit a pull request detailing your changes and their benefits.
 
 ### License
-Project source code is licensed under the MIT license. You are free to fork this repository, edit the code, share and use it both for non-commercial and commercial purposes
+Project source code is licensed under the MIT license. You are free to fork this repository, edit the code, share and use it both for non-commercial and commercial purposes.
