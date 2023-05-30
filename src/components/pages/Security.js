@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/security.css";
 
 const Security = () => {
   return (

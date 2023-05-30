@@ -18,21 +18,21 @@ const Settings = () => {
         <NavLink
           to="/dashboard/settings"
           className="settings-link"
-          style={activeLinkStyle}
+          // style={activeLinkStyle}
         >
           Profile
         </NavLink>
         <NavLink
           to="notification"
           className="settings-link"
-          style={activeLinkStyle}
+          // style={activeLinkStyle}
         >
           Notification
         </NavLink>
         <NavLink
           to="security"
           className="settings-link"
-          style={activeLinkStyle}
+          // style={activeLinkStyle}
         >
           Security
         </NavLink>
@@ -40,7 +40,6 @@ const Settings = () => {
       <>
         <Outlet />
       </>
-     
     </div>
   );
 };

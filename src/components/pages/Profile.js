@@ -1,6 +1,7 @@
 import React from "react";
 import profile from "../../assets/profile-pic.png";
 import Buttons from "../layouts/Buttons";
+import "../../styles/profile.css";
 
 function Profile() {
   return (
