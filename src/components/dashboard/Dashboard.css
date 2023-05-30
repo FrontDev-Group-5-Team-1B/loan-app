@@ -3,20 +3,22 @@
   margin: 0;
   padding: 0;
 }
-.dContainer {
-  padding: 10px;
+.dContainer{
+    padding: 10px;
+
 }
-.main-wrap {
-  margin: 120px 0 50px 260px;
+.main-wrap{
+    margin: 120px 0 50px 260px;
 }
-.dash-wallet {
-  margin-top: 25px;
-  font-size: 15px;
+.dash-wallet{
+    margin-top: 25px;
+    font-size: 15px;
+    
 }
-ul {
-  max-width: 500px;
-  display: grid;
-  grid-template-columns: repeat(3, 0.5fr);
+ul{
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
 }
 .dHead {
   padding: 15px;
@@ -53,37 +55,40 @@ ul {
 .fig-flex img {
   padding: 20px 0;
 }
-.percent-flex {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #cccccc;
-  background-color: #f2f2f2;
-  padding: 15px;
+.percent-flex{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #CCCCCC;
+    background-color: #F2F2F2;
+    padding: 15px;
+    
 }
-.percent-rect {
-  display: flex;
-  gap: 5px;
+.percent-rect{
+    display: flex;
+    gap: 5px;
 }
-.fig-flex h4 {
-  font-size: 1.5rem;
+.fig-flex h4{
+    font-size: 1.5rem;
 }
-.fig-map:nth-child(1) {
-  color: blue;
+.fig-map:nth-child(1){
+    color: blue;
 }
-.fig-map:nth-child(2) {
-  color: #04ab33;
+.fig-map:nth-child(2){
+    color:#04AB33 ;
 }
-.fig-map:nth-child(3) {
-  color: #ff2727;
+.fig-map:nth-child(3){
+    color:#FF2727 ;
 }
-.fig-map:nth-child(4) {
-  color: #f29509;
+.fig-map:nth-child(4){
+    color:#F29509 ;
 }
 
-.dash-chart {
-  border: 1px solid #e6f0ff;
-  background-color: #f9f9f96b;
-  /* width: 990px;
+
+
+.dash-chart{
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+    /* width: 990px;
     height: 488px; */
   padding: 20px;
   margin: 20px;
@@ -122,24 +127,33 @@ ul {
   font-weight: bold;
 }
 
-.bor-data {
-  width: 60%;
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px solid #cce1ff;
-  background-color: #fafcff;
-  width: 600px;
-  height: 350px;
-  border-radius: 25px 0 25px 0;
+.bor-data{
+ width: 60%;
+ margin: 0 auto;
+ padding: 10px;
+ border: 1px solid #CCE1FF;
+ background-color: #FAFCFF;
+ width: 600px;
+ height: 350px;
+ border-radius: 25px 0 25px 0;
+ 
 }
-.loan-data {
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px solid #cce1ff;
-  background-color: #fafcff;
-  width: 600px;
-  height: 350px;
-  border-radius: 25px 0 25px 0;
+.loan-data{
+ margin: 0 auto;
+ padding: 10px;
+ border: 1px solid #CCE1FF;
+ background-color: #FAFCFF;
+ width: 600px;
+ height: 350px;
+ border-radius: 25px 0 25px 0;
+
+
+}
+.loan-data h5{
+    color: #4D4D4D;
+    font-size: 1.2rem;
+    margin: 0 25px;
+
 }
 .loan-data h5 {
   color: #4d4d4d;
@@ -151,11 +165,12 @@ ul {
   font-size: 1.2rem;
   margin: 0 25px;
 }
-.b-data {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
+.b-data{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    
 }
 .b-data input {
   padding: 10px;
@@ -172,22 +187,23 @@ ul {
   width: 650px;
   padding: 30px 0;
 }
-.b-btn {
-  width: 120px;
-  padding: 10px;
-  background-color: #0267ff;
-  border-style: none;
-  margin-right: 30px;
-  font-weight: 750;
+.b-btn{
+    width: 120px;
+    padding: 10px;
+    background-color: #0267FF;
+    border-style: none;
+    margin-right: 30px;
+    font-weight: 750;
+    
 }
-.b-btn:hover {
-  background-color: #4889eb;
+.b-btn:hover{
+    background-color: #4889eb;
 }
 
-.loan-info-flex {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+.loan-info-flex{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 .loan-info-flex input {
   padding: 10px;
@@ -221,29 +237,30 @@ textarea {
   max-width: 550px;
   padding: 20px;
 }
-.l-btn {
-  width: 120px;
-  padding: 10px;
-  align-self: flex-end;
-  background-color: white;
-  border-color: #0267ff;
-  margin-right: 30px;
-  color: #0267ff;
-  font-weight: 750;
+.l-btn{
+    width: 120px;
+    padding: 10px;
+    align-self: flex-end;
+    background-color: white;
+    border-color: #0267FF;
+    margin-right: 30px;
+    color: #0267FF;
+    font-weight: 750;
 }
-.l-btn:hover {
-  background-color: #4889eb;
+.l-btn:hover{
+    background-color: #4889eb;
 }
-.borrow-wrap {
-  margin-top: 100px;
+.borrow-wrap{
+    margin-top: 100px;
 }
-.car-dot {
-  display: flex;
-  color: #839fc9;
-  font-size: 15px;
-  margin: 0 auto;
-  width: 50px;
+.car-dot{
+    display: flex;
+    color: #839fc9;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 50px;
+    
 }
-.car-dot .p1 {
-  color: #064ab1;
+.car-dot .p1{
+    color: #064ab1;
 }
