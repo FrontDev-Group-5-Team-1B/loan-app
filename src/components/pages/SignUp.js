@@ -16,13 +16,13 @@ const SignUp = () => {
   const handleClose =()=>{
     modref.current.style.display = "none"
   }
+  const url ="https://nodebt-application.onrender.com/api/users/create"
 
   return (
     <>
     <div className="signup-container">
       <div className="login-left-box">
         <p className="arrow">
-
         <Link to="/" className=""><FaArrowLeft /></Link>
         </p>
         <h2 className="logwel">Create an account</h2>

@@ -41,6 +41,7 @@ import PendingLoans from "./components/dashboard/PendingLoans";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+
     <>
       <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
