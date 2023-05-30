@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 // Styles
 import "../../styles/home.css"
+import "../../styles/mediaQueries.css"
 
 // Services images
 import image1 from "../../assets/3266883 1.png";
@@ -53,26 +54,31 @@ const Home = () => {
             <HiArrowSmRight />
           </button>
         </div>
+        <div className="imageSlider">
+
         <ImageSlider/>
+        </div>
       </section>
 
-      <main>
+      <main className="mainServices">
         <section className="services" id="services">
           <div className="services-container">
           <div className="content"><h2>Our Services</h2></div>
             <div className="services-content">
               <span>1</span>
+              <div className="textAndImage">
               <div className="text">
-                <p>
+                <p>b
                   Help reduce the rate of loan default by using advanced
                   algorithms to analyze the borrowers data and giving
                   predictions of default possibilites.
                 </p>
-                </div>
+              </div>
               <div className="image">
                 <img src={image1} alt="services" />
               </div>
               </div>
+            </div>
 
              <div className="services-content">
               <span>2</span>
