@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/settings.css";
 import { NavLink, Outlet } from "react-router-dom";
-import Buttons from "../layouts/Buttons";
 
 const Settings = () => {
   const activeLinkStyle = ({ isActive }) => {
