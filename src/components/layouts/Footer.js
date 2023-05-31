@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/footer.css";
+import "../../styles/mediaQueries.css"
 
 const Footer = () => {
   return (
@@ -29,7 +30,7 @@ const Footer = () => {
             <div className="header-img ">
               <NavLink to="/"><img src={logo2} alt="app-logo" className="footer-img"/></NavLink>
             </div>
-
+          <div className="footer-link-wrapper">
             <div className="footer">
               <div className="white-radius"></div>
               <ul>
@@ -65,6 +66,8 @@ const Footer = () => {
               </ul>
             </div>
             </div>
+            </div>
+          
             <div className="footer-last-text">
           <p>
             No debt unlock the potential of predictive modelng and credit risk

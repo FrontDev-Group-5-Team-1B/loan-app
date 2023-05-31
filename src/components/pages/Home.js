@@ -82,6 +82,7 @@ const Home = () => {
 
              <div className="services-content">
               <span>2</span>
+              <div className="textAndImage">
               <div className="image">
                 <img src={image2} alt="services" />
               </div>
@@ -93,10 +94,13 @@ const Home = () => {
                   credit risk management
                 </p>
               </div>
+              </div>
+
             </div>
 
             <div className="services-content">
               <span>3</span>
+              <div className="textAndImage">
               <div className="text">
                 <p>
                   The prediction model helps the bank by minimizing the risk and
@@ -106,6 +110,7 @@ const Home = () => {
               <div className="image">
                 <img src={image3} alt="services" />
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -138,7 +143,7 @@ const Home = () => {
                 <div className="review-content">
                 <div className="review-subcontent">
                 <img src={pexel3} className="user"/>
-                  <span className="reviewer">Tazan Fred</span>
+                  <span className="reviewer">Tazan Freds</span>
                   <span className="time">Monday 01 June 2023 by 4AM</span>
               </div>
                 <p className="review">
