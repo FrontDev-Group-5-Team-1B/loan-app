@@ -19,8 +19,8 @@ const DbNav = () => {
           <input type="text" placeholder="Search" className="db-input-search" />
         </div>
         <div className="db-nav-icons">
-          <img src={mail} className="db-mail" />
-          <img src={bell} className="db-bell" />
+          {/* <img src={mail} className="db-mail" /> */}
+          {/* <img src={bell} className="db-bell" /> */}
           <NavLink to="settings"><img src={profile} className="profile-pic" /></NavLink>
         </div>
       </div>
