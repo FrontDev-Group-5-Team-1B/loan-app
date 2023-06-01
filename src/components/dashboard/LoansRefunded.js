@@ -2,26 +2,27 @@ import React from 'react'
 import loanApplication from '../../data/loanApplication';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import {RiArrowDownSLine} from 'react-icons/ri';
+import  '../../styles/dashPages.css'
 
 const LoansRefunded = () => {
   return (
 <>
-    <div>
-        <div>
+    <div className='loansgener-wrapper'>
+        <div className='generated-flex'>
             <p>Dashboard</p>
             <MdKeyboardArrowRight/>
             <h3>Loans Refunded</h3>
         </div>
+        <div className='generatedboard-wrap'>
+        <h4>Loans Refunded</h4>
+        <div className='loans-heading'>
         <div>
-        <div>
-            <h4>Loans Refunded</h4>
-            <div>
             <p>Total Amount: 4,587,541.28</p>
-            <p>Sort by month<RiArrowDownSLine/><span>Month</span></p>
+            <h6>Last Month</h6>
             </div>
-            <p>Last Month</p>
+           <div> <p>Sort by month<span><RiArrowDownSLine/>Month</span></p></div>
         </div>
-        <table>
+        <table className='loans-table'>
         <thead>
           <tr>
             <th>Borrower's Name</th>
@@ -36,7 +37,7 @@ const LoansRefunded = () => {
                 <tr key={index}>
                 <td>{application.borrower_name}</td>
                 <td>{application.date}</td>
-                <td>{application.status}</td>
+                <td className='generated-green'>{application.status}</td>
                 <td>{application.credit_score}</td>
                 <td>{application.amount}</td>
               </tr>

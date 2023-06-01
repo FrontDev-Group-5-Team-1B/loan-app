@@ -34,9 +34,14 @@ import Security from "./components/pages/Security";
 import LogOut from "./components/dashboard/LogOut"
 import DashCollaInfo from "./components/dashboard/DashCollaInfo";
 import DashGInfo from "./components/dashboard/DashGInfo";
+import LoansGenerated from "./components/dashboard/LoansGenerated";
+import LoansDeclined from "./components/dashboard/LoansDeclined";
+import LoansRefunded from "./components/dashboard/LoansRefunded";
+import PendingLoans from "./components/dashboard/PendingLoans";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+
     <>
       <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
@@ -57,6 +62,10 @@ const router = createBrowserRouter(
         <Route path="borrowerloan_info" element={<BorrowerLoanInfo/>}/>
         <Route path="collateral_info" element={<DashCollaInfo/>}/>.
         <Route path="guarantor_info" element={<DashGInfo/>}/>
+        <Route path="loansgenerated" element={<LoansGenerated/>}/>
+        <Route path="loansdeclined" element={<LoansDeclined/>}/>
+        <Route path="loansrefunded" element={<LoansRefunded/>}/>
+        <Route path="pendingloans" element={<PendingLoans />}/>
 
       </Route>
 

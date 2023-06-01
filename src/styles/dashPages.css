@@ -1,0 +1,77 @@
+.loansgener-wrapper{
+  max-width: 99.7rem;
+  position: absolute;
+  top: 150px;
+  left: 300px;
+  right: 60px;
+}
+.generated-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    font-size: 1.5rem;
+}
+.generated-flex h3{
+    font-weight: 500;    
+}
+.generatedboard-wrap{
+    border: 1px solid #CCE1FF;
+    background-color: #FAFCFF;
+    height: 500px;
+    padding: 20px;
+}
+.generatedboard-wrap h4{
+ color: #013E99;
+ font-size:1.5rem ;
+
+}
+.loans-heading{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.loans-heading span{
+    color: #4D4D4D;
+}
+.loans-heading h6{
+    color: #0252CC;
+    font-size: 1.2rem;
+}
+.loans-heading p{
+    color: #0267FF;
+    font-size: 1.2rem;
+    padding: 5px 0;
+}
+.loans-table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: start;
+    margin-top: 20px;
+    color: #666666;
+    font-size: 12px;
+    font-weight: 400;
+    
+}
+.loans-table th{
+    background-color: #E6F0FF;
+}
+.loans-table td, .loans-table th{
+  padding: 15px;
+  text-align: start;
+}
+.generated-blue{
+    color:#0267FF;
+}
+.generated-orange{
+    color: #F29509;
+}
+.generated-red{
+  color: #FF2727;
+}
+.generated-green{
+    color: #04AB33;
+}
