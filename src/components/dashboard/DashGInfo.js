@@ -63,7 +63,7 @@ const DashGInfo = () => {
     </div>
     <div className='d-btn'>
      <button className='l-btn'><Link to='/dashboard/collateral_info' style={{ textDecoration: "none", color: "blue" }}>Previous</Link></button>
-     <button className='b-btn'>Save Data</button>
+     <button className='g-btn'>Save Data</button>
 
  </div>
    

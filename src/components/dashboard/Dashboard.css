@@ -8,6 +8,10 @@
     font-size: 15px;
     
 }
+.percent-flex .dash-view{
+    color: #1A1A1A;
+
+}
 ul{
     max-width: 500px;
     display: grid;
@@ -98,8 +102,6 @@ ul{
 }
 
 .b-header {
-  margin: 0 auto;
-  width: 40%;
   padding: 20px 0;
 }
 
@@ -185,6 +187,15 @@ ul{
 .b-btn:hover{
     background-color: #4889eb;
 }
+.g-btn{
+    width: 120px;
+    padding: 10px;
+    background-color: #0267FF;
+    color: white;
+    border-style: none;
+    margin-right: 30px;
+    font-weight: 750;
+}
 
 .loan-info-flex{
     display: flex;
@@ -220,7 +231,6 @@ textarea {
 .d-btn {
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
   max-width: 550px;
   padding: 20px;
 }

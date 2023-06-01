@@ -40,7 +40,9 @@ const Dashboard = () => {
        <p className={`fig-map ${colorClass}`}style={{ color: color }}>2.15%</p>
        <span>Last month</span>
         </div>
-        <div className='dash-view'><p>View more</p></div>
+        <div> <Link to={`/dashboard/${loanFig.href}`} style={{textDecoration: 'none', color: '#1A1A1A'}}>
+                View More
+              </Link></div>
       </div>
 
     </div>
@@ -60,6 +62,11 @@ const Dashboard = () => {
    </div>
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
+</div>
+<div>
+  <h5>Loan Chart</h5>
+
+
 </div>
    
       </div>
