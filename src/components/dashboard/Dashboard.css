@@ -17,7 +17,7 @@ ul{
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
     list-style: none;
-    gap: 1.2rem;
+    gap: 2.5rem;
 }
 .dHead {
   padding: 15px 0;
@@ -34,7 +34,7 @@ ul{
 .dCards {
   border: 1px solid #cccccc;
   border-radius: 3px;
-  width: 250px;
+  width: 300px;
   min-height: 150px;
   display: flex;
   flex-direction: column;
@@ -68,12 +68,6 @@ ul{
 }
 .fig-flex h4{
     font-size: 1.7rem;
-}
-.dash-chart{
-    border: 1px solid #E6F0FF;
-    background-color: #F9F9F96B;
-  padding: 20px;
-  margin: 20px;
 }
 
 .dash-wallet{
@@ -257,4 +251,30 @@ textarea {
 }
 .car-dot .p1{
     color: #064ab1;
+}
+.main-wrap h5{
+    font-size: 1.2rem;
+    padding: 30px 0;
+}
+.dash-chart{
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.dash-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+}.area-chart{
+    width: 60%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+
+}
+.dash-pie{
+    width: 40%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
 }
