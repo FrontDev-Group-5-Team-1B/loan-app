@@ -1,37 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/settings.css";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Settings = () => {
-  const activeLinkStyle = ({ isActive }) => {
-    return {
-      fontWeight: isActive ? "bold" : "normal",
-      color: isActive ? " #666666" : "#b3b3b3",
-      borderBottom: isActive ? "2px solid #666666" : "none",
-    };
+  const [activePage, setActivePage] = useState(1);
+  const handlePageClick = (pageId) => {
+    setActivePage(pageId);
   };
+
   return (
     <div className="settings-wrapper">
       <h2 className="settings-heading">Settings</h2>
       <div className="settings-links">
         <NavLink
           to="/dashboard/settings"
-          className="settings-link"
-          // style={activeLinkStyle}
+          onClick={() => handlePageClick(1)}
+          className={activePage === 1 ? "active-link" : ""}
         >
           Profile
         </NavLink>
         <NavLink
           to="notification"
-          className="settings-link"
-          // style={activeLinkStyle}
+          className={activePage === 2 ? "active-link" : ""}
+          onClick={() => handlePageClick(2)}
         >
           Notification
         </NavLink>
         <NavLink
           to="security"
-          className="settings-link"
-          // style={activeLinkStyle}
+          className={activePage === 3 ? "active-link" : ""}
+          onClick={() => handlePageClick(3)}
         >
           Security
         </NavLink>
