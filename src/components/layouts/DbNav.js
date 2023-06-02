@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/dashBoard.css";
-import { Link } from "react-router-dom";
 
 const DbNav = () => {
   return (
@@ -20,9 +19,9 @@ const DbNav = () => {
           <input type="text" placeholder="Search" className="db-input-search" />
         </div>
         <div className="db-nav-icons">
-          <img src={mail} className="db-mail" />
-          <img src={bell} className="db-bell" />
-          <img src={profile} className="profile-pic" />
+          {/* <img src={mail} className="db-mail" /> */}
+          {/* <img src={bell} className="db-bell" /> */}
+          <NavLink to="settings"><img src={profile} className="profile-pic" /></NavLink>
         </div>
       </div>
     </>
