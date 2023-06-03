@@ -63,6 +63,10 @@ html {
 .admin-plus {
   font-size: 2.5rem;
   padding-right: 5px;
+  padding-top: 7px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .admin-card-holder {
@@ -305,6 +309,17 @@ html {
   align-items: center;
   border: 2px solid green;
 } */
+
+.add-admin-form-img-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
 
 .save-upload-btn {
   position: absolute;
