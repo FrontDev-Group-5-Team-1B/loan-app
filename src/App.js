@@ -6,6 +6,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 //pages
 import Home from "./components/pages/Home";
@@ -31,17 +33,17 @@ import HelpSupport from "./components/dashboard/HelpSupport";
 import Profile from "./components/pages/Profile";
 import Notification from "./components/pages/Notification";
 import Security from "./components/pages/Security";
-import LogOut from "./components/dashboard/LogOut"
+import LogOutPage from "./components/dashboard/LogOut";
 import DashCollaInfo from "./components/dashboard/DashCollaInfo";
 import DashGInfo from "./components/dashboard/DashGInfo";
 import LoansGenerated from "./components/dashboard/LoansGenerated";
 import LoansDeclined from "./components/dashboard/LoansDeclined";
 import LoansRefunded from "./components/dashboard/LoansRefunded";
 import PendingLoans from "./components/dashboard/PendingLoans";
+import ErrorPage from "./components/pages/ErrorPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-
     <>
       <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
@@ -59,17 +61,14 @@ const router = createBrowserRouter(
         <Route path="history" element={<History />} />
         <Route path="admin" element={<AdminPage />} />
         <Route path="add_admin" element={<AddAdmin />} />
-        <Route path="borrowerloan_info" element={<BorrowerLoanInfo/>}/>
-        <Route path="collateral_info" element={<DashCollaInfo/>}/>.
-        <Route path="guarantor_info" element={<DashGInfo/>}/>
-        <Route path="loansgenerated" element={<LoansGenerated/>}/>
-        <Route path="loansdeclined" element={<LoansDeclined/>}/>
-        <Route path="loansrefunded" element={<LoansRefunded/>}/>
-        <Route path="pendingloans" element={<PendingLoans />}/>
-
+        <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
+        <Route path="collateral_info" element={<DashCollaInfo />} />.
+        <Route path="guarantor_info" element={<DashGInfo />} />
+        <Route path="loansgenerated" element={<LoansGenerated />} />
+        <Route path="loansdeclined" element={<LoansDeclined />} />
+        <Route path="loansrefunded" element={<LoansRefunded />} />
+        <Route path="pendingloans" element={<PendingLoans />} />
       </Route>
-
-    
 
       <Route path="dashboard" element={<DashBoardContainer />}>
         <Route index element={<Dashboard />} />
@@ -83,17 +82,21 @@ const router = createBrowserRouter(
         </Route>
 
         <Route path="help" element={<HelpSupport />} />
-        <Route path="logout" element={<LogOut/>} />
+        <Route path="logout" element={<LogOutPage />} />
       </Route>
+      <Route path="*" element={<ErrorPage />} />
     </>
   )
 );
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
