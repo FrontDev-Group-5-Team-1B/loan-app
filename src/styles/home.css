@@ -6,7 +6,7 @@
   .container {
     width: 1140px;
     height: 600px;
-    margin: 0 auto;
+    margin: 60px auto;
     background: var(--container-color);
     border-radius: 0 30px;
     border: 1px solid var(--container-color)
@@ -56,6 +56,12 @@
     background: var(--button-color);
     border-radius: 5px;
     gap: 10px;
+    cursor: pointer;
+  }
+
+  .hero-btn a {
+    text-decoration: none;
+    color: inherit;
   }
 
   /* Services section */

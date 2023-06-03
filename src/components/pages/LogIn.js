@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
@@ -13,7 +13,7 @@ import { useLogin } from "../../services/query/query.service";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 
-const LogIn = () => {
+const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -23,7 +23,6 @@ const LogIn = () => {
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
-
 
   const handleClose = () => {
     modref.current.style.display = "none";
@@ -50,7 +49,7 @@ const LogIn = () => {
 
   const onSuccess = (res) => {
     console.log(res);
-    navigate("/dashboard");
+    setAuth(!auth);
   };
 
   const onError = (err) => {
@@ -65,6 +64,12 @@ const LogIn = () => {
     console.log(formData);
     mutate(formData);
   };
+
+  useEffect(() => {
+    if (auth) {
+      navigate("/dashboard");
+    }
+  }, [auth]);
   return (
     <>
       <div className="login-container">
@@ -85,7 +90,9 @@ const LogIn = () => {
             </span>
           </p>
           {isLoading ? (
+            <div className="dots">
             <ThreeDots />
+            </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <input

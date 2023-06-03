@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 // Styles
 import "../../styles/home.css"
@@ -45,12 +45,13 @@ const Home = () => {
             </h1>
             <p>
               Get ready to explore our range of loan products and find the one
-              tha's right for your client.
+              that's right for your client.
             </p>
           </div>
-          <button className="hero-btn">
+          <button className="hero-btn"><Link to="signup">
             Get Started
-            <HiArrowSmRight />
+          </Link>
+          <HiArrowSmRight />
           </button>
         </div>
         <ImageSlider/>

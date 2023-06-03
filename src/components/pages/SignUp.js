@@ -37,16 +37,10 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // if (password !== confirmPassword) {
-    //   // handle error
-    //   return;
-    // }
     const  formData = {name, email, password, confirmPassword}
     console.log(formData)
     mutate(formData)
   };
-
-  // const url = "https://nodebt-application.onrender.com/api/users/create";
 
   return (
     <>
@@ -67,7 +61,7 @@ const SignUp = () => {
               </Link>
             </span>
           </p>
-          {isLoading ? <ThreeDots /> : <form onSubmit={handleSubmit}>
+          {isLoading ? <div className="dots"><ThreeDots /></div> : <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Name:"

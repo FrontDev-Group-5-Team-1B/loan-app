@@ -44,6 +44,14 @@ form{
     font-size: 18px;
     padding-top: 1rem;
 }
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+}
+
 .logsign{
     color: #F2F2F2;
     text-align: center;
@@ -110,6 +118,7 @@ form{
     font-weight: 600;
     color: #012966;
     margin: 3rem 0 0 0;
+    cursor: pointer;
 }
 hr{
     width: 100%;

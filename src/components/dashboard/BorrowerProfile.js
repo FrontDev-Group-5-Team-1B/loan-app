@@ -2,6 +2,7 @@ import React from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { RiArrowDownSLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import "../../styles/borrowersProfile.css"
 
 const BorrowerProfile = () => {
 
