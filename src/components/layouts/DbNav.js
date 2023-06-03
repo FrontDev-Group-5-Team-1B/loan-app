@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/Loan logo 1.png";
-import mail from "../../assets/mail-icon.svg";
-import bell from "../../assets/bell-icon.svg";
+// import mail from "../../assets/mail-icon.svg";
+// import bell from "../../assets/bell-icon.svg";
 import profile from "../../assets/profile-pic.png";
 import { Link } from "react-router-dom";
 
