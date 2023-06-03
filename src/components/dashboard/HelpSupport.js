@@ -15,7 +15,7 @@ const HelpSupport = () => {
   return (
     <div className="help-support-container">
       <section>
-        <h3>Help & Support</h3>
+      <h3>Help & Support</h3>
         <div className="help-support-row1">
           <div>
             <img src={support} alt="support" />
@@ -69,7 +69,7 @@ const HelpSupport = () => {
                 {item.answer}
               </div>
             </div>
-          ))};
+          ))}
         </div>
         </div>
         </div>

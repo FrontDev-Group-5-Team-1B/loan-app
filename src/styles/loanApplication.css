@@ -12,30 +12,28 @@
     margin-top: 100px;
   } */
 
-  .loan-app-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.loan-app-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.loan-app-title h2{
-    font-size: 24px;
-    font-weight: 600;
-    color: #0267FF;
+.loan-app-title h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0267ff;
 }
 
 .loan-app-filter-icon {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .loan-app-filter-icon h3 {
-    font-size: 20px;
-    color: #666666;
+  font-size: 20px;
+  color: #666666;
 }
-
-
 
 .loan-app-table {
   width: 100%;
@@ -54,10 +52,10 @@
 }
 
 .loan-app-table th {
-    background: #E6F0FF;
-    font-weight: 600;
-  }
+  background: #e6f0ff;
+  font-weight: 600;
+}
 
-  .loan-app-table tr {
-    background:  #FAFCFF;
-  }
+.loan-app-table tr {
+  background: #fafcff;
+}
