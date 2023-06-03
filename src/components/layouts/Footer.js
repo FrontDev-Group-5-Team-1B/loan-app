@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/footer.css";
+import "../../styles/mediaQueries.css"
 
 const Footer = () => {
   return (
@@ -31,39 +32,25 @@ const Footer = () => {
             </div>
 
             <div className="footer">
-              <div className="white-radius"></div>
-              <ul>
-              <li>
-                <a href="#">Products</a>
-              </li>
-              <li>
-                <a href="#">No Debt</a>
-              </li>
-              <li>
-                <a href="#">Loan</a>
-              </li>
-              <li>
-                <a href="#">Loan default</a>
-              </li>
-              </ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">No Debt</a></li>
+                <li><a href="#">Loan</a></li>
+                <li><a href="#">Loan default</a></li>
             </div>
 
             <div className="footer">
-              <ul>
               <li><a href="#">Account</a></li>
               <li><a href="#">FAQS</a></li>
               <li><a href="#">Blog</a></li>
-              </ul>
             </div>
 
             <div className="footer">
-              <ul>
-             <li><a href="#">Legal</a></li>
+              <li><a href="#">Legal</a></li>
               <li><a href="#">Terms</a></li>
               <li><a href="#">Privacy</a></li>
               <li><a href="#">Security</a></li>
-              </ul>
             </div>
+
             </div>
             <div className="footer-last-text">
           <p>

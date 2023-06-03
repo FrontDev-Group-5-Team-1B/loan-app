@@ -23,3 +23,16 @@
 .images.fade-out {
   opacity: 0;
 }
+@media (max-width: 1200px) {
+  .images{
+    width: 550px;
+    height: 300px;
+  }
+  
+}
+@media (max-width: 600px) {
+  .images{
+    height: 250px;
+  }
+  
+}

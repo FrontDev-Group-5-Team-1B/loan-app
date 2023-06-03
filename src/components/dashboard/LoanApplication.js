@@ -6,13 +6,19 @@ import "../../styles/loanApplication.css"
 const LoanApplication = () => {
  
   return (
-    <div className="loan-app-wrapper">
+
+    <div className='db-loan-application-container'>
+        <div><h2>Loan Applications</h2>
+      <div><FiMenu /> Filter</div>
+    
+    {/* <div className="loan-app-wrapper">
         <div className="loan-app-title">
           <h2>Loan Applications</h2>
       <div className="loan-app-filter-icon">
         <FiMenu size="35px" /> 
         <h3>Filter</h3>
-        </div>
+        </div>*/}
+
       </div>
           <table className="loan-app-table">
         <thead>
