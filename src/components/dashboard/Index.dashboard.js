@@ -5,6 +5,10 @@ import {BsSquare} from 'react-icons/bs'
 import BorrowerLoanInfo from './BorrowerLoanInfo'
 import { Link } from 'react-router-dom'
 import DashBoardContainer from '../layouts/DashBoardContainer'
+// import { Chart } from 'chart.js'
+import ChartComponent from './ChartComponent'
+import ChartLineComponent from './ChartLineComponent'
+import ChartPie from './ChartPie'
 
 
 const loanData = [
@@ -13,7 +17,8 @@ const loanData = [
   { id: "3", fig: "21,500.", name: "Loans declined", href: 'loansdeclined' },
   { id: "4", fig: "42,542.", name: "Pending loans", href: 'pendingloans' }
 ];
-
+   
+ 
 const Dashboard = () => {
   const colors = ['#0267FF', '#04AB33', '#FF2727', '#F29509'];
 
@@ -27,7 +32,7 @@ const Dashboard = () => {
      <div className='dCards'>
       <div className='fig-flex'>
         <div>
-        <p className={`fig-map ${colorClass}`} style={{ color: color }}>{loanFig.name}</p>
+        <Link to={`/dashboard/${loanFig.href}`} className={`fig-map ${colorClass}`} style={{ color: color, textDecoration: 'none'}}>{loanFig.name}</Link>
         <h4>{loanFig.fig}<span>28</span></h4>
         </div>
         <Link to={`/dashboard/${loanFig.href}`} className='dash-wallet'>
@@ -40,7 +45,9 @@ const Dashboard = () => {
        <p className={`fig-map ${colorClass}`}style={{ color: color }}>2.15%</p>
        <span>Last month</span>
         </div>
-        <div className='dash-view'><p>View more</p></div>
+        <div> <Link to={`/dashboard/${loanFig.href}`} style={{textDecoration: 'none', color: '#1A1A1A'}}>
+                View More
+              </Link></div>
       </div>
 
     </div>
@@ -60,11 +67,21 @@ const Dashboard = () => {
    </div>
 <div className='dash-chart'>
   <p>Loan Monthly Frequency</p>
+  <ChartComponent/>
+</div> 
+<h5>Loan Chart</h5>
+<div className='dash-flex'>
+  <div className='area-chart'>
+  <ChartLineComponent/>
+  </div>
+  <div className='dash-pie'>
+    <ChartPie />
+  </div>
 </div>
-   
-      </div>
+ </div>
 
   );
+
 };
 
 export default Dashboard;

@@ -9,10 +9,10 @@ import {RxDotFilled} from 'react-icons/rx';
 
 
 const Borrow = () => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(-1);
-  };
+  // const navigate = useNavigate();
+  // const handleClick = () => {
+  //   navigate(-1);
+  // };
 
   return (
 
@@ -70,7 +70,7 @@ const Borrow = () => {
     
     </div>
     <div className='s-btn'>
-    <button className='b-btn'><Link to='/dashboard/borrowerloan_info' style={{ textDecoration: "none", color: "white" }}>Next</Link></button>
+    <button type='submit' className='b-btn'><Link to='/dashboard/borrowerloan_info' style={{ textDecoration: "none", color: "white" }}>Next</Link></button>
     </div>
    
     </div>

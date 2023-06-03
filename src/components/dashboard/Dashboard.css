@@ -8,12 +8,16 @@
     font-size: 15px;
     
 }
+.percent-flex .dash-view{
+    color: #1A1A1A;
+
+}
 ul{
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
     list-style: none;
-    gap: 1.2rem;
+    gap: 2.5rem;
 }
 .dHead {
   padding: 15px 0;
@@ -30,7 +34,7 @@ ul{
 .dCards {
   border: 1px solid #cccccc;
   border-radius: 3px;
-  width: 250px;
+  width: 300px;
   min-height: 150px;
   display: flex;
   flex-direction: column;
@@ -41,11 +45,6 @@ ul{
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-}
-.fig-flex p {
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 1.3rem;
 }
 .fig-flex img {
   padding: 20px 0;
@@ -64,12 +63,7 @@ ul{
 }
 .fig-flex h4{
     font-size: 1.7rem;
-}
-.dash-chart{
-    border: 1px solid #E6F0FF;
-    background-color: #F9F9F96B;
-  padding: 20px;
-  margin: 20px;
+    padding-top: 10px;
 }
 
 .dash-wallet{
@@ -98,8 +92,6 @@ ul{
 }
 
 .b-header {
-  margin: 0 auto;
-  width: 40%;
   padding: 20px 0;
 }
 
@@ -185,6 +177,15 @@ ul{
 .b-btn:hover{
     background-color: #4889eb;
 }
+.g-btn{
+    width: 120px;
+    padding: 10px;
+    background-color: #0267FF;
+    color: white;
+    border-style: none;
+    margin-right: 30px;
+    font-weight: 750;
+}
 
 .loan-info-flex{
     display: flex;
@@ -220,7 +221,6 @@ textarea {
 .d-btn {
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
   max-width: 550px;
   padding: 20px;
 }
@@ -247,4 +247,34 @@ textarea {
 }
 .car-dot .p1{
     color: #064ab1;
+}
+.main-wrap h5{
+    font-size: 1.2rem;
+    padding: 30px 0;
+}
+.dash-chart{
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.dash-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+}.area-chart{
+    width: 60%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+
+}
+.dash-pie{
+    width: 40%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+}
+.fig-map{
+    font-weight: 800;
+    font-size: 1.2rem;
 }

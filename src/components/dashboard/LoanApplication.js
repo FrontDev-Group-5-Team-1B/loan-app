@@ -2,22 +2,20 @@ import React from 'react'
 import loanApplication from '../../data/loanApplication'
 import {FiMenu} from "react-icons/fi"
 import "../../styles/loanApplication.css"
+import { Link } from 'react-router-dom'
 
 const LoanApplication = () => {
- 
   return (
-
-    <div className='db-loan-application-container'>
-        <div className="loan-app-title">
-          <h2>Loan Applications</h2>
-      <div className="loan-app-filter-icon">
-        <FiMenu size="25px"/>
-        <h3>Filter</h3>
+    <div className="db-loan-application-container">
+      <div className="loan-app-title">
+        <h2>Loan Applications</h2>
+        <div className="loan-app-filter-icon">
+          <FiMenu size="25px" />
+          <h3>Filter</h3>
         </div>
-        </div>
+      </div>
 
-      
-          <table className="loan-app-table">
+      <table className="loan-app-table">
         <thead>
           <tr>
             <th>Borrower's Name</th>
@@ -30,9 +28,20 @@ const LoanApplication = () => {
         <tbody>
           {loanApplication?.map((application, idx) => (
             <tr key={idx}>
-              <td>{application.borrower_name}</td>
+             <Link to='/dashboard/borrowerprofile' className='br-loan-n'> <td>{application.borrower_name}</td></Link>
               <td>{application.date}</td>
-              <td className="status">{application.status}</td>
+              <td
+                className="status"
+                style={
+                  application.status === "Successful"
+                    ? { color: "green" }
+                    : application.status === "Pending"
+                    ? { color: "orange" }
+                    : { color: "red" }
+                }
+              >
+                {application.status}
+              </td>
               <td>{application.credit_score}</td>
               <td>{application.amount}</td>
             </tr>
@@ -40,7 +49,7 @@ const LoanApplication = () => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default LoanApplication
+export default LoanApplication;

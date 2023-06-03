@@ -16,6 +16,11 @@
 .generated-flex h3{
     font-weight: 500;    
 }
+.dashb-link{
+    text-decoration: none;
+    color: #808080;
+
+}
 .generatedboard-wrap{
     border: 1px solid #CCE1FF;
     background-color: #FAFCFF;
@@ -42,9 +47,11 @@
     font-size: 1.2rem;
 }
 .loans-heading p{
-    color: #0267FF;
     font-size: 1.2rem;
     padding: 5px 0;
+}
+.sort-div{
+    color: #0252CC;
 }
 .loans-table{
     width: 100%;
@@ -64,14 +71,22 @@
   text-align: start;
 }
 .generated-blue{
-    color:#0267FF;
+    color:#0267FF; 
+    font-weight: 600;
 }
 .generated-orange{
     color: #F29509;
+    font-weight: 600;
 }
 .generated-red{
   color: #FF2727;
+  font-weight: 600;
 }
 .generated-green{
     color: #04AB33;
+    font-weight: 600;
+}
+.arrowimg{
+    font-size: 30px;
+    padding-top: 10px;
 }
