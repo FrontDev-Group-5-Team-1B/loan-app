@@ -1,20 +1,16 @@
-
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-import BorrowerLoanInfo from './BorrowerLoanInfo';
-import DashCollaInfo from './DashCollaInfo';
-import DashGInfo from './DashGInfo';
-import "./Dashboard.css";
 
-
-const Borrow = () => {
+const BorrowerData = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(-1);
-  };
+  const handleClick =() => {
+    navigate(-1)
+  }
+
+
 
   return (
-  <>
+  
   
     <div>
     <div className='b-header'>
@@ -57,24 +53,14 @@ const Borrow = () => {
       </div>
     </div>
     </div>
+    <button className='b-btn' onClick={handleClick}>Next</button>
     </form>
     
     </div>
-    <div className='s-btn'>
-    <button className='b-btn'>Next</button>
     </div>
-   
-    </div>
-
-<BorrowerLoanInfo/>
-
-<DashCollaInfo />
-<DashGInfo />
-    
-   
-</>
+  
    
   )
 }
 
-export default Borrow;
+export default BorrowerData;

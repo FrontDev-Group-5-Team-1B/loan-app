@@ -20,13 +20,6 @@ html {
   z-index: -1;
 }
 
-.add-admin-link {
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 16px;
-  color: #808080;
-}
-
 .admin-heading-primary {
   font-weight: 600;
   font-size: 20px;
@@ -191,7 +184,6 @@ html {
 /* ADD ADMIN PAGE STYLES */
 .indicator {
   display: flex;
-  align-items: center;
   gap: 12px;
   padding-bottom: 25px;
 }

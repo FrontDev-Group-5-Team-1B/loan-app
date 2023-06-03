@@ -88,14 +88,6 @@
   flex: none;
   order: 1;
   flex-grow: 0;
- margin: 40px 0 0 20px;
+  padding: 40px 0 0 20px;
   text-decoration: none;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  gap: 10px;
-}
-
-.log-out {
-  display: flex;
 }
