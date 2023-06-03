@@ -7,10 +7,10 @@ import { FiMenu } from "react-icons/fi";
 const History = () => {
   return (
     <div className="db-history-container">
-      <div>
+      <div className="history-title">
         <h2>History</h2>
         <div className="filter-icon">
-          <FiMenu size="35px"/> 
+          <FiMenu size="25px"/> 
           <h3>Filter</h3>
         </div>
       </div>

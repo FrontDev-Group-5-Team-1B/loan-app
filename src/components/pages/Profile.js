@@ -1,37 +1,58 @@
 import React from "react";
-import profile from "../../assets/portrait-good-looking-tender-woman-keeps-hand-neck-smiles-gently-has-shy-expression-while-talks-with-boyfriend-rejoices-nice-moment-life-receives-heartwarming-compliment 2 (1).png";
-import Buttons from "../layouts/Buttons";
+import profile from "../../assets/profile-pic.png";
+import "../../styles/profile.css";
 
 function Profile() {
   return (
     <div>
       <section>
-        <h3>Profile</h3>
         <div>
-          <h4>Personal Information</h4>
+          <h4 className="profile-hp">Personal Information</h4>
           <form>
-            <div className="profile-input">
+            <div className="profile-inputs">
               <div>
-                <div>
-                  <input type="text" />
-                </div>
-                <div>
-                  <input type="text" />
-                </div>
-                <div>
-                  <input type="text" />
-                </div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Name of Organization"
+                />
               </div>
               <div>
-                <div>
-                  <input type="text" />
-                </div>
-                <div>
-                  <input type="text" />
-                </div>
-                <div>
-                  <input type="text" />
-                </div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Email Address"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Number of Staff"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Identity Number"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Type of Organization"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  className="profile-input"
+                  placeholder="Website"
+                />
               </div>
             </div>
           </form>
@@ -40,24 +61,35 @@ function Profile() {
 
       <section>
         <div>
-          <h4>Admin Information</h4>
-          <p>Change Admin information</p>
+          <h4 className="profile-hp">Admin Information</h4>
+          <p className="profile-hs">Change Admin information</p>
         </div>
         <form>
-          <div>
+          <div className="profile-inputs">
             <div>
-              <input type="text" />
+              <input type="text" className="profile-input" placeholder="Name" />
             </div>
             <div>
-              <input type="text" />
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="Email Address"
+              />
             </div>
-          </div>
-          <div>
+
             <div>
-              <input type="text" />
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="Position"
+              />
             </div>
             <div>
-              <input type="text" />
+              <input
+                type="text"
+                className="profile-input"
+                placeholder="Phone Number"
+              />
             </div>
           </div>
         </form>
@@ -65,12 +97,21 @@ function Profile() {
 
       <section>
         <div>
-          <h4>Profile Picture</h4>
-          <img src={profile} alt="" />
-          <a href="#">Change Profile Picture</a>
-          <a href="#">Remove Profile Picture</a>
+          <h4 className="profile-hp">Profile Picture</h4>
+          <img
+            src={profile}
+            alt="user-profile"
+            className="settings-profile-pic"
+          />
+          <div className="profile-change-btn">
+            <a href="#">Change Profile Picture</a>
+            <a href="#">Remove Profile Picture</a>
+          </div>
         </div>
-        <Buttons />
+        <div className="cancle-save-btn">
+          <button className="cancle">Cancle</button>
+          <button className="save">Save</button>
+        </div>
       </section>
     </div>
   );

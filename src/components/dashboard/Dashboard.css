@@ -1,35 +1,30 @@
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-.dContainer{
-    padding: 10px;  
- 
+.dash-wallet{
+    margin-top: 25px;
+    font-size: 15px;
+    
 }
+.percent-flex .dash-view{
+    color: #1A1A1A;
 
+}
 ul{
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
-}
-
-.dContainer {
-  padding: 10px;
-}
-
-.dHead{
-    
-    padding: 10px;
-
+    list-style: none;
+    gap: 2.5rem;
 }
 .dHead {
-  padding: 10px;
+  padding: 15px 0;
 }
 .dHead h2 {
   color: #0267ff;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .dHead h3 {
   font-weight: 600;
@@ -39,7 +34,7 @@ ul{
 .dCards {
   border: 1px solid #cccccc;
   border-radius: 3px;
-  width: 250px;
+  width: 300px;
   min-height: 150px;
   display: flex;
   flex-direction: column;
@@ -51,17 +46,9 @@ ul{
   justify-content: space-between;
   padding: 10px;
 }
-.fig-flex p {
-  padding: 10px 0;
-  color: #0267ff;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
 .fig-flex img {
   padding: 20px 0;
 }
-
-
 .percent-flex{
     display: flex;
     justify-content: space-between;
@@ -70,25 +57,25 @@ ul{
     padding: 15px;
     
 }
-
+.percent-rect{
+    display: flex;
+    gap: 5px;
+}
 .fig-flex h4{
-    font-size: 1.5rem;
-}
-.dash-chart{
-    border: 1px solid #E6F0FF;
-    background-color: #F9F9F96B;
-    /* width: 990px;
-    height: 488px; */
-    padding: 20px;
-    margin: 20px;
+    font-size: 1.7rem;
+    padding-top: 10px;
 }
 
-
-
+.dash-wallet{
+    color: #666666;
+    
+}
 .borowers-container,
 .main-db-container,
 .db-loan-application-container,
-.db-history-container {
+.db-history-container,
+.borrow-wrap,
+.main-wrap {
   max-width: 98.7rem;
   position: absolute;
   top: 130px;
@@ -96,126 +83,198 @@ ul{
   right: 60px;
   z-index: -1;
 }
-.dash-chart p{
-    font-size: 1.5rem;
-    font-weight: 700;
+.dash-chart p {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
-.placeholder::placeholder{
- color: #808080;
-}
-.b-header{
-    margin: 0 auto;
-    width: 40%;
-    padding: 30px 0;
-}
-.b-header h3{
-    padding: 10px 0;
-    color: #0267FF;
-    font-size: 1.3rem;
+.placeholder::placeholder {
+  color: #808080;
 }
 
-.b-header p{
-    color: #4D4D4D;
-    font-weight: bold;
+.b-header {
+  padding: 20px 0;
+}
 
+.b-header h3 {
+  padding: 10px 0;
+  color: #0267ff;
+  font-size: 1.3rem;
+}
+
+.b-header p {
+  color: #4d4d4d;
+  font-weight: bold;
 }
 
 .bor-data{
- width: 80%;
+ padding: 10px;
+ border: 1px solid #CCE1FF;
+ background-color: #FAFCFF;
+ width: 600px;
+ height: 350px;
+ border-radius: 25px 0 25px 0;
+ 
+}
+.loan-data{
  margin: 0 auto;
  padding: 10px;
  border: 1px solid #CCE1FF;
  background-color: #FAFCFF;
  width: 600px;
  height: 350px;
-
  border-radius: 25px 0 25px 0;
+
+
 }
-.bor-data h5{
+.loan-data h5{
     color: #4D4D4D;
     font-size: 1.2rem;
     margin: 0 25px;
+
+}
+.loan-data h5 {
+  color: #4d4d4d;
+  font-size: 1.2rem;
+  margin: 0 25px;
+}
+.bor-data h5 {
+  color: #4d4d4d;
+  font-size: 1.2rem;
+  margin: 0 25px;
 }
 .b-data{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     
 }
-.b-data input{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    border-style: none;
-    font-size: 11px;
-    border: 1px solid #0252CC;
+.b-data input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  border-style: none;
+  font-size: 11px;
+  border: 1px solid #0252cc;
 }
+  
 .s-btn{
     display: flex;
     justify-content: flex-end;
     margin: 0 auto;
-    width: 650px;
-    padding: 30px 0;
-    
+    width: 200px;
+    padding: 20px 0;
 }
 .b-btn{
-   
     width: 120px;
     padding: 10px;
-
     background-color: #0267FF;
     border-style: none;
     margin-right: 30px;
-    color: white;
-
+    font-weight: 750;
     
 }
+.b-btn:hover{
+    background-color: #4889eb;
+}
+.g-btn{
+    width: 120px;
+    padding: 10px;
+    background-color: #0267FF;
+    color: white;
+    border-style: none;
+    margin-right: 30px;
+    font-weight: 750;
+}
+
 .loan-info-flex{
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-.loan-info-flex input{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    font-size: 11px;
-    border-style: none;
-    border: 1px solid #0252CC;
+.loan-info-flex input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 11px;
+  border-style: none;
+  border: 1px solid #0252cc;
+}
 
+.loan-info-flex select {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 11px;
+  border-style: none;
+  border: 1px solid #0252cc;
+  color: #808080;
 }
-.loan-info-flex select{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    font-size: 11px;
-    border-style: none;
-    border: 1px solid #0252CC;
-    color: #808080;
+textarea {
+  padding: 20px;
+  margin: 10px;
+  font-size: 11px;
+  width: 500px;
+  align-self: center;
+  border: 1px solid #0252cc;
 }
-textarea{
-    padding: 20px;
-    margin: 10px;
-    font-size: 11px;
-    width: 500px;
-    align-self: center;
-    border: 1px solid #0252CC;
+.d-btn {
+  display: flex;
+  justify-content: space-around;
+  max-width: 550px;
+  padding: 20px;
 }
-.d-btn{
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 550px;
-    padding: 20px;
-
-}
+  
 .l-btn{
     width: 120px;
     padding: 10px;
-    align-self: flex-end;
     background-color: white;
     border-color: #0267FF;
     margin-right: 30px;
     color: #0267FF;
+    font-weight: 750;
+}
+.l-btn:hover{
+    background-color: #4889eb;
+}
+.car-dot{
+    display: flex;
+    color: #839fc9;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 50px;
+    
+}
+.car-dot .p1{
+    color: #064ab1;
+}
+.main-wrap h5{
+    font-size: 1.2rem;
+    padding: 30px 0;
+}
+.dash-chart{
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.dash-flex{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+}.area-chart{
+    width: 60%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+
+}
+.dash-pie{
+    width: 40%;
+    border: 1px solid #E6F0FF;
+    background-color: #F9F9F96B;
+}
+.fig-map{
+    font-weight: 800;
+    font-size: 1.2rem;
 }

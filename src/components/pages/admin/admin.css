@@ -63,6 +63,10 @@ html {
 .admin-plus {
   font-size: 2.5rem;
   padding-right: 5px;
+  padding-top: 7px;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .admin-card-holder {
@@ -226,7 +230,7 @@ html {
 .admin-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 38px;
+  gap: 35px;
   padding-bottom: 8rem;
   border-bottom: 1px solid #b3b3b3;
 }
@@ -242,7 +246,7 @@ html {
 .admin-input::placeholder {
   padding-top: 1.8rem;
   padding-bottom: 1.8rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .admin-label {
   width: 462px;
@@ -305,6 +309,17 @@ html {
   align-items: center;
   border: 2px solid green;
 } */
+
+.add-admin-form-img-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
 
 .save-upload-btn {
   position: absolute;

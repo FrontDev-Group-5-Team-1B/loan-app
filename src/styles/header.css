@@ -51,7 +51,6 @@
   color: var(--bg-color);
   background: var(--button-color);
 }
-
 .btn-second{
   display: none;
 }
