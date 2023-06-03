@@ -1,8 +1,14 @@
-@media (max-width: 1120px) {
+@media (max-width: 1208px) {
+    body{
+        overflow-x: hidden;
+    }
+    
     .row{
         flex-direction: column;
         margin-bottom: 5rem;
-        
+    }
+    .container{
+        width: 90%;
     }
     .hero-title h1{
         font-size: 40px;
@@ -10,11 +16,7 @@
         margin-top: 3rem;
 
     }
-    .imageSlider .wrapper{
-        margin: 2rem 5rem;
-        margin-bottom: 5rem;
-        height: 50px; 
-    }
+   
     .mainServices{
         margin-top: 25rem;
         margin-left: -50px;
@@ -110,6 +112,9 @@
     .content h2{
         margin-top: 8rem;
     }
+    .form-field[type="text"]{
+        width: 60rem;
+    }
 }
 @media (max-width: 630px) {
     .hero-title h1{
@@ -127,5 +132,59 @@
      
     .mainServices{
         margin-top: 18rem;
+        width: 100%;
+    }
+    .review-content{
+        height: 400px;
+    }
+    .review-container p{
+        width: 100%;
+        margin-left: -20px;
+    }
+    .review-subcontent .time{
+        line-height: 30px;
+    }
+    .services-content .text p {
+        width: 40%;
+        margin-top: 20px;
+    }
+    .services-content {
+        display: block;
+    }
+    .services-content span{
+        margin-bottom: 5px;
+    }
+    .media-content .btn{
+        margin-left: 0
+    }
+   
+    .media-content{
+        margin: 70px 30px;
+    }
+    .media-content a button{
+        width: 20rem;
+        padding: 9px 4px;
+    }
+}
+@media (max-width: 400px) {
+    .hero-title h1{
+        font-size: 24px;
+        line-height: 34px;
+        margin-top: 3rem;
+    }
+    .hero-btn{
+        padding: 6px;
+        width: 200px;
+    }
+}
+@media (max-width: 363px) {
+    .review-content{
+        height: 550px;
+    }
+    .media-content h3{
+        font-size: 30px;
+    }
+    .media-content a button{
+        width: 15rem;
     }
 }
