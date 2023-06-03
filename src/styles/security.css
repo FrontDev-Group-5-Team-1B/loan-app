@@ -35,8 +35,14 @@
   padding: 10px;
 }
 
-.settings-links .active {
+.active-link {
   font-weight: bold;
   color: #666666;
   border-bottom: 2px solid #666666;
 }
+
+/* .settings-links .active {
+  font-weight: bold;
+  color: #666666;
+  border-bottom: 2px solid #666666;
+} */
