@@ -14,9 +14,9 @@ const ChartPie = () => {
               chart: {
                 width: 150
               },
-            //   legend: {
-            //     position: 'bottom'
-            //   }
+              legend: {
+                position: 'bottom'
+              }
             }
           }]}
       });
@@ -25,7 +25,7 @@ const ChartPie = () => {
   return (
     <div>
         <div>
-       <Chart options={state.options} series={state.series} type="donut" width={450} height={320} />
+       <Chart options={state.options} series={state.series} type="donut" width={500} height={320} />
     </div>
 
     </div>

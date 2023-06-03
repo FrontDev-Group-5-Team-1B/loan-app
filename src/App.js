@@ -40,6 +40,7 @@ import LoansGenerated from "./components/dashboard/LoansGenerated";
 import LoansDeclined from "./components/dashboard/LoansDeclined";
 import LoansRefunded from "./components/dashboard/LoansRefunded";
 import PendingLoans from "./components/dashboard/PendingLoans";
+import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 import ErrorPage from "./components/pages/ErrorPage";
 
 const router = createBrowserRouter(
@@ -61,13 +62,15 @@ const router = createBrowserRouter(
         <Route path="history" element={<History />} />
         <Route path="admin" element={<AdminPage />} />
         <Route path="add_admin" element={<AddAdmin />} />
-        <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
-        <Route path="collateral_info" element={<DashCollaInfo />} />.
-        <Route path="guarantor_info" element={<DashGInfo />} />
-        <Route path="loansgenerated" element={<LoansGenerated />} />
-        <Route path="loansdeclined" element={<LoansDeclined />} />
-        <Route path="loansrefunded" element={<LoansRefunded />} />
-        <Route path="pendingloans" element={<PendingLoans />} />
+          
+        <Route path="borrowerloan_info" element={<BorrowerLoanInfo/>}/>
+        <Route path="collateral_info" element={<DashCollaInfo/>}/>
+        <Route path="guarantor_info" element={<DashGInfo/>}/>
+        <Route path="loansgenerated" element={<LoansGenerated/>}/>
+        <Route path="loansdeclined" element={<LoansDeclined/>}/>
+        <Route path="loansrefunded" element={<LoansRefunded/>}/>
+        <Route path="pendingloans" element={<PendingLoans />}/>
+        <Route path="borrowerprofile" element={<BorrowerProfile/>}/>
       </Route>
 
       <Route path="dashboard" element={<DashBoardContainer />}>

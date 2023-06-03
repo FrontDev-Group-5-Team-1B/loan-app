@@ -3,6 +3,7 @@ import GeneratedLoanData from '../../data/GeneratedLoanData';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import {RiArrowDownSLine} from 'react-icons/ri';
 import '../../styles/dashPages.css'
+import { Link } from 'react-router-dom';
 
 const LoansGenerated = () => {
 
@@ -10,7 +11,7 @@ const LoansGenerated = () => {
   <>
     <div className='loansgener-wrapper'>
         <div className='generated-flex'>
-            <p>Dashboard</p>
+            <Link to='/dashboard' style={{textDecoration: 'none', color: '#808080'}} ><p>Dashboard</p></Link>
            <p className='arrowimg'> <MdKeyboardArrowRight/></p>
             <h3>Loans Generated</h3>
         </div>
