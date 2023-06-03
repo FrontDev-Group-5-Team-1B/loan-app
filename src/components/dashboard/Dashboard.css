@@ -46,11 +46,6 @@ ul{
   justify-content: space-between;
   padding: 10px;
 }
-.fig-flex p {
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
 .fig-flex img {
   padding: 20px 0;
 }
@@ -68,6 +63,7 @@ ul{
 }
 .fig-flex h4{
     font-size: 1.7rem;
+    padding-top: 10px;
 }
 
 .dash-wallet{
@@ -265,7 +261,7 @@ textarea {
 .dash-flex{
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
 
 }.area-chart{
     width: 60%;
@@ -277,4 +273,8 @@ textarea {
     width: 40%;
     border: 1px solid #E6F0FF;
     background-color: #F9F9F96B;
+}
+.fig-map{
+    font-weight: 800;
+    font-size: 1.2rem;
 }

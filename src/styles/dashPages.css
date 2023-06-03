@@ -16,6 +16,11 @@
 .generated-flex h3{
     font-weight: 500;    
 }
+.dashb-link{
+    text-decoration: none;
+    color: #808080;
+
+}
 .generatedboard-wrap{
     border: 1px solid #CCE1FF;
     background-color: #FAFCFF;

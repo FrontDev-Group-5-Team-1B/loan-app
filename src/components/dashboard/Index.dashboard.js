@@ -32,7 +32,7 @@ const Dashboard = () => {
      <div className='dCards'>
       <div className='fig-flex'>
         <div>
-        <p className={`fig-map ${colorClass}`} style={{ color: color }}>{loanFig.name}</p>
+        <Link to={`/dashboard/${loanFig.href}`} className={`fig-map ${colorClass}`} style={{ color: color, textDecoration: 'none'}}>{loanFig.name}</Link>
         <h4>{loanFig.fig}<span>28</span></h4>
         </div>
         <Link to={`/dashboard/${loanFig.href}`} className='dash-wallet'>

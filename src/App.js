@@ -38,6 +38,7 @@ import LoansGenerated from "./components/dashboard/LoansGenerated";
 import LoansDeclined from "./components/dashboard/LoansDeclined";
 import LoansRefunded from "./components/dashboard/LoansRefunded";
 import PendingLoans from "./components/dashboard/PendingLoans";
+import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -66,6 +67,7 @@ const router = createBrowserRouter(
         <Route path="loansdeclined" element={<LoansDeclined/>}/>
         <Route path="loansrefunded" element={<LoansRefunded/>}/>
         <Route path="pendingloans" element={<PendingLoans />}/>
+        <Route path="borrowerprofile" element={<BorrowerProfile/>}/>
 
       </Route>
 
