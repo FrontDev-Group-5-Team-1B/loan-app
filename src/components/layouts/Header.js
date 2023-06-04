@@ -8,8 +8,11 @@ import "../../styles/header.css";
 
 
 const Header = ({auth}) => {
-  const [isMobile, setIsMobile] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
+      const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+      }
   return (
     <>
       <header className="header">
@@ -23,7 +26,7 @@ const Header = ({auth}) => {
           <DbNav />
         ) : (
           <>
-            <div className={`navbar ${isMobile ? "mobile" : ""}`}>
+            <div className={`navbar ${isMobileMenuOpen ? "active" : ""}`}>
               <NavLink to="/">Home</NavLink>
               <NavLink to="about">About Us</NavLink>
               <a href="/#services">Services</a>
@@ -35,9 +38,20 @@ const Header = ({auth}) => {
                 Sign Up
               </NavLink>
             </div>
+            <button className="mobile-menu-icons" onClick={toggleMobileMenu}>
+             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+           </button>
           </>
         )}
       </header>
+      <nav className="header-second">
+      <div className="btn-second">
+          <NavLink to="login">Log In</NavLink>
+          <NavLink to="signup" className="signup">
+            Sign Up
+          </NavLink>
+        </div>
+      </nav>
 
 
       <Outlet />
