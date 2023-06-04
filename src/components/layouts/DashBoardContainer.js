@@ -9,7 +9,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const DashBoardContainer = () => {
-
   const [activeLink, setActiveLink] = useState(1);
   const handleLinkClick = (pageId) => {
     setActiveLink(pageId);
@@ -21,12 +20,11 @@ const DashBoardContainer = () => {
     notify();
   }, []);
 
-
   return (
-    <>
+    <main className='db-main'>
       <aside className="db-s-nav">
         <ToastContainer />
-        <DbNav />
+        {/* <DbNav /> */}
         <nav className="db-links">
           <NavLink
             to="/dashboard"
@@ -76,7 +74,6 @@ const DashBoardContainer = () => {
             onClick={() => handleLinkClick(7)}
             className={activeLink === 7 ? "active-dbl" : " db-link"}
           >
-
             <FiHelpCircle />
             Help & Support
           </NavLink>
@@ -84,7 +81,6 @@ const DashBoardContainer = () => {
 
         <div>
           <NavLink to="logout" className="db-link">
-
             <TbLogout />
             LogOut
           </NavLink>
@@ -92,7 +88,7 @@ const DashBoardContainer = () => {
       </aside>
 
       <Outlet />
-    </>
+    </main>
   );
 };
 
