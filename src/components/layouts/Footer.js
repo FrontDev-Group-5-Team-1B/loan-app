@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 // styles
 import "../../styles/footer.css";
+import "../../styles/mediaQueries.css"
 
 const Footer = () => {
   return (

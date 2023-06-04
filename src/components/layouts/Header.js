@@ -6,11 +6,10 @@ import DbNav from "./DbNav";
 // styles
 import "../../styles/header.css";
 
+
 const Header = ({auth}) => {
   const [isMobile, setIsMobile] = useState(false);
-
-
-
+  
   return (
     <>
       <header className="header">
@@ -19,6 +18,7 @@ const Header = ({auth}) => {
             <img src={logo} alt="logo" />
           </NavLink>
         </div>
+
         {auth ? (
           <DbNav />
         ) : (
@@ -38,6 +38,7 @@ const Header = ({auth}) => {
           </>
         )}
       </header>
+
 
       <Outlet />
     </>
