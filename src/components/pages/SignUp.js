@@ -18,6 +18,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassoword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const closeref = useRef();
   const modref = useRef();
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const SignUp = () => {
   };
   const onError = (err) => {
     console.log(err);
+    setErrorMsg(err.response.data.message)
   };
 
   const { mutate, error, isLoading } = useSignup(onSuccess, onError);
@@ -36,10 +38,9 @@ const SignUp = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const  formData = {name, email, password, confirmPassword}
-    console.log(formData)
-    mutate(formData)
+      const  formData = {name, email, password, confirmPassword}
+      console.log(formData)
+      mutate(formData)
   };
 
   return (
@@ -104,8 +105,10 @@ const SignUp = () => {
                 <BsEyeSlash />
               </span>
             </div>
-
+            
+            {error && <p className="val-message">{errorMsg}</p>}
             <button className="log-btn">Sign Up</button>
+
             <div className="continue">
               <hr />
               <span>Or continue with</span>

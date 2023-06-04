@@ -294,7 +294,11 @@ hr{
 .tw{
     width: 60%;
 }
-
+.val-message{
+    color: red;
+    font-size: 20px;
+    padding: 1rem 0;
+}
 
 @media (max-width:997px) {
     .login-container, .signup-container{
