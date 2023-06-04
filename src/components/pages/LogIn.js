@@ -110,12 +110,14 @@ const LogIn = () => {
                 </span>
               </div>
 
+              <div className="forgot-box">
+              <div>
+                <input type="checkbox" className="" />
+                <label style={{fontSize:"14px"}}>Always keep me logged in</label>
+              </div>
               <p className="forgot" onClick={handleFG}>
                 Forgot Password?
               </p>
-              <div>
-                <input type="checkbox" className="" />
-                <label>Always keep me logged in</label>
               </div>
               <button className="log-btn">Log In</button>
               <div className="continue">

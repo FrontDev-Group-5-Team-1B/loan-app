@@ -89,12 +89,15 @@ form{
     top: 30%;
     right: 4%;
 }
-.forgot{
+.forgot-box{
+    width: 100%;
     display: flex;
-    justify-content: end;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+.forgot{
     color: #FFFEFE;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
     font-size: 16px;
     cursor: pointer;
 }
@@ -345,6 +348,13 @@ hr{
         border-radius: 50%;
         margin: 0.5rem;
         border: 1px solid #0252CC;
+    }
+    .forgot-box{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0 0 0;
     }
 
 }
