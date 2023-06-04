@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./components/pages/About.css";
 
 import {
@@ -33,7 +34,6 @@ import HelpSupport from "./components/dashboard/HelpSupport";
 import Profile from "./components/pages/Profile";
 import Notification from "./components/pages/Notification";
 import Security from "./components/pages/Security";
-import LogOutPage from "./components/dashboard/LogOut";
 import DashCollaInfo from "./components/dashboard/DashCollaInfo";
 import DashGInfo from "./components/dashboard/DashGInfo";
 import LoansGenerated from "./components/dashboard/LoansGenerated";
@@ -42,59 +42,61 @@ import LoansRefunded from "./components/dashboard/LoansRefunded";
 import PendingLoans from "./components/dashboard/PendingLoans";
 import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 import ErrorPage from "./components/pages/ErrorPage";
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={<Header />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-
-      <Route path="login" element={<LogIn />} />
-      <Route path="signup" element={<SignUp />} />
-
-      <Route path="dashboard" element={<DashBoardContainer />}>
-        <Route index element={<Dashboard />} />
-        <Route path="borrow" element={<Borrow />} />
-        <Route path="loan_application" element={<LoanApplication />} />
-        <Route path="history" element={<History />} />
-        <Route path="admin" element={<AdminPage />} />
-        <Route path="add_admin" element={<AddAdmin />} />
-          
-        <Route path="borrowerloan_info" element={<BorrowerLoanInfo/>}/>
-        <Route path="collateral_info" element={<DashCollaInfo/>}/>
-        <Route path="guarantor_info" element={<DashGInfo/>}/>
-        <Route path="loansgenerated" element={<LoansGenerated/>}/>
-        <Route path="loansdeclined" element={<LoansDeclined/>}/>
-        <Route path="loansrefunded" element={<LoansRefunded/>}/>
-        <Route path="pendingloans" element={<PendingLoans />}/>
-        <Route path="borrowerprofile" element={<BorrowerProfile/>}/>
-      </Route>
-
-      <Route path="dashboard" element={<DashBoardContainer />}>
-        <Route index element={<Dashboard />} />
-        <Route path="borrow" element={<Borrow />} />
-        <Route path="loan" element={<LoanApplication />} />
-        <Route path="history" element={<History />} />
-        <Route path="settings" element={<Settings />}>
-          <Route index element={<Profile />} />
-          <Route path="notification" element={<Notification />} />
-          <Route path="security" element={<Security />} />
-        </Route>
-
-        <Route path="help" element={<HelpSupport />} />
-        <Route path="logout" element={<LogOutPage />} />
-      </Route>
-      <Route path="*" element={<ErrorPage />} />
-    </>
-  )
-);
-
-const queryClient = new QueryClient();
+import PrivateRoute from "./components/pages/private.pages";
 
 function App() {
+  const [auth, setAuth] = useState(false);
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="login" element={<LogIn auth={auth} setAuth={setAuth} />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="/" element={<Header auth={auth} />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+
+          <Route
+            path="dashboard"
+            element={
+              <PrivateRoute auth={auth}>
+                <DashBoardContainer />
+              </PrivateRoute>
+            }
+          >
+            <Route index element={<Dashboard />} />
+            <Route path="borrow" element={<Borrow />} />
+            <Route path="loan" element={<LoanApplication />} />
+            <Route path="history" element={<History />} />
+            <Route path="admin" element={<AdminPage />} />
+            <Route path="add_admin" element={<AddAdmin />} />
+
+            <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
+            <Route path="collateral_info" element={<DashCollaInfo />} />
+            <Route path="guarantor_info" element={<DashGInfo />} />
+            <Route path="loansgenerated" element={<LoansGenerated />} />
+            <Route path="loansdeclined" element={<LoansDeclined />} />
+            <Route path="loansrefunded" element={<LoansRefunded />} />
+            <Route path="pendingloans" element={<PendingLoans />} />
+            <Route path="borrowerprofile" element={<BorrowerProfile />} />
+            <Route path="settings" element={<Settings />}>
+              <Route index element={<Profile />} />
+              <Route path="notification" element={<Notification />} />
+              <Route path="security" element={<Security />} />
+            </Route>
+            <Route path="preview" element={"h2 elememnt in progress"} />
+            <Route path="help" element={<HelpSupport />} />
+          </Route>
+        </Route>
+
+        <Route path="*" element={<ErrorPage />} />
+      </>
+    )
+  );
+
+  const queryClient = new QueryClient();
+
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
