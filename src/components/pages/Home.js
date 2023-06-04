@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 // Styles
 import "../../styles/home.css"
+import "../../styles/mediaQueries.css"
 
 // Services images
 import image1 from "../../assets/3266883 1.png";
@@ -53,29 +54,35 @@ const Home = () => {
             <HiArrowSmRight />
           </button>
         </div>
+        <div className="imageSlider">
+
         <ImageSlider/>
+        </div>
       </section>
 
-      <main>
+      <main className="mainServices">
         <section className="services" id="services">
           <div className="services-container">
           <div className="content"><h2>Our Services</h2></div>
             <div className="services-content">
               <span>1</span>
+              <div className="textAndImage">
               <div className="text">
-                <p>
+                <p>b
                   Help reduce the rate of loan default by using advanced
                   algorithms to analyze the borrowers data and giving
                   predictions of default possibilites.
                 </p>
-                </div>
+              </div>
               <div className="image">
                 <img src={image1} alt="services" />
               </div>
               </div>
+            </div>
 
              <div className="services-content">
               <span>2</span>
+              <div className="textAndImage">
               <div className="image">
                 <img src={image2} alt="services" />
               </div>
@@ -87,10 +94,13 @@ const Home = () => {
                   credit risk management
                 </p>
               </div>
+              </div>
+
             </div>
 
             <div className="services-content">
               <span>3</span>
+              <div className="textAndImage">
               <div className="text">
                 <p>
                   The prediction model helps the bank by minimizing the risk and
@@ -100,6 +110,7 @@ const Home = () => {
               <div className="image">
                 <img src={image3} alt="services" />
               </div>
+            </div>
             </div>
           </div>
         </section>
@@ -132,7 +143,7 @@ const Home = () => {
                 <div className="review-content">
                 <div className="review-subcontent">
                 <img src={pexel3} className="user"/>
-                  <span className="reviewer">Tazan Fred</span>
+                  <span className="reviewer">Tazan Freds</span>
                   <span className="time">Monday 01 June 2023 by 4AM</span>
               </div>
                 <p className="review">

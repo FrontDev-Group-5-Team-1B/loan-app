@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-import Buttons from "../layouts/Buttons";
 import "../../styles/notification.css";
 
 const ButtonSet = ({ defaultYesStyle, defaultNoStyle }) => {

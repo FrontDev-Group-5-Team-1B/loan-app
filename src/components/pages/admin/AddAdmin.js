@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import rightArrow from "../../../assets/right-arrow.svg";
 import cloud from "../../../assets/cloud-computing.png";
 import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
+import Axios from "axios";
 
 const AddAdmin = () => {
+  const [image, setImage] = useState();
   const handleUpload = function (e) {
     e.preventDefault();
     console.log("hey");
@@ -13,6 +15,22 @@ const AddAdmin = () => {
   const handleSubmit = function (e) {
     e.preventDefault();
     console.log("hello");
+  };
+
+  const presetKey = "jiut047v";
+  const cloudName = "dd8sai0uo";
+
+  const handleFile = (event) => {
+    const file = event.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", presetKey);
+    Axios.post(
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      formData
+    )
+      .then((res) => setImage(res.data.secure_url))
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -83,19 +101,29 @@ const AddAdmin = () => {
           <div className="form-img-sec">
             <h2 className="h-s upload-h-s">Add image</h2>
             <div className="img-upload">
-              <div className="form-img">
-                <img src={cloud} />
-              </div>
-              <div className="form-img-text">
-                <p>Upload an image to use as profile picture</p>
-                <p className="text-italic">
-                  Compatible file type: .jpg, .png, .svg, .bmp or .dxf
-                </p>
-              </div>
+              {image ? (
+                <img src={image} />
+              ) : (
+                <div className="add-admin-form-img-wraper">
+                  <div className="form-img">
+                    <img src={cloud} />
+                  </div>
+                  <div className="form-img-text">
+                    <p>Upload an image to use as profile picture</p>
+                    <p className="text-italic">
+                      Compatible file type: .jpg, .png, .svg, .bmp or .dxf
+                    </p>
+                  </div>
+                </div>
+              )}
 
-              <button className="_btn-blue upload-btn" onClick={handleUpload}>
+              {/* <button className="_btn-blue upload-btn" onClick={handleUpload}>
                 Uplad Image
-              </button>
+              </button> */}
+              <label className="_btn-blue upload-btn">
+                <input type="file" onChange={handleFile} />
+                {image ? "Image Uploaded" : "Upload Image"}
+              </label>
             </div>
           </div>
           <button className="_btn-blue save-upload-btn">Save</button>

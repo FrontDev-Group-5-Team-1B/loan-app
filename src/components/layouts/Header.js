@@ -7,12 +7,12 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import "../../styles/header.css";
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobile(!isMobile);
-  };
-
+    const toggleMobileMenu = () => {
+      setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+  
   return (
     <>
       <nav className="header">
@@ -21,7 +21,7 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </NavLink>
         </div>
-        <div className={`navbar ${isMobile ? 'mobile' : ''}`}>
+        <div className={`navbar ${isMobileMenuOpen ? "active" : ""}`}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="about">About Us</NavLink>
           <a href="/#services">Services</a>
@@ -34,8 +34,16 @@ const Header = () => {
           </NavLink>
         </div>
         <button className="mobile-menu-icons" onClick={toggleMobileMenu}>
-        {isMobile ? <FaTimes /> : <FaBars />}
-        </button>
+             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+           </button>
+      </nav>
+      <nav className="header-second">
+      <div className="btn-second">
+          <NavLink to="login">Log In</NavLink>
+          <NavLink to="signup" className="signup">
+            Sign Up
+          </NavLink>
+        </div>
       </nav>
 
       <Outlet />

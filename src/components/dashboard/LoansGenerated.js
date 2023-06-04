@@ -1,8 +1,9 @@
 import React from 'react'
-import loanApplication from '../../data/loanApplication';
+import GeneratedLoanData from '../../data/GeneratedLoanData';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import {RiArrowDownSLine} from 'react-icons/ri';
 import '../../styles/dashPages.css'
+import { Link } from 'react-router-dom';
 
 const LoansGenerated = () => {
 
@@ -10,8 +11,8 @@ const LoansGenerated = () => {
   <>
     <div className='loansgener-wrapper'>
         <div className='generated-flex'>
-            <p>Dashboard</p>
-           <p> <MdKeyboardArrowRight/></p>
+            <Link to='/dashboard' style={{textDecoration: 'none', color: '#808080'}} ><p>Dashboard</p></Link>
+           <p className='arrowimg'> <MdKeyboardArrowRight/></p>
             <h3>Loans Generated</h3>
         </div>
         <div className='generatedboard-wrap'>
@@ -19,10 +20,10 @@ const LoansGenerated = () => {
         <div className='loans-heading'>
          
             <div>
-            <p>Total Amount: 4,587,541.28</p>
+            <p className='generated-blue'>Total Amount: 4,587,541.28</p>
             <h6>Last Month</h6>
             </div>
-           <div> <p>Sort by month<span><RiArrowDownSLine/>Month</span></p></div>
+           <div className='sort-div'> <p>Sort by month<span><RiArrowDownSLine/>Month</span></p></div>
            
             
         </div>
@@ -37,13 +38,13 @@ const LoansGenerated = () => {
           </tr>
         </thead>
         <tbody>
-            {loanApplication?.map((application, index) => (
+            {GeneratedLoanData?.map((generatedData, index) => (
                 <tr key={index}>
-                <td>{application.borrower_name}</td>
-                <td>{application.date}</td>
-                <td  className='generated-blue'>{application.status}</td>
-                <td>{application.credit_score}</td>
-                <td>{application.amount}</td>
+                <td>{generatedData.borrower_name}</td>
+                <td>{generatedData.date}</td>
+                <td  className='generated-blue'>{generatedData.status}</td>
+                <td>{generatedData.credit_score}</td>
+                <td>{generatedData.amount}</td>
               </tr>
             ))}
 
