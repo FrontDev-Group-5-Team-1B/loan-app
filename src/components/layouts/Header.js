@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import logo from "../../assets/Loan logo 1.png";
 import DbNav from "./DbNav";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 // styles
 import "../../styles/header.css";
