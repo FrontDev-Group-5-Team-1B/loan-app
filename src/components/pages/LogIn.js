@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
@@ -13,9 +13,11 @@ import { useLogin } from "../../services/query/query.service";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 
-const LogIn = ({ auth, setAuth }) => {
+const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
   const navigate = useNavigate();
 
   const closeref = useRef();
@@ -23,6 +25,7 @@ const LogIn = ({ auth, setAuth }) => {
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
+
 
   const handleClose = () => {
     modref.current.style.display = "none";
@@ -49,11 +52,12 @@ const LogIn = ({ auth, setAuth }) => {
 
   const onSuccess = (res) => {
     console.log(res);
-    setAuth(!auth);
+    navigate("/dashboard");
   };
 
   const onError = (err) => {
     console.log(err);
+    setErrorMsg(err.response.data.message)
   };
 
   const { mutate, isLoading, error, isSuccess } = useLogin(onSuccess, onError);
@@ -64,12 +68,6 @@ const LogIn = ({ auth, setAuth }) => {
     console.log(formData);
     mutate(formData);
   };
-
-  useEffect(() => {
-    if (auth) {
-      navigate("/dashboard");
-    }
-  }, [auth]);
   return (
     <>
       <div className="login-container">
@@ -90,9 +88,7 @@ const LogIn = ({ auth, setAuth }) => {
             </span>
           </p>
           {isLoading ? (
-            <div className="dots">
             <ThreeDots />
-            </div>
           ) : (
             <form onSubmit={handleSubmit}>
               <input
@@ -116,6 +112,7 @@ const LogIn = ({ auth, setAuth }) => {
                   <BsEyeSlash />
                 </span>
               </div>
+              <div className="forgot-box">
 
               <p className="forgot" onClick={handleFG}>
                 Forgot Password?
@@ -124,6 +121,8 @@ const LogIn = ({ auth, setAuth }) => {
                 <input type="checkbox" className="" />
                 <label>Always keep me logged in</label>
               </div>
+              </div>
+              {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
               <div className="continue">
                 <hr />
