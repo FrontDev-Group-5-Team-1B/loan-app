@@ -9,13 +9,27 @@ import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import google from "../../assets/logos_google-icon.png";
 import { Link } from "react-router-dom";
-import { useLogin } from "../../services/query/query.service";
+import {
+  useLogin,
+  useVerifyToken,
+  useResetPassword,
+  useGetToken,
+} from "../../services/query/query.service";
+import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
+import { GetToken } from "../../services/api/api.service";
 
 const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [token1, setToken1] = useState("");
+  const [token2, setToken2] = useState("");
+  const [token3, setToken3] = useState("");
+  const [token4, setToken4] = useState("");
+  const [token5, setToken5] = useState("");
+  // above token states should be structured with objects
   const navigate = useNavigate();
 
   const closeref = useRef();
@@ -49,20 +63,58 @@ const LogIn = ({ auth, setAuth }) => {
 
   const onSuccess = (res) => {
     console.log(res);
+    localStorage.setItem("token", res.data.access_token);
     setAuth(!auth);
+  };
+
+  const onGetTokenSuccess = (res) => {
+    console.log(res);
+    handleTwo();
+  };
+  const onVerifyTokenSuccess = (res) => {
+    console.log(res);
+    handleThree();
+  };
+  const onResetPassordSuccess = (res) => {
+    console.log(res);
+    handleFour();
   };
 
   const onError = (err) => {
     console.log(err);
   };
-
+  
+const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
   const { mutate, isLoading, error, isSuccess } = useLogin(onSuccess, onError);
+  const { mutate: verify } = useVerifyToken(onVerifyTokenSuccess, onError);
+  const { mutate: reset } = useResetPassword(onResetPassordSuccess, onError);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = { email, password };
-    console.log(formData);
     mutate(formData);
+  };
+  // const {refetch} = useQuery(['password', email], () => GetToken(email), {onGetTokenSuccess, onError})
+
+  const handleGetToken = (e) => {
+    e.preventDefault();
+    console.log('clicked')
+// refetch()
+getToken(email)
+    // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
+  };
+
+  const handleVerifyToken = (e) => {
+    e.preventDefault();
+    const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
+    console.log(fiveDigitToken)
+    verify({email, fiveDigitToken});
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    const data = { password, confirmPassword };
+    reset({email, data});
   };
 
   useEffect(() => {
@@ -91,7 +143,7 @@ const LogIn = ({ auth, setAuth }) => {
           </p>
           {isLoading ? (
             <div className="dots">
-            <ThreeDots />
+              <ThreeDots />
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
@@ -157,19 +209,23 @@ const LogIn = ({ auth, setAuth }) => {
               Kindly insert your email below, a verification code will be sent
               to you, make sure you enter the correct email.
             </p>
-            <div className="fgform">
+            <form className="fgform" onSubmit={handleGetToken}>
               <input
                 type="text"
                 placeholder="Email address:"
                 className="inpt"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <button className="fg-btn" onClick={handleTwo}>
+              {/* <button className="fg-btn" onClick={handleTwo}>
                 Send
-              </button>
+              </button> */}
+              <button className="fg-btn">Send</button>
               <p className="bk" ref={closeref} onClick={handleClose}>
                 Back to sign in
               </p>
-            </div>
+            </form>
           </div>
         </div>
         {/* second step */}
@@ -178,12 +234,47 @@ const LogIn = ({ auth, setAuth }) => {
             <img src={fgpimg} alt="" className="fgimg" />
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
-            <div className="fgform2">
-              <input type="text" placeholder="" className="inptc" />
-              <input type="text" placeholder="" className="inptc" />
-              <input type="text" placeholder="" className="inptc" />
-              <input type="text" placeholder="" className="inptc" />
-              <input type="text" placeholder="" className="inptc" />
+            <form className="fgform2" onSubmit={handleVerifyToken}>
+              <input
+                type="text"
+                placeholder=""
+                className="inptc"
+                name="token"
+                value={token1}
+                onChange={(e) => setToken1(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder=""
+                className="inptc"
+                name="token"
+                value={token2}
+                onChange={(e) => setToken2(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder=""
+                className="inptc"
+                name="token"
+                value={token3}
+                onChange={(e) => setToken3(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder=""
+                className="inptc"
+                name="token"
+                value={token4}
+                onChange={(e) => setToken4(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder=""
+                className="inptc"
+                name="token"
+                value={token5}
+                onChange={(e) => setToken5(e.target.value)}
+              />
 
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
@@ -193,12 +284,17 @@ const LogIn = ({ auth, setAuth }) => {
               </p>
               <button
                 className="fg-btn"
-                onClick={handleThree}
                 style={{ marginTop: "3rem", padding: "1rem" }}
               >
                 Verify
+                {/* <button
+                className="fg-btn"
+                onClick={handleThree}
+                style={{ marginTop: "3rem", padding: "1rem" }}
+              >
+                Verify */}
               </button>
-            </div>
+            </form>
           </div>
         </div>
         {/* third step */}
@@ -207,22 +303,38 @@ const LogIn = ({ auth, setAuth }) => {
             <img src={fgpimg} alt="" className="fgimg" />
             <p className="pp">Change Password</p>
             <p className="fptxt">Kindly enter your new password.</p>
-            <div className="fgform2">
-              <input type="text" placeholder="New Password:" className="inpt" />
+            <form className="fgform2" onSubmit={handleReset}>
               <input
-                type="text"
+                type="password"
+                placeholder="New Password:"
+                className="inpt"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <input
+                type="password"
                 placeholder="Confirn New Password:"
                 className="inpt"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
 
               <button
+                className="fg-btn"
+                style={{ marginTop: "3rem", padding: "1rem" }}
+              >
+                Change Password
+              </button>
+              {/* <button
                 className="fg-btn"
                 onClick={handleFour}
                 style={{ marginTop: "3rem", padding: "1rem" }}
               >
                 Change Password
-              </button>
-            </div>
+              </button> */}
+            </form>
           </div>
         </div>
         {/* final step */}
