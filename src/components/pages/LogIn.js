@@ -3,7 +3,7 @@ import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
 import fgpimgcheck from "../../assets/checked 1.png";
-import { BsEyeSlash } from "react-icons/bs";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -17,6 +17,7 @@ const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const closeref = useRef();
   const modref = useRef();
@@ -65,6 +66,10 @@ const LogIn = ({ auth, setAuth }) => {
     mutate(formData);
   };
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   useEffect(() => {
     if (auth) {
       navigate("/dashboard");
@@ -91,7 +96,7 @@ const LogIn = ({ auth, setAuth }) => {
           </p>
           {isLoading ? (
             <div className="dots">
-            <ThreeDots />
+              <ThreeDots />
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
@@ -105,7 +110,7 @@ const LogIn = ({ auth, setAuth }) => {
               />
               <div className="pass">
                 <input
-                  type="password"
+                  type={showPassword === false ? "password" : "text"}
                   placeholder="Password:"
                   className="pa"
                   name="password"
@@ -113,7 +118,11 @@ const LogIn = ({ auth, setAuth }) => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <span className="eye">
-                  <BsEyeSlash />
+                  {showPassword === false ? (
+                    <BsEyeSlash onClick={togglePassword} />
+                  ) : (
+                    <BsEye onClick={togglePassword} />
+                  )}
                 </span>
               </div>
 
