@@ -55,7 +55,7 @@ const BorrowerProfile = () => {
                 </div>
                 <div>
                 <button onClick={() => setModalisopen(true)} className='borrow_preview'>View Borrower's Data</button>
-                
+
                 <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles} >
                 <div className='modalP-head'>
                    <h2>Borrower's Saved Data</h2>
