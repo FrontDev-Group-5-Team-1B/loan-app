@@ -37,10 +37,45 @@
     color: #666666;
   }
 
-   .borrow_link{
+   .borrow_preview{
     text-decoration: none;
     padding-top: 30px;
     font-size: 18px;
     color: #0267FF;
     font-weight: 500;
+    border-style: none;
+    background-color: white;
   } 
+  .modal-flex{
+    display: flex;
+   
+  }
+  .modal-flex li{
+    border: 1px solid #0252CC;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+  }
+  .modalP-head{
+    padding: 10px;
+  }
+  .modalP-head h2{
+    color: #0267FF;
+    font-weight: 600;
+  }
+  .modalP-head p{
+    padding-top: 10px;
+  }
+  .modal-btn{
+    padding: 10px;
+    background-color: #0267FF;
+    color: white;
+    border: none;
+   
+  }
+  .modal-btn-div{
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+ 
