@@ -68,8 +68,6 @@ form{
     border-radius: 4px;
     margin-top: 2.5rem;
     font-size: 17px;
-    outline-color: transparent;
-    /* outline-offset: 5px; */
     background-color: inherit;
     color: #FFFEFE;
 }
@@ -77,8 +75,6 @@ form{
     width: 100%;
     border: none;
     font-size: 17px;
-    outline-color: transparent;
-    /* outline-offset: 5px; */
     background-color: inherit;
     padding: 1.3rem 0;
     color: #dfdada;
@@ -101,12 +97,15 @@ form{
     top: 30%;
     right: 4%;
 }
-.forgot{
+.forgot-box{
+    width: 100%;
     display: flex;
-    justify-content: end;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+.forgot{
     color: #FFFEFE;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
     font-size: 16px;
     cursor: pointer;
 }
@@ -270,8 +269,6 @@ hr{
     width: 90%;
     padding: 1rem 1rem;
     font-size: 16px;
-    outline-color: #4e82d2;
-    outline-offset: 5px;
     border-radius: 4px;
     border: 1px solid #0252CC;
     margin-bottom: 2rem;
@@ -286,8 +283,6 @@ hr{
     border-radius: 50%;
     margin: 1rem;
     border: 1px solid #0252CC;
-    outline-color: #4e82d2;
-    outline-offset: 5px;
 }
 .resend a{
     color: #0252CC;
@@ -299,7 +294,11 @@ hr{
 .tw{
     width: 60%;
 }
-
+.val-message{
+    color: red;
+    font-size: 20px;
+    padding: 1rem 0;
+}
 
 @media (max-width:997px) {
     .login-container, .signup-container{
@@ -362,6 +361,13 @@ hr{
         border-radius: 50%;
         margin: 0.5rem;
         border: 1px solid #0252CC;
+    }
+    .forgot-box{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0 0 0;
     }
 
 }

@@ -29,7 +29,7 @@ const LoanApplication = () => {
           {loanApplication?.map((application, idx) => (
             <tr key={idx}>
               <td>
-                <Link to={"/dashboard/preview"}>
+                <Link to={"/dashboard/borrowerprofile"}>
                   {application.borrower_name}
                 </Link>
               </td>

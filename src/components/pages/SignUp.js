@@ -17,6 +17,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassoword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const closeref = useRef();
   const modref = useRef();
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const SignUp = () => {
   };
   const onError = (err) => {
     console.log(err);
+    setErrorMsg(err.response.data.message)
   };
 
   const { mutate, error, isLoading } = useSignup(onSuccess, onError);
@@ -49,6 +51,7 @@ const SignUp = () => {
 
   const toggleConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword);
+
   };
 
   return (
@@ -92,6 +95,7 @@ const SignUp = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+
               <div className="pass">
                 <input
                   type={showPassword === false ? "password" : "text"}
@@ -146,6 +150,33 @@ const SignUp = () => {
               </div>
             </form>
           )}
+
+//               <span className="eye">
+//                 <BsEyeSlash />
+//               </span>
+//             </div>
+            
+//             {error && <p className="val-message">{errorMsg}</p>}
+//             <button className="log-btn">Sign Up</button>
+
+//             <div className="continue">
+//               <hr />
+//               <span>Or continue with</span>
+//               <hr />
+//             </div>
+//             <div className="login-icons">
+//               <Link>
+//                 <FaEnvelope />
+//               </Link>
+//               <Link>
+//                 <img src={google} alt="google" />
+//               </Link>
+//               <Link>
+//                 <FaApple />
+//               </Link>
+//             </div>
+//           </form>}
+
         </div>
         <div className="login-right-box">
           <img src={logimg} alt="woman" />
