@@ -73,7 +73,7 @@ const Notification = () => {
         </ul>
       </div>
       <div className="cancle-save-btn">
-        <button className="cancle">Cancle</button>
+        <button className="cancle">Cancel</button>
         <button className="save">Save</button>
       </div>
     </div>

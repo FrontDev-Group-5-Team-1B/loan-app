@@ -86,10 +86,10 @@ const DashGInfo = () => {
 
      <button type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button>
      <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
-      
+
       <div className='bs-preview'>
         <h6>Borower's data has been saved. Kindly preview data</h6>
-        <button>Preview</button>
+        <Link to='/dashboard/fullbprofile'><button>Preview</button></Link>
         <p>Cancel</p>
       </div>
 

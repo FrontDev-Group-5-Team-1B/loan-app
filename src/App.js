@@ -43,6 +43,7 @@ import PendingLoans from "./components/dashboard/PendingLoans";
 import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 import ErrorPage from "./components/pages/ErrorPage";
 import PrivateRoute from "./components/pages/private.pages";
+import FullBProfile from "./components/dashboard/FullBProfile";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -80,6 +81,7 @@ function App() {
             <Route path="loansrefunded" element={<LoansRefunded />} />
             <Route path="pendingloans" element={<PendingLoans />} />
             <Route path="borrowerprofile" element={<BorrowerProfile />} />
+            <Route path="Fullbprofile" element={<FullBProfile/>}/>
             <Route path="settings" element={<Settings />}>
               <Route index element={<Profile />} />
               <Route path="notification" element={<Notification />} />
