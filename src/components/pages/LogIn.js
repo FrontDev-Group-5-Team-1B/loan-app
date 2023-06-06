@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 import { GetToken } from "../../services/api/api.service";
 
-const LogIn = () => {
+const LogIn = ({auth, setAuth}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -194,7 +194,7 @@ getToken(email)
               <p className="forgot" onClick={handleFG}>
                 Forgot Password?
               </p>
-              <div>
+              <div className="">
                 <input type="checkbox" className="" />
                 <label>Always keep me logged in</label>
               </div>
