@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/security.css";
+import { Link } from "react-router-dom";
 
 const Security = () => {
   return (
@@ -37,7 +38,9 @@ const Security = () => {
         </form>
 
         <div>
-          <button className="setings-pwd-btn">Change Password</button>
+          <Link to="forgot_password">
+            <button className="setings-pwd-btn">Change Password</button>
+          </Link>
         </div>
       </div>
     </div>

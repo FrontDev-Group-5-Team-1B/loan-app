@@ -43,6 +43,7 @@ import PendingLoans from "./components/dashboard/PendingLoans";
 import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 import ErrorPage from "./components/pages/ErrorPage";
 import PrivateRoute from "./components/pages/private.pages";
+import ForgotPassword from "./components/pages/ForgotPassword";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -52,6 +53,10 @@ function App() {
       <>
         <Route path="login" element={<LogIn auth={auth} setAuth={setAuth} />} />
         <Route path="signup" element={<SignUp />} />
+        <Route
+          path="/dashboard/settings/security/forgot_password"
+          element={<ForgotPassword />}
+        />
         <Route path="/" element={<Header auth={auth} />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />

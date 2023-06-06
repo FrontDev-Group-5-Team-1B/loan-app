@@ -88,3 +88,41 @@
   border: 1px solid #0267ff;
   background: #0267ff;
 }
+
+/* PROFILE MODAL STYLES */
+.profile-modal-content {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  font-size: 14px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+.yes_no {
+  display: flex;
+  gap: 30px;
+  padding: 16px 0;
+}
+
+.yes {
+  color: #ff2727;
+  cursor: pointer;
+}
+.no {
+  color: #0267ff;
+  cursor: pointer;
+}
+
+.profile-modal2-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 50px;
+}

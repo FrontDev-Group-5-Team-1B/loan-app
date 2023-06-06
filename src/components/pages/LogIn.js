@@ -1,9 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
 import fgpimgcheck from "../../assets/checked 1.png";
-import { BsEyeSlash } from "react-icons/bs";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 import { GetToken } from "../../services/api/api.service";
 
-const LogIn = ({ auth, setAuth }) => {
+const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -30,13 +30,19 @@ const LogIn = ({ auth, setAuth }) => {
   const [token4, setToken4] = useState("");
   const [token5, setToken5] = useState("");
   // above token states should be structured with objects
+
+  const [errorMsg, setErrorMsg] = useState("");
+
+
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const closeref = useRef();
   const modref = useRef();
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
+
 
   const handleClose = () => {
     modref.current.style.display = "none";
@@ -63,8 +69,12 @@ const LogIn = ({ auth, setAuth }) => {
 
   const onSuccess = (res) => {
     console.log(res);
+
     localStorage.setItem("token", res.data.access_token);
     setAuth(!auth);
+
+    navigate("/dashboard");
+
   };
 
   const onGetTokenSuccess = (res) => {
@@ -82,6 +92,7 @@ const LogIn = ({ auth, setAuth }) => {
 
   const onError = (err) => {
     console.log(err);
+    setErrorMsg(err.response.data.message)
   };
   
 const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
@@ -117,11 +128,16 @@ getToken(email)
     reset({email, data});
   };
 
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   useEffect(() => {
     if (auth) {
       navigate("/dashboard");
     }
   }, [auth]);
+  
   return (
     <>
       <div className="login-container">
@@ -145,6 +161,7 @@ getToken(email)
             <div className="dots">
               <ThreeDots />
             </div>
+
           ) : (
             <form onSubmit={handleSubmit}>
               <input
@@ -157,7 +174,7 @@ getToken(email)
               />
               <div className="pass">
                 <input
-                  type="password"
+                  type={showPassword === false ? "password" : "text"}
                   placeholder="Password:"
                   className="pa"
                   name="password"
@@ -165,9 +182,14 @@ getToken(email)
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <span className="eye">
-                  <BsEyeSlash />
+                  {showPassword === false ? (
+                    <BsEyeSlash onClick={togglePassword} />
+                  ) : (
+                    <BsEye onClick={togglePassword} />
+                  )}
                 </span>
               </div>
+              <div className="forgot-box">
 
               <p className="forgot" onClick={handleFG}>
                 Forgot Password?
@@ -176,6 +198,8 @@ getToken(email)
                 <input type="checkbox" className="" />
                 <label>Always keep me logged in</label>
               </div>
+              </div>
+              {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
               <div className="continue">
                 <hr />

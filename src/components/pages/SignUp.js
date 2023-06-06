@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import modimg from "../../assets/5568706 1.png";
-import { BsEyeSlash } from "react-icons/bs";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -12,21 +12,24 @@ import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 
-
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassoword] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const closeref = useRef();
   const modref = useRef();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const onSuccess = () => {
     navigate("/login");
   };
   const onError = (err) => {
     console.log(err);
+    setErrorMsg(err.response.data.message)
   };
 
   const { mutate, error, isLoading } = useSignup(onSuccess, onError);
@@ -37,9 +40,18 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const  formData = {name, email, password, confirmPassword}
-    console.log(formData)
-    mutate(formData)
+    const formData = { name, email, password, confirmPassword };
+    console.log(formData);
+    mutate(formData);
+  };
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+
   };
 
   return (
@@ -61,68 +73,110 @@ const SignUp = () => {
               </Link>
             </span>
           </p>
-          {isLoading ? <div className="dots"><ThreeDots /></div> : <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Name:"
-              className="loginput"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              type="email"
-              placeholder="Email address:"
-              className="loginput"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <div className="pass">
-              <input
-                type="password"
-                placeholder="Password:"
-                className="pa"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <span className="eye">
-                <BsEyeSlash />
-              </span>
+          {isLoading ? (
+            <div className="dots">
+              <ThreeDots />
             </div>
-            <div className="pass">
+          ) : (
+            <form onSubmit={handleSubmit}>
               <input
-                type="password"
-                placeholder="Confirm Password:"
-                className=" pa"
-                name="confirm"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassoword(e.target.value)}
+                type="text"
+                placeholder="Name:"
+                className="loginput"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
-              <span className="eye">
-                <BsEyeSlash />
-              </span>
-            </div>
+              <input
+                type="email"
+                placeholder="Email address:"
+                className="loginput"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
-            <button className="log-btn">Sign Up</button>
-            <div className="continue">
-              <hr />
-              <span>Or continue with</span>
-              <hr />
-            </div>
-            <div className="login-icons">
-              <Link>
-                <FaEnvelope />
-              </Link>
-              <Link>
-                <img src={google} alt="google" />
-              </Link>
-              <Link>
-                <FaApple />
-              </Link>
-            </div>
-          </form>}
+              <div className="pass">
+                <input
+                  type={showPassword === false ? "password" : "text"}
+                  placeholder="Password:"
+                  className="pa"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <span className="eye">
+                  {showPassword === false ? (
+                    <BsEyeSlash onClick={togglePassword} />
+                  ) : (
+                    <BsEye onClick={togglePassword} />
+                  )}
+                </span>
+              </div>
+              <div className="pass">
+                <input
+                  type={showConfirmPassword === false ? "password" : "text"}
+                  placeholder="Confirm Password:"
+                  className=" pa"
+                  name="confirm"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassoword(e.target.value)}
+                />
+                <span className="eye">
+                  {showPassword === false ? (
+                    <BsEyeSlash onClick={toggleConfirmPassword} />
+                  ) : (
+                    <BsEye onClick={toggleConfirmPassword} />
+                  )}
+                </span>
+              </div>
+
+              <button className="log-btn">Sign Up</button>
+              <div className="continue">
+                <hr />
+                <span>Or continue with</span>
+                <hr />
+              </div>
+              <div className="login-icons">
+                <Link>
+                  <FaEnvelope />
+                </Link>
+                <Link>
+                  <img src={google} alt="google" />
+                </Link>
+                <Link>
+                  <FaApple />
+                </Link>
+              </div>
+            </form>
+          )}
+
+//               <span className="eye">
+//                 <BsEyeSlash />
+//               </span>
+//             </div>
+            
+//             {error && <p className="val-message">{errorMsg}</p>}
+//             <button className="log-btn">Sign Up</button>
+
+//             <div className="continue">
+//               <hr />
+//               <span>Or continue with</span>
+//               <hr />
+//             </div>
+//             <div className="login-icons">
+//               <Link>
+//                 <FaEnvelope />
+//               </Link>
+//               <Link>
+//                 <img src={google} alt="google" />
+//               </Link>
+//               <Link>
+//                 <FaApple />
+//               </Link>
+//             </div>
+//           </form>}
+
         </div>
         <div className="login-right-box">
           <img src={logimg} alt="woman" />
