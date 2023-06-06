@@ -3,8 +3,6 @@ import {RxDotFilled} from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import BorrowerProfile from './BorrowerProfile';
-
 
 const DashGInfo = () => {
   const [ModalIsopen, setModalisopen] = useState(false);

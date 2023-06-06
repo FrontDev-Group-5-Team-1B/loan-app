@@ -150,7 +150,7 @@ const SignUp = () => {
               </div>
             </form>
           )}
-
+{/* 
 //               <span className="eye">
 //                 <BsEyeSlash />
 //               </span>
@@ -175,7 +175,7 @@ const SignUp = () => {
 //                 <FaApple />
 //               </Link>
 //             </div>
-//           </form>}
+//           </form>} */}
 
         </div>
         <div className="login-right-box">
