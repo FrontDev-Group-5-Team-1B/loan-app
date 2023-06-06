@@ -304,3 +304,16 @@ input[type="file"] {
 Link {
   text-decoration: none;
 }
+
+/* PROFILE MODAL STYLES */
+/* .profile-modal2-content {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4d4d4d;
+} */

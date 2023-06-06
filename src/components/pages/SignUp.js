@@ -20,6 +20,8 @@ const SignUp = () => {
   const closeref = useRef();
   const modref = useRef();
   const navigate = useNavigate();
+
+  // Toggle password either to show as text or as password
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -43,6 +45,7 @@ const SignUp = () => {
     mutate(formData);
   };
 
+  // Toggle password either to show as text or as password
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
