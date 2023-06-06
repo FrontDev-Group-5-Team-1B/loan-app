@@ -70,6 +70,7 @@ form{
     font-size: 17px;
     background-color: inherit;
     color: #FFFEFE;
+    outline: none;
 }
 .pa{
     width: 100%;
@@ -96,6 +97,7 @@ form{
     position: absolute;
     top: 30%;
     right: 4%;
+    cursor: pointer;
 }
 .forgot-box{
     width: 100%;
