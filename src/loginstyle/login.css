@@ -70,6 +70,7 @@ form{
     font-size: 17px;
     background-color: inherit;
     color: #FFFEFE;
+    outline: none;
 }
 .pa{
     width: 100%;
@@ -80,6 +81,7 @@ form{
     color: #dfdada;
     border-radius: 4px;
     text-indent: 1rem;
+    outline: none;
 }
 .loginput::placeholder, .pa::placeholder{
     color: #fffdfd;
@@ -96,6 +98,7 @@ form{
     position: absolute;
     top: 30%;
     right: 4%;
+    cursor: pointer;
 }
 .forgot-box{
     width: 100%;
