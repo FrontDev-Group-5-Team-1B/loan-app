@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import modimg from "../../assets/5568706 1.png";
-import { BsEyeSlash } from "react-icons/bs";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import { FaEnvelope } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
@@ -14,21 +14,22 @@ import { ThreeDots } from "../loaders/Loader.component";
 
 
 const SignUp = () => {
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [organisation, setOrganisation] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [organisationName, setOrganisationName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassoword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const closeref = useRef();
   const modref = useRef();
   const navigate = useNavigate();
-
-  // Toggle password either to show as text or as password
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  // show password
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const onSuccess = () => {
     navigate("/login");
   };
@@ -44,7 +45,7 @@ const SignUp = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-      const  formData = {firstname, lastname, email, organisation, password, confirmPassword}
+      const  formData = {firstName, lastName, email, organisationName, password, confirmPassword}
       console.log(formData)
       mutate(formData)
   };
@@ -74,7 +75,7 @@ const SignUp = () => {
               placeholder="First Name:"
               className="loginput"
               name="firstname"
-              value={firstname}
+              value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <input
@@ -82,7 +83,7 @@ const SignUp = () => {
               placeholder="Last Name:"
               className="loginput"
               name="lastname"
-              value={lastname}
+              value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
             <input
@@ -98,12 +99,12 @@ const SignUp = () => {
               placeholder="Organisation Name:"
               className="loginput"
               name="organisation"
-              value={organisation}
-              onChange={(e) => setOrganisation(e.target.value)}
+              value={organisationName}
+              onChange={(e) => setOrganisationName(e.target.value)}
             />
             <div className="pass">
               <input
-                type="password"
+                type={showPassword === false ? "password" : "text"}
                 placeholder="Password:"
                 className="pa"
                 name="password"
@@ -111,12 +112,16 @@ const SignUp = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <span className="eye">
-                <BsEyeSlash />
+              {showPassword === false ? (
+                    <BsEyeSlash onClick={togglePassword} />
+                  ) : (
+                    <BsEye onClick={togglePassword} />
+                  )}
               </span>
             </div>
             <div className="pass">
               <input
-                type="password"
+                type={showPassword === false ? "password" : "text"}
                 placeholder="Confirm Password:"
                 className=" pa"
                 name="confirm"
@@ -124,7 +129,11 @@ const SignUp = () => {
                 onChange={(e) => setConfirmPassoword(e.target.value)}
               />
               <span className="eye">
-                <BsEyeSlash />
+              {showPassword === false ? (
+                    <BsEyeSlash onClick={togglePassword} />
+                  ) : (
+                    <BsEye onClick={togglePassword} />
+                  )}
               </span>
             </div>
             
