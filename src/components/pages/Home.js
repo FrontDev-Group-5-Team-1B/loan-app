@@ -69,7 +69,7 @@ const Home = () => {
               <span>1</span>
               <div className="textAndImage">
               <div className="text">
-                <p>b
+                <p>
                   Help reduce the rate of loan default by using advanced
                   algorithms to analyze the borrowers data and giving
                   predictions of default possibilites.

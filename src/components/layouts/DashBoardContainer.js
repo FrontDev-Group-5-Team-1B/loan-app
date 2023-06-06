@@ -17,6 +17,7 @@ const DashBoardContainer = () => {
   const notify = () => toast("Successful");
 
   useEffect(() => {
+    console.log("hello")
     notify();
   }, []);
 

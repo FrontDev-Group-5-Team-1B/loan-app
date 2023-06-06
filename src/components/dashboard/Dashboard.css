@@ -54,6 +54,7 @@ ul{
 .percent-flex{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-top: 1px solid #CCCCCC;
     background-color: #F2F2F2;
     padding: 15px;
@@ -287,5 +288,9 @@ textarea {
 
 .fig-map{
     font-weight: 800;
+    font-size: 1.5rem;
+}
+.percent-flex span{
     font-size: 1.2rem;
+
 }

@@ -6,7 +6,7 @@ function PrivateRoute({ auth, children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (auth) {
+    if (auth || localStorage.getItem('token')) {
       setIsAuth(!isAuth);
     } else {
       navigate("/login");
