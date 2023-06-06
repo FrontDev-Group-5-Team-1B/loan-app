@@ -81,6 +81,7 @@ form{
     color: #dfdada;
     border-radius: 4px;
     text-indent: 1rem;
+    outline: none;
 }
 .loginput::placeholder, .pa::placeholder{
     color: #fffdfd;
