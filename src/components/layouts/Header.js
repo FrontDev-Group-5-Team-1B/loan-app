@@ -23,7 +23,7 @@ const Header = ({auth}) => {
           </NavLink>
         </div>
 
-        {auth ? (
+        {auth || localStorage.getItem('token') ? (
           <DbNav />
         ) : (
           <>
