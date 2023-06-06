@@ -26,6 +26,7 @@ const SignUp = () => {
   const modref = useRef();
   const navigate = useNavigate();
 
+  // show password
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
