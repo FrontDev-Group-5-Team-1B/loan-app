@@ -12,11 +12,7 @@ const DbNav = () => {
   return (
     <>
       <div className="db-nav-container">
-        <div className="db-logo header-img">
-          <Link to="/">
-            <img src={logo} />
-          </Link>
-        </div>
+      
         <div className="db-search">
           <input type="text" placeholder="Search" className="db-input-search" />
         </div>
