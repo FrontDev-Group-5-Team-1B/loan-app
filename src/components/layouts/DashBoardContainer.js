@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { RiDashboardFill, RiAdminLine, RiHistoryFill } from "react-icons/ri";
 import { TfiPieChart } from "react-icons/tfi";
 import { TbCoins, TbLogout } from "react-icons/tb";
@@ -7,9 +7,14 @@ import { FiSettings, FiHelpCircle } from "react-icons/fi";
 import DbNav from "./DbNav";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Modal from "../Modal";
+import { useQueryClient } from "react-query";
 
 const DashBoardContainer = () => {
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [activeLink, setActiveLink] = useState(1);
+  const [showModal, setShowModal] = useState(false);
   const handleLinkClick = (pageId) => {
     setActiveLink(pageId);
   };
@@ -17,12 +22,17 @@ const DashBoardContainer = () => {
   const notify = () => toast("Successful");
 
   useEffect(() => {
-    console.log("hello")
+    console.log("hello");
     notify();
   }, []);
 
+  const handleLogout = () => {
+    queryClient.removeQueries();
+    navigate("/");
+    setShowModal(false);
+  };
   return (
-    <main className='db-main'>
+    <main className="db-main">
       <aside className="db-s-nav">
         <ToastContainer />
         {/* <DbNav /> */}
@@ -81,11 +91,26 @@ const DashBoardContainer = () => {
         </nav>
 
         <div>
-          <NavLink to="logout" className="db-link">
+          <NavLink className="db-link" onClick={() => setShowModal(true)}>
             <TbLogout />
             LogOut
           </NavLink>
         </div>
+        {showModal && (
+          <Modal show={showModal} onClose={() => setShowModal(false)}>
+            <div className="profile-modal-content">
+              <p>Are you sure you want to Logout?</p>
+              <div className="yes_no">
+                <p className="yes" onClick={handleLogout}>
+                  Yes
+                </p>
+                <p className="no" onClick={() => setShowModal(false)}>
+                  No
+                </p>
+              </div>
+            </div>
+          </Modal>
+        )}
       </aside>
 
       <Outlet />

@@ -1,11 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cloud from "../../../assets/cloud-computing.png";
 import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import Axios from "axios";
+import Modal from "../../Modal";
 
 const AddAdmin = () => {
   const [image, setImage] = useState();
+  const [adminInfoModal, setAdminInfoModal] = useState(false);
+  useEffect(() => {
+    if (adminInfoModal) {
+      const timer = setTimeout(() => {
+        setAdminInfoModal(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [adminInfoModal]);
   const handleUpload = function (e) {
     e.preventDefault();
     console.log("hey");
@@ -121,7 +132,19 @@ const AddAdmin = () => {
             </label>
           </div>
         </div>
-        <button className="_btn-blue save-upload-btn">Save</button>
+        <button
+          className="_btn-blue save-upload-btn"
+          onClick={() => setAdminInfoModal(true)}
+        >
+          Save
+        </button>
+        {adminInfoModal && (
+          <Modal show={adminInfoModal} onClose={() => setAdminInfoModal(false)}>
+            <div className="profile-modal2-content">
+              <p>Your data has already been saved</p>
+            </div>
+          </Modal>
+        )}
       </form>
     </div>
   );
