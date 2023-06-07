@@ -1,5 +1,6 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "../../styles/notification.css";
+import Modal from "../Modal";
 
 const ButtonSet = ({ defaultYesStyle, defaultNoStyle }) => {
   const [yesStyle, setYesStyle] = useState(defaultYesStyle);
@@ -28,6 +29,17 @@ const ButtonSet = ({ defaultYesStyle, defaultNoStyle }) => {
 };
 
 const Notification = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [notificationModal, setNotificationModal] = useState(false);
+  useEffect(() => {
+    if (notificationModal) {
+      const timer = setTimeout(() => {
+        setNotificationModal(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [notificationModal]);
   const defaultButtonStyle = { backgroundColor: "white", color: "#333333" };
   return (
     <div>
@@ -73,8 +85,37 @@ const Notification = () => {
         </ul>
       </div>
       <div className="cancle-save-btn">
-        <button className="cancle">Cancel</button>
-        <button className="save">Save</button>
+        <button className="cancle" onClick={() => setShowModal(true)}>
+          Cancel
+        </button>
+        {showModal && (
+          <Modal show={showModal} onClose={() => setShowModal(false)}>
+            <div className="profile-modal-content">
+              <p>Are you sure you want to cancle changes</p>
+              <div className="yes_no">
+                <p className="yes" onClick={() => setShowModal(false)}>
+                  Yes
+                </p>
+                <p className="no" onClick={() => setShowModal(false)}>
+                  No
+                </p>
+              </div>
+            </div>
+          </Modal>
+        )}
+        <button className="save" onClick={() => setNotificationModal(true)}>
+          Save
+        </button>
+        {notificationModal && (
+          <Modal
+            show={notificationModal}
+            onClose={() => setNotificationModal(false)}
+          >
+            <div className="profile-modal2-content">
+              <p>Your Settings has already been saved</p>
+            </div>
+          </Modal>
+        )}
       </div>
     </div>
   );

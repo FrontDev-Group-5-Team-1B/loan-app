@@ -43,7 +43,10 @@ import PendingLoans from "./components/dashboard/PendingLoans";
 import BorrowerProfile from "./components/dashboard/BorrowerProfile";
 import ErrorPage from "./components/pages/ErrorPage";
 import PrivateRoute from "./components/pages/private.pages";
+import ForgotPassword from "./components/pages/ForgotPassword";
 import FullBProfile from "./components/dashboard/FullBProfile";
+import EligibilityStatus from "./components/dashboard/EligibilityStatus";
+import StatusSender from "./components/dashboard/StatusSender";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -53,6 +56,10 @@ function App() {
       <>
         <Route path="login" element={<LogIn auth={auth} setAuth={setAuth} />} />
         <Route path="signup" element={<SignUp />} />
+        <Route
+          path="/dashboard/settings/security/forgot_password"
+          element={<ForgotPassword />}
+        />
         <Route path="/" element={<Header auth={auth} />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -81,13 +88,14 @@ function App() {
             <Route path="loansrefunded" element={<LoansRefunded />} />
             <Route path="pendingloans" element={<PendingLoans />} />
             <Route path="borrowerprofile" element={<BorrowerProfile />} />
-            <Route path="Fullbprofile" element={<FullBProfile/>}/>
             <Route path="settings" element={<Settings />}>
               <Route index element={<Profile />} />
               <Route path="notification" element={<Notification />} />
               <Route path="security" element={<Security />} />
             </Route>
-            <Route path="preview" element={"h2 elememnt in progress"} />
+            <Route path="fullbprofile" element={<FullBProfile/>} />
+            <Route path="eligibilitystatus" element={< EligibilityStatus/>}/>
+            <Route path="statussender" element={<StatusSender/>}/>
             <Route path="help" element={<HelpSupport />} />
           </Route>
         </Route>

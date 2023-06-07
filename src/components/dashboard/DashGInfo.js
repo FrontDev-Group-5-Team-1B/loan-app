@@ -3,7 +3,6 @@ import {RxDotFilled} from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import BorrowerProfile from './BorrowerProfile';
 
 
 const DashGInfo = () => {
@@ -19,10 +18,6 @@ const DashGInfo = () => {
       padding: '50px'
     },
   };
-  
-
-
-
   return (
 
     <div className='borrow-wrap'>
@@ -84,7 +79,7 @@ const DashGInfo = () => {
     <div className='d-btn'>
      <button className='l-btn'><Link to='/dashboard/collateral_info' style={{ textDecoration: "none", color: "blue" }}>Previous</Link></button>
 
-     <button type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button>
+     <button  type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button>
      <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
 
       <div className='bs-preview'>
@@ -93,7 +88,7 @@ const DashGInfo = () => {
         <p>Cancel</p>
       </div>
 
-     </Modal>
+     </Modal> 
 
  </div>
    
