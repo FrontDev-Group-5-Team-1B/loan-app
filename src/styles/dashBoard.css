@@ -8,16 +8,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fafcff;
-  border: 0.5px solid #cccccc;
   width: 100%;
   max-width: 1440px;
-  padding: 30px 70px 18px;
+  padding: 30px 70px 18px ;
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 999;
+  z-index: 99999;
 }
 
 .db-logo img {
