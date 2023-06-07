@@ -9,6 +9,10 @@
   /* margin-bottom: 70px; */
   border-bottom: 0.5px solid var(--border-color);
 }
+.header-dash {
+  background: #fafcff;
+  border: 0.5px solid #cccccc;
+}
 .header-second{
   height: 80px;
   padding-top: 20px;
