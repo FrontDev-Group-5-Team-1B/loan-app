@@ -145,7 +145,10 @@ const LogIn = ({ auth, setAuth }) => {
     setShowPassword(!showPassword);
   };
 
-  useEffect(() => {
+  useEffect((
+    
+  ) => {
+
     if (auth) {
       navigate("/dashboard");
     }
@@ -433,5 +436,6 @@ const LogIn = ({ auth, setAuth }) => {
     </>
   );
 };
+}
 
 export default LogIn;
