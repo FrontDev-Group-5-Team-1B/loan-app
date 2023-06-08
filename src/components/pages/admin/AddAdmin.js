@@ -4,10 +4,58 @@ import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import Axios from "axios";
 import Modal from "../../Modal";
+import { useMutation } from "react-query";
 
 const AddAdmin = () => {
   const [image, setImage] = useState();
   const [adminInfoModal, setAdminInfoModal] = useState(false);
+
+  // ADMIN DATA STATE//////////
+  const [adminData, setAdminData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    role: "",
+  });
+
+  //// ADD ADMIN LOGIC STARTS HERE//////////////////////////////////
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAdminData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+    console.log(adminData);
+  };
+
+  const handleAddAdmin = (e) => {
+    e.preventDefault();
+    mutation.mutate(adminData);
+  };
+
+  const addAdmin = async (adminData) => {
+    try {
+      const response = await Axios.post(
+        "https://nodebt-application.onrender.com/api/admins/create",
+        adminData,
+        {
+          headers: {
+            Authorization: `Beaarer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      return response.data;
+      console.log(response.data);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  };
+
+  const mutation = useMutation(addAdmin);
+
+  // ADD ADMIN LOGIC ENDS HERE//////////////////////////////////
+
   useEffect(() => {
     if (adminInfoModal) {
       const timer = setTimeout(() => {
@@ -55,7 +103,7 @@ const AddAdmin = () => {
         <p className="dash-bold">Add Admin</p>
       </div>
       <h2 className="admin-heading-primary">Add Admin</h2>
-      <form className="admin-form" onSubmit={handleSubmit}>
+      <form className="admin-form" onSubmit={handleAddAdmin}>
         <h2 className="h-sec">Admin Information</h2>
 
         <div className="admin-inputs">
@@ -66,43 +114,48 @@ const AddAdmin = () => {
               type="text"
               placeholder="First Name"
               className="admin-input"
+              onChange={handleChange}
             />
           </label>
 
           <label htmlFor="email" className="admin-label">
             <input
-              id="admin-email"
-              name="admin-email"
+              id="email"
+              name="email"
               type="email"
               placeholder="Email Address"
               className="admin-input"
+              onChange={handleChange}
             />
           </label>
-          <label htmlFor="lasttName">
+          <label htmlFor="lastName">
             <input
-              id="lasttName"
-              name="lasttName"
+              id="lastName"
+              name="lastName"
               type="text"
               placeholder="Last Name"
               className="admin-input"
+              onChange={handleChange}
             />
           </label>
-          <label htmlFor="lasttName">
+          <label htmlFor="phoneNumber">
             <input
-              id="phone"
-              name="phone"
-              type="number"
+              id="phoneNumber"
+              name="phoneNumber"
+              type="text"
               placeholder="Phone Number"
               className="admin-input"
+              onChange={handleChange}
             />
           </label>
-          <label htmlFor="position">
+          <label htmlFor="role">
             <input
-              id="position"
-              name="position"
+              id="role"
+              name="role"
               type="text"
               placeholder="Position in Company"
               className="admin-input"
+              onChange={handleChange}
             />
           </label>
         </div>
