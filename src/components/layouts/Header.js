@@ -16,7 +16,7 @@ const Header = ({auth}) => {
       }
   return (
     <>
-      <header className="header">
+      <header className={auth || localStorage.getItem('token') ? "header header-dash" : "header"}>
         <div className="header-img">
           <NavLink to="/">
             <img src={logo} alt="logo" />
