@@ -42,6 +42,7 @@ const LogIn = ({auth, setAuth}) => {
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
+  const pp = useRef();
 
 
   const handleClose = () => {
@@ -112,6 +113,7 @@ const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
     console.log('clicked')
 // refetch()
 getToken(email)
+pp.current.innerHTML = errorMsg
     // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
   };
 
@@ -245,6 +247,7 @@ getToken(email)
               {/* <button className="fg-btn" onClick={handleTwo}>
                 Send
               </button> */}
+          <p className="val-message" ref={pp}>{errorMsg}</p>
               <button className="fg-btn">Send</button>
               <p className="bk" ref={closeref} onClick={handleClose}>
                 Back to sign in
@@ -259,6 +262,7 @@ getToken(email)
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
             <form className="fgform2" onSubmit={handleVerifyToken}>
+              <div>
               <input
                 type="text"
                 placeholder=""
@@ -299,7 +303,7 @@ getToken(email)
                 value={token5}
                 onChange={(e) => setToken5(e.target.value)}
               />
-
+</div>
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
                 <span className="resend">

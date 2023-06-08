@@ -172,6 +172,7 @@ const SignUp = () => {
           <p className="mod-text">
             You now have an account, please go ahead to Log into your account
           </p>
+          
           <Link to="/login">
             <button className="mod-btn">Log In</button>
           </Link>
