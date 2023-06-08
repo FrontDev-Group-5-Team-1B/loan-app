@@ -146,7 +146,7 @@ const LogIn = ({ auth, setAuth }) => {
   };
 
   useEffect((
-    
+
   ) => {
 
     if (auth) {
