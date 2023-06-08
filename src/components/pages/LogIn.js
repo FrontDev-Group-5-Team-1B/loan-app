@@ -24,6 +24,7 @@ import { GetToken } from "../../services/api/api.service";
 const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [secret_key, setSecretKey] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [token1, setToken1] = useState("");
   const [token2, setToken2] = useState("");
@@ -34,7 +35,9 @@ const LogIn = ({ auth, setAuth }) => {
 
   //form validation
   const [errorMsg, setErrorMsg] = useState("");
+
   const { handleSubmit, register, formState: { errors } } = useForm();
+
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -44,6 +47,7 @@ const LogIn = ({ auth, setAuth }) => {
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
+
   const pp = useRef();
 
   const handleClose = () => {
@@ -112,7 +116,7 @@ const LogIn = ({ auth, setAuth }) => {
 
   const handleGetToken = (e) => {
     e.preventDefault();
-    
+
     console.log("clicked");
     // refetch()
     getToken(email);
@@ -123,12 +127,17 @@ const LogIn = ({ auth, setAuth }) => {
     e.preventDefault();
     const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
     console.log(fiveDigitToken);
-    verify({ email, fiveDigitToken });
+    
+    if (fiveDigitToken) {
+      verify({ email, fiveDigitToken });
+
   };
 
   const handleReset = (e) => {
     e.preventDefault();
-    const data = { password, confirmPassword };
+
+    const data = { secret_key, password, confirmPassword };
+
     reset({ email, data });
   };
 
@@ -209,7 +218,9 @@ const LogIn = ({ auth, setAuth }) => {
                   )}
                 </span>
               </div>
+
               <p className="val-message">{errors.password && errors.password.message}</p>
+
 
               <div className="forgot-box">
                 <p className="forgot" onClick={handleFG}>
@@ -281,48 +292,56 @@ const LogIn = ({ auth, setAuth }) => {
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
             <form className="fgform2" onSubmit={handleVerifyToken}>
-              <div>
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token1}
-                onChange={(e) => setToken1(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token2}
-                onChange={(e) => setToken2(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token3}
-                onChange={(e) => setToken3(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token4}
-                onChange={(e) => setToken4(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token5}
-                onChange={(e) => setToken5(e.target.value)}
-              />
-</div>
+
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  alignItems: "center",
+                }}
+              >
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token1}
+                  onChange={(e) => setToken1(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token2}
+                  onChange={(e) => setToken2(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token3}
+                  onChange={(e) => setToken3(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token4}
+                  onChange={(e) => setToken4(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token5}
+                  onChange={(e) => setToken5(e.target.value)}
+                />
+              </div>
+
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
                 <span className="resend">
@@ -351,6 +370,14 @@ const LogIn = ({ auth, setAuth }) => {
             <p className="pp">Change Password</p>
             <p className="fptxt">Kindly enter your new password.</p>
             <form className="fgform2" onSubmit={handleReset}>
+              <input
+                type="text"
+                placeholder="Secret key:"
+                className="inpt"
+                name="secret_key"
+                value={secret_key}
+                onChange={(e) => setSecretKey(e.target.value)}
+              />
               <input
                 type="password"
                 placeholder="New Password:"
