@@ -11,19 +11,18 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
+import { useForm } from "react-hook-form";
 
 
 const SignUp = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [organisationName, setOrganisationName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassoword] = useState("");
+  
   const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const closeref = useRef();
   const modref = useRef();
+//form validation
+  const { handleSubmit, register, formState: { errors } } = useForm();
+
   const navigate = useNavigate();
   // show password
   const togglePassword = () => {
@@ -43,8 +42,13 @@ const SignUp = () => {
   const handleClose = () => {
     modref.current.style.display = "none";
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+   const firstName = data.firstname
+   const lastName = data.lastname
+   const email = data.email
+   const organisationName = data.organisation
+   const password = data.password
+   const confirmPassword = data.confirm
       const  formData = {firstName, lastName, email, organisationName, password, confirmPassword}
       console.log(formData)
       mutate(formData)
@@ -69,47 +73,71 @@ const SignUp = () => {
               </Link>
             </span>
           </p>
-          {isLoading ? <div className="dots"><ThreeDots /></div> : <form onSubmit={handleSubmit}>
+          {isLoading ? <div className="dots"><ThreeDots /></div> : <form onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder="First Name:"
               className="loginput"
               name="firstname"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              
+              {...register("firstname", {
+                required: "First name Required",
+              })}
             />
+            <p className="val-message">{errors.firstname && errors.firstname.message}</p>
+            
             <input
               type="text"
               placeholder="Last Name:"
               className="loginput"
               name="lastname"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+            
+              {...register("lastname", {
+                required: "Last name Required",
+              })}
             />
+            <p className="val-message">{errors.lastname && errors.lastname.message}</p>
+            
             <input
               type="email"
               placeholder="Email address:"
               className="loginput"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              {...register("email", {
+                required: "Required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "invalid email address"
+                }
+              })}
             />
+            <p className="val-message">{errors.email && errors.email.message}</p>
+            
             <input
               type="text"
               placeholder="Organisation Name:"
               className="loginput"
               name="organisation"
-              value={organisationName}
-              onChange={(e) => setOrganisationName(e.target.value)}
+              
+              {...register("organisation", {
+                required: "Organisation name Required",
+              })}
             />
+            <p className="val-message">{errors.organisation && errors.organisation.message}</p>
+            
             <div className="pass">
               <input
                 type={showPassword === false ? "password" : "text"}
                 placeholder="Password:"
                 className="pa"
                 name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                {...register("password", {
+                  required: "Password Required",
+                  pattern: {
+                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                    message: "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol."
+                  }
+                })}
               />
               <span className="eye">
               {showPassword === false ? (
@@ -119,14 +147,21 @@ const SignUp = () => {
                   )}
               </span>
             </div>
+            <p className="val-message">{errors.password && errors.password.message}</p>
+
             <div className="pass">
               <input
                 type={showPassword === false ? "password" : "text"}
                 placeholder="Confirm Password:"
                 className=" pa"
                 name="confirm"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassoword(e.target.value)}
+                {...register("confirm", {
+                  required: "Confirm Password Required",
+                  pattern: {
+                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                    message: "Password requirements: must be the same with password"
+                  }
+                })}
               />
               <span className="eye">
               {showPassword === false ? (
@@ -136,6 +171,7 @@ const SignUp = () => {
                   )}
               </span>
             </div>
+            <p className="val-message">{errors.confirm && errors.confirm.message}</p>
             
             {error && <p className="val-message">{errorMsg}</p>}
             <button className="log-btn">Sign Up</button>
@@ -171,6 +207,7 @@ const SignUp = () => {
           <p className="mod-text">
             You now have an account, please go ahead to Log into your account
           </p>
+          
           <Link to="/login">
             <button className="mod-btn">Log In</button>
           </Link>

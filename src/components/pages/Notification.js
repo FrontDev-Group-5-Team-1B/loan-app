@@ -86,7 +86,7 @@ const Notification = () => {
       </div>
       <div className="cancle-save-btn">
         <button className="cancle" onClick={() => setShowModal(true)}>
-          Cancle
+          Cancel
         </button>
         {showModal && (
           <Modal show={showModal} onClose={() => setShowModal(false)}>

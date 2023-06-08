@@ -29,7 +29,7 @@ const ForgotPassword = () => {
               className="forgot-btn forgot-cancle"
               onClick={() => history(-1)}
             >
-              Cancle
+              Cancel
             </buton>
           </div>
         </div>

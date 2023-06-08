@@ -26,12 +26,6 @@
     padding: 20px;
     gap: 4px;
   }
-
-  .status-change{
-    background-color: #0267FF;
-    padding: 7px;
-    color: white;
-  } 
   .br-loan-n {
     text-decoration: none;
     color: #666666;
@@ -46,22 +40,18 @@
     border-style: none;
     background-color: white;
   } 
-  .modal-flex{
+  .fbp-flex{
     display: flex;
+    justify-content: space-between;
+  
    
   }
-  .modal-flex li{
+  .fbp-flex li{
     border: 1px solid #0252CC;
     list-style-type: none;
-    padding: 10px;
-    margin: 10px;
-  }
-  .modalP-head{
-    padding: 10px;
-  }
-  .modalP-head h2{
-    color: #0267FF;
-    font-weight: 600;
+    padding: 10px ;
+    margin: 10px 0;
+    width: 300px;
   }
   .modalP-head p{
     padding-top: 10px;
@@ -73,18 +63,14 @@
     border: none;
    
   }
-  .modal-btn-div{
-    display: flex;
-    justify-content: flex-end;
-    
-  }
+
   .bs-preview{
     background-color: white;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
     padding: 10px;
-  }
+  } 
   .bs-preview h6{
     padding-bottom: 10px;
     font-weight: 400;
@@ -102,4 +88,70 @@
     padding-top: 10px;
     font-weight: 600;
   }
- 
+  .g-fbp, .l-fbp, .p-fbp, .c-fbp{
+    border-bottom: 1px solid rgb(202, 198, 198);
+    padding: 20px 0;
+  }
+  .fbp-text{
+    border: 1px solid #0267FF;
+    background-color: #EEF5FC;
+    height: 100px;
+    padding: 10px;
+  
+  }
+  .fbp-header{
+          padding-top: 10px ;
+  }
+  .b-header h2{
+    color: #0267FF;
+
+  }
+  .fbp-header2{
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-top:10px ;
+  }
+  .fbp-grade{
+    padding: 20px 0;
+
+  }
+  .fbp-grade p{
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+  }
+  .f-btn{
+    padding: 10px;
+    color: white;
+    background-color: #0267FF ;
+    border: none;
+  }
+ .b-head1{
+  padding: 15px 0;
+  font-size: 1.2rem;
+ }
+ .can-btn{
+  padding-bottom: 10px;
+ }
+ .status-bor{
+   color:  #0267FF;
+   font-size: 1.2rem;
+
+ }
+ .m-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  gap: 10px;
+  
+ }
+ .mb-btn{
+  background-color: white;
+  border-color: #0267FF ;
+  color:  #0267FF;
+  padding: 10px;
+  font-weight: 600;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+ }
