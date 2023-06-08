@@ -299,8 +299,7 @@ hr{
 }
 .val-message{
     color: rgb(248, 83, 83);
-    font-size: 20px;
-    padding: 1rem 0;
+    font-size: 16px;
 }
 
 @media (max-width:997px) {

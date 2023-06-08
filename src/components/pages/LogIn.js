@@ -9,6 +9,7 @@ import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import google from "../../assets/logos_google-icon.png";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import {
   useLogin,
   useVerifyToken,
@@ -31,7 +32,9 @@ const LogIn = ({auth, setAuth}) => {
   const [token5, setToken5] = useState("");
   // above token states should be structured with objects
 
+  //form validation
   const [errorMsg, setErrorMsg] = useState("");
+  const { handleSubmit, register, formState: { errors } } = useForm();
 
 
   const navigate = useNavigate();
@@ -101,8 +104,9 @@ const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
   const { mutate: verify } = useVerifyToken(onVerifyTokenSuccess, onError);
   const { mutate: reset } = useResetPassword(onResetPassordSuccess, onError);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
+    const email = data.email
+    const password = data.password
     const formData = { email, password };
     mutate(formData);
   };
@@ -165,24 +169,41 @@ pp.current.innerHTML = errorMsg
             </div>
 
           ) : (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="email"
                 placeholder="Email address:"
                 className="loginput"
                 name="email"
-                value={email}
+                
                 onChange={(e) => setEmail(e.target.value)}
+                {...register("email", {
+                  required: "Email Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "invalid email address"
+                  }
+                })}
               />
+              <p className="val-message">{errors.email && errors.email.message}</p>
+              
               <div className="pass">
                 <input
                   type={showPassword === false ? "password" : "text"}
                   placeholder="Password:"
                   className="pa"
                   name="password"
-                  value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  {...register("password", {
+                    required: "Password Required",
+                    pattern: {
+                      value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                      message: "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol."
+                    }
+                  })}
                 />
+       
+                
                 <span className="eye">
                   {showPassword === false ? (
                     <BsEyeSlash onClick={togglePassword} />
@@ -191,6 +212,8 @@ pp.current.innerHTML = errorMsg
                   )}
                 </span>
               </div>
+              <p className="val-message">{errors.password && errors.password.message}</p>
+
               <div className="forgot-box">
 
               <p className="forgot" onClick={handleFG}>
