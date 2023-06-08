@@ -1,12 +1,19 @@
 import React from 'react';
 import {RxDotFilled} from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useState } from 'react';
 
 
 const DashGInfo = () => {
   const [ModalIsopen, setModalisopen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1)
+  }
+
   const customStyles = {
     content: {
       top: '50%',
@@ -85,7 +92,7 @@ const DashGInfo = () => {
       <div className='bs-preview'>
         <h6>Borower's data has been saved. Kindly preview data</h6>
         <Link to='/dashboard/fullbprofile'><button>Preview</button></Link>
-        <p>Cancel</p>
+        <button onClick={handleClick}>Cancel</button>
       </div>
 
      </Modal> 

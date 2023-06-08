@@ -5,12 +5,7 @@ import { Link } from 'react-router-dom'
 import "../../styles/borrowersProfile.css"
 
 
-
-
-// Modal.setAppElement('#root');
 const BorrowerProfile = () => {
-
-
   return (
     <div  className='loansgener-wrapper'>
          <div className='generated-flex'>

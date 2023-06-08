@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {MdKeyboardArrowRight} from 'react-icons/md'
+import Modal from '../Modal'
 
 
 
 const EligibilityStatus = () => {
+  const [showModal, setShowModal] = useState(false);
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      padding: '50px'
+    },
+  };
 
 
   return (
@@ -24,9 +37,13 @@ const EligibilityStatus = () => {
             <p className='b-head1'><span>Financial advice:</span><i>Application for a lower amount of loan is advised, possible amount is between the sum of $40 - 50$</i></p>
         </div>
         <div className='can-btn'>
-            <button className='f-btn'>Cancel Loan Generation</button>
+            <button type='submit' onClick={() => setShowModal(true)} className='f-btn'>Cancel Loan Generation</button>
+            <Modal show={showModal} onClose={() => setShowModal(false)}>
+              <p>Loan Generation Process has been canceled</p>
+              <Link to='/dashboard'>Back</Link>
+            </Modal>
         </div>
-        <Link to='/dashbord/statussender'><p className='status-bor'>Send Eligibility Status to Borrower</p></Link>
+        <Link to='/dashboard/statussender'style={{textDecoration: 'none', color: '#808080'}}><p className='status-bor'>Send Eligibility Status to Borrower</p></Link>
     </div>
   )
 }

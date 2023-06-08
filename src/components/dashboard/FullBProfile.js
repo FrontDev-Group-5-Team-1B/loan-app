@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import Modal from '../Modal';
 
 
-
 const FullBProfile = () => {
   const [ModalIsopen, setModalisopen] = useState(false)
+  
+
   const customStyles = {
     content: {
       top: '50%',
@@ -104,8 +105,10 @@ const FullBProfile = () => {
                    <div className='fbp-grade'>
                     <p><i>After carefully previewing the borrower's data form, go ahead to upload and check loan eligibilty to predict loan default</i></p>
                     </div>
+
+
                    <div>
-                    <button type='submit'onClick={() => setModalisopen(true)} className='f-btn'>Uplaod data</button>
+                    <button type='submit' onClick={() => setModalisopen(true)} className='f-btn'>Uplaod data</button>
                     <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
 
                        <div className='bs-preview'>
