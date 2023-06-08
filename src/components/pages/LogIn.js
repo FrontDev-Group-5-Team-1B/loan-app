@@ -123,7 +123,7 @@ const LogIn = ({ auth, setAuth }) => {
     // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
   };
 
-  const handleVerifyToken = (e) => {
+  const HandleVerifyToken = (e) => {
     e.preventDefault();
     const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
     console.log(fiveDigitToken);
@@ -291,7 +291,7 @@ const LogIn = ({ auth, setAuth }) => {
             <img src={fgpimg} alt="" className="fgimg" />
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
-            <form className="fgform2" onSubmit={handleVerifyToken}>
+            <form className="fgform2" onSubmit={HandleVerifyToken}>
 
               <div
                 style={{
@@ -433,5 +433,5 @@ const LogIn = ({ auth, setAuth }) => {
     </>
   );
 };
-
+}
 export default LogIn;
