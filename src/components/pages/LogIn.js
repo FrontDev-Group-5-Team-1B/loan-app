@@ -216,13 +216,13 @@ pp.current.innerHTML = errorMsg
 
               <div className="forgot-box">
 
-              <p className="forgot" onClick={handleFG}>
-                Forgot Password?
-              </p>
               <div className="">
                 <input type="checkbox" className="" />
                 <label>Always keep me logged in</label>
               </div>
+              <p className="forgot" onClick={handleFG}>
+                Forgot Password?
+              </p>
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
