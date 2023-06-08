@@ -1,4 +1,4 @@
-import { useRef, useState,useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
@@ -21,7 +21,7 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 import { GetToken } from "../../services/api/api.service";
 
-const LogIn = ({auth, setAuth}) => {
+const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -36,7 +36,6 @@ const LogIn = ({auth, setAuth}) => {
   const [errorMsg, setErrorMsg] = useState("");
   const { handleSubmit, register, formState: { errors } } = useForm();
 
-
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -46,7 +45,6 @@ const LogIn = ({auth, setAuth}) => {
   const modref3 = useRef();
   const modref4 = useRef();
   const pp = useRef();
-
 
   const handleClose = () => {
     modref.current.style.display = "none";
@@ -72,13 +70,13 @@ const LogIn = ({auth, setAuth}) => {
   };
 
   const onSuccess = (res) => {
-    console.log(res);
+    console.log(res.data);
 
     localStorage.setItem("token", res.data.access_token);
+    localStorage.setItem("adminId", res.data.adminId);
     setAuth(!auth);
 
     navigate("/dashboard");
-
   };
 
   const onGetTokenSuccess = (res) => {
@@ -96,10 +94,10 @@ const LogIn = ({auth, setAuth}) => {
 
   const onError = (err) => {
     console.log(err);
-    setErrorMsg(err.response.data.message)
+    setErrorMsg(err.response.data.message);
   };
-  
-const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
+
+  const { mutate: getToken } = useGetToken(onGetTokenSuccess, onError);
   const { mutate, isLoading, error, isSuccess } = useLogin(onSuccess, onError);
   const { mutate: verify } = useVerifyToken(onVerifyTokenSuccess, onError);
   const { mutate: reset } = useResetPassword(onResetPassordSuccess, onError);
@@ -114,24 +112,24 @@ const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
 
   const handleGetToken = (e) => {
     e.preventDefault();
-    console.log('clicked')
-// refetch()
-getToken(email)
-pp.current.innerHTML = errorMsg
+    
+    console.log("clicked");
+    // refetch()
+    getToken(email);
     // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
   };
 
   const handleVerifyToken = (e) => {
     e.preventDefault();
     const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
-    console.log(fiveDigitToken)
-    verify({email, fiveDigitToken});
+    console.log(fiveDigitToken);
+    verify({ email, fiveDigitToken });
   };
 
   const handleReset = (e) => {
     e.preventDefault();
     const data = { password, confirmPassword };
-    reset({email, data});
+    reset({ email, data });
   };
 
   const togglePassword = () => {
@@ -143,7 +141,7 @@ pp.current.innerHTML = errorMsg
       navigate("/dashboard");
     }
   }, [auth]);
-  
+
   return (
     <>
       <div className="login-container">
@@ -167,7 +165,6 @@ pp.current.innerHTML = errorMsg
             <div className="dots">
               <ThreeDots />
             </div>
-
           ) : (
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -215,14 +212,13 @@ pp.current.innerHTML = errorMsg
               <p className="val-message">{errors.password && errors.password.message}</p>
 
               <div className="forgot-box">
-
-              <p className="forgot" onClick={handleFG}>
-                Forgot Password?
-              </p>
-              <div className="">
-                <input type="checkbox" className="" />
-                <label>Always keep me logged in</label>
-              </div>
+                <p className="forgot" onClick={handleFG}>
+                  Forgot Password?
+                </p>
+                <div className="">
+                  <input type="checkbox" className="" />
+                  <label>Always keep me logged in</label>
+                </div>
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
