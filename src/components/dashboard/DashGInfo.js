@@ -1,11 +1,19 @@
 import React from 'react';
 import {RxDotFilled} from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useState } from 'react';
 
+
 const DashGInfo = () => {
   const [ModalIsopen, setModalisopen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1)
+  }
+
   const customStyles = {
     content: {
       top: '50%',
@@ -17,10 +25,6 @@ const DashGInfo = () => {
       padding: '50px'
     },
   };
-  
-
-
-
   return (
 
     <div className='borrow-wrap'>
@@ -82,16 +86,16 @@ const DashGInfo = () => {
     <div className='d-btn'>
      <button className='l-btn'><Link to='/dashboard/collateral_info' style={{ textDecoration: "none", color: "blue" }}>Previous</Link></button>
 
-     <button type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button>
+     <button  type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button>
      <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
-      
+
       <div className='bs-preview'>
         <h6>Borower's data has been saved. Kindly preview data</h6>
-        <button>Preview</button>
-        <p>Cancel</p>
+        <Link to='/dashboard/fullbprofile'><button>Preview</button></Link>
+        <button onClick={handleClick}>Cancel</button>
       </div>
 
-     </Modal>
+     </Modal> 
 
  </div>
    
