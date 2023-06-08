@@ -66,7 +66,7 @@ function App() {
             path="dashboard"
             element={
               <PrivateRoute auth={auth}>
-                <DashBoardContainer />
+                <DashBoardContainer setAuth={setAuth}/>
               </PrivateRoute>
             }
           >

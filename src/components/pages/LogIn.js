@@ -1,4 +1,4 @@
-import { useRef, useState,useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import "../../loginstyle/login.css";
 import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
@@ -20,9 +20,10 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 import { GetToken } from "../../services/api/api.service";
 
-const LogIn = ({auth, setAuth}) => {
+const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [secret_key, setSecretKey] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [token1, setToken1] = useState("");
   const [token2, setToken2] = useState("");
@@ -33,7 +34,6 @@ const LogIn = ({auth, setAuth}) => {
 
   const [errorMsg, setErrorMsg] = useState("");
 
-
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -42,7 +42,6 @@ const LogIn = ({auth, setAuth}) => {
   const modref2 = useRef();
   const modref3 = useRef();
   const modref4 = useRef();
-
 
   const handleClose = () => {
     modref.current.style.display = "none";
@@ -74,7 +73,6 @@ const LogIn = ({auth, setAuth}) => {
     setAuth(!auth);
 
     navigate("/dashboard");
-
   };
 
   const onGetTokenSuccess = (res) => {
@@ -92,10 +90,10 @@ const LogIn = ({auth, setAuth}) => {
 
   const onError = (err) => {
     console.log(err);
-    setErrorMsg(err.response.data.message)
+    setErrorMsg(err.response.data.message);
   };
-  
-const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
+
+  const { mutate: getToken } = useGetToken(onGetTokenSuccess, onError);
   const { mutate, isLoading, error, isSuccess } = useLogin(onSuccess, onError);
   const { mutate: verify } = useVerifyToken(onVerifyTokenSuccess, onError);
   const { mutate: reset } = useResetPassword(onResetPassordSuccess, onError);
@@ -109,23 +107,25 @@ const {mutate: getToken} = useGetToken(onGetTokenSuccess, onError)
 
   const handleGetToken = (e) => {
     e.preventDefault();
-    console.log('clicked')
-// refetch()
-getToken(email)
+    console.log("clicked");
+    // refetch()
+    getToken(email);
     // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
   };
 
   const handleVerifyToken = (e) => {
     e.preventDefault();
     const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
-    console.log(fiveDigitToken)
-    verify({email, fiveDigitToken});
+    console.log(fiveDigitToken);
+    if (fiveDigitToken) {
+      verify({ email, fiveDigitToken });
+    }
   };
 
   const handleReset = (e) => {
     e.preventDefault();
-    const data = { password, confirmPassword };
-    reset({email, data});
+    const data = { secret_key, password, confirmPassword };
+    reset({ email, data });
   };
 
   const togglePassword = () => {
@@ -137,7 +137,7 @@ getToken(email)
       navigate("/dashboard");
     }
   }, [auth]);
-  
+
   return (
     <>
       <div className="login-container">
@@ -161,7 +161,6 @@ getToken(email)
             <div className="dots">
               <ThreeDots />
             </div>
-
           ) : (
             <form onSubmit={handleSubmit}>
               <input
@@ -190,14 +189,13 @@ getToken(email)
                 </span>
               </div>
               <div className="forgot-box">
-
-              <p className="forgot" onClick={handleFG}>
-                Forgot Password?
-              </p>
-              <div className="">
-                <input type="checkbox" className="" />
-                <label>Always keep me logged in</label>
-              </div>
+                <p className="forgot" onClick={handleFG}>
+                  Forgot Password?
+                </p>
+                <div className="">
+                  <input type="checkbox" className="" />
+                  <label>Always keep me logged in</label>
+                </div>
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
@@ -259,47 +257,54 @@ getToken(email)
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
             <form className="fgform2" onSubmit={handleVerifyToken}>
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token1}
-                onChange={(e) => setToken1(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token2}
-                onChange={(e) => setToken2(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token3}
-                onChange={(e) => setToken3(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token4}
-                onChange={(e) => setToken4(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder=""
-                className="inptc"
-                name="token"
-                value={token5}
-                onChange={(e) => setToken5(e.target.value)}
-              />
-
+              <div
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  alignItems: "center",
+                }}
+              >
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token1}
+                  onChange={(e) => setToken1(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token2}
+                  onChange={(e) => setToken2(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token3}
+                  onChange={(e) => setToken3(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token4}
+                  onChange={(e) => setToken4(e.target.value)}
+                />
+                <input
+                  type="text"
+                  placeholder=""
+                  className="inptc"
+                  name="token"
+                  value={token5}
+                  onChange={(e) => setToken5(e.target.value)}
+                />
+              </div>
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
                 <span className="resend">
@@ -328,6 +333,14 @@ getToken(email)
             <p className="pp">Change Password</p>
             <p className="fptxt">Kindly enter your new password.</p>
             <form className="fgform2" onSubmit={handleReset}>
+              <input
+                type="text"
+                placeholder="Secret key:"
+                className="inpt"
+                name="secret_key"
+                value={secret_key}
+                onChange={(e) => setSecretKey(e.target.value)}
+              />
               <input
                 type="password"
                 placeholder="New Password:"

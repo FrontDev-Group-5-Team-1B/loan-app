@@ -3,10 +3,33 @@ import profile from "../../assets/profile-pic.png";
 import "../../styles/profile.css";
 import "../../styles/modal.css";
 import Modal from "../Modal";
+import { useDeleteProfilePicture, useUpdateProfilePiture } from "../../services/query/query.service";
 
 function Profile() {
   const [showModal, setShowModal] = useState(false);
   const [saveProfile, setSaveProfile] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null)
+
+  const UpdateProfilePicture = useUpdateProfilePiture();
+  const DeleteProfilePicture = useDeleteProfilePicture();
+  const DownloadProfilePicture = useDeleteProfilePicture()
+
+
+  const handleProfilePictureChange = (event) => {
+    const file = event.target.files[0];
+    setProfilePicture(file);
+  }
+
+  const handleProfilePictureUpload = () => {
+    const formData = new FormData();
+    formData.append('profilePicture', profilePicture);
+    UpdateProfilePicture.mutate(formData)
+  };
+
+  const handleDeleteProfilePicture = () => {
+    DeleteProfilePicture.mutate();
+  }
+
 
   useEffect(() => {
     if (saveProfile) {
@@ -17,6 +40,18 @@ function Profile() {
       return () => clearTimeout(timer);
     }
   }, [saveProfile]);
+
+  // if (updateProfilePicture.isLoading) {
+  //   return <div>Updating profile picture...</div>;
+  // }
+
+  // if (updateProfilePicture.isError) {
+  //   return <div>Error updating profile picture.</div>;
+  // }
+
+  // if (updateProfilePicture.isSuccess) {
+  //   return <div>Profile picture updated successfully!</div>;
+  // }
 
   return (
     <div>
@@ -119,8 +154,16 @@ function Profile() {
             className="settings-profile-pic"
           />
           <div className="profile-change-btn">
+            <input type="file"
+            accept="image/*"
+            onChange={handleProfilePictureChange}/>
+            <button onClick={handleProfilePictureUpload}>
             <a href="#">Change Profile Picture</a>
+            </button>
+            <button onClick={handleDeleteProfilePicture}>
             <a href="#">Remove Profile Picture</a>
+            </button>
+           
           </div>
         </div>
         <div className="cancle-save-btn">
