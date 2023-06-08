@@ -4,6 +4,10 @@ import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 
 const Borrow = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('hello')
+  }
 
   return (
     <div className="borrow-wrap dash-wrapper">
@@ -13,63 +17,63 @@ const Borrow = () => {
       </div>
       <div className="bor-data">
         <h5>Personal and contact information</h5>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="b-data">
             <div className="b-data1">
-              <div>
+              <label htmlFor="name">
                 <input type="text" placeholder="name" className="placeholder" />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="email">
                 <input
                   type="email"
                   placeholder="Email"
                   className="placeholder"
                 />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="address">
                 <input
                   type="text"
                   placeholder="Address"
                   className="placeholder"
                 />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="employment">
                 <input
                   type="text"
                   placeholder="Employment"
                   className="placeholder"
                 />
-              </div>
+              </label>
             </div>
             <div className="b-data2">
-              <div>
+              <label htmlFor="phone_number">
                 <input
                   type="number"
                   placeholder="Phone Number"
                   className="placeholder"
                 />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="date-of-birth">
                 <input
                   type="number"
                   placeholder="Date of Birth"
                   className="placeholder"
                 />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="national-id">
                 <input
                   type="number"
                   placeholder="National Identity Number"
                   className="placeholder"
                 />
-              </div>
-              <div>
+              </label>
+              <label htmlFor="income">
                 <input
                   type="number"
                   placeholder="Income per month"
                   className="placeholder"
                 />
-              </div>
+              </label>
             </div>
           </div>
           <div className="car-dot">
