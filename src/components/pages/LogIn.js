@@ -207,7 +207,7 @@ const LogIn = ({ auth, setAuth }) => {
                     required: "Password Required",
                     pattern: {
                       value:
-                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-()+=])[a-zA-Z0-9!@#?$%^&*_-()+=]{8,20}$/,
                       message:
                         "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol.",
                     },
