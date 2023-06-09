@@ -19,9 +19,9 @@ export const GetToken = (email) => {
 export const VerifyToken = ({email, fiveDigitToken}) => {
   // console.log('hello', email, fiveDigitToken)
   return axios.post(`${baseURI}/password-reset?email=${email}`, {fiveDigitToken}, {
-  headers: {
-    "content-type": "application/json"
-  }
+  // headers: {
+  //   "content-type": "application/json"
+  // }
   });
 };
 
