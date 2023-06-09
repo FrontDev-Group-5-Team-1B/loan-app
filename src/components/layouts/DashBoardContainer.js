@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Modal from "../Modal";
 import { useQueryClient } from "react-query";
 
-const DashBoardContainer = () => {
+const DashBoardContainer = ({setAuth}) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [activeLink, setActiveLink] = useState(1);
@@ -27,6 +27,8 @@ const DashBoardContainer = () => {
   }, []);
 
   const handleLogout = () => {
+    localStorage.removeItem("token")
+    setAuth(false);
     queryClient.removeQueries();
     navigate("/");
     setShowModal(false);
@@ -34,7 +36,9 @@ const DashBoardContainer = () => {
   return (
     <main className="db-main">
       <aside className="db-s-nav">
-        <ToastContainer />
+        <div className="toast">
+          <ToastContainer />
+          </div>
         {/* <DbNav /> */}
         <nav className="db-links">
           <NavLink

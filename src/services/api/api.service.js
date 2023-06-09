@@ -17,10 +17,27 @@ export const GetToken = (email) => {
 };
 
 export const VerifyToken = ({email, fiveDigitToken}) => {
-  console.log('hello', email, fiveDigitToken)
-  return axios.post(`${baseURI}/password-reset?email=${email}`, fiveDigitToken);
+  // console.log('hello', email, fiveDigitToken)
+  return axios.post(`${baseURI}/password-reset?email=${email}`, {fiveDigitToken}, {
+  // headers: {
+  //   "content-type": "application/json"
+  // }
+  });
 };
 
 export const ResetPassword = ({email, data}) => {
   return axios.put(`${baseURI}/password-reset?email=${email}`, data);
 };
+
+export const UpdateProfilePicture = ({formData}) => {
+  return axios.put(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`, formData)
+  };
+
+  export const DeleteProfilePicture = ({formData}) => {
+    return axios.delete(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`, formData)
+  }
+
+  export const DownloadProfilePicture = ({}) => {
+    return axios.get(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`)
+  }
+

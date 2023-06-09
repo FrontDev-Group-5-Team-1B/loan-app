@@ -2,18 +2,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function PrivateRoute({ auth, children }) {
-  const [isAuth, setIsAuth] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (auth || localStorage.getItem('token')) {
-      setIsAuth(!isAuth);
-    } else {
+    if (!auth && !localStorage.getItem("token")) {
       navigate("/login");
     }
   }, [auth]);
 
-  return <>{isAuth ? <>{ children }</> : null}</>;
+  return auth || localStorage.getItem("token") ? children : null;
 }
 
 export default PrivateRoute;

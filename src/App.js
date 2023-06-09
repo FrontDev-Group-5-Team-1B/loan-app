@@ -54,8 +54,8 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="login" element={<LogIn auth={auth} setAuth={setAuth} />} />
-        <Route path="signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn auth={auth} setAuth={setAuth} />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route
           path="/dashboard/settings/security/forgot_password"
           element={<ForgotPassword />}
@@ -69,7 +69,7 @@ function App() {
             path="dashboard"
             element={
               <PrivateRoute auth={auth}>
-                <DashBoardContainer />
+                <DashBoardContainer setAuth={setAuth}/>
               </PrivateRoute>
             }
           >
