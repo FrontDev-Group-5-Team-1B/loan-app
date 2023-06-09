@@ -94,10 +94,8 @@ const DashGInfo = () => {
         <Link to='/dashboard/fullbprofile'><button>Preview</button></Link>
         <button onClick={handleClick}>Cancel</button>
       </div>
-
      </Modal> 
-
- </div>
+   </div>
    
     </div>
 

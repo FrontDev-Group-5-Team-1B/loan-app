@@ -22,7 +22,7 @@ const StatusSender = () => {
 
         <div className='b-header'>
             <h2>Send Loan Eligibility Status To Borrower</h2>
-            <p className='b-head1'><i>Choose to send the eligibility status and financial advive to borrower via email or text message</i></p>
+            <p className='b-head1'><i>Choose to send the eligibility status and financial advice to borrower via email or text message</i></p>
         </div>
         <div className='m-btn'>
             <button className='mb-btn'>Send via Gmail <span> <FaEnvelope/></span></button>

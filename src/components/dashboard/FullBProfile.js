@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal';
+import Modal from 'react-modal';
 
 
 const FullBProfile = () => {
@@ -112,7 +112,7 @@ const FullBProfile = () => {
                     <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
 
                        <div className='bs-preview'>
-                      <h6>Borower's data has been Uploaded successfully</h6>
+                      <h6>Borower's data has been Uploaded successfully!</h6>
                       <Link to='/dashboard/eligibilitystatus'><button>Check Eligibility Status</button></Link>
                       
                     </div>
