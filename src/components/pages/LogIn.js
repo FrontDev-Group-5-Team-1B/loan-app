@@ -207,7 +207,7 @@ const LogIn = ({ auth, setAuth }) => {
                     required: "Password Required",
                     pattern: {
                       value:
-                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-()+=])[a-zA-Z0-9!@#?$%^&*_-()+=]{8,20}$/,
                       message:
                         "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol.",
                     },
@@ -222,19 +222,18 @@ const LogIn = ({ auth, setAuth }) => {
                   )}
                 </span>
               </div>
-  
-              <p className="val-message">
-                {errors.password && errors.password.message}
-              </p>
-  
+
+              <p className="val-message">{errors.password && errors.password.message}</p>
+
               <div className="forgot-box">
-                <p className="forgot" onClick={handleFG}>
-                  Forgot Password?
-                </p>
-                <div className="">
-                  <input type="checkbox" className="" />
-                  <label>Always keep me logged in</label>
-                </div>
+
+              <div className="">
+                <input type="checkbox" className="" />
+                <label>Always keep me logged in</label>
+              </div>
+              <p className="forgot" onClick={handleFG}>
+                Forgot Password?
+              </p>
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
