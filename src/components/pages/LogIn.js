@@ -123,16 +123,6 @@ const LogIn = ({ auth, setAuth }) => {
     // useGetToken(email, onGetTokenSuccess, onError); //interchage parameter if not work
   };
 
-  const HandleVerifyToken = (e) => {
-    e.preventDefault();
-    const fiveDigitToken = `${token1}${token2}${token3}${token4}${token5}`;
-    console.log(fiveDigitToken);
-    
-    if (fiveDigitToken) {
-      verify({ email, fiveDigitToken });
-
-  };
-
   const handleReset = (e) => {
     e.preventDefault();
 
@@ -145,15 +135,24 @@ const LogIn = ({ auth, setAuth }) => {
     setShowPassword(!showPassword);
   };
 
-  useEffect((
-
-  ) => {
-
+  useEffect(() => {
     if (auth) {
       navigate("/dashboard");
     }
   }, [auth]);
 
+  const HandleVerifyToken = (e) => {
+    e.preventDefault();
+    const fiveDigitToken = Number(`${token1}${token2}${token3}${token4}${token5}`);
+    console.log(fiveDigitToken);
+
+    if (fiveDigitToken) {
+      verify({ email, fiveDigitToken });
+    }
+
+   
+
+  }
   return (
     <>
       <div className="login-container">
@@ -184,18 +183,19 @@ const LogIn = ({ auth, setAuth }) => {
                 placeholder="Email address:"
                 className="loginput"
                 name="email"
-                
                 onChange={(e) => setEmail(e.target.value)}
                 {...register("email", {
                   required: "Email Required",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: "invalid email address"
-                  }
+                    message: "invalid email address",
+                  },
                 })}
               />
-              <p className="val-message">{errors.email && errors.email.message}</p>
-              
+              <p className="val-message">
+                {errors.email && errors.email.message}
+              </p>
+  
               <div className="pass">
                 <input
                   type={showPassword === false ? "password" : "text"}
@@ -206,13 +206,14 @@ const LogIn = ({ auth, setAuth }) => {
                   {...register("password", {
                     required: "Password Required",
                     pattern: {
-                      value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
-                      message: "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol."
-                    }
+                      value:
+                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                      message:
+                        "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol.",
+                    },
                   })}
                 />
-       
-                
+  
                 <span className="eye">
                   {showPassword === false ? (
                     <BsEyeSlash onClick={togglePassword} />
@@ -221,10 +222,11 @@ const LogIn = ({ auth, setAuth }) => {
                   )}
                 </span>
               </div>
-
-              <p className="val-message">{errors.password && errors.password.message}</p>
-
-
+  
+              <p className="val-message">
+                {errors.password && errors.password.message}
+              </p>
+  
               <div className="forgot-box">
                 <p className="forgot" onClick={handleFG}>
                   Forgot Password?
@@ -258,7 +260,7 @@ const LogIn = ({ auth, setAuth }) => {
         <div className="login-right-box">
           <img src={logimg} alt="woman" />
         </div>
-
+  
         {/* forgot password */}
         <div className="fgcontainer" ref={modref}>
           <div className="modal-sign">
@@ -278,9 +280,11 @@ const LogIn = ({ auth, setAuth }) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               {/* <button className="fg-btn" onClick={handleTwo}>
-                Send
-              </button> */}
-          <p className="val-message" ref={pp}>{errorMsg}</p>
+              Send
+            </button> */}
+              <p className="val-message" ref={pp}>
+                {errorMsg}
+              </p>
               <button className="fg-btn">Send</button>
               <p className="bk" ref={closeref} onClick={handleClose}>
                 Back to sign in
@@ -295,11 +299,11 @@ const LogIn = ({ auth, setAuth }) => {
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
             <form className="fgform2" onSubmit={HandleVerifyToken}>
-
               <div
                 style={{
                   display: "flex",
-                  width: "100%",
+                  width: "fit",
+                  margin: "0 auto",
                   alignItems: "center",
                 }}
               >
@@ -344,7 +348,7 @@ const LogIn = ({ auth, setAuth }) => {
                   onChange={(e) => setToken5(e.target.value)}
                 />
               </div>
-
+  
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
                 <span className="resend">
@@ -357,11 +361,11 @@ const LogIn = ({ auth, setAuth }) => {
               >
                 Verify
                 {/* <button
-                className="fg-btn"
-                onClick={handleThree}
-                style={{ marginTop: "3rem", padding: "1rem" }}
-              >
-                Verify */}
+              className="fg-btn"
+              onClick={handleThree}
+              style={{ marginTop: "3rem", padding: "1rem" }}
+            >
+              Verify */}
               </button>
             </form>
           </div>
@@ -397,7 +401,7 @@ const LogIn = ({ auth, setAuth }) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
-
+  
               <button
                 className="fg-btn"
                 style={{ marginTop: "3rem", padding: "1rem" }}
@@ -405,12 +409,12 @@ const LogIn = ({ auth, setAuth }) => {
                 Change Password
               </button>
               {/* <button
-                className="fg-btn"
-                onClick={handleFour}
-                style={{ marginTop: "3rem", padding: "1rem" }}
-              >
-                Change Password
-              </button> */}
+              className="fg-btn"
+              onClick={handleFour}
+              style={{ marginTop: "3rem", padding: "1rem" }}
+            >
+              Change Password
+            </button> */}
             </form>
           </div>
         </div>
@@ -418,7 +422,7 @@ const LogIn = ({ auth, setAuth }) => {
         <div className="fgcontainer" ref={modref4}>
           <div className="modal-sign">
             <img src={fgpimgcheck} alt="" className="fgimg" />
-
+  
             <p className="fptxt tw">
               Your password change process is successful. You now have a new
               password.
@@ -435,7 +439,6 @@ const LogIn = ({ auth, setAuth }) => {
       </div>
     </>
   );
-};
 }
 
 export default LogIn;
