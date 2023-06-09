@@ -158,7 +158,7 @@ const SignUp = () => {
                 {...register("confirm", {
                   required: "Confirm Password Required",
                   pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
                     message: "Password requirements: must be the same with password"
                   }
                 })}
