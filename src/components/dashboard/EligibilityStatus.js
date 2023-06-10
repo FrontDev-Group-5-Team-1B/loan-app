@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {MdKeyboardArrowRight} from 'react-icons/md'
-import Modal from '../Modal'
+import Modal from 'react-modal'
 
 
 
 const EligibilityStatus = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [modalIsOpen, setModalisopen] = useState(false);
   const customStyles = {
     content: {
       top: '50%',
@@ -37,13 +37,15 @@ const EligibilityStatus = () => {
             <p className='b-head1'><span>Financial advice:</span><i>Application for a lower amount of loan is advised, possible amount is between the sum of $40 - 50$</i></p>
         </div>
         <div className='can-btn'>
-            <button type='submit' onClick={() => setShowModal(true)} className='f-btn'>Cancel Loan Generation</button>
-            <Modal show={showModal} onClose={() => setShowModal(false)}>
-              <p>Loan Generation Process has been canceled</p>
-              <Link to='/dashboard'>Back</Link>
+            <button type='submit' onClick={() => setModalisopen(true)} className='f-btn'>Cancel Loan Generation</button>
+            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalisopen(false)}  style={customStyles}>
+            <div className='bs-preview'>
+              <p className='can-btnP'>Loan Generation Process has been canceled</p>
+            <Link to='/dashboard' ><button>Back</button></Link>
+            </div>
             </Modal>
         </div>
-        <Link to='/dashboard/statussender'style={{textDecoration: 'none', color: '#808080'}}><p className='status-bor'>Send Eligibility Status to Borrower</p></Link>
+        <Link to='/dashboard/statussender'style={{textDecoration: 'none', color: '#808080'}}><button className='status-bor'>Send Eligibility Status to Borrower</button></Link>
     </div>
   )
 }
