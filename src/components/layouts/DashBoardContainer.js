@@ -37,7 +37,7 @@ const DashBoardContainer = ({setAuth}) => {
     <main className="db-main">
       <aside className="db-s-nav">
         <div className="toast">
-          <ToastContainer />
+          <ToastContainer style={{ marginBottom: "150px" }}/>
           </div>
         {/* <DbNav /> */}
         <nav className="db-links">

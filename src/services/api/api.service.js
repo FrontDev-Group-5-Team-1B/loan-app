@@ -2,6 +2,11 @@ import axios from "axios";
 
 const baseURI = "https://nodebt-application.onrender.com/api";
 
+const headers = {
+  'Content-Type': 'multipart/form-data;',
+  Authorization: `Bearer ${localStorage.getItem('token')}`,
+};
+
 export const Signup = (data) => {
     console.log(data)
   return axios.post(`${baseURI}/admins/signup`, data);
@@ -13,7 +18,7 @@ export const Signin = (data) => {
 
 export const GetToken = (email) => {
   console.log(email)
-  return axios.get(`${baseURI}/password-reset?email=${email}`);
+  return axios.get(`${baseURI}/password-reset?email=${email}`, {passwordLink: `http://localhost:3000`});
 };
 
 export const VerifyToken = ({email, fiveDigitToken}) => {
@@ -29,15 +34,17 @@ export const ResetPassword = ({email, data}) => {
   return axios.put(`${baseURI}/password-reset?email=${email}`, data);
 };
 
-export const UpdateProfilePicture = ({formData}) => {
-  return axios.put(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`, formData)
+export const UpdateProfilePicture = ({profileImage, adminId}) => {
+  console.log({profileImage})
+  return axios.put(`${baseURI}/admins/${adminId}/profile-picture`, {profileImage}, {headers: headers})
   };
 
-  export const DeleteProfilePicture = ({formData}) => {
-    return axios.delete(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`, formData)
+  export const DeleteProfilePicture = ({profileImage, adminId}) => {
+    console.log(profileImage)
+    return axios.delete(`${baseURI}/admins/${adminId}/profile-picture`, profileImage, {headers: headers})
   }
 
-  export const DownloadProfilePicture = ({}) => {
-    return axios.get(`${baseURI}/admins/647deebbc24032a06525003d/profile-picture`)
+  export const DownloadProfilePicture = ({adminId}) => {
+    return axios.get(`${baseURI}/admins/${adminId}/profile-picture`)
   }
 
