@@ -32,7 +32,7 @@ import AddAdmin from "./components/pages/admin/AddAdmin";
 import Settings from "./components/dashboard/Settings";
 import HelpSupport from "./components/dashboard/HelpSupport";
 import Profile from "./components/pages/Profile";
-import Notification from "./components/pages/Notification";
+// import Notification from "./components/pages/Notification";
 import Security from "./components/pages/Security";
 import DashCollaInfo from "./components/dashboard/DashCollaInfo";
 import DashGInfo from "./components/dashboard/DashGInfo";
@@ -54,7 +54,10 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/login" element={<LogIn auth={auth} setAuth={setAuth} />} />
+        <Route
+          path="/login"
+          element={<LogIn auth={auth} setAuth={setAuth} />}
+        />
         <Route path="/signup" element={<SignUp />} />
         <Route
           path="/dashboard/settings/security/forgot_password"
@@ -69,7 +72,7 @@ function App() {
             path="dashboard"
             element={
               <PrivateRoute auth={auth}>
-                <DashBoardContainer setAuth={setAuth}/>
+                <DashBoardContainer setAuth={setAuth} />
               </PrivateRoute>
             }
           >
@@ -90,12 +93,12 @@ function App() {
             <Route path="borrowerprofile" element={<BorrowerProfile />} />
             <Route path="settings" element={<Settings />}>
               <Route index element={<Profile />} />
-              <Route path="notification" element={<Notification />} />
+              {/* <Route path="notification" element={<Notification />} /> */}
               <Route path="security" element={<Security />} />
             </Route>
-            <Route path="fullbprofile" element={<FullBProfile/>} />
-            <Route path="eligibilitystatus" element={< EligibilityStatus/>}/>
-            <Route path="statussender" element={<StatusSender/>}/>
+            <Route path="fullbprofile" element={<FullBProfile />} />
+            <Route path="eligibilitystatus" element={<EligibilityStatus />} />
+            <Route path="statussender" element={<StatusSender />} />
             <Route path="help" element={<HelpSupport />} />
           </Route>
         </Route>
