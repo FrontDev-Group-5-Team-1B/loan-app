@@ -8,6 +8,10 @@ html {
   font-size: 62.5%;
 }
 
+.admin-container {
+  padding-top: 4rem;
+}
+
 .add-admin-link {
   text-decoration: none;
   font-weight: 400;
@@ -305,6 +309,11 @@ Link {
   text-decoration: none;
 }
 
+.admin-img-add {
+  height: 250px;
+  border-radius: 5px;
+  margin-bottom: -4rem;
+}
 /* PROFILE MODAL STYLES */
 /* .profile-modal2-content {
   width: 280px;

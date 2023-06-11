@@ -5,7 +5,7 @@ import "../../styles/modal.css";
 import Modal from "../Modal";
 import {
   useDeleteProfilePicture,
-  useUpdateProfilePiture,
+  useUpdateProfilePicture,
 } from "../../services/query/query.service";
 import { useMutation, useQuery } from "react-query";
 import axios from "axios";
@@ -23,22 +23,20 @@ function Profile() {
   const onError = (error) => {
     console.log(error)
   }
-  const {mutate: UploadPicture} = useUpdateProfilePiture(onSuccess, onError);
+  const {mutate: UploadPicture} = useUpdateProfilePicture(onSuccess, onError);
   const DeleteProfilePicture = useDeleteProfilePicture();
-  const DownloadProfilePicture = useDeleteProfilePicture();
+  const DownloadProfilePicture = useDeleteProfilePicture()
 
-  
-  const handleProfilePictureUpload = (file) => {
-    const profileImage = new FormData();
-    profileImage.append("profileImage", file);
-    console.log(profileImage)
-    UploadPicture({ profileImage, adminId:localStorage.getItem('adminId') });
-  };
-  
+
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
-    console.log(file)
-    handleProfilePictureUpload(file);
+    setProfilePicture(file);
+  }
+
+  const handleProfilePictureUpload = () => {
+    const formData = new FormData();
+    formData.append('profilePicture', profilePicture);
+    UploadPicture(formData)
   };
   // const handleDeleteProfilePicture = () => {
   //   DeleteProfilePicture.mutate();
@@ -60,23 +58,36 @@ function Profile() {
   const adminId = localStorage.getItem("adminId");
   console.log(adminId);
 
-  const { mutate, isLoading, isError, error } = useMutation((data) => {
-    axios.put(
-      `https://nodebt-application.onrender.com/api/admins/${adminId}`,
-      data,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+  const { mutate, isLoading, isError, error } = useMutation(
+    (data) => {
+      axios
+        .put(
+          `https://nodebt-application.onrender.com/api/admins/${adminId}`,
+          data,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Response:", response.data.data.admin);
+          return response; // Return the response to the caller
+        });
+    },
+    {
+      onSuccess: () => {
+        setSaveProfile(true); // Set saveProfile to true on successful update
       },
-      {
-        onSuccess: () => {
-          setSaveProfile(true); // Set saveProfile to true on successful update
-        },
-      }
-    );
-    console.log(data);
-  });
+    },
+    {
+      onError: (error) => {
+        // Handle the error here
+        console.error("An error occurred:", error);
+        error.preventDefault();
+      },
+    }
+  );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -165,8 +176,8 @@ function Profile() {
               </div>
               <div>
                 <input
-                  id="orgainisationType"
-                  name="orgainisationType"
+                  id="organisationType"
+                  name="organisationType"
                   type="text"
                   className="profile-input"
                   placeholder="Type of Organization"
@@ -304,5 +315,6 @@ function Profile() {
     </div>
   );
 }
+
 
 export default Profile;
