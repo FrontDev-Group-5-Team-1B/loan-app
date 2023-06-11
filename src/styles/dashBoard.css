@@ -10,7 +10,7 @@
   align-items: center;
   width: 100%;
   max-width: 1440px;
-  padding: 30px 70px 18px ;
+  padding: 30px 70px 18px;
   position: sticky;
   top: 0;
   left: 0;
@@ -58,7 +58,7 @@
 }
 
 /* DASHBOARD SIDENAV STYLES */
-.db-main{
+.db-main {
   display: flex;
   gap: 40px;
 }
@@ -138,4 +138,16 @@
 } */
 .log-out {
   display: flex;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.welcome-msg {
+  font-size: 1.5rem;
+  color: #0267ff;
 }

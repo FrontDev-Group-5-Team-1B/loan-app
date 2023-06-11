@@ -19,13 +19,13 @@ const Settings = () => {
         >
           Profile
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="notification"
           className={activePage === 2 ? "active-link" : ""}
           onClick={() => handlePageClick(2)}
         >
           Notification
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="security"
           className={activePage === 3 ? "active-link" : ""}

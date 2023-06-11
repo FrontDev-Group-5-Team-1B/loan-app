@@ -3,35 +3,36 @@ import profile from "../../assets/profile-pic.png";
 import "../../styles/profile.css";
 import "../../styles/modal.css";
 import Modal from "../Modal";
-import { useDeleteProfilePicture, useUpdateProfilePiture } from "../../services/query/query.service";
+import {
+  useDeleteProfilePicture,
+  useUpdateProfilePiture,
+} from "../../services/query/query.service";
 import { useMutation, useQuery } from "react-query";
 import axios from "axios";
 
 function Profile() {
   const [showModal, setShowModal] = useState(false);
   const [saveProfile, setSaveProfile] = useState(false);
-  const [profilePicture, setProfilePicture] = useState(null)
+  const [profilePicture, setProfilePicture] = useState(null);
 
   const UpdateProfilePicture = useUpdateProfilePiture();
   const DeleteProfilePicture = useDeleteProfilePicture();
-  const DownloadProfilePicture = useDeleteProfilePicture()
-
+  const DownloadProfilePicture = useDeleteProfilePicture();
 
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
     setProfilePicture(file);
-  }
+  };
 
   const handleProfilePictureUpload = () => {
     const formData = new FormData();
-    formData.append('profilePicture', profilePicture);
-    UpdateProfilePicture.mutate(formData)
+    formData.append("profilePicture", profilePicture);
+    UpdateProfilePicture.mutate(formData);
   };
 
   const handleDeleteProfilePicture = () => {
     DeleteProfilePicture.mutate();
-  }
-
+  };
 
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
@@ -49,23 +50,36 @@ function Profile() {
   const adminId = localStorage.getItem("adminId");
   console.log(adminId);
 
-  const { mutate, isLoading, isError, error } = useMutation((data) => {
-    axios.put(
-      `https://nodebt-application.onrender.com/api/admins/${adminId}`,
-      data,
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+  const { mutate, isLoading, isError, error } = useMutation(
+    (data) => {
+      axios
+        .put(
+          `https://nodebt-application.onrender.com/api/admins/${adminId}`,
+          data,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((response) => {
+          console.log("Response:", response.data.data.admin);
+          return response; // Return the response to the caller
+        });
+    },
+    {
+      onSuccess: () => {
+        setSaveProfile(true); // Set saveProfile to true on successful update
       },
-      {
-        onSuccess: () => {
-          setSaveProfile(true); // Set saveProfile to true on successful update
-        },
-      }
-    );
-    console.log(data);
-  });
+    },
+    {
+      onError: (error) => {
+        // Handle the error here
+        console.error("An error occurred:", error);
+        error.preventDefault();
+      },
+    }
+  );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -154,8 +168,8 @@ function Profile() {
               </div>
               <div>
                 <input
-                  id="orgainisationType"
-                  name="orgainisationType"
+                  id="organisationType"
+                  name="organisationType"
                   type="text"
                   className="profile-input"
                   placeholder="Type of Organization"
@@ -237,16 +251,17 @@ function Profile() {
             className="settings-profile-pic"
           />
           <div className="profile-change-btn">
-            <input type="file"
-            accept="image/*"
-            onChange={handleProfilePictureChange}/>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleProfilePictureChange}
+            />
             <button onClick={handleProfilePictureUpload}>
-            <a href="#">Change Profile Picture</a>
+              <a href="#">Change Profile Picture</a>
             </button>
             <button onClick={handleDeleteProfilePicture}>
-            <a href="#">Remove Profile Picture</a>
+              <a href="#">Remove Profile Picture</a>
             </button>
-           
           </div>
         </div>
         <div className="cancle-save-btn">

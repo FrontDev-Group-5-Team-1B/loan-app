@@ -9,19 +9,34 @@ import { Link } from "react-router-dom";
 import "../../styles/dashBoard.css";
 
 const DbNav = () => {
+  const storedAdminData = localStorage.getItem("adminData");
+  const parsedAdminData = JSON.parse(storedAdminData);
+
   return (
     <>
       <div className="db-nav-container">
-      
         <div className="db-search">
           <input type="text" placeholder="Search" className="db-input-search" />
         </div>
         <div className="db-nav-icons">
           {/* <img src={mail} className="db-mail" /> */}
           {/* <img src={bell} className="db-bell" /> */}
-          <Link to="settings">
-            <img src={profile} className="profile-pic" />
-          </Link>
+          {parsedAdminData ? (
+            <div className="welcome">
+              <div>
+                <h2 className="welcome-msg">
+                  Welcome {parsedAdminData.firstName}
+                </h2>
+              </div>
+              <Link to="settings">
+                <img src={profile} className="profile-pic" />
+              </Link>
+            </div>
+          ) : (
+            <Link to="settings">
+              <img src={profile} className="profile-pic" />
+            </Link>
+          )}
         </div>
       </div>
     </>

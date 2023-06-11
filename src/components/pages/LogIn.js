@@ -20,6 +20,8 @@ import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
 import { GetToken } from "../../services/api/api.service";
+import { useMutation } from "react-query";
+import axios from "axios";
 
 const LogIn = ({ auth, setAuth }) => {
   const [email, setEmail] = useState("");
@@ -31,13 +33,17 @@ const LogIn = ({ auth, setAuth }) => {
   const [token3, setToken3] = useState("");
   const [token4, setToken4] = useState("");
   const [token5, setToken5] = useState("");
+  const [resetToken, setResetToken] = useState({ fiveDigitToken: "" });
   // above token states should be structured with objects
 
   //form validation
   const [errorMsg, setErrorMsg] = useState("");
 
-  const { handleSubmit, register, formState: { errors } } = useForm();
-
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -76,6 +82,7 @@ const LogIn = ({ auth, setAuth }) => {
   const onSuccess = (res) => {
     console.log(res.data);
 
+    localStorage.setItem("adminData", JSON.stringify(res.data));
     localStorage.setItem("token", res.data.access_token);
     localStorage.setItem("adminId", res.data.adminId);
     setAuth(!auth);
@@ -107,8 +114,8 @@ const LogIn = ({ auth, setAuth }) => {
   const { mutate: reset } = useResetPassword(onResetPassordSuccess, onError);
 
   const onSubmit = (data) => {
-    const email = data.email
-    const password = data.password
+    const email = data.email;
+    const password = data.password;
     const formData = { email, password };
     mutate(formData);
   };
@@ -128,7 +135,7 @@ const LogIn = ({ auth, setAuth }) => {
 
     const data = { secret_key, password, confirmPassword };
 
-    reset({ email, data });
+    reset({ data });
   };
 
   const togglePassword = () => {
@@ -141,18 +148,51 @@ const LogIn = ({ auth, setAuth }) => {
     }
   }, [auth]);
 
-  const HandleVerifyToken = (e) => {
-    e.preventDefault();
-    const fiveDigitToken = Number(`${token1}${token2}${token3}${token4}${token5}`);
-    console.log(fiveDigitToken);
+  // const HandleVerifyToken = (e) => {
+  //   e.preventDefault();
+  //   const fiveDigitToken = Number(
+  //     `${token1}${token2}${token3}${token4}${token5}`
+  //   );
+  //   console.log(fiveDigitToken);
 
-    if (fiveDigitToken) {
-      verify({ email, fiveDigitToken });
+  //   if (fiveDigitToken) {
+  //     verify({ email, fiveDigitToken });
+  //   }
+  // };
+
+  const tokenverify = async (token) => {
+    try {
+      const response = await axios.post(
+        `https://nodebt-application.onrender.com/api/password-reset/${localStorage.getItem(
+          "adminId"
+        )}`,
+        { fiveDigitToken: token.fiveDigitToken }
+      );
+      return response.data;
+      console.log(response.data);
+    } catch (error) {
+      throw new Error(error.response.data.message);
     }
+  };
 
-   
+  const mutation = useMutation(tokenverify);
 
-  }
+  const handleVerifyToken = async (e) => {
+    e.preventDefault();
+
+    const fiveDigitToken = Number(
+      `${token1}${token2}${token3}${token4}${token5}`
+    );
+    console.log(fiveDigitToken);
+    try {
+      const response = await mutation.mutateAsync({ fiveDigitToken });
+      // Handle the successful response
+      handleThree();
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <div className="login-container">
@@ -195,7 +235,7 @@ const LogIn = ({ auth, setAuth }) => {
               <p className="val-message">
                 {errors.email && errors.email.message}
               </p>
-  
+
               <div className="pass">
                 <input
                   type={showPassword === false ? "password" : "text"}
@@ -213,7 +253,7 @@ const LogIn = ({ auth, setAuth }) => {
                     },
                   })}
                 />
-  
+
                 <span className="eye">
                   {showPassword === false ? (
                     <BsEyeSlash onClick={togglePassword} />
@@ -223,17 +263,18 @@ const LogIn = ({ auth, setAuth }) => {
                 </span>
               </div>
 
-              <p className="val-message">{errors.password && errors.password.message}</p>
+              <p className="val-message">
+                {errors.password && errors.password.message}
+              </p>
 
               <div className="forgot-box">
-
-              <div className="">
-                <input type="checkbox" className="" />
-                <label>Always keep me logged in</label>
-              </div>
-              <p className="forgot" onClick={handleFG}>
-                Forgot Password?
-              </p>
+                <div className="">
+                  <input type="checkbox" className="" />
+                  <label>Always keep me logged in</label>
+                </div>
+                <p className="forgot" onClick={handleFG}>
+                  Forgot Password?
+                </p>
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
@@ -259,7 +300,7 @@ const LogIn = ({ auth, setAuth }) => {
         <div className="login-right-box">
           <img src={logimg} alt="woman" />
         </div>
-  
+
         {/* forgot password */}
         <div className="fgcontainer" ref={modref}>
           <div className="modal-sign">
@@ -297,7 +338,7 @@ const LogIn = ({ auth, setAuth }) => {
             <img src={fgpimg} alt="" className="fgimg" />
             <p className="pp">Enter Verification Code</p>
             <p className="fptxt">Kindly enter the code sent to your mail.</p>
-            <form className="fgform2" onSubmit={HandleVerifyToken}>
+            <form className="fgform2" onSubmit={handleVerifyToken}>
               <div
                 style={{
                   display: "flex",
@@ -347,7 +388,7 @@ const LogIn = ({ auth, setAuth }) => {
                   onChange={(e) => setToken5(e.target.value)}
                 />
               </div>
-  
+
               <p style={{ paddingTop: "1rem" }} className="code">
                 Didn't get the code?{" "}
                 <span className="resend">
@@ -377,12 +418,12 @@ const LogIn = ({ auth, setAuth }) => {
             <p className="fptxt">Kindly enter your new password.</p>
             <form className="fgform2" onSubmit={handleReset}>
               <input
-                type="text"
+                type="number"
                 placeholder="Secret key:"
                 className="inpt"
                 name="secret_key"
                 value={secret_key}
-                onChange={(e) => setSecretKey(e.target.value)}
+                onChange={(e) => setSecretKey(parseInt(e.target.value))}
               />
               <input
                 type="password"
@@ -400,7 +441,7 @@ const LogIn = ({ auth, setAuth }) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
-  
+
               <button
                 className="fg-btn"
                 style={{ marginTop: "3rem", padding: "1rem" }}
@@ -421,7 +462,7 @@ const LogIn = ({ auth, setAuth }) => {
         <div className="fgcontainer" ref={modref4}>
           <div className="modal-sign">
             <img src={fgpimgcheck} alt="" className="fgimg" />
-  
+
             <p className="fptxt tw">
               Your password change process is successful. You now have a new
               password.
@@ -438,6 +479,6 @@ const LogIn = ({ auth, setAuth }) => {
       </div>
     </>
   );
-}
+};
 
 export default LogIn;

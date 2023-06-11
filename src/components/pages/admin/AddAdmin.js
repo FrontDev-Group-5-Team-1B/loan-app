@@ -164,7 +164,7 @@ const AddAdmin = () => {
           <h2 className="h-s upload-h-s">Add image</h2>
           <div className="img-upload">
             {image ? (
-              <img src={image} />
+              <img src={image} className="admin-img-add" />
             ) : (
               <div className="add-admin-form-img-wraper">
                 <div className="form-img">
