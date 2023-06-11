@@ -2,6 +2,11 @@ import axios from "axios";
 
 const baseURI = "https://nodebt-application.onrender.com/api";
 
+const headers = {
+  'Content-Type': 'multipart/form-data;',
+  Authorization: `Bearer ${localStorage.getItem('token')}`,
+};
+
 export const Signup = (data) => {
   console.log(data);
   return axios.post(`${baseURI}/admins/signup`, data);
