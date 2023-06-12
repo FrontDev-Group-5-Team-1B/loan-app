@@ -27,10 +27,12 @@ ul{
 .dHead h2 {
   color: #0267ff;
   padding: 15px 0;
+  font-size: 1.5rem;
 }
 .dHead h3 {
   font-weight: 600;
   padding-bottom: 10px;
+  font-size: 1.5rem;
 }
 
 .dCards {
@@ -90,12 +92,13 @@ ul{
 
 .b-header {
   padding: 20px 0;
+  font-size: 1.5rem;
 }
 
 .b-header h3 {
   padding: 10px 0;
   color: #0267ff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .b-header p {
@@ -137,7 +140,7 @@ ul{
 
 .bor-data h5 {
   color: #4d4d4d;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin: 0 25px;
 }
 
@@ -145,7 +148,7 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
     
 }
 
@@ -154,7 +157,7 @@ ul{
   margin: 10px;
   width: 250px;
   border-style: none;
-  font-size: 11px;
+  font-size: 1.2rem;
   border: 1px solid #0252cc;
 }
   
@@ -199,7 +202,7 @@ ul{
   padding: 10px;
   margin: 10px;
   width: 250px;
-  font-size: 11px;
+  font-size: 1.3rem;
   border-style: none;
   border: 1px solid #0252cc;
 }
@@ -208,7 +211,7 @@ ul{
   padding: 10px;
   margin: 10px;
   width: 250px;
-  font-size: 11px;
+  font-size: 1.3rem;
   border-style: none;
   border: 1px solid #0252cc;
   color: #808080;
@@ -217,7 +220,7 @@ ul{
 textarea {
   padding: 20px;
   margin: 10px;
-  font-size: 11px;
+  font-size: 1.3rem;
   width: 500px;
   align-self: center;
   border: 1px solid #0252cc;
@@ -226,7 +229,8 @@ textarea {
 .d-btn {
   display: flex;
   justify-content: space-around;
-  max-width: 550px;
+  max-width: 60
+  0px;
   padding: 20px;
 }
   

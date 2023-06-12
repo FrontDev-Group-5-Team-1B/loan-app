@@ -46,7 +46,7 @@
   
    
   }
-  .fbp-flex li{
+  .fbp-flex input{
     border: 1px solid #0252CC;
     list-style-type: none;
     padding: 10px ;
@@ -64,25 +64,28 @@
    
   }
 
-  .bs-preview{
-    background-color: white;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-  } 
+.bs-preview .btn-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bs-preview button{
+  align-content: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: #0267FF ;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  width: 200px;
+}
   .bs-preview h6{
     padding-bottom: 10px;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.2rem;
   }
-  .bs-preview button{
-       background-color: #0267FF;
-       color: white;
-       padding: 10px;
-       border: none;
-       width: 200px;
-  }
+  
   .bs-preview p{
     color: red;
     padding-top: 10px;
@@ -97,20 +100,39 @@
     border: 1px solid #0267FF;
     background-color: #EEF5FC;
     height: 100px;
-    padding: 10px;
+    margin-left: 0px;
+    font-size: 1.2rem;
+    color: rgb(129, 127, 127);
   
   }
-  .fbp-header{
-          padding-top: 10px ;
+  .fbp-admin{
+    display: flex;
+    justify-content:flex-start ;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .fbp-admin p{
+    color: #0267FF; ;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .fbp-admin input{
+    padding:5px;
+    border-color: #0267FF;
   }
   .b-header h2{
     color: #0267FF;
 
   }
+  .f-btn-div{
+    display: flex;
+    justify-content: flex-end;
+  }
   .fbp-header2{
     font-weight: 700;
     font-size: 1.2rem;
-    padding-top:10px ;
+    padding-top:10px 0 10px 0 ;
   }
   .fbp-grade{
     padding: 20px 0;
@@ -126,6 +148,8 @@
     color: white;
     background-color: #0267FF ;
     border: none;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
   .f-btn:hover{
     background-color:  #7f98be;
