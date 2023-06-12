@@ -256,9 +256,9 @@ const LogIn = ({ auth, setAuth }) => {
 
                 <span className="eye">
                   {showPassword === false ? (
-                    <BsEyeSlash onClick={togglePassword} />
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
-                    <BsEye onClick={togglePassword} />
+                    <BsEye size="20px" onClick={togglePassword} />
                   )}
                 </span>
               </div>
@@ -278,7 +278,7 @@ const LogIn = ({ auth, setAuth }) => {
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
-              <div className="continue">
+              {/* <div className="continue">
                 <hr />
                 <span>Or continue with</span>
                 <hr />
@@ -293,7 +293,7 @@ const LogIn = ({ auth, setAuth }) => {
                 <Link>
                   <FaApple />
                 </Link>
-              </div>
+              </div> */}
             </form>
           )}
         </div>
