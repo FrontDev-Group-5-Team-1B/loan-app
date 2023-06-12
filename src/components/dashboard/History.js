@@ -19,7 +19,7 @@ const History = () => {
           <tr>
             <th>Date</th>
             <th>Description</th>
-            <th>Interest Rate</th>
+            {/* <th>Interest Rate</th> */}
             <th>Borrower's Name</th>
             <th>Time of Refund</th>
             <th>Login Type</th>
@@ -31,7 +31,7 @@ const History = () => {
             <tr key={idx}>
               <td>{history.date}</td>
               <td>{history.description}</td>
-              <td>{history.interest_rate}</td>
+              {/* <td>{history.interest_rate}</td> */}
               <td>{history.borrower_name}</td>
               <td>{history.time_of_refund}</td>
               <td>{history.loan_type}</td>

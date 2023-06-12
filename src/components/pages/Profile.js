@@ -29,21 +29,21 @@ function Profile() {
   const DownloadProfilePicture = useDeleteProfilePicture();
   const [profileUrl, setProfileUrl] = useState(null);
   const inputRef = useRef(null);
-  const handleProfilePictureUpload = () => {
-    const formData = new FormData();
-    formData.append("profileImage", profilePicture);
-    UpdateProfilePicture.mutate(formData);
-  };
+  // const handleProfilePictureUpload = () => {
+  //   const formData = new FormData();
+  //   formData.append("profileImage", profilePicture);
+  //   UpdateProfilePicture.mutate(formData);
 
 
-  const handleProfilePictureChange = (event) => {
-    const file = event.target.files[0];
-    setProfilePicture(file);
+
+  // const handleProfilePictureChange = (event) => {
+  //   const file = event.target.files[0];
+  //   setProfilePicture(file);
     
-    const formData = new FormData();
-    formData.append("profileImage", profilePicture);
-    UpdateProfilePicture.mutate(formData);
-  };
+  //   const formData = new FormData();
+  //   formData.append("profileImage", profilePicture);
+  //   UpdateProfilePicture.mutate(formData);
+  // };
 
   const handleDeleteProfilePicture = () => {
     DeleteProfilePicture.mutate();
@@ -108,9 +108,6 @@ function Profile() {
   };
   //New code for profile picture upload ends here///////
 
-  }
-
- 
 
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
@@ -183,21 +180,8 @@ function Profile() {
     }
   }, [saveProfile]);
 
-  // if (updateProfilePicture.isLoading) {
-  //   return <div>Updating profile picture...</div>;
-  // }
-
-  // if (updateProfilePicture.isError) {
-  //   return <div>Error updating profile picture.</div>;
-  // }
-
-  // if (updateProfilePicture.isSuccess) {
-  //   return <div>Profile picture updated successfully!</div>;
-  // }
-
   return (
     <div>
-      {/* <form className="profile-form"> */}
       <section>
         <div>
           <h4 className="profile-hp">Personal Information</h4>
@@ -333,24 +317,8 @@ function Profile() {
           ) : (
             <img src={profile} alt="Default" className="settings-profile-pic" />
           )}
-          {/* <img
-            src={profile}
-            alt="user-profile"
-            className="settings-profile-pic"
-          /> */}
+         
           <div className="profile-change-btn">
-            {/* <input
-
-              type="file"
-              name="profileImage"
-              // value={profilePicture}
-              // accept="image/*"
-              onChange={handleProfilePictureChange}
-            />
-
-            <button onClick={handleProfilePictureUpload}>
-              <a href="#">Change Profile Picture</a>
-            </button> */}
             <div>
               <label className="">
                 <input
@@ -368,14 +336,14 @@ function Profile() {
 
             <button onClick={handleDeleteProfilePicture}>
             <a href="#">Remove Profile Picture</a>
-            </button> */}
+            </button> 
           </div>
         </div>
         <div className="cancle-save-btn">
           <button className="cancle" onClick={() => setShowModal(true)}>
             Cancle
           </button>
-          {/* <button className="cancle" onClick={() => setShowModal(true)}> */}
+
           {showModal && (
             <Modal show={showModal} onClose={() => setShowModal(false)}>
               <div className="profile-modal-content">
@@ -406,6 +374,7 @@ function Profile() {
     </div>
   );
 }
+
 
 
 export default Profile;
