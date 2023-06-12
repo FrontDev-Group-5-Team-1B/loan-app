@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import profile from "../../assets/profile-pic.png";
 import "../../styles/profile.css";
 import "../../styles/modal.css";
@@ -25,22 +25,92 @@ function Profile() {
   }
   const {mutate: UploadPicture} = useUpdateProfilePicture(onSuccess, onError);
   const DeleteProfilePicture = useDeleteProfilePicture();
-  const DownloadProfilePicture = useDeleteProfilePicture()
+
+  const DownloadProfilePicture = useDeleteProfilePicture();
+  const [profileUrl, setProfileUrl] = useState(null);
+  const inputRef = useRef(null);
+  const handleProfilePictureUpload = () => {
+    const formData = new FormData();
+    formData.append("profileImage", profilePicture);
+    UpdateProfilePicture.mutate(formData);
+  };
 
 
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
     setProfilePicture(file);
+    
+    const formData = new FormData();
+    formData.append("profileImage", profilePicture);
+    UpdateProfilePicture.mutate(formData);
+  };
+
+  const handleDeleteProfilePicture = () => {
+    DeleteProfilePicture.mutate();
+  };
+  //New code for profile picture upload starts here///////
+  const uploadProfilePic = async (file) => {
+    const formData = new FormData();
+    formData.append("profileImage", file);
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "multipart/form-data",
+      },
+    };
+
+    const response = await axios.put(
+      `https://nodebt-application.onrender.com/api/admins/${localStorage.getItem(
+        "adminId"
+      )}/profile-picture`,
+      formData,
+      config
+    );
+
+    return response.data;
+  };
+
+  const mutation = useMutation(uploadProfilePic);
+
+  const handleFileUploads = async (e) => {
+    const file = inputRef.current?.files[0];
+    if (file) {
+      try {
+        const response = await mutation.mutateAsync(file);
+        // Handle the successful upload
+        console.log("Profile picture uploaded successfully");
+
+        const additionalResponse = await axios.get(
+          `https://nodebt-application.onrender.com/api/admins/${localStorage.getItem(
+            "adminId"
+          )}/profile-picture`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        // Handle the successful additional response
+        console.log("Additional response received successfully");
+        setProfileUrl(additionalResponse.data.data.imageUrl);
+
+        console.log(additionalResponse.data.data.imageUrl);
+        // Update the profileUrl state with the new image URL
+        setProfileUrl(additionalResponse.data.data.imageUrl);
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.log("No file selected");
+    }
+  };
+  //New code for profile picture upload ends here///////
+
   }
 
-  const handleProfilePictureUpload = () => {
-    const formData = new FormData();
-    formData.append('profilePicture', profilePicture);
-    UploadPicture(formData)
-  };
-  // const handleDeleteProfilePicture = () => {
-  //   DeleteProfilePicture.mutate();
-  // };
+ 
 
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
@@ -253,28 +323,49 @@ function Profile() {
       <section>
         <div>
           <h4 className="profile-hp">Profile Picture</h4>
-          <img
-            src={profilePicture.name || profile}
+
+          {profileUrl ? (
+            <img
+              src={profileUrl}
+              alt="Profile"
+              className="settings-profile-pic"
+            />
+          ) : (
+            <img src={profile} alt="Default" className="settings-profile-pic" />
+          )}
+          {/* <img
+            src={profile}
             alt="user-profile"
             className="settings-profile-pic"
-          />
-          
+          /> */}
           <div className="profile-change-btn">
-            <label className="Change-button" htmlFor="upload">
-              Change Profile Picture
-              
-            </label>
-            <input
-              id="upload"
+            {/* <input
+
               type="file"
               name="profileImage"
               // value={profilePicture}
               // accept="image/*"
               onChange={handleProfilePictureChange}
             />
-            {/* <button onClick={handleProfilePictureUpload}>
-            <a href="#">Change Profile Picture</a>
-            </button>
+
+            <button onClick={handleProfilePictureUpload}>
+              <a href="#">Change Profile Picture</a>
+            </button> */}
+            <div>
+              <label className="">
+                <input
+                  type="file"
+                  style={{ display: "none" }}
+                  ref={inputRef}
+                  onChange={handleFileUploads}
+                />
+                Change Profile Picture
+              </label>
+              <button onClick={() => inputRef.current.click()}>
+                Select File
+              </button>
+            </div>
+
             <button onClick={handleDeleteProfilePicture}>
             <a href="#">Remove Profile Picture</a>
             </button> */}

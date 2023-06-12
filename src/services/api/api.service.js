@@ -41,10 +41,17 @@ export const ResetPassword = ({ data }) => {
   );
 };
 
+//Get access token from local storage
 export const UpdateProfilePicture = ({ formData }) => {
   return axios.put(
-    `${baseURI}/admins/647deebbc24032a06525003d/profile-picture`,
-    formData
+    `${baseURI}/admins/${localStorage.getItem("adminId")}/profile-picture`,
+    formData,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "multipart/form-data",
+      },
+    }
   );
 };
 
