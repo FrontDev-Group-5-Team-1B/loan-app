@@ -34,8 +34,10 @@
   height: 50px;
   background: #fafcff;
   outline: none;
-  border: 1px solid #666666;
   padding-left: 3.3rem;
+  border: 0;
+  border-radius: 5px;
+
 }
 .profile-input::placeholder {
   padding-top: 1.8rem;
@@ -48,7 +50,10 @@
   height: 150px;
   margin: 1rem 0 2rem;
 }
-
+.bod{
+  border: 1px solid #000;
+  border-radius: 5px;
+}
 .profile-change-btn {
   display: flex;
   flex-direction: column;
