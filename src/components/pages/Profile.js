@@ -5,7 +5,7 @@ import "../../styles/modal.css";
 import Modal from "../Modal";
 import {
   useDeleteProfilePicture,
-  useUpdateProfilePiture,
+  useUpdateProfilePicture,
 } from "../../services/query/query.service";
 import { useMutation, useQuery } from "react-query";
 import axios from "axios";
@@ -13,10 +13,19 @@ import axios from "axios";
 function Profile() {
   const [showModal, setShowModal] = useState(false);
   const [saveProfile, setSaveProfile] = useState(false);
-  const [profilePicture, setProfilePicture] = useState(null);
+  const [profilePicture, setProfilePicture] = useState('');
+  const [imageUrl, setImageUrl] = useState('')
 
-  const UpdateProfilePicture = useUpdateProfilePiture();
+  const onSuccess = (data) => {
+    console.log('data')
+  }
+
+  const onError = (error) => {
+    console.log(error)
+  }
+  const {mutate: UploadPicture} = useUpdateProfilePicture(onSuccess, onError);
   const DeleteProfilePicture = useDeleteProfilePicture();
+
   const DownloadProfilePicture = useDeleteProfilePicture();
   const [profileUrl, setProfileUrl] = useState(null);
   const inputRef = useRef(null);
@@ -26,9 +35,11 @@ function Profile() {
     UpdateProfilePicture.mutate(formData);
   };
 
+
   const handleProfilePictureChange = (event) => {
     const file = event.target.files[0];
     setProfilePicture(file);
+    
     const formData = new FormData();
     formData.append("profileImage", profilePicture);
     UpdateProfilePicture.mutate(formData);
@@ -96,6 +107,10 @@ function Profile() {
     }
   };
   //New code for profile picture upload ends here///////
+
+  }
+
+ 
 
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
@@ -308,6 +323,7 @@ function Profile() {
       <section>
         <div>
           <h4 className="profile-hp">Profile Picture</h4>
+
           {profileUrl ? (
             <img
               src={profileUrl}
@@ -324,10 +340,14 @@ function Profile() {
           /> */}
           <div className="profile-change-btn">
             {/* <input
+
               type="file"
-              accept="image/*"
+              name="profileImage"
+              // value={profilePicture}
+              // accept="image/*"
               onChange={handleProfilePictureChange}
             />
+
             <button onClick={handleProfilePictureUpload}>
               <a href="#">Change Profile Picture</a>
             </button> */}
@@ -345,9 +365,10 @@ function Profile() {
                 Select File
               </button>
             </div>
+
             <button onClick={handleDeleteProfilePicture}>
-              <a href="#">Remove Profile Picture</a>
-            </button>
+            <a href="#">Remove Profile Picture</a>
+            </button> */}
           </div>
         </div>
         <div className="cancle-save-btn">
@@ -385,5 +406,6 @@ function Profile() {
     </div>
   );
 }
+
 
 export default Profile;
