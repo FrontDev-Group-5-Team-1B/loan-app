@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 import { useForm } from "react-hook-form";
+import Modal from 'react-modal';
 
 
 const SignUp = () => {
   
   const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [modalIsOpen, setModalisopen] = useState(false)
   const closeref = useRef();
   const modref = useRef();
 //form validation
@@ -174,7 +176,17 @@ const SignUp = () => {
             <p className="val-message">{errors.confirm && errors.confirm.message}</p>
             
             {error && <p className="val-message">{errorMsg}</p>}
-            <button className="log-btn">Sign Up</button>
+            <button  type='submit'onClick={() => setModalisopen(true)} className="log-btn">Sign Up</button>
+          <Modal isOpen={modalIsOpen} onRequestClose={() => setModalisopen(false)} className="modal-sign">
+          <img src={modimg} alt="" className="mod-img" />
+          <p className="mod-text">
+            You now have an account, please go ahead to Log into your account
+          </p>
+          
+          <Link to="/login">
+            <button className="mod-btn">Log In</button>
+          </Link>
+        </Modal>
 
             {/* <div className="continue">
               <hr />
@@ -202,16 +214,7 @@ const SignUp = () => {
         <p className="close" ref={closeref} onClick={handleClose}>
           X
         </p>
-        <div className="modal-sign">
-          <img src={modimg} alt="" className="mod-img" />
-          <p className="mod-text">
-            You now have an account, please go ahead to Log into your account
-          </p>
-          
-          <Link to="/login">
-            <button className="mod-btn">Log In</button>
-          </Link>
-        </div>
+      
       </div>
     </>
   );
