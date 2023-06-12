@@ -17,6 +17,7 @@ const AddAdmin = () => {
     email: "",
     phoneNumber: "",
     role: "",
+    loginURL: ""
   });
 
   //// ADD ADMIN LOGIC STARTS HERE//////////////////////////////////
