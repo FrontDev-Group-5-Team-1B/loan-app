@@ -141,9 +141,9 @@ const SignUp = () => {
               />
               <span className="eye">
               {showPassword === false ? (
-                    <BsEyeSlash onClick={togglePassword} />
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
-                    <BsEye onClick={togglePassword} />
+                    <BsEye size="20px" onClick={togglePassword} />
                   )}
               </span>
             </div>
@@ -165,9 +165,9 @@ const SignUp = () => {
               />
               <span className="eye">
               {showPassword === false ? (
-                    <BsEyeSlash onClick={togglePassword} />
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
-                    <BsEye onClick={togglePassword} />
+                    <BsEye size="20px" onClick={togglePassword} />
                   )}
               </span>
             </div>
@@ -176,7 +176,7 @@ const SignUp = () => {
             {error && <p className="val-message">{errorMsg}</p>}
             <button className="log-btn">Sign Up</button>
 
-            <div className="continue">
+            {/* <div className="continue">
               <hr />
               <span>Or continue with</span>
               <hr />
@@ -191,7 +191,7 @@ const SignUp = () => {
               <Link>
                 <FaApple />
               </Link>
-            </div>
+            </div> */}
           </form>}
         </div>
         <div className="login-right-box">
