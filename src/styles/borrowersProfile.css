@@ -46,7 +46,7 @@
   
    
   }
-  .fbp-flex li{
+  .fbp-flex input{
     border: 1px solid #0252CC;
     list-style-type: none;
     padding: 10px ;
@@ -64,29 +64,33 @@
    
   }
 
-  .bs-preview{
-    background-color: white;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: center;
-    padding: 10px;
-  } 
+.bs-preview .btn-btn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bs-preview button{
+  align-content: center;
+  padding: 10px;
+  margin: 5px;
+  background-color: #0267FF ;
+  border-style: none;
+  color: white;
+  font-weight: 600;
+  width: 200px;
+}
   .bs-preview h6{
     padding-bottom: 10px;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 1.2rem;
   }
-  .bs-preview button{
-       background-color: #0267FF;
-       color: white;
-       padding: 10px;
-       border: none;
-       width: 100px;
-  }
+  
   .bs-preview p{
     color: red;
     padding-top: 10px;
-    font-weight: 600;
+    font-weight: 700;
+    
   }
   .g-fbp, .l-fbp, .p-fbp, .c-fbp{
     border-bottom: 1px solid rgb(202, 198, 198);
@@ -96,20 +100,39 @@
     border: 1px solid #0267FF;
     background-color: #EEF5FC;
     height: 100px;
-    padding: 10px;
+    margin-left: 0px;
+    font-size: 1.2rem;
+    color: rgb(129, 127, 127);
   
   }
-  .fbp-header{
-          padding-top: 10px ;
+  .fbp-admin{
+    display: flex;
+    justify-content:flex-start ;
+    align-items: center;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .fbp-admin p{
+    color: #0267FF; ;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .fbp-admin input{
+    padding:5px;
+    border-color: #0267FF;
   }
   .b-header h2{
     color: #0267FF;
 
   }
+  .f-btn-div{
+    display: flex;
+    justify-content: flex-end;
+  }
   .fbp-header2{
     font-weight: 700;
     font-size: 1.2rem;
-    padding-top:10px ;
+    padding-top:10px 0 10px 0 ;
   }
   .fbp-grade{
     padding: 20px 0;
@@ -118,12 +141,19 @@
   .fbp-grade p{
     font-size: 1.2rem;
     padding-bottom: 10px;
+    padding-bottom: 20px;
   }
   .f-btn{
     padding: 10px;
     color: white;
     background-color: #0267FF ;
     border: none;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .f-btn:hover{
+    background-color:  #7f98be;
+
   }
  .b-head1{
   padding: 15px 0;
@@ -131,11 +161,24 @@
  }
  .can-btn{
   padding-bottom: 10px;
+  
+ }
+ .can-btnP{
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+
  }
  .status-bor{
    color:  #0267FF;
+   background-color: white;
    font-size: 1.2rem;
+   border: none;
+   padding: 10px 0;
 
+ }
+ .status-bor:hover{
+  background-color: #659beb;
  }
  .m-btn{
   display: flex;
@@ -146,7 +189,7 @@
   
  }
  .mb-btn{
-  background-color: white;
+  background-color: #FAFCFF;
   border-color: #0267FF ;
   color:  #0267FF;
   padding: 10px;
@@ -154,4 +197,12 @@
   justify-content: center;
   align-content: center;
   width: 300px;
+ }
+ .back-btn{
+  background-color: #0267FF ;
+  padding: 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
  }

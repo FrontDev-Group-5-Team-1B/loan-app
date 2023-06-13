@@ -12,12 +12,14 @@ import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 import { useForm } from "react-hook-form";
+import Modal from 'react-modal';
 
 
 const SignUp = () => {
   
   const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [modalIsOpen, setModalisopen] = useState(false)
   const closeref = useRef();
   const modref = useRef();
 //form validation
@@ -135,15 +137,15 @@ const SignUp = () => {
                   required: "Password Required",
                   pattern: {
                     value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
-                    message: "Password requirements: more than 8 characters, 1 Uppercase, 1 Number, 1 symbol."
+                    message: "Password requirements: more than 8 characters, 1 Uppercase,1 lowercase, 1 Number, 1 symbol."
                   }
                 })}
               />
               <span className="eye">
               {showPassword === false ? (
-                    <BsEyeSlash onClick={togglePassword} />
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
-                    <BsEye onClick={togglePassword} />
+                    <BsEye size="20px" onClick={togglePassword} />
                   )}
               </span>
             </div>
@@ -158,25 +160,35 @@ const SignUp = () => {
                 {...register("confirm", {
                   required: "Confirm Password Required",
                   pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
                     message: "Password requirements: must be the same with password"
                   }
                 })}
               />
               <span className="eye">
               {showPassword === false ? (
-                    <BsEyeSlash onClick={togglePassword} />
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
-                    <BsEye onClick={togglePassword} />
+                    <BsEye size="20px" onClick={togglePassword} />
                   )}
               </span>
             </div>
             <p className="val-message">{errors.confirm && errors.confirm.message}</p>
             
             {error && <p className="val-message">{errorMsg}</p>}
-            <button className="log-btn">Sign Up</button>
+            <button  type='submit'onClick={() => setModalisopen(true)} className="log-btn">Sign Up</button>
+          <Modal isOpen={modalIsOpen} onRequestClose={() => setModalisopen(false)} className="modal-sign">
+          <img src={modimg} alt="" className="mod-img" />
+          <p className="mod-text">
+            You now have an account, please go ahead to Log into your account
+          </p>
+          
+          <Link to="/login">
+            <button className="mod-btn">Log In</button>
+          </Link>
+        </Modal>
 
-            <div className="continue">
+            {/* <div className="continue">
               <hr />
               <span>Or continue with</span>
               <hr />
@@ -191,7 +203,7 @@ const SignUp = () => {
               <Link>
                 <FaApple />
               </Link>
-            </div>
+            </div> */}
           </form>}
         </div>
         <div className="login-right-box">
@@ -202,16 +214,7 @@ const SignUp = () => {
         <p className="close" ref={closeref} onClick={handleClose}>
           X
         </p>
-        <div className="modal-sign">
-          <img src={modimg} alt="" className="mod-img" />
-          <p className="mod-text">
-            You now have an account, please go ahead to Log into your account
-          </p>
-          
-          <Link to="/login">
-            <button className="mod-btn">Log In</button>
-          </Link>
-        </div>
+      
       </div>
     </>
   );

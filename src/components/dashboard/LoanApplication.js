@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import loanApplication from "../../data/loanApplication";
 import { FiMenu } from "react-icons/fi";
 import "../../styles/loanApplication.css";
 import { Link } from "react-router-dom";
 
 const LoanApplication = () => {
+  const [loanData, setLoanData] = useState();
   return (
     <div className="db-loan-application-container dash-wrapper">
       <div className="loan-app-title">

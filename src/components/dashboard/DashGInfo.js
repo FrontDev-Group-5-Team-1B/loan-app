@@ -91,13 +91,13 @@ const DashGInfo = () => {
 
       <div className='bs-preview'>
         <h6>Borower's data has been saved. Kindly preview data</h6>
-        <Link to='/dashboard/fullbprofile'><button>Preview</button></Link>
-        <button onClick={handleClick}>Cancel</button>
+        <div className='btn-btn'>
+        <div><button><Link to='/dashboard/fullbprofile' style={{ textDecoration: "none", color: 'white'}}>Preview</Link></button></div>
+        <div><button  onClick={handleClick}>Cancel</button></div>
+        </div>
       </div>
-
      </Modal> 
-
- </div>
+   </div>
    
     </div>
 

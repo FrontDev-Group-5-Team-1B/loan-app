@@ -23,7 +23,7 @@ export const useResetPassword = (onSuccess, onError) => {
   return useMutation(ResetPassword, {onSuccess, onError})
 }
 
-export const useUpdateProfilePiture = (onSuccess, onError) => {
+export const useUpdateProfilePicture = (onSuccess, onError) => {
   return useMutation(UpdateProfilePicture, {onSuccess, onError})
 }
 

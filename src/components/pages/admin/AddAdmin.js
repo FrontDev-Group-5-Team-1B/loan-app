@@ -17,6 +17,7 @@ const AddAdmin = () => {
     email: "",
     phoneNumber: "",
     role: "",
+    loginURL: "https://loan-prediction-app-group-1b.netlify.app/login"
   });
 
   //// ADD ADMIN LOGIC STARTS HERE//////////////////////////////////

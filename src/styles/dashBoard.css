@@ -24,7 +24,6 @@
 
 .db-input-search {
   background: #ffffff;
-  /* padding: 12px 24px; */
   border: 1px solid #e5e5e5;
   border-radius: 8px;
   width: 520px;
@@ -64,15 +63,10 @@
 }
 
 .db-s-nav {
-  /* height: calc(100vh -102px); */
-
   display: flex;
   flex-direction: column;
   width: 250px;
   background: #fafcff;
-  /* position: fixed;
-  top: 102px;
-  left: 0; */
   height: 86vh;
   width: 250px;
   overflow: auto;
