@@ -54,12 +54,36 @@
   flex-direction: column;
 }
 
-.profile-change-btn a {
+.profile-pic-change {
   font-size: 1.1rem;
   padding: 0.5rem 0;
   text-decoration: none;
   color: #0267ff;
   font-weight: 500;
+  font-weight: bold;
+}
+
+.profile-pic-remove {
+  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: #0267ff;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.change-pic-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
 }
 
 .cancle-save-btn {

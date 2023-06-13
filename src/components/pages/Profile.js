@@ -97,6 +97,45 @@ function Profile() {
   };
   //New code for profile picture upload ends here///////
 
+  //Code for Deleting profile picture starts here///////
+
+  // const deleteProfileImage = async () => {
+  //   const url = `https://nodebt-application.onrender.com/api/users/${localStorage.getItem(
+  //     "adminId"
+  //   )}/profile-picture`;
+
+  //   try {
+  //     const response = await axios.delete(url, {
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     return response.data;
+  //   } catch (error) {
+  //     throw new Error("Failed to delete profile image");
+  //   }
+  // };
+
+  // const ProfileImageDeleteButton = () => {
+  //   const { mutate } = useMutation(deleteProfileImage);
+
+  //   const handleDeleteImage = () => {
+  //     mutate();
+  //   };
+
+  //   return handleDeleteImage;
+  // };
+
+  // // Usage:
+  // const handleDeleteImage = ProfileImageDeleteButton();
+  const handleDeleteImage = () => {
+    setProfileUrl("");
+  };
+
+  //Code for Deleting profile picture ends here///////
+
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
     organisationEmail: "",
@@ -332,7 +371,7 @@ function Profile() {
               <a href="#">Change Profile Picture</a>
             </button> */}
             <div>
-              <label className="">
+              <label className="profile-pic-change">
                 <input
                   type="file"
                   style={{ display: "none" }}
@@ -341,12 +380,13 @@ function Profile() {
                 />
                 Change Profile Picture
               </label>
-              <button onClick={() => inputRef.current.click()}>
-                Select File
-              </button>
+              <button
+                onClick={() => inputRef.current.click()}
+                className="change-pic-btn"
+              ></button>
             </div>
-            <button onClick={handleDeleteProfilePicture}>
-              <a href="#">Remove Profile Picture</a>
+            <button onClick={handleDeleteImage} className="profile-pic-remove">
+              Remove Profile Picture
             </button>
           </div>
         </div>
