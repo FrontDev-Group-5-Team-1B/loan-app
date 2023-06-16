@@ -283,6 +283,8 @@ html {
   font-size: 20px;
   line-height: 29px;
   margin-top: 4.8rem;
+
+  text-align: center;
 }
 
 .add-admin-form-img-wraper {
@@ -294,6 +296,7 @@ html {
 
 input[type="file"] {
   visibility: hidden;
+  display: none;
 }
 
 .save-upload-btn {

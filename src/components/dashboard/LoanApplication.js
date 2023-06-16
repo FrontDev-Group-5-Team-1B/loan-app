@@ -3,9 +3,12 @@ import loanApplication from "../../data/loanApplication";
 import { FiMenu } from "react-icons/fi";
 import "../../styles/loanApplication.css";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import axios from "axios";
 
 const LoanApplication = () => {
   const [loanData, setLoanData] = useState();
+
   return (
     <div className="db-loan-application-container dash-wrapper">
       <div className="loan-app-title">

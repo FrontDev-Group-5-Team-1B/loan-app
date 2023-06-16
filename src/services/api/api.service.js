@@ -3,8 +3,8 @@ import axios from "axios";
 const baseURI = "https://nodebt-application.onrender.com/api";
 
 const headers = {
-  'Content-Type': 'multipart/form-data;',
-  Authorization: `Bearer ${localStorage.getItem('token')}`,
+  "Content-Type": "multipart/form-data;",
+  Authorization: `Bearer ${localStorage.getItem("token")}`,
 };
 
 export const Signup = (data) => {
@@ -57,8 +57,14 @@ export const UpdateProfilePicture = ({ formData }) => {
 
 export const DeleteProfilePicture = ({ formData }) => {
   return axios.delete(
-    `${baseURI}/admins/647deebbc24032a06525003d/profile-picture`,
-    formData
+    `${baseURI}/admins/${localStorage.getItem("adminId")}/profile-picture`,
+    formData,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "multipart/form-data",
+      },
+    }
   );
 };
 
