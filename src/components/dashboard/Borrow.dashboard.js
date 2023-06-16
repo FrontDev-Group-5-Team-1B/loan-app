@@ -3,66 +3,141 @@ import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 
-const Borrow = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('hello')
-  }
+const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gender, maritalStatus, jobRole, jobSector, nationalIdentityNumber, incomePerMonth, handleChange, page}) => {
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // console.log('hello')
+  // }
 
   return (
-    <div className="borrow-wrap dash-wrapper">
+    <div className="borrow-wrap dash-wrapper" style={page === 1 || page === "open" ? {display: "block"} : {display: "none"}}>
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
       </div>
       <div className="bor-data">
         <h5>Personal and contact information</h5>
-        <form onSubmit={handleSubmit}>
+        
           <div className="b-data">
             <div className="b-data1">
-              <label htmlFor="name">
-                <input type="text" placeholder="name" className="placeholder" />
+
+              <label htmlFor="fullname">
+                <input type="text" 
+                name="fullname" 
+                value={fullname} 
+                onChange={handleChange} 
+                placeholder="Full Name" 
+                className="placeholder" />
               </label>
+
               <label htmlFor="email">
                 <input
                   type="email"
+                  name="email"
+                  value={email} 
+                  onChange={handleChange}
                   placeholder="Email"
                   className="placeholder"
                 />
               </label>
+
               <label htmlFor="address">
                 <input
                   type="text"
+                  name="address"
+                  value={address} 
+                  onChange={handleChange}
                   placeholder="Address"
                   className="placeholder"
                 />
               </label>
-              <label htmlFor="employment">
+
+              <label htmlFor="employment_type">
                 <input
                   type="text"
+                  name="employmentType"
+                  value={employmentType} 
+                  onChange={handleChange}
                   placeholder="Employment"
                   className="placeholder"
                 />
               </label>
+
+              <label htmlFor="age">
+                <input
+                  type="number"
+                  name="age"
+                  value={age} 
+                  onChange={handleChange}
+                  placeholder="Age"
+                  className="placeholder"
+                />
+              </label>
+
+              <label htmlFor="marital_status">
+                <input
+                  type="text"
+                  name="maritalStatus"
+                  value={maritalStatus} 
+                  onChange={handleChange}
+                  placeholder="Marital Status"
+                  className="placeholder"
+                />
+              </label>
             </div>
+
             <div className="b-data2">
               <label htmlFor="phone_number">
                 <input
-                  type="number"
+                  type="tel"
+                  name="phoneNumber"
+                  value={phoneNumber} 
+                  onChange={handleChange}
                   placeholder="Phone Number"
                   className="placeholder"
                 />
               </label>
-              <label htmlFor="date-of-birth">
+
+              <label htmlFor="gender">
                 <input
-                  type="number"
-                  placeholder="Date of Birth"
+                  type="text"
+                  name="gender"
+                  value={gender} 
+                  onChange={handleChange}
+                  placeholder="Gender"
                   className="placeholder"
                 />
               </label>
+
+              <label htmlFor="job_role">
+                <input
+                  type="text"
+                  name="jobRole"
+                  value={jobRole} 
+                  onChange={handleChange}
+                  placeholder="Job Role"
+                  className="placeholder"
+                />
+              </label>
+
+              <label htmlFor="job_sector">
+                <input
+                  type="text"
+                  name="jobSector"
+                  value={jobSector} 
+                  onChange={handleChange}
+                  placeholder="Jod Sector"
+                  className="placeholder"
+                />
+              </label>
+
               <label htmlFor="national-id">
                 <input
                   type="number"
+                  name="nationalIdentityNumber"
+                  value={nationalIdentityNumber} 
+                  onChange={handleChange}
                   placeholder="National Identity Number"
                   className="placeholder"
                 />
@@ -70,13 +145,16 @@ const Borrow = () => {
               <label htmlFor="income">
                 <input
                   type="number"
+                  name="incomePerMonth"
+                  value={incomePerMonth} 
+                  onChange={handleChange}
                   placeholder="Income per month"
                   className="placeholder"
                 />
               </label>
             </div>
           </div>
-          <div className="car-dot">
+          {/* <div className="car-dot">
             <p className="p1">
               <RxDotFilled />
             </p>
@@ -95,10 +173,10 @@ const Borrow = () => {
             <p>
               <RxDotFilled />
             </p>
-          </div>
-        </form>
+          </div> */}
+      
       </div>
-      <div className="s-btn">
+      {/* <div className="s-btn">
         <button type="submit" className="b-btn">
           <Link
             to="/dashboard/borrowerloan_info"
@@ -107,7 +185,7 @@ const Borrow = () => {
             Next
           </Link>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

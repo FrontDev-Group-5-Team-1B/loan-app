@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURI = "https://nodebt-application.onrender.com/api";
+const secondURI = "https://nodebtdev.onrender.com/api"
 
 const headers = {
   'Content-Type': 'multipart/form-data;',
@@ -67,3 +68,8 @@ export const DownloadProfilePicture = ({}) => {
     `${baseURI}/admins/647deebbc24032a06525003d/profile-picture`
   );
 };
+
+
+export const CreateNewLoan = ({}) => {
+  return axios.post(`${secondURI}/loans/create`)
+}
