@@ -49,11 +49,11 @@ const DashBoardContainer = ({setAuth}) => {
             <RiDashboardFill /> Dashboard
           </NavLink>
           <NavLink
-            to="borrow"
+            to="borrower_data"
             onClick={() => handleLinkClick(2)}
             className={activeLink === 2 ? "active-dbl" : " db-link"}
           >
-            <TfiPieChart /> Borrow Data
+            <TfiPieChart /> Borrower's Data
           </NavLink>
           <NavLink
             to="loan"

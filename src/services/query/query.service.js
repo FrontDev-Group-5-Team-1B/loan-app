@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "react-query";
 import { Signup, Signin, GetToken, UpdateProfilePicture, DeleteProfilePicture, DownloadProfilePicture } from "../api/api.service";
-import { VerifyToken, ResetPassword } from "../api/api.service";
+import { VerifyToken, ResetPassword, CreateNewLoan } from "../api/api.service";
 
 export const useSignup = (onSuccess, onError) => {
   return useMutation(Signup, { onSuccess, onError });
@@ -33,4 +33,8 @@ export const useDeleteProfilePicture = (onSuccess, onError) => {
 
 export const useDownloadprofilePicture = () => {
   return useQuery(DownloadProfilePicture)
+}
+
+export const UseCreateNewLoan = (onSuccess, onError) => {
+  return useMutation(CreateNewLoan, {onSuccess, onError})
 }
