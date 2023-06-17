@@ -46,7 +46,7 @@ const DashCollaInfo = ({
                 type="text"
                 name="collateralValue"
                 value={collateralValue}
-                onChanage={handleChange}
+                onChange={handleChange}
                 placeholder="Collateral Value"
                 className="placeholder"
               />
@@ -60,16 +60,14 @@ const DashCollaInfo = ({
             onChange={handleChange}
             placeholder="Provide Collateral information e.g location, car model, mileage e.t.c"
           />
-          {/* <div className='car-dot'>
-          <p><RxDotFilled/></p>
-         <Link to='/dashboard/borrow' style={{ textDecoration: "none"}}> <p><RxDotFilled/></p></Link>
-          <p className='p1'><RxDotFilled/></p>
-         <Link to='/dashboard/guarantor_info' style={{ textDecoration: "none"}}> <p><RxDotFilled/></p></Link>
-
-
-
-
-        </div> */}
+          <div className='car-dot'>
+          <p><RxDotFilled size="25px" /></p>
+         {/* <Link to='/dashboard/borrow' style={{ textDecoration: "none"}}> <p><RxDotFilled/></p></Link> */}
+         <p><RxDotFilled size="25px" /></p>
+          <p className='p1'><RxDotFilled size="25px" /></p>
+         {/* <Link to='/dashboard/guarantor_info' style={{ textDecoration: "none"}}> </Link> */}
+         <p><RxDotFilled size="25px" /></p>
+        </div>
         
       </div>
       {/* <div className='d-btn'>

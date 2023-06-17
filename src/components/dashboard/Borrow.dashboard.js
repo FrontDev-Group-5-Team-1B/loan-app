@@ -127,7 +127,7 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
                   name="jobSector"
                   value={jobSector} 
                   onChange={handleChange}
-                  placeholder="Jod Sector"
+                  placeholder="Job Sector"
                   className="placeholder"
                 />
               </label>
@@ -154,26 +154,26 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
               </label>
             </div>
           </div>
-          {/* <div className="car-dot">
+          <div className="car-dot">
             <p className="p1">
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
-            <Link
+            {/* <Link
               to="/dashboard/borrowerloan_info"
               style={{ textDecoration: "none" }}
-            >
+            > */}
               {" "}
               <p>
-                <RxDotFilled />
+                <RxDotFilled size="25px"/>
               </p>
-            </Link>
+            {/* </Link> */}
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
-          </div> */}
+          </div>
       
       </div>
       {/* <div className="s-btn">

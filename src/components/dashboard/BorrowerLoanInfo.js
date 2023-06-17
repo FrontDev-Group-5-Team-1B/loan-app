@@ -47,12 +47,13 @@ const BorrowerLoanInfo = ({loanType, repaymentType,loanAmount, purposeOfLoan, ha
         </div>
         </div>
         <textarea type='text' name='purposeOfLoan' value={purposeOfLoan} onChange={handleChange} placeholder='Purpose of Loan' />
-      {/* <div className='car-dot'>
-        <p><RxDotFilled/></p>
-        <p className='p1'><RxDotFilled/></p>
-      <Link to='/dashboard/collateral_info' style={{ textDecoration: "none"}}>  <p><RxDotFilled/></p></Link>
-        <p><RxDotFilled/></p>
-      </div> */}
+      <div className='car-dot'>
+        <p><RxDotFilled size="25px" /></p>
+        <p className='p1'><RxDotFilled size="25px" /></p>
+      {/* <Link to='/dashboard/collateral_info' style={{ textDecoration: "none"}}>  </Link> */}
+      <p><RxDotFilled size="25px" /></p>
+        <p><RxDotFilled size="25px" /></p>
+      </div>
      
         
        

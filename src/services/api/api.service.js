@@ -70,6 +70,13 @@ export const DownloadProfilePicture = ({}) => {
 };
 
 
-export const CreateNewLoan = ({}) => {
-  return axios.post(`${secondURI}/loans/create`)
-}
+export const CreateNewLoan = async (formData) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`, 
+    },
+  };
+
+  const response = await axios.post(`${secondURI}/loans/create`, formData, config);
+  return response.data;
+};
