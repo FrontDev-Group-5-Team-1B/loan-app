@@ -46,12 +46,12 @@ const FullBProfile = ({ page, formData, ModalTwo }) => {
   return (
     <div
       style={page === "preview" ? { display: "block" } : { display: "none" }}
-      className="borrow-wrap"
+      // className="borrow-wrap"
     >
       <div>
         <div className="generated-flex">
           <Link
-            to="/dashboard/borrower_data/borrow"
+            to="/dashboard/borrow"
             style={{ textDecoration: "none", color: "#808080" }}
           >
             Input Borrower's data

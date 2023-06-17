@@ -43,7 +43,7 @@
   .fbp-flex{
     display: flex;
     justify-content: space-between;
-  
+    width: 800px;
    
   }
   .fbp-flex input{
@@ -95,6 +95,7 @@
   .g-fbp, .l-fbp, .p-fbp, .c-fbp{
     border-bottom: 1px solid rgb(202, 198, 198);
     padding: 20px 0;
+    width: 800px;
   }
   .fbp-text{
     border: 1px solid #0267FF;
@@ -128,6 +129,7 @@
   .f-btn-div{
     display: flex;
     justify-content: flex-end;
+    width: 800px;
   }
   .fbp-header2{
     font-weight: 700;
@@ -150,6 +152,7 @@
     border: none;
     font-size: 1.3rem;
     margin-bottom: 20px;
+    
   }
   .f-btn:hover{
     background-color:  #7f98be;

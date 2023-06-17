@@ -188,7 +188,7 @@ const SignUp = () => {
           </Link>
         </Modal>
 
-            {/* <div className="continue">
+            <div className="continue">
               <hr />
               <span>Or continue with</span>
               <hr />
@@ -203,7 +203,7 @@ const SignUp = () => {
               <Link>
                 <FaApple />
               </Link>
-            </div> */}
+            </div>
           </form>}
         </div>
         <div className="login-right-box">
