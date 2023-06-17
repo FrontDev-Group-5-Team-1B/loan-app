@@ -58,7 +58,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="text"
-                  name="guarantor.fullname"
+                  name="fullname"
                   value={fullname}
                   onChange={handleChange}
                   placeholder="Full Name"
@@ -68,7 +68,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="tel"
-                  name="guarantor.phoneNumber"
+                  name="phoneNumber"
                   value={phoneNumber}
                   onChange={handleChange}
                   placeholder="Phone Number"
@@ -78,7 +78,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="email"
-                  name="guarantor.email"
+                  name="email"
                   value={email}
                   onChange={handleChange}
                   placeholder="Email"
@@ -89,7 +89,7 @@ const DashGInfo = ({
                 <input
                   type="text"
                   placeholder="Address"
-                  name="guarantor.address"
+                  name="address"
                   value={address}
                   onChange={handleChange}
                   className="placeholder"
@@ -98,7 +98,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="number"
-                  name="guarantor.socialSecurityNumber"
+                  name="socialSecurityNumber"
                   value={socialSecurityNumber}
                   onChange={handleChange}
                   placeholder="Social Security Number"
@@ -110,7 +110,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="text"
-                  name="guarantor.relationship"
+                  name="relationship"
                   value={relationship}
                   onChange={handleChange}
                   placeholder="Relationship"
@@ -120,17 +120,17 @@ const DashGInfo = ({
               <div>
                 <input
                   type="number"
-                  name="guarantor.incomePerMonth"
+                  name="incomePerMonth"
                   value={incomePerMonth}
                   onChange={handleChange}
                   placeholder="Income Per Month"
                   className="placeholder"
                 />
               </div>
-              <div>
+             <div>
                 <input
                   type="text"
-                  name="guarantor.otherSourcesOfMonth"
+                  name="otherSourcesOfIncome"
                   value={otherSourcesOfIncome}
                   onChange={handleChange}
                   placeholder="Other Sources Of Income"
@@ -140,7 +140,7 @@ const DashGInfo = ({
               <div>
                 <input
                   type="number"
-                  name="guarantor.age"
+                  name="age"
                   value={age}
                   onChange={handleChange}
                   placeholder="Age"
@@ -159,12 +159,13 @@ const DashGInfo = ({
               </div>
             </div>
           </div>
-          {/* <div className='car-dot'>
-      <p><RxDotFilled/></p>
-      <p><RxDotFilled/></p>
-      <Link to='/dashboard/collateral_info' style={{ textDecoration: "none" }}><p><RxDotFilled/></p></Link>
-      <p className='p1'><RxDotFilled/></p>
-    </div> */}
+          <div className='car-dot'>
+      <p><RxDotFilled size="25px"/></p>
+      <p><RxDotFilled size="25px" /></p>
+      {/* <Link to='/dashboard/collateral_info' style={{ textDecoration: "none" }}></Link> */}
+      <p><RxDotFilled size="25px" /></p>
+      <p className='p1'><RxDotFilled size="25px" /></p>
+    </div>
         
       </div>
       {/* <div className='d-btn'> */}
