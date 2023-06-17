@@ -11,12 +11,12 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
   // }
 
   return (
-    <div className="borrow-wrap dash-wrapper" style={page === 1 || page === "open" ? {display: "block"} : {display: "none"}}>
+    <div className="borrow-wrap" style={page === 1 || page === "open" ? {display: "block"} : {display: "none"}}>
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
       </div>
-      <div className="bor-data">
+      <div className="bor-data-b">
         <h5>Personal and contact information</h5>
         
           <div className="b-data">
