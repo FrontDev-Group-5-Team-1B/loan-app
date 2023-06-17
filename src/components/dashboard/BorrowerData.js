@@ -70,7 +70,8 @@ const BorrowerData = () => {
   const [ModalIsOpen, setModalIsOpen] = useState(false);
   const [ModalTwo, setModalTwo] = useState(false);
 
-  const {mutate} = UseCreateNewLoan()
+  const { mutate } = UseCreateNewLoan()
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -121,6 +122,11 @@ const BorrowerData = () => {
     console.log(formData);
     mutate(formData)
   };
+
+  // const handleCancel = () => {
+  //   window.history.back();
+  // };
+  
 
   const handleModalClose = () => {
     setModalIsOpen(false);
@@ -232,10 +238,10 @@ const BorrowerData = () => {
               <h6>Borower's data has been saved. Kindly preview data</h6>
               <div className="btn-btn">
                 <div>
-                  <button onClick={handleNext}>Preview</button>
+                  <button onClick={handleNext} className="btn-pre">Preview</button>
                 </div>
                 <div>
-                  <button>Cancel</button>
+                  <button className="btn-cancel">Cancel</button>
                 </div>
               </div>
             </div>
