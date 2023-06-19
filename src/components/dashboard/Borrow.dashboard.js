@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 import useBorrowersDataStore from "../../store/borowersDataStore";
@@ -28,7 +27,7 @@ const Borrow = () => {
 
 
   return (
-    <div className="borrow-wrap" style={page === 1 || page === "open" ? {display: "block"} : {display: "none"}}>
+    <div className="borrow-wrap">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
@@ -54,11 +53,8 @@ const Borrow = () => {
                 <input
                   type="email"
                   name="email"
-                  value={email} 
-                  onChange={handleChange}
                   placeholder="Email"
                   className="placeholder"
-                  name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
@@ -106,17 +102,6 @@ const Borrow = () => {
                   name="gender"
                   value={formData.gender}
                   onChange={handleInputChange}
-                />
-              </label>
-
-              <label htmlFor="age">
-                <input
-                  type="number"
-                  name="age"
-                  value={age} 
-                  onChange={handleChange}
-                  placeholder="Age"
-                  className="placeholder"
                 />
               </label>
             </div>

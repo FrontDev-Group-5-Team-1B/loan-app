@@ -244,7 +244,6 @@ const SignUp = () => {
                 <FaApple />
               </Link> */}
             </div>
-          </form>}
 
         </div>
         <div className="login-right-box">

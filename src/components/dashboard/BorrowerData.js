@@ -5,7 +5,7 @@ import DashCollaInfo from "./DashCollaInfo";
 import DashGInfo from "./DashGInfo";
 import FullBProfile from "./FullBProfile";
 import Modal from "react-modal";
-import { UseCreateNewLoan } from "../../services/query/query.service";
+// import { UseCreateNewLoan } from "../../services/query/query.service";
 
 const formField = {
   guarantor: {
@@ -70,7 +70,7 @@ const BorrowerData = () => {
   const [ModalIsOpen, setModalIsOpen] = useState(false);
   const [ModalTwo, setModalTwo] = useState(false);
 
-  const { mutate } = UseCreateNewLoan()
+  // const { mutate } = UseCreateNewLoan()
 
 
   const handleChange = (e) => {
@@ -120,7 +120,7 @@ const BorrowerData = () => {
     e.preventDefault();
     setModalTwo(true);
     console.log(formData);
-    mutate(formData)
+    // mutate(formData)
   };
 
   // const handleCancel = () => {

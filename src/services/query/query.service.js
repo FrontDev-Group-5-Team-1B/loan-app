@@ -9,7 +9,9 @@ import {
   CreateLoan,
   sendEmail,
   socialAuth, 
-  VerifyToken, ResetPassword
+  VerifyToken,
+  ResetPassword,
+  checkEligibility
 } from "../api/api.service";
 
 
@@ -53,6 +55,10 @@ export const useDownloadprofilePicture = () => {
 
 export const useSendEmail = (isLoading, isError) => {
   return useMutation(sendEmail, {isLoading, isError})
+}
+
+export const useCheckEligibilty = () => {
+  return useQuery(checkEligibility)
 }
 
 export const useCreatLoan = (onSuccess, onError) => {
