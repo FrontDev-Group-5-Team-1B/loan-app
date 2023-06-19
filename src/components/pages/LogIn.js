@@ -15,6 +15,7 @@ import {
   useVerifyToken,
   useResetPassword,
   useGetToken,
+  useSocialAuth,
 } from "../../services/query/query.service";
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -193,13 +194,19 @@ const LogIn = ({ auth, setAuth }) => {
       console.error(error);
     }
   };
+
+  const socialAuth = useSocialAuth()
+  const handleSocialAuth = () => {
+    socialAuth.mutate()
+  };
+
   return (
     <>
       <div className="login-container">
         <div className="login-left-box">
           <p className="arrow">
             <Link to="/" className="">
-              <FaArrowLeft />
+              <FaArrowLeft size="20px"/>
             </Link>
           </p>
           <h2 className="logwel">Welcome Back</h2>
@@ -278,22 +285,22 @@ const LogIn = ({ auth, setAuth }) => {
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
-              {/* <div className="continue">
+              <div className="continue">
                 <hr />
                 <span>Or continue with</span>
                 <hr />
               </div>
-              <div className="login-icons">
-                <Link>
+             <div className="login-icons">
+                {/* <Link>
                   <FaEnvelope />
-                </Link>
-                <Link>
+                </Link> */}
+                <Link onClick={handleSocialAuth}>
                   <img src={google} alt="google" />
                 </Link>
-                <Link>
+                {/* <Link>
                   <FaApple />
-                </Link>
-              </div> */}
+                </Link> */}
+              </div>
             </form>
           )}
         </div>

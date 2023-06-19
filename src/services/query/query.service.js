@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "react-query";
 import { Signup, Signin, GetToken, UpdateProfilePicture, DeleteProfilePicture, DownloadProfilePicture } from "../api/api.service";
-import { VerifyToken, ResetPassword, CreateNewLoan } from "../api/api.service";
+import { VerifyToken, ResetPassword, CreateNewLoan, sendEmail, socialAuth } from "../api/api.service";
 
 export const useSignup = (onSuccess, onError) => {
   return useMutation(Signup, { onSuccess, onError });
@@ -17,6 +17,12 @@ export const useGetToken = (onSuccess, onError) => {
 
 export const useVerifyToken = (onSuccess, onError) => {
   return useMutation(VerifyToken, {onSuccess, onError})
+}
+
+export const useSocialAuth = () => {
+  return useMutation(socialAuth, {onSuccess: (data) => {
+    console.log(data)
+  }});
 }
 
 export const useResetPassword = (onSuccess, onError) => {
@@ -37,4 +43,8 @@ export const useDownloadprofilePicture = () => {
 
 export const UseCreateNewLoan = (onSuccess, onError) => {
   return useMutation(CreateNewLoan, {onSuccess, onError})
+}
+
+export const useSendEmail = (isLoading, isError) => {
+  return useMutation(sendEmail, {isLoading, isError})
 }

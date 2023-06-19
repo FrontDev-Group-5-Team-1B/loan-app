@@ -35,6 +35,32 @@ export const VerifyToken = ({ email, fiveDigitToken }) => {
   );
 };
 
+export const socialAuth = async (code) => {
+  try {
+    const headers = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json',
+    };
+
+    const requestData = new URLSearchParams();
+    requestData.append('code', code);
+    requestData.append('client_id', '971442954116-mo6drlr37kt7c5tadolni39jiki7eire.apps.googleusercontent.com');
+    requestData.append('client_secret', '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');
+    requestData.append('grant_type', 'authorization_code');
+    requestData.append('redirect_uri', 'localhost:5000/api/admins/signup');
+
+    const response = await axios.post(
+      'https://accounts.google.com/o/oauth2/token',
+      requestData.toString(),
+      { headers }
+    );
+
+    return response.data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const ResetPassword = ({ data }) => {
   return axios.put(
     `${baseURI}/password-reset/${localStorage.getItem("adminId")}`,
@@ -80,3 +106,7 @@ export const CreateNewLoan = async (formData) => {
   const response = await axios.post(`${secondURI}/loans/create`, formData, config);
   return response.data;
 };
+
+export const sendEmail = () => {
+  return axios.get(`${secondURI}/loans/send-eligibility-status?id=648359a9d79d9330ffc5df4d`);
+}

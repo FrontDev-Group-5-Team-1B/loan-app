@@ -62,7 +62,7 @@ const SignUp = () => {
         <div className="login-left-box">
           <p className="arrow">
             <Link to="/" className="">
-              <FaArrowLeft />
+              <FaArrowLeft size="20px" />
             </Link>
           </p>
           <h2 className="logwel">Create an account</h2>
@@ -194,15 +194,15 @@ const SignUp = () => {
               <hr />
             </div>
             <div className="login-icons">
-              <Link>
+              {/* <Link>
                 <FaEnvelope />
-              </Link>
+              </Link> */}
               <Link>
                 <img src={google} alt="google" />
               </Link>
-              <Link>
+              {/* <Link>
                 <FaApple />
-              </Link>
+              </Link> */}
             </div>
           </form>}
         </div>
