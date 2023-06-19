@@ -225,25 +225,9 @@ const SignUp = () => {
                   <button className="mod-btn">Log In</button>
                 </Link>
               </Modal>
-
-              {/* <div className="continue">
-              <hr />
-              <span>Or continue with</span>
-              <hr />
-            </div>
-            <div className="login-icons">
-              <Link>
-                <FaEnvelope />
-              </Link>
-              <Link>
-                <img src={google} alt="google" />
-              </Link>
-              <Link>
-                <FaApple />
-              </Link>
-            </div> */}
             </form>
           )}
+
         </div>
         <div className="login-right-box">
           <img src={logimg} alt="woman" />

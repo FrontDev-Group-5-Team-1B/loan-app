@@ -33,19 +33,6 @@ function Profile() {
   const DownloadProfilePicture = useDeleteProfilePicture();
   const [profileUrl, setProfileUrl] = useState(null);
   const inputRef = useRef(null);
-  // const handleProfilePictureUpload = () => {
-  //   const formData = new FormData();
-  //   formData.append("profileImage", profilePicture);
-  //   UpdateProfilePicture.mutate(formData);
-
-  // const handleProfilePictureChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setProfilePicture(file);
-
-  //   const formData = new FormData();
-  //   formData.append("profileImage", profilePicture);
-  //   UpdateProfilePicture.mutate(formData);
-  // };
 
   const handleDeleteProfilePicture = () => {
     DeleteProfilePicture.mutate();
@@ -114,44 +101,12 @@ function Profile() {
   };
   //New code for profile picture upload ends here///////
 
-  //Code for Deleting profile picture starts here///////
-
-  // const deleteProfileImage = async () => {
-  //   const url = `https://nodebt-application.onrender.com/api/users/${localStorage.getItem(
-  //     "adminId"
-  //   )}/profile-picture`;
-
-  //   try {
-  //     const response = await axios.delete(url, {
-  //       headers: {
-  //         Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     return response.data;
-  //   } catch (error) {
-  //     throw new Error("Failed to delete profile image");
-  //   }
-  // };
-
-  // const ProfileImageDeleteButton = () => {
-  //   const { mutate } = useMutation(deleteProfileImage);
-
-  //   const handleDeleteImage = () => {
-  //     mutate();
-  //   };
-
-  //   return handleDeleteImage;
-  // };
-
-  // // Usage:
-  // const handleDeleteImage = ProfileImageDeleteButton();
   const handleDeleteImage = () => {
     setProfileImageUrl("");
   };
 
   //Code for Deleting profile picture ends here///////
+
 
   const [updateAdmin, setUpdateAdmin] = useState({
     organisationName: "",
@@ -396,6 +351,7 @@ function Profile() {
                 className="change-pic-btn"
               ></button>
             </div>
+
             <button onClick={handleDeleteImage} className="profile-pic-remove">
               Remove Profile Picture
             </button>

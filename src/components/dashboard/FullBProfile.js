@@ -10,16 +10,7 @@ import axios from "axios";
 const FullBProfile = () => {
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData } = useBorrowersDataStore();
-  // console.log(formData);
-  // console.log(formData.guarantor);
-
-  // const { mutate, error, isLoading } = useCreatLoan();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   mutate(formData);
-  //   setModalisopen(true);
-  // };
+ 
   const customStyles = {
     content: {
       top: "50%",
@@ -45,7 +36,6 @@ const FullBProfile = () => {
         }
       );
       return response.data;
-
       console.log(response.data);
     } catch (error) {
       throw new Error(error.response.data.message);
@@ -56,11 +46,6 @@ const FullBProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const {
-    //   guarantor: { dateOfBirth, employment, ...guarantor },
-    //   dateOfBirth: dob,
-    //   ...formValues
-    // } = formData;
     mutation.mutate(formData);
     console.log("formData", formData);
   };
@@ -230,7 +215,6 @@ const FullBProfile = () => {
                   type="text"
                   placeholder="Upload credit score"
                   className="placeholder"
-                  // value={formData.fullname}
                 />
               </div>
             </div>
