@@ -12,31 +12,33 @@ import { useNavigate } from "react-router-dom";
 import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 import { useForm } from "react-hook-form";
-import Modal from 'react-modal';
-
+import Modal from "react-modal";
 
 const SignUp = () => {
-  
   const [errorMsg, setErrorMsg] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [modalIsOpen, setModalisopen] = useState(false)
+  const [modalIsOpen, setModalisopen] = useState(false);
   const closeref = useRef();
   const modref = useRef();
-//form validation
-  const { handleSubmit, register, formState: { errors } } = useForm();
+  //form validation
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
   const navigate = useNavigate();
   // show password
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-  
+
   const onSuccess = () => {
     navigate("/login");
   };
   const onError = (err) => {
     console.log(err);
-    setErrorMsg(err.response.data.message)
+    setErrorMsg(err.response.data.message);
   };
 
   const { mutate, error, isLoading } = useSignup(onSuccess, onError);
@@ -45,15 +47,22 @@ const SignUp = () => {
     modref.current.style.display = "none";
   };
   const onSubmit = (data) => {
-   const firstName = data.firstname
-   const lastName = data.lastname
-   const email = data.email
-   const organisationName = data.organisation
-   const password = data.password
-   const confirmPassword = data.confirm
-      const  formData = {firstName, lastName, email, organisationName, password, confirmPassword}
-      console.log(formData)
-      mutate(formData)
+    const firstName = data.firstname;
+    const lastName = data.lastname;
+    const email = data.email;
+    const organisationName = data.organisation;
+    const password = data.password;
+    const confirmPassword = data.confirm;
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      organisationName,
+      password,
+      confirmPassword,
+    };
+    console.log(formData);
+    mutate(formData);
   };
 
   return (
@@ -75,118 +84,149 @@ const SignUp = () => {
               </Link>
             </span>
           </p>
-          {isLoading ? <div className="dots"><ThreeDots /></div> : <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="text"
-              placeholder="First Name:"
-              className="loginput"
-              name="firstname"
-              
-              {...register("firstname", {
-                required: "First name Required",
-              })}
-            />
-            <p className="val-message">{errors.firstname && errors.firstname.message}</p>
-            
-            <input
-              type="text"
-              placeholder="Last Name:"
-              className="loginput"
-              name="lastname"
-            
-              {...register("lastname", {
-                required: "Last name Required",
-              })}
-            />
-            <p className="val-message">{errors.lastname && errors.lastname.message}</p>
-            
-            <input
-              type="email"
-              placeholder="Email address:"
-              className="loginput"
-              name="email"
-              {...register("email", {
-                required: "Required",
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "invalid email address"
-                }
-              })}
-            />
-            <p className="val-message">{errors.email && errors.email.message}</p>
-            
-            <input
-              type="text"
-              placeholder="Organisation Name:"
-              className="loginput"
-              name="organisation"
-              
-              {...register("organisation", {
-                required: "Organisation name Required",
-              })}
-            />
-            <p className="val-message">{errors.organisation && errors.organisation.message}</p>
-            
-            <div className="pass">
+          {isLoading ? (
+            <div className="dots">
+              <ThreeDots />
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)}>
               <input
-                type={showPassword === false ? "password" : "text"}
-                placeholder="Password:"
-                className="pa"
-                name="password"
-                {...register("password", {
-                  required: "Password Required",
-                  pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
-                    message: "Password requirements: more than 8 characters, 1 Uppercase,1 lowercase, 1 Number, 1 symbol."
-                  }
+                type="text"
+                placeholder="First Name:"
+                className="loginput"
+                name="firstname"
+                {...register("firstname", {
+                  required: "First name Required",
                 })}
               />
-              <span className="eye">
-              {showPassword === false ? (
-                    <BsEyeSlash size="20px" onClick={togglePassword} />
-                  ) : (
-                    <BsEye size="20px" onClick={togglePassword} />
-                  )}
-              </span>
-            </div>
-            <p className="val-message">{errors.password && errors.password.message}</p>
+              <p className="val-message">
+                {errors.firstname && errors.firstname.message}
+              </p>
 
-            <div className="pass">
               <input
-                type={showPassword === false ? "password" : "text"}
-                placeholder="Confirm Password:"
-                className=" pa"
-                name="confirm"
-                {...register("confirm", {
-                  required: "Confirm Password Required",
-                  pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
-                    message: "Password requirements: must be the same with password"
-                  }
+                type="text"
+                placeholder="Last Name:"
+                className="loginput"
+                name="lastname"
+                {...register("lastname", {
+                  required: "Last name Required",
                 })}
               />
-              <span className="eye">
-              {showPassword === false ? (
+              <p className="val-message">
+                {errors.lastname && errors.lastname.message}
+              </p>
+
+              <input
+                type="email"
+                placeholder="Email address:"
+                className="loginput"
+                name="email"
+                {...register("email", {
+                  required: "Required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "invalid email address",
+                  },
+                })}
+              />
+              <p className="val-message">
+                {errors.email && errors.email.message}
+              </p>
+
+              <input
+                type="text"
+                placeholder="Organisation Name:"
+                className="loginput"
+                name="organisation"
+                {...register("organisation", {
+                  required: "Organisation name Required",
+                })}
+              />
+              <p className="val-message">
+                {errors.organisation && errors.organisation.message}
+              </p>
+
+              <div className="pass">
+                <input
+                  type={showPassword === false ? "password" : "text"}
+                  placeholder="Password:"
+                  className="pa"
+                  name="password"
+                  {...register("password", {
+                    required: "Password Required",
+                    pattern: {
+                      value:
+                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*])[a-zA-Z0-9!@#?$%^&*]{8,20}$/,
+                      message:
+                        "Password requirements: more than 8 characters, 1 Uppercase,1 lowercase, 1 Number, 1 symbol.",
+                    },
+                  })}
+                />
+                <span className="eye">
+                  {showPassword === false ? (
                     <BsEyeSlash size="20px" onClick={togglePassword} />
                   ) : (
                     <BsEye size="20px" onClick={togglePassword} />
                   )}
-              </span>
-            </div>
-            <p className="val-message">{errors.confirm && errors.confirm.message}</p>
-            
-            {error && <p className="val-message">{errorMsg}</p>}
-            <button  type='submit'onClick={() => setModalisopen(true)} className="log-btn">Sign Up</button>
-          <Modal isOpen={modalIsOpen} onRequestClose={() => setModalisopen(false)} className="modal-sign">
-          <img src={modimg} alt="" className="mod-img" />
-          <p className="mod-text">
-            You now have an account, please go ahead to Log into your account
-          </p>
-          
-          <Link to="/login">
-            <button className="mod-btn">Log In</button>
-          </Link>
-        </Modal>
+                </span>
+              </div>
+              <p className="val-message">
+                {errors.password && errors.password.message}
+              </p>
+
+              <div className="pass">
+                <input
+                  type={showPassword === false ? "password" : "text"}
+                  placeholder="Confirm Password:"
+                  className=" pa"
+                  name="confirm"
+                  {...register("confirm", {
+                    required: "Confirm Password Required",
+                    pattern: {
+                      value:
+                        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
+                      message:
+                        "Password requirements: must be the same with password",
+                    },
+                  })}
+                />
+                <span className="eye">
+                  {showPassword === false ? (
+                    <BsEyeSlash size="20px" onClick={togglePassword} />
+                  ) : (
+                    <BsEye size="20px" onClick={togglePassword} />
+                  )}
+                </span>
+              </div>
+              <p className="val-message">
+                {errors.confirm && errors.confirm.message}
+              </p>
+
+              {error && <p className="val-message">{errorMsg}</p>}
+              <button
+                type="submit"
+                onClick={() => setModalisopen(true)}
+                className="log-btn"
+              >
+                Sign Up
+              </button>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalisopen(false)}
+                className="modal-sign"
+              >
+                <img src={modimg} alt="" className="mod-img" />
+                <p className="mod-text">
+                  You now have an account, please go ahead to Log into your
+                  account
+                </p>
+
+                <Link to="/login">
+                  <button className="mod-btn">Log In</button>
+                </Link>
+              </Modal>
+            </form>
+          )}
 
             <div className="continue">
               <hr />
@@ -205,6 +245,7 @@ const SignUp = () => {
               </Link> */}
             </div>
           </form>}
+
         </div>
         <div className="login-right-box">
           <img src={logimg} alt="woman" />
@@ -214,7 +255,6 @@ const SignUp = () => {
         <p className="close" ref={closeref} onClick={handleClose}>
           X
         </p>
-      
       </div>
     </>
   );

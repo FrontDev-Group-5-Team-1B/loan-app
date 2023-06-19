@@ -5,12 +5,15 @@ import logo from "../../assets/Loan logo 1.png";
 import profile from "../../assets/profile-pic.png";
 import { Link } from "react-router-dom";
 
+import useProfileImageStore from "../../store/profileImageStore";
+
 // styles
 import "../../styles/dashBoard.css";
 
 const DbNav = () => {
   const storedAdminData = localStorage.getItem("adminData");
   const parsedAdminData = JSON.parse(storedAdminData);
+  const { profileImageUrl, setProfileImageUrl } = useProfileImageStore();
 
   return (
     <>
@@ -29,12 +32,20 @@ const DbNav = () => {
                 </h2>
               </div>
               <Link to="settings">
-                <img src={profile} className="profile-pic" />
+                {profileImageUrl ? (
+                  <img src={profileImageUrl} className="profile-pic" />
+                ) : (
+                  <img src={profile} className="profile-pic" />
+                )}
               </Link>
             </div>
           ) : (
             <Link to="settings">
-              <img src={profile} className="profile-pic" />
+              {profileImageUrl ? (
+                <img src={profileImageUrl} className="profile-pic" />
+              ) : (
+                <img src={profile} className="profile-pic" />
+              )}
             </Link>
           )}
         </div>
