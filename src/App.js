@@ -22,6 +22,7 @@ import Header from "./components/layouts/Header";
 import LogIn from "./components/pages/LogIn";
 import SignUp from "./components/pages/SignUp";
 import DashBoardContainer from "./components/layouts/DashBoardContainer";
+import BorrowerData from "./components/dashboard/BorrowerData";
 import BorrowerLoanInfo from "./components/dashboard/BorrowerLoanInfo";
 import Dashboard from "./components/dashboard/Index.dashboard";
 import Borrow from "./components/dashboard/Borrow.dashboard";
@@ -77,12 +78,14 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
-            <Route path="borrow" element={<Borrow />} />
+            <Route path="borrower_data" element={<BorrowerData />} />
             <Route path="loan" element={<LoanApplication />} />
             <Route path="history" element={<History />} />
             <Route path="admin" element={<AdminPage />} />
             <Route path="add_admin" element={<AddAdmin />} />
 
+            
+            <Route path="borrow" element={<Borrow />} />
             <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
             <Route path="collateral_info" element={<DashCollaInfo />} />
             <Route path="guarantor_info" element={<DashGInfo />} />

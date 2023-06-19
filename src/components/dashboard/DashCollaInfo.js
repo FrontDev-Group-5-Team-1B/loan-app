@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { RxDotFilled } from "react-icons/rx";
+
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const DashCollaInfo = () => {
@@ -8,11 +9,6 @@ const DashCollaInfo = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
-    // // Check if the input is a select field
-    // if (name === "collateralType") {
-    //   setFormData({ ...formData, collateralType: value });
-    // } else {
     const newValue = name === "collateralValue" ? parseFloat(value) : value;
     setFormData({ ...formData, [name]: newValue });
   };
@@ -60,16 +56,16 @@ const DashCollaInfo = () => {
           />
           <div className="car-dot">
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px" />
             </p>
             <Link to="/dashboard/borrow" style={{ textDecoration: "none" }}>
               {" "}
               <p>
-                <RxDotFilled />
+                <RxDotFilled size="25px" />
               </p>
             </Link>
             <p className="p1">
-              <RxDotFilled />
+              <RxDotFilled size="25px" />
             </p>
             <Link
               to="/dashboard/guarantor_info"
@@ -77,7 +73,7 @@ const DashCollaInfo = () => {
             >
               {" "}
               <p>
-                <RxDotFilled />
+                <RxDotFilled size="25px" />
               </p>
             </Link>
           </div>

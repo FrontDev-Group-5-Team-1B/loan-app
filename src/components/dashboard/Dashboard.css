@@ -95,7 +95,7 @@ ul {
 .b-header h3 {
   padding: 10px 0;
   color: #0267ff;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .b-header p {
@@ -108,9 +108,9 @@ ul {
   border: 1px solid #cce1ff;
   background-color: #fafcff;
   width: 600px;
-  /* height: 350px; */
   border-radius: 25px 0 25px 0;
 }
+
 .loan-data {
   margin: 0 auto;
   padding: 10px;
@@ -146,12 +146,12 @@ ul {
 }
 
 .b-data input {
-  padding: 10px;
+  padding: 14px;
   margin: 10px;
-  width: 250px;
-  border-style: none;
+  width: 270px;
   font-size: 1.2rem;
   border: 1px solid #0252cc;
+  border-radius: 5px;
 }
 
 .b-data select {
@@ -206,8 +206,8 @@ ul {
   margin: 10px;
   width: 250px;
   font-size: 1.3rem;
-  border-style: none;
   border: 1px solid #0252cc;
+  border-radius: 5px;
 }
 
 .loan-info-flex select {
@@ -215,18 +215,18 @@ ul {
   margin: 10px;
   width: 250px;
   font-size: 1.3rem;
-  border-style: none;
   border: 1px solid #0252cc;
   color: #808080;
+  border-radius: 5px;
 }
 
 textarea {
   padding: 20px;
-  margin: 10px;
+  margin: 25px;  
   font-size: 1.3rem;
-  width: 500px;
-  align-self: center;
+  width: 600px;
   border: 1px solid #0252cc;
+  border-radius: 5px;
 }
 
 .d-btn {

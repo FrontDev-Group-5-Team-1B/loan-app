@@ -6,6 +6,7 @@ import { useState } from "react";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const DashGInfo = () => {
+  
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData, setFormData } = useBorrowersDataStore();
   const { guarantor } = formData;
@@ -63,6 +64,7 @@ const DashGInfo = () => {
       </div>
       <div className="bor-data">
         <h5>Guarantor's Information</h5>
+    
         <form>
           <div className="b-data">
             <div className="b-data1">
