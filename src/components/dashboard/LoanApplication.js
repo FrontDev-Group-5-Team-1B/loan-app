@@ -63,7 +63,9 @@ const LoanApplication = () => {
                 </Link>
               </td>
               <td>
-                <Link to={"/dashboard/preview"}>{application.createdAt}</Link>
+                <Link to={"/dashboard/preview"}>
+                  {application.createdAt.split("T")[0]}
+                </Link>
               </td>
               <td
                 className="status"
