@@ -9,41 +9,30 @@ import {
 } from "../../services/query/query.service";
 import { useMutation, useQuery } from "react-query";
 import axios from "axios";
+import { FadeLoader } from "react-spinners";
+import useProfileImageStore from "../../store/profileImageStore";
 
 function Profile() {
   const [showModal, setShowModal] = useState(false);
   const [saveProfile, setSaveProfile] = useState(false);
-  const [profilePicture, setProfilePicture] = useState('');
-  const [imageUrl, setImageUrl] = useState('')
+  const [profilePicture, setProfilePicture] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { profileImageUrl, setProfileImageUrl } = useProfileImageStore();
 
   const onSuccess = (data) => {
-    console.log('data')
-  }
+    console.log("data");
+  };
 
   const onError = (error) => {
-    console.log(error)
-  }
-  const {mutate: UploadPicture} = useUpdateProfilePicture(onSuccess, onError);
+    console.log(error);
+  };
+  const { mutate: UploadPicture } = useUpdateProfilePicture(onSuccess, onError);
   const DeleteProfilePicture = useDeleteProfilePicture();
 
   const DownloadProfilePicture = useDeleteProfilePicture();
   const [profileUrl, setProfileUrl] = useState(null);
   const inputRef = useRef(null);
-  // const handleProfilePictureUpload = () => {
-  //   const formData = new FormData();
-  //   formData.append("profileImage", profilePicture);
-  //   UpdateProfilePicture.mutate(formData);
-
-
-
-  // const handleProfilePictureChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setProfilePicture(file);
-    
-  //   const formData = new FormData();
-  //   formData.append("profileImage", profilePicture);
-  //   UpdateProfilePicture.mutate(formData);
-  // };
 
   const handleDeleteProfilePicture = () => {
     DeleteProfilePicture.mutate();
@@ -77,6 +66,7 @@ function Profile() {
     const file = inputRef.current?.files[0];
     if (file) {
       try {
+        setLoading(true); // Set loading state to true
         const response = await mutation.mutateAsync(file);
         // Handle the successful upload
         console.log("Profile picture uploaded successfully");
@@ -98,15 +88,24 @@ function Profile() {
 
         console.log(additionalResponse.data.data.imageUrl);
         // Update the profileUrl state with the new image URL
-        setProfileUrl(additionalResponse.data.data.imageUrl);
+        setProfileImageUrl(additionalResponse.data.data.imageUrl);
+        console.log(profileImageUrl);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false); // Set loading state to false
       }
     } else {
       console.log("No file selected");
     }
   };
   //New code for profile picture upload ends here///////
+
+  const handleDeleteImage = () => {
+    setProfileImageUrl("");
+  };
+
+  //Code for Deleting profile picture ends here///////
 
 
   const [updateAdmin, setUpdateAdmin] = useState({
@@ -307,17 +306,34 @@ function Profile() {
       <section>
         <div>
           <h4 className="profile-hp">Profile Picture</h4>
-
-          {profileUrl ? (
-            <img
-              src={profileUrl}
-              alt="Profile"
-              className="settings-profile-pic"
-            />
+          {loading ? (
+            <div className="spinner-container ">
+              <FadeLoader
+                color="blue"
+                loading={loading}
+                size={150}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </div>
           ) : (
-            <img src={profile} alt="Default" className="settings-profile-pic" />
+            <div>
+              {profileImageUrl ? (
+                <img
+                  src={profileImageUrl}
+                  alt="Profile"
+                  className="settings-profile-pic"
+                />
+              ) : (
+                <img
+                  src={profile}
+                  alt="Default"
+                  className="settings-profile-pic"
+                />
+              )}
+            </div>
           )}
-         
+
           <div className="profile-change-btn">
             <div>
               <label className="profile-pic-change">
@@ -327,7 +343,8 @@ function Profile() {
                   ref={inputRef}
                   onChange={handleFileUploads}
                 />
-                Change Profile Picture
+
+                <p>Change Profile Picture</p>
               </label>
               <button
                 onClick={() => inputRef.current.click()}
@@ -335,9 +352,9 @@ function Profile() {
               ></button>
             </div>
 
-            <button onClick={handleDeleteProfilePicture}>
-            <a href="#">Remove Profile Picture</a>
-            </button> 
+            <button onClick={handleDeleteImage} className="profile-pic-remove">
+              Remove Profile Picture
+            </button>
           </div>
         </div>
         <div className="cancle-save-btn">
@@ -375,7 +392,5 @@ function Profile() {
     </div>
   );
 }
-
-
 
 export default Profile;
