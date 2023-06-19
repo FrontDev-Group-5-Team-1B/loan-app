@@ -105,6 +105,16 @@ export const DownloadProfilePicture = ({}) => {
   );
 };
 
+// Get Eligibility email
+export const sendEmail = () => {
+  return axios.get(`${secondURI}/loans/send-eligibility-status?id=648359a9d79d9330ffc5df4d`)
+}
+
+// Check Eligibility Status
+export const checkEligibility = () => {
+  return axios.get(`${secondURI}/loans/eligibility?id=6483574dd79d9330ffc5df36`)
+}
+
 
 // Create a New Loan API call
 export const CreateLoan = ({ formData }) => {
