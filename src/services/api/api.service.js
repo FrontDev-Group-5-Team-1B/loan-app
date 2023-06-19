@@ -73,3 +73,16 @@ export const DownloadProfilePicture = ({}) => {
     `${baseURI}/admins/647deebbc24032a06525003d/profile-picture`
   );
 };
+
+export const CreateLoan = ({ formData }) => {
+  return axios.post(
+    `https://nodebtdev.onrender.com/api/loans/create`,
+    formData,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+};

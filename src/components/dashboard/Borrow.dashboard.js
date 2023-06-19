@@ -9,7 +9,16 @@ const Borrow = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let newValue;
+
+    if (name === "incomePerMonth") {
+      newValue = parseFloat(value);
+    } else if (name === "age") {
+      newValue = parseInt(value);
+    } else {
+      newValue = value;
+    }
+    setFormData({ ...formData, [name]: newValue });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,11 +76,39 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
+
+              <select
+                name="maritalStatus"
+                onChange={handleInputChange}
+                value={formData.maritalStatus}
+              >
+                <option value="">Marital Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+                <option Value="Divorced">Divorced</option>
+                <option Value="Separated">Separated</option>
+              </select>
+              <select
+                name="gender"
+                onChange={handleInputChange}
+                value={formData.gender}
+              >
+                <option value="">select gender</option>
+                <option value="Male">Male</option>
+                <option
+                  value="
+                
+                Female"
+                >
+                  Female
+                </option>
+              </select>
             </div>
             <div className="b-data2">
               <label htmlFor="phone_number">
                 <input
-                  type="number"
+                  type="tel"
                   placeholder="Phone Number"
                   className="placeholder"
                   name="phoneNumber"
@@ -79,13 +116,14 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
+
               <label htmlFor="date-of-birth">
                 <input
-                  type="number"
-                  placeholder="Date of Birth"
+                  type="text"
+                  placeholder="Age"
                   className="placeholder"
-                  name="dateOfBirth"
-                  value={formData.dateOfBirth}
+                  name="age"
+                  value={formData.age}
                   onChange={handleInputChange}
                 />
               </label>
@@ -106,6 +144,42 @@ const Borrow = () => {
                   className="placeholder"
                   name="incomePerMonth"
                   value={formData.incomePerMonth}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <select
+                name="jobSector"
+                onChange={handleInputChange}
+                value={formData.jobSector}
+              >
+                <option value="">Job Sector</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Accounting and Finance">
+                  Accounting and Finance
+                </option>
+                <option Value=" Sales and Customer Service">
+                  Sales and Customer Service
+                </option>
+                <option Value="Engineering">Engineering</option>
+                <option Value="Operations and Logistics">
+                  Operations and Logistics
+                </option>
+                <option Value="Information Technology">
+                  Information Technology
+                </option>
+                <option Value="Education and Training">
+                  Education and Training
+                </option>
+                <option Value="Others">Others</option>
+              </select>
+
+              <label htmlFor="jobRole">
+                <input
+                  type="text"
+                  placeholder="Job Role"
+                  className="placeholder"
+                  name="jobRole"
+                  value={formData.jobRole}
                   onChange={handleInputChange}
                 />
               </label>
