@@ -71,7 +71,7 @@ const SignUp = () => {
         <div className="login-left-box">
           <p className="arrow">
             <Link to="/" className="">
-              <FaArrowLeft />
+              <FaArrowLeft size="20px" />
             </Link>
           </p>
           <h2 className="logwel">Create an account</h2>
@@ -227,6 +227,24 @@ const SignUp = () => {
               </Modal>
             </form>
           )}
+
+            <div className="continue">
+              <hr />
+              <span>Or continue with</span>
+              <hr />
+            </div>
+            <div className="login-icons">
+              {/* <Link>
+                <FaEnvelope />
+              </Link> */}
+              <Link>
+                <img src={google} alt="google" />
+              </Link>
+              {/* <Link>
+                <FaApple />
+              </Link> */}
+            </div>
+          </form>}
 
         </div>
         <div className="login-right-box">

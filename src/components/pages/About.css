@@ -5,79 +5,107 @@
 }
 
 .aboutContain{
-    margin:0 auto;
-    width: 100%;
-    
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 30px; 
   }
   
   .aboutContain .topic{
     color: #67A4FF;
-    padding-bottom: 15px;
-    font-size: 2rem;
-  
+    padding: 25px;
+    font-size: 3rem;
+    text-align: left;
+    font-weight: 700;
   }
+
   .missionA{
-    height: 500px;
+    height: 400px;
     background-color: #F1FBF8;
-    padding: 20px;
-       
+    padding: 25px 25px;
+    align-items: center;   
   }
+
   .missionA h4{
     background-color: #012966;
     color: white;
-    width: 120px;
+    width: fit-content;
     padding: 15px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 30px;
   }
+
   .missionA p{
-    width: 80%;
-    margin: 0 auto;
-    font-size: 2vw;
-    padding-top: 80px;
+    margin-left: 100px;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 55px;
+    margin-right: 50px;
   }
+
   .visionA{
-    height: 500px;
+    height: 400px;
     background-color: #013E99;
-    padding: 20px;
+    align-items: center;
+    padding: 25px 25px;
     border-radius: 5px;
   }
-  .visionA h5{
-    background-color: #E6F0FF;
-    width: 120px;
-    padding: 15px;
-    font-size: 1.5rem;
-  }
-  .visionA p{
-    color: white;
-    width: 80%;
-    margin: 0 auto;
-    font-size: 2vw;
-    padding-top: 30px;
-  }
-  .coreValues{
-    height: 500px;
-    background-color: #9AC2FF;
-    padding: 20px;
-    margin-bottom: -50px;
 
-    
-  }
-  .coreValues h6{
-    background-color: #012966;
-    color: white;
-    width: 150px;
+  .visionA h4{
+    background-color: #E6F0FF;
+    width: fit-content;
     padding: 15px;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-left: 30px;
+  }
+
+  .visionA p{
+    color: #fff;
+    font-size: 2rem;
+    align-items: center;
+    margin-left: 100px;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 55px;
+    margin-right: 50px;
+  }
+
+  .coreValues{
+    height: 400px;
+    background-color: #9AC2FF;
+    padding: 25px 25px;
+  }
+
+  .coreValues h4{
+    background-color: #012966;
+    color: #fff;
+    width: fit-content;
+    padding: 20px;
+    font-size: 2rem;
+    width: fit-content;
+    margin-left: 30px;
     
   }
   .coreValues ul{
-    margin: 0 auto;
-   width: 60%;
-   font-size: 3vw;
+   font-size: 1.5rem;
    display: flex;
    flex-wrap: wrap;
-   justify-content:space-between;
-   padding-top: 70px;
-  
+   justify-content: center;
+   align-items: center;
+   margin-left: 250px;
+   margin-top: 100px;
   }
- 
+
+  .coreValues li {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .coreValues li svg {
+    vertical-align: middle;
+    fill: #012966;
+  }
+  

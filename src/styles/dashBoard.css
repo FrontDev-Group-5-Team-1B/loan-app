@@ -22,6 +22,14 @@
   width: 35px;
 }
 
+.db-search {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .db-input-search {
   background: #ffffff;
   border: 1px solid #e5e5e5;
@@ -49,12 +57,12 @@
   align-items: center;
 }
 
-.db-mail {
+/* .db-mail {
   height: 18px;
 }
 .db-bell {
   height: 25px;
-}
+} */
 
 /* DASHBOARD SIDENAV STYLES */
 .db-main {
