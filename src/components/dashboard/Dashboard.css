@@ -108,7 +108,7 @@ ul {
   border: 1px solid #cce1ff;
   background-color: #fafcff;
   width: 600px;
-  height: 350px;
+  /* height: 350px; */
   border-radius: 25px 0 25px 0;
 }
 .loan-data {

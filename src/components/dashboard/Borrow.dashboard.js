@@ -89,21 +89,16 @@ const Borrow = () => {
                 <option Value="Divorced">Divorced</option>
                 <option Value="Separated">Separated</option>
               </select>
-              <select
-                name="gender"
-                onChange={handleInputChange}
-                value={formData.gender}
-              >
-                <option value="">select gender</option>
-                <option value="Male">Male</option>
-                <option
-                  value="
-                
-                Female"
-                >
-                  Female
-                </option>
-              </select>
+              <label htmlFor="Gender">
+                <input
+                  type="text"
+                  placeholder="Gender"
+                  className="placeholder"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleInputChange}
+                />
+              </label>
             </div>
             <div className="b-data2">
               <label htmlFor="phone_number">
@@ -117,9 +112,9 @@ const Borrow = () => {
                 />
               </label>
 
-              <label htmlFor="date-of-birth">
+              <label htmlFor="age">
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Age"
                   className="placeholder"
                   name="age"
