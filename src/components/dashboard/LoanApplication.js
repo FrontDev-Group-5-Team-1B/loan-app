@@ -68,14 +68,20 @@ const LoanApplication = () => {
               <td
                 className="status"
                 style={
-                  application.eligibility === "true"
+                  application.eligibility === true
                     ? { color: "green" }
-                    : application.eligibility === "false"
-                    ? { color: "orange" }
+                    : application.eligibility === false
+                    ? { color: "red" }
                     : { color: "red" }
                 }
               >
-                <Link to={"/dashboard/preview"}>{application.eligibility}</Link>
+                <Link to={"/dashboard/preview"}>
+                  {application.eligibility === true ? (
+                    <p>Successful</p>
+                  ) : (
+                    <p>Declined</p>
+                  )}
+                </Link>
               </td>
               <td>
                 <Link to={"/dashboard/preview"}>{application.creditScore}</Link>
