@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../../styles/security.css";
 import { Link } from "react-router-dom";
 import { useMutation } from "react-query";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import fgpimg from "../../assets/5568706 1.png";
 
 
 const Security = () => {
@@ -19,14 +20,17 @@ const Security = () => {
   const togglePassword2 = () => {
     setShowPassword2(!showPassword2);
   };
-  const [errorMessage, setErrorMessage] = useState("");
+  const modref = useRef();
+
+  // const [errorMessage, setErrorMessage] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [success, setSuccess] = useState("")
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
   const { handleSubmit, register, formState: { errors } } = useForm();
   
 
-  // const [error, setError] = useState("");
+
   const { mutate, error } = useMutation(
     (data) =>
       axios.put(
@@ -40,12 +44,17 @@ const Security = () => {
           },
         }
       ),
-    {
-      onError: (err) => {
-        console.log(err);
-        setErrorMsg(err.response.data.message)
+      {
+      onSuccess:(result)=>{
+        setSuccess(result.data.message)
+      },
+
+
+        onError: (err) => {
+          console.log(err);
+          setErrorMsg(err.response.data.message)
+        }
       }
-    }
   );
 
   const handleChange = (event) => {
@@ -63,6 +72,11 @@ const Security = () => {
     //   // Handle password mismatch error
     //   return;
     // }
+    const changePassword = {
+      oldPassword: data.oldPassword,
+    newPassword: data.newPassword,
+    confirmNewPassword: data.confirmNewPassword,
+    }
 
     mutate(changePassword);
   };
@@ -147,6 +161,7 @@ const Security = () => {
             {/* {error?.response?.data?.message && (
               <p>{error.response.data.message}</p>
             )} */}
+            {success && <p style={{textAlign:"center", color:"green", fontSize:"20px"}}>{success}</p>}
             {error && <p className="val-message">{errorMsg}</p>}
           </div>
 
@@ -159,6 +174,30 @@ const Security = () => {
           </div>
         </form>
       </div>
+      <div className="fgcontainer" ref={modref}>
+          <div className="modal-sign">
+            <img src={fgpimg} alt="" className="" width="300px"/>
+            <p className="fptxt">
+            Your password has been changed. To confirm, kindly log into your account
+            </p>
+            <form className="fgform">
+            <Link to="/login"><button
+              className="fg-btn2"
+              style={{ margin: "10px", width:"100%", padding: "1rem" }}
+            >
+              Log into your account
+            </button>
+            </Link>
+            <Link to="/dashboard"><button
+              className="fg-btn2"
+              style={{margin: "10px",backgroundColor:"transparent",border:"1px",borderStyle:"solid",borderColor:"#FF2727",color:"#FF2727", width:"100%", padding: "1rem" }}
+            >
+              Cancel
+            </button>
+            </Link>
+            </form>
+          </div>
+        </div>
     </div>
   );
 };
