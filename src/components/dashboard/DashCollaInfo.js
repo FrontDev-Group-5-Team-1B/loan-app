@@ -9,9 +9,11 @@ const DashCollaInfo = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
     const newValue = name === "collateralValue" ? parseFloat(value) : value;
     setFormData({ ...formData, [name]: newValue });
   };
+
   return (
     <div className="borrow-wrap">
       <div className="b-header">
@@ -58,24 +60,25 @@ const DashCollaInfo = () => {
             <p>
               <RxDotFilled size="25px" />
             </p>
-            <Link to="/dashboard/borrow" style={{ textDecoration: "none" }}>
-              {" "}
+            {/* <Link to="/dashboard/borrow" style={{ textDecoration: "none" }}> </Link>
+              {" "} */}
               <p>
                 <RxDotFilled size="25px" />
               </p>
-            </Link>
+           
             <p className="p1">
               <RxDotFilled size="25px" />
             </p>
-            <Link
-              to="/dashboard/guarantor_info"
-              style={{ textDecoration: "none" }}
-            >
-              {" "}
-              <p>
+            <p>
                 <RxDotFilled size="25px" />
               </p>
-            </Link>
+            
+            {/* <Link
+              to="/dashboard/guarantor_info"
+              style={{ textDecoration: "none" }}
+            ></Link> */}
+              {" "}
+              
           </div>
         </form>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 import useBorrowersDataStore from "../../store/borowersDataStore";
@@ -27,14 +28,14 @@ const Borrow = () => {
 
 
   return (
-    <div className="borrow-wrap">
+    <div className="borrow-wrap dash-wrapper">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
       </div>
-      <div className="bor-data-b">
+      <div className="bor-data">
         <h5>Personal and contact information</h5>
-        
+        <form onSubmit={handleSubmit}>
           <div className="b-data">
             <div className="b-data1">
 
@@ -191,6 +192,8 @@ const Borrow = () => {
             <p className="p1">
               <RxDotFilled size="25px"/>
             </p>
+            {/* <Link to="/dashboard/borrowerloan_info" style={{ textDecoration: "none" }}
+            ></Link> */}
               {" "}
               <p>
                 <RxDotFilled size="25px"/>
@@ -202,9 +205,18 @@ const Borrow = () => {
               <RxDotFilled size="25px"/>
             </p>
           </div>
-      
+          </form>
       </div>
-     
+      <div className="s-btn">
+        <button type="submit" className="b-btn">
+          <Link
+            to="/dashboard/borrowerloan_info"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Next
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };

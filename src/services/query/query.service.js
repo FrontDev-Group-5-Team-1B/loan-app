@@ -6,9 +6,7 @@ import {
   UpdateProfilePicture,
   DeleteProfilePicture,
   DownloadProfilePicture,
-  CreateLoan,
-  sendEmail,
-  socialAuth, 
+  sendEmail, 
   VerifyToken,
   ResetPassword,
   checkEligibility
@@ -31,11 +29,6 @@ export const useVerifyToken = (onSuccess, onError) => {
   return useMutation(VerifyToken, { onSuccess, onError });
 };
 
-export const useSocialAuth = () => {
-  return useMutation(socialAuth, {onSuccess: (data) => {
-    console.log(data)
-  }});
-}
 
 export const useResetPassword = (onSuccess, onError) => {
   return useMutation(ResetPassword, { onSuccess, onError });
@@ -61,6 +54,3 @@ export const useCheckEligibilty = () => {
   return useQuery(checkEligibility)
 }
 
-export const useCreatLoan = (onSuccess, onError) => {
-  return useMutation(CreateLoan, { onSuccess, onError });
-};

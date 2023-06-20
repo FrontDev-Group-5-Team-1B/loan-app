@@ -49,7 +49,7 @@ const DashBoardContainer = ({ setAuth, auth }) => {
             <RiDashboardFill /> Dashboard
           </NavLink>
           <NavLink
-            to="borrower_data"
+            to="borrow"
             onClick={() => handleLinkClick(2)}
             className={activeLink === 2 ? "active-dbl" : " db-link"}
           >

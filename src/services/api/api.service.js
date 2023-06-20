@@ -36,31 +36,6 @@ export const VerifyToken = ({ email, fiveDigitToken }) => {
 };
 
 // Social Authentication API call
-export const socialAuth = async (code) => {
-  try {
-    const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json',
-    };
-
-    const requestData = new URLSearchParams();
-    requestData.append('code', code);
-    requestData.append('client_id', '971442954116-mo6drlr37kt7c5tadolni39jiki7eire.apps.googleusercontent.com');
-    requestData.append('client_secret', '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');
-    requestData.append('grant_type', 'authorization_code');
-    requestData.append('redirect_uri', 'localhost:5000/api/admins/signup');
-
-    const response = await axios.post(
-      'https://accounts.google.com/o/oauth2/token',
-      requestData.toString(),
-      { headers }
-    );
-
-    return response.data;
-  } catch (error) {
-    throw new Error(error);
-  }
-};
 
 // Reset Password API call
 export const ResetPassword = ({ data }) => {
@@ -114,18 +89,3 @@ export const sendEmail = () => {
 export const checkEligibility = () => {
   return axios.get(`${secondURI}/loans/eligibility?id=6483574dd79d9330ffc5df36`)
 }
-
-
-// Create a New Loan API call
-export const CreateLoan = ({ formData }) => {
-  return axios.post(
-    `https://nodebtdev.onrender.com/api/loans/create`,
-    formData,
-    {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
-};
