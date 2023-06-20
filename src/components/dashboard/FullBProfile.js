@@ -56,11 +56,6 @@ const FullBProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const {
-    //   guarantor: { dateOfBirth, employment, ...guarantor },
-    //   dateOfBirth: dob,
-    //   ...formValues
-    // } = formData;
     mutation.mutate(formData);
     console.log("formData", formData);
   };
