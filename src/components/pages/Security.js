@@ -8,11 +8,11 @@ import { useForm } from "react-hook-form";
 import fgpimg from "../../assets/5568706 1.png";
 
 const Security = () => {
-  const [changePassword, setChangePassword] = useState({
-    oldPassword: "",
-    newPassword: "",
-    confirmNewPassword: "",
-  });
+  // const [changePassword, setChangePassword] = useState({
+  //   oldPassword: "",
+  //   newPassword: "",
+  //   confirmNewPassword: "",
+  // });
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -59,13 +59,13 @@ const Security = () => {
       }
   );
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setChangePassword((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setChangePassword((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
 
   const onPasswordChange = (data) => {
     console.log(data);
@@ -103,7 +103,7 @@ const Security = () => {
                 type="text"
                 className="profile-input"
                 placeholder="Old Password"
-                onChange={handleChange}
+                
                 {...register("oldPassword", {
                   required: "Old password Required",
                 })}
@@ -128,7 +128,7 @@ const Security = () => {
                 type={showPassword === false ? "password" : "text"}
                 className="profile-input"
                 placeholder="New Password"
-                onChange={handleChange}
+                
                 {...register("newPassword", {
                   required: "New password Required",
                   pattern: {
@@ -166,7 +166,7 @@ const Security = () => {
                 type={showPassword2 === false ? "password" : "text"}
                 className="profile-input"
                 placeholder="Confirm New Password"
-                onChange={handleChange}
+             
                 {...register("confirmNewPassword", {
                   required: "Confirm new password Required",
                   pattern: {

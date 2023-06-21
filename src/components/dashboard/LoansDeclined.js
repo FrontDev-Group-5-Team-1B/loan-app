@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DeclinedLoanData from "../../data/DeclinedLoanData";
+// import DeclinedLoanData from "../../data/DeclinedLoanData";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import "../../styles/dashPages.css";
@@ -25,9 +25,14 @@ const LoansDeclined = () => {
 
   const { data } = useQuery("declinedAscend", getDeclinedData);
   useEffect(() => {
-    console.log(data);
     setDeclined(data);
   }, [data]);
+
+//  if (declined.length === 0){
+//                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
+//                   {declined?.message}
+//                 </p>
+//    }
   return (
     <>
       <div className="loansgener-wrapper">
@@ -82,11 +87,18 @@ const LoansDeclined = () => {
                   <td>{declinedData.amount}</td>
                 </tr>
               ))} */}
-              {declined && (
-                <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
-                  {declined.message}!
-                </p>
-              )}
+             
+              {declined?.data.loans.map((all) => {
+                return (
+                  <tr key={all._id}>
+                    <td>{all.fullname}</td>
+                    <td>{all.createdAt}</td>
+                    <td className="generated-red">Declined</td>
+                    <td>{all.creditScore}</td>
+                    <td>{all.loanAmount}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
