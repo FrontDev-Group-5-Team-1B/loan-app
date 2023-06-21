@@ -107,26 +107,8 @@ ul {
   padding: 10px;
   border: 1px solid #cce1ff;
   background-color: #fafcff;
-  width: 700px;
-  /* height: 550px; */
+  width: 600px;
   border-radius: 25px 0 25px 0;
-  margin-top: 35px;
-  
-}
-.bor-data-b{
-  border: 1px solid #cce1ff;
-  background-color: #fafcff;
-  width: 700px;
-  /* height: 550px; */
-  border-radius: 25px 0 25px 0;
-  margin-top: 35px;
-
-}
-.bor-data-b h5{
-  padding-top: 10px;
-  color: #4d4d4d;
-  font-size: 1.5rem;
-  margin: 0 25px;
 }
 
 .loan-data {
@@ -142,7 +124,6 @@ ul {
   color: #4d4d4d;
   font-size: 1.2rem;
   margin: 0 25px;
-  /* padding: 20px 0; */
 }
 
 .loan-data h5 {
@@ -173,13 +154,23 @@ ul {
   border-radius: 5px;
 }
 
-/* .s-btn {
- 
+.b-data select {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  font-size: 1.3rem;
+  border-style: none;
+  border: 1px solid #0252cc;
+  color: #808080;
+}
+
+.s-btn {
+  display: flex;
+  justify-content: flex-end;
   margin: 0 auto;
   width: 200px;
   padding: 20px 0;
-  cursor: pointer;
-} */
+}
 
 .b-btn {
   width: 120px;
@@ -188,48 +179,25 @@ ul {
   border-style: none;
   margin-right: 30px;
   font-weight: 750;
-  cursor: pointer;
 }
 
-/* .b-btn:hover{
-    background-color: #4889eb;
-} */
+.b-btn:hover {
+  background-color: #4889eb;
+}
 
 .g-btn {
-  /* display: flex;
-  justify-content: flex-end; */
-  width: 200px;
+  width: 120px;
   padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
   background-color: #0267ff;
   color: white;
   border-style: none;
   margin-right: 30px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.g-btn:hover {
-  opacity: 0.8;
-}
-
-.btn-btn .btn-pre {
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn-btn .btn-cancel {
-  color: #ff1c1c;
-  background-color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+  font-weight: 750;
 }
 
 .loan-info-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
 }
 
@@ -264,42 +232,30 @@ textarea {
 .d-btn {
   display: flex;
   justify-content: space-around;
-  max-width: 700px;
+  max-width: 60 0px;
   padding: 20px;
-  cursor: pointer;
 }
 
 .l-btn {
-  width: 200px;
-  font-size: 16px;
+  width: 120px;
   padding: 10px;
   background-color: white;
-  border-color: #80b2ff;
+  border-color: #0267ff;
   margin-right: 30px;
   color: #0267ff;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
+  font-weight: 750;
 }
 
 .l-btn:hover {
-  background-color: #0f6fff85;
+  background-color: #4889eb;
 }
 
 .car-dot {
   display: flex;
-  justify-content: center;
-  align-items: center;
   color: #839fc9;
-  margin-top: 15px;
-  margin-left: -20px;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-  /* position: absolute; */
-  /* font-size: 15px; */
-  /* margin: 0 auto; */
-  /* width: 50px;    */
+  font-size: 15px;
+  margin: 0 auto;
+  width: 50px;
 }
 
 .car-dot .p1 {

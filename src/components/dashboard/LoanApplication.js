@@ -3,9 +3,37 @@ import loanApplication from "../../data/loanApplication";
 import { FiMenu } from "react-icons/fi";
 import "../../styles/loanApplication.css";
 import { Link } from "react-router-dom";
+import { useQuery } from "react-query";
+import axios from "axios";
 
 const LoanApplication = () => {
   const [loanData, setLoanData] = useState();
+
+  //  LOGIC FOR FETCHING ALL LOANS STARTS HERE //////////////
+  const fetchCompanyLoans = async () => {
+    try {
+      const response = await axios.get(
+        "https://nodebtdev.onrender.com/api/loans/company-loans",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      return response.data.data.loans;
+    } catch (error) {
+      throw new Error(error.response.data.error);
+    }
+  };
+
+  const { data, isLoading, isError, error } = useQuery(
+    "companyLoans",
+    fetchCompanyLoans
+  );
+
+  console.log(data);
+  //  LOGIC FOR FETCHING ALL LOANS STARTS HERE //////////////
+
   return (
     <div className="db-loan-application-container dash-wrapper">
       <div className="loan-app-title">
@@ -27,35 +55,41 @@ const LoanApplication = () => {
           </tr>
         </thead>
         <tbody>
-          {loanApplication?.map((application, idx) => (
+          {data?.map((application, idx) => (
             <tr key={idx}>
               <td>
                 <Link to={"/dashboard/borrowerprofile"}>
-                  {application.borrower_name}
+                  {application.fullname}
                 </Link>
               </td>
               <td>
-                <Link to={"/dashboard/preview"}>{application.date}</Link>
+                <Link to={"/dashboard/preview"}>
+                  {application.createdAt.split("T")[0]}
+                </Link>
               </td>
               <td
                 className="status"
                 style={
-                  application.status === "Successful"
+                  application.eligibility === true
                     ? { color: "green" }
-                    : application.status === "Pending"
-                    ? { color: "orange" }
+                    : application.eligibility === false
+                    ? { color: "red" }
                     : { color: "red" }
                 }
               >
-                <Link to={"/dashboard/preview"}>{application.status}</Link>
-              </td>
-              <td>
                 <Link to={"/dashboard/preview"}>
-                  {application.credit_score}
+                  {application.eligibility === true ? (
+                    <p>Successful</p>
+                  ) : (
+                    <p>Declined</p>
+                  )}
                 </Link>
               </td>
               <td>
-                <Link to={"/dashboard/preview"}>{application.amount}</Link>
+                <Link to={"/dashboard/preview"}>{application.creditScore}</Link>
+              </td>
+              <td>
+                <Link to={"/dashboard/preview"}>{application.loanAmount}</Link>
               </td>
             </tr>
           ))}

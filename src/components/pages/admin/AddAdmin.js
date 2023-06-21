@@ -17,7 +17,7 @@ const AddAdmin = () => {
     email: "",
     phoneNumber: "",
     role: "",
-    loginURL: "https://loan-prediction-app-group-1b.netlify.app/login"
+    loginURL: "https://loan-prediction-app-group-1b.netlify.app/login",
   });
 
   //// ADD ADMIN LOGIC STARTS HERE//////////////////////////////////
@@ -180,7 +180,10 @@ const AddAdmin = () => {
               </div>
             )}
 
-            <label className="_btn-blue upload-btn">
+            <label
+              className="_btn-blue upload-btn"
+              style={{ textAlign: "center" }}
+            >
               <input type="file" onChange={handleFile} />
               {image ? "Image Uploaded" : "Upload Image"}
             </label>

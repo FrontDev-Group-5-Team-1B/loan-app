@@ -7,7 +7,6 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import fgpimg from "../../assets/5568706 1.png";
 
-
 const Security = () => {
   const [changePassword, setChangePassword] = useState({
     oldPassword: "",
@@ -27,8 +26,11 @@ const Security = () => {
   const [success, setSuccess] = useState("")
   const [showPassword, setShowPassword] = useState(false);
   const [showPassword2, setShowPassword2] = useState(false);
-  const { handleSubmit, register, formState: { errors } } = useForm();
-  
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
 
 
   const { mutate, error } = useMutation(
@@ -66,7 +68,7 @@ const Security = () => {
   };
 
   const onPasswordChange = (data) => {
-    console.log(data)
+    console.log(data);
 
     // if (changePassword.newPassword !== changePassword.confirmNewPassword) {
     //   // Handle password mismatch error
@@ -91,7 +93,10 @@ const Security = () => {
       <div>
         <form className="sec-form">
           <div className="sec-inputs">
-            <div className="bod" style={{marginBottom:0, marginTop:0,background: "#fafcff"}}>
+            <div
+              className="bod"
+              style={{ marginBottom: 0, marginTop: 0, background: "#fafcff" }}
+            >
               <input
                 id="oldPassword"
                 name="oldPassword"
@@ -103,10 +108,20 @@ const Security = () => {
                   required: "Old password Required",
                 })}
               />
-               
-              <p className="val-message">{errors.oldPassword && errors.oldPassword.message}</p>
+
+              <p className="val-message">
+                {errors.oldPassword && errors.oldPassword.message}
+              </p>
             </div>
-            <div className="pass" style={{marginBottom:0, marginTop:0,background: "#fafcff", borderColor: "#666666"}}>
+            <div
+              className="pass"
+              style={{
+                marginBottom: 0,
+                marginTop: 0,
+                background: "#fafcff",
+                borderColor: "#666666",
+              }}
+            >
               <input
                 id="newPassword"
                 name="newPassword"
@@ -117,22 +132,34 @@ const Security = () => {
                 {...register("newPassword", {
                   required: "New password Required",
                   pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
-                    message: "Password requirements: more than 8 characters, 1 Uppercase,1 lowercase, 1 Number, 1 symbol."
-                  }
+                    value:
+                      /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
+                    message:
+                      "Password requirements: more than 8 characters, 1 Uppercase,1 lowercase, 1 Number, 1 symbol.",
+                  },
                 })}
               />
               <span className="eye">
-              {showPassword === false ? (
-                    <BsEyeSlash size="20px" onClick={togglePassword} />
-                  ) : (
-                    <BsEye size="20px" onClick={togglePassword} />
-                  )}
+                {showPassword === false ? (
+                  <BsEyeSlash size="20px" onClick={togglePassword} />
+                ) : (
+                  <BsEye size="20px" onClick={togglePassword} />
+                )}
               </span>
-      
-              <p className="val-message">{errors.newPassword && errors.newPassword.message}</p>
+
+              <p className="val-message">
+                {errors.newPassword && errors.newPassword.message}
+              </p>
             </div>
-            <div className="pass" style={{marginBottom:0, marginTop:0,background: "#fafcff", borderColor: "#666666"}}>
+            <div
+              className="pass"
+              style={{
+                marginBottom: 0,
+                marginTop: 0,
+                background: "#fafcff",
+                borderColor: "#666666",
+              }}
+            >
               <input
                 id="confirmNewPassword"
                 name="confirmNewPassword"
@@ -143,21 +170,25 @@ const Security = () => {
                 {...register("confirmNewPassword", {
                   required: "Confirm new password Required",
                   pattern: {
-                    value: /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
-                    message: "Password requirements: must be the same with password"
-                  }
+                    value:
+                      /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#?$%^&*_-])[a-zA-Z0-9!@#?$%^&*_-]{8,20}$/,
+                    message:
+                      "Password requirements: must be the same with password",
+                  },
                 })}
               />
               <span className="eye">
-              {showPassword2 === false ? (
-                    <BsEyeSlash size="20px" onClick={togglePassword2} />
-                  ) : (
-                    <BsEye size="20px" onClick={togglePassword2} />
-                  )}
+                {showPassword2 === false ? (
+                  <BsEyeSlash size="20px" onClick={togglePassword2} />
+                ) : (
+                  <BsEye size="20px" onClick={togglePassword2} />
+                )}
               </span>
-              <p className="val-message">{errors.confirmNewPassword && errors.confirmNewPassword.message}</p>
+              <p className="val-message">
+                {errors.confirmNewPassword && errors.confirmNewPassword.message}
+              </p>
             </div>
-          
+
             {/* {error?.response?.data?.message && (
               <p>{error.response.data.message}</p>
             )} */}
@@ -167,7 +198,10 @@ const Security = () => {
 
           <div>
             <Link>
-              <button className="setings-pwd-btn" onClick={handleSubmit(onPasswordChange)}>
+              <button
+                className="setings-pwd-btn"
+                onClick={handleSubmit(onPasswordChange)}
+              >
                 Change Password
               </button>
             </Link>

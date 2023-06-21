@@ -7,29 +7,7 @@ import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
 
-// const fetchCompanyLoans = async () => {
-//   try {
-//     const response = await axios.get(
-//       "https://nodebtdev.onrender.com/api/loans/company-loans",
-//       {
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem("token")}`,
-//           // Other headers if needed
-//         },
-//       }
-//     );
-//     return response.data;
-//   } catch (error) {
-//     throw new Error("Failed to fetch company loans");
-//   }
-// };
-
 const LoansGenerated = () => {
-  // const { data, isLoading, isError, error } = useQuery(
-  //   "companyLoans",
-  //   fetchCompanyLoans
-  // );
-  // console.log(data);
   return (
     <>
       <div className="loansgener-wrapper">
