@@ -6,6 +6,7 @@ import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const BorrowerLoanInfo = () => {
   const { formData, setFormData } = useBorrowersDataStore();
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const newValue = name === "loanAmount" ? parseFloat(value) : value;
@@ -85,15 +86,14 @@ const BorrowerLoanInfo = () => {
             <p className="p1">
               <RxDotFilled size="25px" />
             </p>
-            <Link
+            {/* <Link
               to="/dashboard/collateral_info"
               style={{ textDecoration: "none" }}
-            >
+            ></Link> */}
               {" "}
               <p>
                 <RxDotFilled size="25px"/>
               </p>
-            </Link>
             <p>
               <RxDotFilled size="25px" />
             </p>

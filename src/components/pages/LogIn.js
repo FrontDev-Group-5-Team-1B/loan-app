@@ -15,7 +15,6 @@ import {
   useVerifyToken,
   useResetPassword,
   useGetToken,
-  useSocialAuth,
 } from "../../services/query/query.service";
 
 import { useNavigate } from "react-router-dom";
@@ -195,11 +194,6 @@ const LogIn = ({ auth, setAuth }) => {
     }
   };
 
-  const socialAuth = useSocialAuth()
-  const handleSocialAuth = () => {
-    socialAuth.mutate()
-  };
-
   return (
     <>
       <div className="login-container">
@@ -294,7 +288,7 @@ const LogIn = ({ auth, setAuth }) => {
                 {/* <Link>
                   <FaEnvelope />
                 </Link> */}
-                <Link onClick={handleSocialAuth}>
+                <Link>
                   <img src={google} alt="google" />
                 </Link>
                 {/* <Link>

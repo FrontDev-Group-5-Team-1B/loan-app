@@ -10,6 +10,7 @@ import "../../styles/header.css";
 const Header = ({ auth }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };

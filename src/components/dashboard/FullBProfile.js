@@ -3,7 +3,6 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import useBorrowersDataStore from "../../store/borowersDataStore";
-import { useCreatLoan } from "../../services/query/query.service";
 import { useMutation } from "react-query";
 import axios from "axios";
 
@@ -22,6 +21,7 @@ const FullBProfile = () => {
       padding: "50px",
     },
   };
+
   const createLoan = async (formData) => {
     console.log(formData);
     try {
@@ -364,7 +364,7 @@ const FullBProfile = () => {
 
         <div>
           <div className="f-btn-div">
-            <button type="submit" onClick={handleSubmit} className="f-btn">
+            <button style={{width: "140px", padding: "10px"}} type="submit" onClick={handleSubmit} className="f-btn">
               Upload Data
             </button>
           </div>
