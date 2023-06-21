@@ -13,6 +13,8 @@ import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 import { useForm } from "react-hook-form";
 import Modal from 'react-modal';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 
 const SignUp = () => {
@@ -197,9 +199,17 @@ const SignUp = () => {
               <Link>
                 <FaEnvelope />
               </Link>
-              <Link>
+              {/* <Link>
                 <img src={google} alt="google" />
-              </Link>
+              </Link> */}
+              <GoogleLogin
+                     onSuccess={credentialResponse => {
+                     console.log(credentialResponse);
+                          }}
+                     onError={() => {
+                 console.log('Login Failed');
+                  }}/>
+                    
               <Link>
                 <FaApple />
               </Link>

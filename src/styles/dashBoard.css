@@ -10,7 +10,7 @@
   align-items: center;
   width: 100%;
   max-width: 1440px;
-  padding: 30px 70px 18px;
+  /* padding: 30px 70px 18px; */
   position: sticky;
   top: 0;
   left: 0;
@@ -20,6 +20,10 @@
 .db-logo img {
   height: 45px;
   width: 35px;
+}
+.db-search{
+  margin: 0 auto;
+  /* margin-left: 120px; */
 }
 
 .db-input-search {
