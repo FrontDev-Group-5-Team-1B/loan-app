@@ -7,7 +7,7 @@ import { BsEyeSlash, BsEye } from "react-icons/bs";
 // import { FaEnvelope } from "react-icons/fa";
 // import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
-// import google from "../../assets/logos_google-icon.png";
+import google from "../../assets/logos_google-icon.png";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {
