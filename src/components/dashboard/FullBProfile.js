@@ -10,16 +10,7 @@ import axios from "axios";
 const FullBProfile = () => {
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData } = useBorrowersDataStore();
-  // console.log(formData);
-  // console.log(formData.guarantor);
 
-  // const { mutate, error, isLoading } = useCreatLoan();
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   mutate(formData);
-  //   setModalisopen(true);
-  // };
   const customStyles = {
     content: {
       top: "50%",
@@ -52,7 +43,11 @@ const FullBProfile = () => {
     }
   };
 
-  const mutation = useMutation(createLoan);
+  const mutation = useMutation(createLoan, {
+    onSuccess: () => {
+      setModalisopen(true);
+    },
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,208 +1,200 @@
-.p-borrow1{
-    display: flex;
-  }
+.p-borrow1 {
+  display: flex;
+}
 
-  .p-borrow1 p{
-    font-weight: 600;
-    padding: 20px 0;
-    font-size: 1.3rem;
-  }
+.p-borrow1 p {
+  font-weight: 600;
+  padding: 20px 0;
+  font-size: 1.3rem;
+}
 
-  .bprofile-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #CCE1FF;
-    padding: 30px;
-    max-width: 800px;
-  }
+.bprofile-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cce1ff;
+  padding: 30px;
+  max-width: 800px;
+}
 
-  .bprofile-div h4{
-    font-size: 1.5rem;
-    padding: 10px 0;
-  }
+.bprofile-div h4 {
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
 
-  .bprofile-div2{
-    padding: 20px;
-    gap: 4px;
-  }
-  .br-loan-n {
-    text-decoration: none;
-    color: #666666;
-  }
+.bprofile-div2 {
+  padding: 20px;
+  gap: 4px;
+}
+.br-loan-n {
+  text-decoration: none;
+  color: #666666;
+}
 
-   .borrow_preview{
-    text-decoration: none;
-    padding-top: 30px;
-    font-size: 18px;
-    color: #0267FF;
-    font-weight: 500;
-    border-style: none;
-    background-color: white;
-  } 
-  .fbp-flex{
-    display: flex;
-    justify-content: space-between;
-  
-   
-  }
-  .fbp-flex input{
-    border: 1px solid #0252CC;
-    list-style-type: none;
-    padding: 10px ;
-    margin: 10px 0;
-    width: 300px;
-  }
-  .modalP-head p{
-    padding-top: 10px;
-  }
-  .modal-btn{
-    padding: 10px;
-    background-color: #0267FF;
-    color: white;
-    border: none;
-   
-  }
+.borrow_preview {
+  text-decoration: none;
+  padding-top: 30px;
+  font-size: 18px;
+  color: #0267ff;
+  font-weight: 500;
+  border-style: none;
+  background-color: white;
+}
+.fbp-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.fbp-flex input {
+  border: 1px solid #0252cc;
+  list-style-type: none;
+  padding: 10px;
+  margin: 10px 0;
+  width: 300px;
+}
+.modalP-head p {
+  padding-top: 10px;
+}
+.modal-btn {
+  padding: 10px;
+  background-color: #0267ff;
+  color: white;
+  border: none;
+}
 
-.bs-preview .btn-btn{
+.bs-preview .btn-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.bs-preview button{
+.bs-preview button {
   align-content: center;
   padding: 10px;
   margin: 5px;
-  background-color: #0267FF ;
+  background-color: #0267ff;
   border-style: none;
   color: white;
   font-weight: 600;
   width: 200px;
 }
-  .bs-preview h6{
-    padding-bottom: 10px;
-    font-weight: 600;
-    font-size: 1.2rem;
-  }
-  
-  .bs-preview p{
-    color: red;
-    padding-top: 10px;
-    font-weight: 700;
-    
-  }
-  .g-fbp, .l-fbp, .p-fbp, .c-fbp{
-    border-bottom: 1px solid rgb(202, 198, 198);
-    padding: 20px 0;
-  }
-  .fbp-text{
-    border: 1px solid #0267FF;
-    background-color: #EEF5FC;
-    height: 100px;
-    margin-left: 0px;
-    font-size: 1.2rem;
-    color: rgb(129, 127, 127);
-  
-  }
-  .fbp-admin{
-    display: flex;
-    justify-content:flex-start ;
-    align-items: center;
-    padding: 10px 0;
-    gap: 10px;
-  }
-  .fbp-admin p{
-    color: #0267FF; ;
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-  .fbp-admin input{
-    padding:5px;
-    border-color: #0267FF;
-  }
-  .b-header h2{
-    color: #0267FF;
+.bs-preview h6 {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 
-  }
-  .f-btn-div{
-    display: flex;
-    justify-content: flex-end;
-  }
-  .fbp-header2{
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding-top:10px 0 10px 0 ;
-  }
-  .fbp-grade{
-    padding: 20px 0;
-
-  }
-  .fbp-grade p{
-    font-size: 1.2rem;
-    padding-bottom: 10px;
-    padding-bottom: 20px;
-  }
-  .f-btn{
-    padding: 10px;
-    color: white;
-    background-color: #0267FF ;
-    border: none;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
-  .f-btn:hover{
-    background-color:  #7f98be;
-
-  }
- .b-head1{
+.bs-preview p {
+  color: red;
+  padding-top: 10px;
+  font-weight: 700;
+}
+.g-fbp,
+.l-fbp,
+.p-fbp,
+.c-fbp {
+  border-bottom: 1px solid rgb(202, 198, 198);
+  padding: 20px 0;
+}
+.fbp-text {
+  border: 1px solid #0267ff;
+  background-color: #eef5fc;
+  height: 100px;
+  margin-left: 0px;
+  font-size: 1.2rem;
+  color: rgb(129, 127, 127);
+  width: 100%;
+}
+.fbp-admin {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  gap: 10px;
+}
+.fbp-admin p {
+  color: #0267ff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.fbp-admin input {
+  padding: 5px;
+  border-color: #0267ff;
+}
+.b-header h2 {
+  color: #0267ff;
+}
+.f-btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+.fbp-header2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-top: 10px 0 10px 0;
+}
+.fbp-grade {
+  padding: 20px 0;
+}
+.fbp-grade p {
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+.f-btn {
+  padding: 10px;
+  color: white;
+  background-color: #0267ff;
+  border: none;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+.f-btn:hover {
+  background-color: #7f98be;
+}
+.b-head1 {
   padding: 15px 0;
   font-size: 1.2rem;
- }
- .can-btn{
+}
+.can-btn {
   padding-bottom: 10px;
-  
- }
- .can-btnP{
+}
+.can-btnP {
   font-weight: 700;
   font-size: 1.2rem;
   padding-bottom: 10px;
-
- }
- .status-bor{
-   color:  #0267FF;
-   background-color: white;
-   font-size: 1.2rem;
-   border: none;
-   padding: 10px 0;
-
- }
- .status-bor:hover{
+}
+.status-bor {
+  color: #0267ff;
+  background-color: white;
+  font-size: 1.2rem;
+  border: none;
+  padding: 10px 0;
+}
+.status-bor:hover {
   background-color: #659beb;
- }
- .m-btn{
+}
+.m-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 10px;
   gap: 10px;
-  
- }
- .mb-btn{
-  background-color: #FAFCFF;
-  border-color: #0267FF ;
-  color:  #0267FF;
+}
+.mb-btn {
+  background-color: #fafcff;
+  border-color: #0267ff;
+  color: #0267ff;
   padding: 10px;
   font-weight: 600;
   justify-content: center;
   align-content: center;
   width: 300px;
- }
- .back-btn{
-  background-color: #0267FF ;
+}
+.back-btn {
+  background-color: #0267ff;
   padding: 10px;
   width: 100px;
   display: flex;
   justify-content: center;
   align-content: center;
- }
+}
