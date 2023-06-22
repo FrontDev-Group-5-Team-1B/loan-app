@@ -4,8 +4,8 @@ import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
 import fgpimgcheck from "../../assets/checked 1.png";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
-import { FaEnvelope } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
+// import { FaEnvelope } from "react-icons/fa";
+// import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import google from "../../assets/logos_google-icon.png";
 import { Link } from "react-router-dom";
@@ -16,10 +16,10 @@ import {
   useResetPassword,
   useGetToken,
 } from "../../services/query/query.service";
-import { useQuery } from "react-query";
+
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
-import { GetToken } from "../../services/api/api.service";
+// import { GetToken } from "../../services/api/api.service";
 import { useMutation } from "react-query";
 import axios from "axios";
 
@@ -169,7 +169,7 @@ const LogIn = ({ auth, setAuth }) => {
         { fiveDigitToken: token.fiveDigitToken }
       );
       return response.data;
-      console.log(response.data);
+    
     } catch (error) {
       throw new Error(error.response.data.message);
     }
