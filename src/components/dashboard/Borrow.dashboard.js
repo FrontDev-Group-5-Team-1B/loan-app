@@ -4,6 +4,7 @@ import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
+
 const Borrow = () => {
   const { formData, setFormData } = useBorrowersDataStore();
 
@@ -25,6 +26,7 @@ const Borrow = () => {
     console.log("hello");
   };
 
+
   return (
     <div className="borrow-wrap dash-wrapper">
       <div className="b-header">
@@ -36,6 +38,7 @@ const Borrow = () => {
         <form onSubmit={handleSubmit}>
           <div className="b-data">
             <div className="b-data1">
+
               <label htmlFor="name">
                 <input
                   type="text"
@@ -46,16 +49,18 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
+
               <label htmlFor="email">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
                   className="placeholder"
-                  name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
               </label>
+
               <label htmlFor="address">
                 <input
                   type="text"
@@ -66,7 +71,8 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
-              <label htmlFor="employment">
+
+              <label htmlFor="employment_type">
                 <input
                   type="text"
                   placeholder="Employment"
@@ -100,6 +106,7 @@ const Borrow = () => {
                 />
               </label>
             </div>
+
             <div className="b-data2">
               <label htmlFor="phone_number">
                 <input
@@ -122,6 +129,7 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
+
               <label htmlFor="national-id">
                 <input
                   type="number"
@@ -182,25 +190,22 @@ const Borrow = () => {
           </div>
           <div className="car-dot">
             <p className="p1">
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
-            <Link
-              to="/dashboard/borrowerloan_info"
-              style={{ textDecoration: "none" }}
-            >
+            {/* <Link to="/dashboard/borrowerloan_info" style={{ textDecoration: "none" }}
+            ></Link> */}
               {" "}
               <p>
-                <RxDotFilled />
+                <RxDotFilled size="25px"/>
               </p>
-            </Link>
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px"/>
             </p>
           </div>
-        </form>
+          </form>
       </div>
       <div className="s-btn">
         <button type="submit" className="b-btn">

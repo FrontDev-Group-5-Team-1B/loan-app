@@ -53,7 +53,7 @@ const DashBoardContainer = ({ setAuth, auth }) => {
             onClick={() => handleLinkClick(2)}
             className={activeLink === 2 ? "active-dbl" : " db-link"}
           >
-            <TfiPieChart /> Borrow Data
+            <TfiPieChart /> Borrower's Data
           </NavLink>
           <NavLink
             to="loan"

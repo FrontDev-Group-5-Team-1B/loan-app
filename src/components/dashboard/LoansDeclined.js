@@ -1,35 +1,38 @@
-import React from "react";
-import DeclinedLoanData from "../../data/DeclinedLoanData";
+import React, { useEffect, useState } from "react";
+// import DeclinedLoanData from "../../data/DeclinedLoanData";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import "../../styles/dashPages.css";
-import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const LoansDeclined = () => {
-  const fetchCompanyLoans = async () => {
-    try {
-      const response = await axios.get(
-        "https://nodebtdev.onrender.com/api/loans/company-loans",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      return response.data.data.loans;
-    } catch (error) {
-      throw new Error(error.response.data.error);
-    }
+  const [declined, setDeclined] = useState();
+  const getToken = localStorage.getItem("token");
+
+  const getDeclinedData = async () => {
+    const gethead = new Headers();
+    gethead.append("Authorization", `Bearer ${getToken}`);
+    const res = await fetch(
+      "https://nodebtdev.onrender.com/api/loans/rejected-loans/ascending",
+      {
+        method: "GET",
+        headers: gethead,
+      }
+    );
+    return res.json();
   };
 
-  const { data, isLoading, isError, error } = useQuery(
-    "companyLoans",
-    fetchCompanyLoans
-  );
+  const { data } = useQuery("declinedAscend", getDeclinedData);
+  useEffect(() => {
+    setDeclined(data);
+  }, [data]);
 
-  console.log(data);
+  //  if (declined.length === 0){
+  //                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
+  //                   {declined?.message}
+  //                 </p>
+  //    }
   return (
     <>
       <div className="loansgener-wrapper">
@@ -75,7 +78,7 @@ const LoansDeclined = () => {
               </tr>
             </thead>
             <tbody>
-              {DeclinedLoanData?.map((declinedData, index) => (
+              {/* {DeclinedLoanData?.map((declinedData, index) => (
                 <tr key={index}>
                   <td>{declinedData.borrower_name}</td>
                   <td>{declinedData.date}</td>
@@ -83,7 +86,19 @@ const LoansDeclined = () => {
                   <td>{declinedData.credit_score}</td>
                   <td>{declinedData.amount}</td>
                 </tr>
-              ))}
+              ))} */}
+
+              {declined?.data.loans.map((all) => {
+                return (
+                  <tr key={all._id}>
+                    <td>{all.fullname}</td>
+                    <td>{all.createdAt}</td>
+                    <td className="generated-red">Declined</td>
+                    <td>{all.creditScore}</td>
+                    <td>{all.loanAmount}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

@@ -1,39 +1,43 @@
 import axios from "axios";
 
+// Base URLs
 const baseURI = "https://nodebt-application.onrender.com/api";
+const secondURI = "https://nodebtdev.onrender.com/api"
 
 const headers = {
   "Content-Type": "multipart/form-data;",
   Authorization: `Bearer ${localStorage.getItem("token")}`,
 };
 
+// Signup API call
 export const Signup = (data) => {
   console.log(data);
   return axios.post(`${baseURI}/admins/signup`, data);
 };
 
+// Login API call
 export const Signin = (data) => {
   return axios.post(`${baseURI}/admins/login`, data).then((res) => res.data);
 };
 
+// Get Token API call
 export const GetToken = (email) => {
   console.log(email);
   return axios.get(`${baseURI}/password-reset?email=${email}`);
 };
 
+// Verify Token API call
 export const VerifyToken = ({ email, fiveDigitToken }) => {
-  // console.log('hello', email, fiveDigitToken)
   return axios.post(
     `${baseURI}/password-reset?email=${email}`,
     { fiveDigitToken },
-    {
-      // headers: {
-      //   "content-type": "application/json"
-      // }
-    }
+    {}
   );
 };
 
+// Social Authentication API call
+
+// Reset Password API call
 export const ResetPassword = ({ data }) => {
   return axios.put(
     `${baseURI}/password-reset/${localStorage.getItem("adminId")}`,
@@ -41,7 +45,7 @@ export const ResetPassword = ({ data }) => {
   );
 };
 
-//Get access token from local storage
+// Get access token from local storage. Update Profile Picture API call
 export const UpdateProfilePicture = ({ formData }) => {
   return axios.put(
     `${baseURI}/admins/${localStorage.getItem("adminId")}/profile-picture`,
@@ -55,6 +59,7 @@ export const UpdateProfilePicture = ({ formData }) => {
   );
 };
 
+// Delete Profile Picture API call
 export const DeleteProfilePicture = ({ formData }) => {
   return axios.delete(
     `${baseURI}/admins/${localStorage.getItem("adminId")}/profile-picture`,
@@ -68,21 +73,19 @@ export const DeleteProfilePicture = ({ formData }) => {
   );
 };
 
+// Download Profile Picture API call
 export const DownloadProfilePicture = ({}) => {
   return axios.get(
     `${baseURI}/admins/647deebbc24032a06525003d/profile-picture`
   );
 };
 
-export const CreateLoan = ({ formData }) => {
-  return axios.post(
-    `https://nodebtdev.onrender.com/api/loans/create`,
-    formData,
-    {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-        "Content-Type": "multipart/form-data",
-      },
-    }
-  );
-};
+// Get Eligibility email
+export const sendEmail = () => {
+  return axios.get(`${secondURI}/loans/send-eligibility-status?id=648359a9d79d9330ffc5df4d`)
+}
+
+// Check Eligibility Status
+export const checkEligibility = () => {
+  return axios.get(`${secondURI}/loans/eligibility?id=6483574dd79d9330ffc5df36`)
+}

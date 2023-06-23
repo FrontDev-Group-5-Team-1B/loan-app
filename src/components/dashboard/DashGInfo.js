@@ -6,6 +6,7 @@ import { useState } from "react";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const DashGInfo = () => {
+  
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData, setFormData } = useBorrowersDataStore();
   const { guarantor } = formData;
@@ -63,6 +64,7 @@ const DashGInfo = () => {
       </div>
       <div className="bor-data">
         <h5>Guarantor's Information</h5>
+    
         <form>
           <div className="b-data">
             <div className="b-data1">
@@ -149,14 +151,19 @@ const DashGInfo = () => {
                 />
               </div>
               <div>
-                <input
-                  type="text"
-                  placeholder="EmploymentType"
-                  className="placeholder"
+                  <select
                   name="guarantor.employmentType"
-                  value={guarantor.employmentType}
                   onChange={handleInputChange}
-                />
+                  value={guarantor.employmentType}
+                >
+                  <option value="">Employment Type</option>
+                  <option value="Self-Employed">Self-Employed</option>
+                  <option value="Employed">Employed</option>
+                  <option value="Freelancer">Freelancer</option>
+                  <option value="Intern">Intern</option>
+                  <option value="Voluteer">Voluteer</option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
               <div>
                 <input
@@ -172,21 +179,23 @@ const DashGInfo = () => {
           </div>
           <div className="car-dot">
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px" />
             </p>
             <p>
-              <RxDotFilled />
+              <RxDotFilled size="25px" />
             </p>
-            <Link
+            <p>
+                <RxDotFilled size="25px" />
+              </p>
+
+            {/* <Link
               to="/dashboard/collateral_info"
               style={{ textDecoration: "none" }}
             >
-              <p>
-                <RxDotFilled />
-              </p>
-            </Link>
+             
+            </Link> */}
             <p className="p1">
-              <RxDotFilled />
+              <RxDotFilled size="25px" />
             </p>
           </div>
         </form>
@@ -201,7 +210,7 @@ const DashGInfo = () => {
           </Link>
         </button>
 
-        <button
+        <button style={{cursor: "pointer", fontSize: "1.5rem", width: "140px"}}
           type="submit"
           onClick={() => setModalisopen(true)}
           className="g-btn"
@@ -217,7 +226,7 @@ const DashGInfo = () => {
             <h6>Borower's data has been saved. Kindly preview data</h6>
             <div className="btn-btn">
               <div>
-                <button>
+                <button style={{fontSize: "18px"}}>
                   <Link
                     to="/dashboard/fullbprofile"
                     style={{ textDecoration: "none", color: "white" }}
@@ -227,7 +236,7 @@ const DashGInfo = () => {
                 </button>
               </div>
               <div>
-                <button onClick={handleClick}>Cancel</button>
+                <button onClick={handleClick} style={{color: "red", background: "none", fontSize: "18px", cursor: "pointer"}}>Cancel</button>
               </div>
             </div>
           </div>

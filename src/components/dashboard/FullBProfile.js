@@ -3,7 +3,6 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import useBorrowersDataStore from "../../store/borowersDataStore";
-import { useCreatLoan } from "../../services/query/query.service";
 import { useMutation } from "react-query";
 import axios from "axios";
 
@@ -22,6 +21,7 @@ const FullBProfile = () => {
       padding: "50px",
     },
   };
+
   const createLoan = async (formData) => {
     console.log(formData);
     try {
@@ -36,8 +36,7 @@ const FullBProfile = () => {
         }
       );
       return response.data;
-
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       throw new Error(error.response.data.message);
     }
@@ -220,7 +219,6 @@ const FullBProfile = () => {
                   type="text"
                   placeholder="Upload credit score"
                   className="placeholder"
-                  // value={formData.fullname}
                 />
               </div>
             </div>
@@ -371,6 +369,7 @@ const FullBProfile = () => {
         <div>
           <div className="f-btn-div">
             <button
+              style={{ width: "140px", padding: "10px" }}
               type="submit"
               onClick={handleSubmit}
               className="f-btn"

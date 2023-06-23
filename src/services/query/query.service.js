@@ -6,9 +6,12 @@ import {
   UpdateProfilePicture,
   DeleteProfilePicture,
   DownloadProfilePicture,
-  CreateLoan,
+  sendEmail, 
+  VerifyToken,
+  ResetPassword,
+  checkEligibility
 } from "../api/api.service";
-import { VerifyToken, ResetPassword } from "../api/api.service";
+
 
 export const useSignup = (onSuccess, onError) => {
   return useMutation(Signup, { onSuccess, onError });
@@ -26,6 +29,7 @@ export const useVerifyToken = (onSuccess, onError) => {
   return useMutation(VerifyToken, { onSuccess, onError });
 };
 
+
 export const useResetPassword = (onSuccess, onError) => {
   return useMutation(ResetPassword, { onSuccess, onError });
 };
@@ -42,6 +46,11 @@ export const useDownloadprofilePicture = () => {
   return useQuery(DownloadProfilePicture);
 };
 
-export const useCreatLoan = (onSuccess, onError) => {
-  return useMutation(CreateLoan, { onSuccess, onError });
-};
+export const useSendEmail = (isLoading, isError) => {
+  return useMutation(sendEmail, {isLoading, isError})
+}
+
+export const useCheckEligibilty = () => {
+  return useQuery(checkEligibility)
+}
+

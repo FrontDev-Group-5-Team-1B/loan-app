@@ -43,6 +43,7 @@
 .fbp-flex {
   display: flex;
   justify-content: space-between;
+  width: 800px;
 }
 .fbp-flex input {
   border: 1px solid #0252cc;
@@ -102,7 +103,6 @@
   margin-left: 0px;
   font-size: 1.2rem;
   color: rgb(129, 127, 127);
-  width: 100%;
 }
 .fbp-admin {
   display: flex;
@@ -147,7 +147,6 @@
   border: none;
   font-size: 1.3rem;
   margin-bottom: 20px;
-  cursor: pointer;
 }
 .f-btn:hover {
   background-color: #7f98be;
@@ -197,5 +196,4 @@
   width: 100px;
   display: flex;
   justify-content: center;
-  align-content: center;
 }
