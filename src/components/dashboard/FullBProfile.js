@@ -370,8 +370,13 @@ const FullBProfile = () => {
 
         <div>
           <div className="f-btn-div">
-            <button type="submit" onClick={handleSubmit} className="f-btn">
-              Upload Data
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="f-btn"
+              disabled={mutation.isLoading}
+            >
+              {mutation.isLoading ? "Uploading..." : "Upload Data"}
             </button>
           </div>
           <Modal

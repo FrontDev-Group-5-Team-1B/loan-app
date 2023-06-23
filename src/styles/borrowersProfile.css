@@ -147,6 +147,7 @@
   border: none;
   font-size: 1.3rem;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .f-btn:hover {
   background-color: #7f98be;

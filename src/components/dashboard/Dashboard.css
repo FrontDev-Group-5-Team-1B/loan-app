@@ -193,6 +193,7 @@ ul {
   border-style: none;
   margin-right: 30px;
   font-weight: 750;
+  cursor: pointer;
 }
 
 .loan-info-flex {
