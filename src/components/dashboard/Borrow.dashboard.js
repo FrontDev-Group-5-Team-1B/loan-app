@@ -2,87 +2,107 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
+import useBorrowersDataStore from "../../store/borowersDataStore";
 
-const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gender, maritalStatus, jobRole, jobSector, nationalIdentityNumber, incomePerMonth, handleChange, page}) => {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // console.log('hello')
-  // }
+const Borrow = () => {
+  const { formData, setFormData } = useBorrowersDataStore();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    let newValue;
+
+    if (name === "incomePerMonth") {
+      newValue = parseFloat(value);
+    } else if (name === "age") {
+      newValue = parseInt(value);
+    } else {
+      newValue = value;
+    }
+    setFormData({ ...formData, [name]: newValue });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("hello");
+  };
+
 
   return (
-    <div className="borrow-wrap" style={page === 1 || page === "open" ? {display: "block"} : {display: "none"}}>
+    <div className="borrow-wrap dash-wrapper">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
       </div>
-      <div className="bor-data-b">
+      <div className="bor-data">
         <h5>Personal and contact information</h5>
-        
+        <form onSubmit={handleSubmit}>
           <div className="b-data">
             <div className="b-data1">
 
-              <label htmlFor="fullname">
-                <input type="text" 
-                name="fullname" 
-                value={fullname} 
-                onChange={handleChange} 
-                placeholder="Full Name" 
-                className="placeholder" />
+              <label htmlFor="name">
+                <input
+                  type="text"
+                  placeholder="name"
+                  className="placeholder"
+                  name="fullname"
+                  value={formData.fullname}
+                  onChange={handleInputChange}
+                />
               </label>
 
               <label htmlFor="email">
                 <input
                   type="email"
                   name="email"
-                  value={email} 
-                  onChange={handleChange}
                   placeholder="Email"
                   className="placeholder"
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
               </label>
 
               <label htmlFor="address">
                 <input
                   type="text"
-                  name="address"
-                  value={address} 
-                  onChange={handleChange}
                   placeholder="Address"
                   className="placeholder"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleInputChange}
                 />
               </label>
 
               <label htmlFor="employment_type">
                 <input
                   type="text"
-                  name="employmentType"
-                  value={employmentType} 
-                  onChange={handleChange}
                   placeholder="Employment"
                   className="placeholder"
+                  name="employmentType"
+                  value={formData.employmentType}
+                  onChange={handleInputChange}
                 />
               </label>
 
-              <label htmlFor="age">
-                <input
-                  type="number"
-                  name="age"
-                  value={age} 
-                  onChange={handleChange}
-                  placeholder="Age"
-                  className="placeholder"
-                />
-              </label>
-
-              <label htmlFor="marital_status">
+              <select
+                name="maritalStatus"
+                onChange={handleInputChange}
+                value={formData.maritalStatus}
+              >
+                <option value="">Marital Status</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+                <option Value="Divorced">Divorced</option>
+                <option Value="Separated">Separated</option>
+              </select>
+              <label htmlFor="Gender">
                 <input
                   type="text"
-                  name="maritalStatus"
-                  value={maritalStatus} 
-                  onChange={handleChange}
-                  placeholder="Marital Status"
+                  placeholder="Gender"
                   className="placeholder"
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleInputChange}
                 />
               </label>
             </div>
@@ -91,65 +111,79 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
               <label htmlFor="phone_number">
                 <input
                   type="tel"
-                  name="phoneNumber"
-                  value={phoneNumber} 
-                  onChange={handleChange}
                   placeholder="Phone Number"
                   className="placeholder"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
                 />
               </label>
 
-              <label htmlFor="gender">
+              <label htmlFor="age">
                 <input
-                  type="text"
-                  name="gender"
-                  value={gender} 
-                  onChange={handleChange}
-                  placeholder="Gender"
+                  type="number"
+                  placeholder="Age"
                   className="placeholder"
-                />
-              </label>
-
-              <label htmlFor="job_role">
-                <input
-                  type="text"
-                  name="jobRole"
-                  value={jobRole} 
-                  onChange={handleChange}
-                  placeholder="Job Role"
-                  className="placeholder"
-                />
-              </label>
-
-              <label htmlFor="job_sector">
-                <input
-                  type="text"
-                  name="jobSector"
-                  value={jobSector} 
-                  onChange={handleChange}
-                  placeholder="Job Sector"
-                  className="placeholder"
+                  name="age"
+                  value={formData.age}
+                  onChange={handleInputChange}
                 />
               </label>
 
               <label htmlFor="national-id">
                 <input
                   type="number"
-                  name="nationalIdentityNumber"
-                  value={nationalIdentityNumber} 
-                  onChange={handleChange}
                   placeholder="National Identity Number"
                   className="placeholder"
+                  name="nationalIdentityNumber"
+                  value={formData.nationalIdentityNumber}
+                  onChange={handleInputChange}
                 />
               </label>
               <label htmlFor="income">
                 <input
                   type="number"
-                  name="incomePerMonth"
-                  value={incomePerMonth} 
-                  onChange={handleChange}
                   placeholder="Income per month"
                   className="placeholder"
+                  name="incomePerMonth"
+                  value={formData.incomePerMonth}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <select
+                name="jobSector"
+                onChange={handleInputChange}
+                value={formData.jobSector}
+              >
+                <option value="">Job Sector</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Accounting and Finance">
+                  Accounting and Finance
+                </option>
+                <option Value=" Sales and Customer Service">
+                  Sales and Customer Service
+                </option>
+                <option Value="Engineering">Engineering</option>
+                <option Value="Operations and Logistics">
+                  Operations and Logistics
+                </option>
+                <option Value="Information Technology">
+                  Information Technology
+                </option>
+                <option Value="Education and Training">
+                  Education and Training
+                </option>
+                <option Value="Others">Others</option>
+              </select>
+
+              <label htmlFor="jobRole">
+                <input
+                  type="text"
+                  placeholder="Job Role"
+                  className="placeholder"
+                  name="jobRole"
+                  value={formData.jobRole}
+                  onChange={handleInputChange}
                 />
               </label>
             </div>
@@ -158,15 +192,12 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
             <p className="p1">
               <RxDotFilled size="25px"/>
             </p>
-            {/* <Link
-              to="/dashboard/borrowerloan_info"
-              style={{ textDecoration: "none" }}
-            > */}
+            {/* <Link to="/dashboard/borrowerloan_info" style={{ textDecoration: "none" }}
+            ></Link> */}
               {" "}
               <p>
                 <RxDotFilled size="25px"/>
               </p>
-            {/* </Link> */}
             <p>
               <RxDotFilled size="25px"/>
             </p>
@@ -174,9 +205,9 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
               <RxDotFilled size="25px"/>
             </p>
           </div>
-      
+          </form>
       </div>
-      {/* <div className="s-btn">
+      <div className="s-btn">
         <button type="submit" className="b-btn">
           <Link
             to="/dashboard/borrowerloan_info"
@@ -185,7 +216,7 @@ const Borrow = ({fullname, email, address, employmentType, phoneNumber, age, gen
             Next
           </Link>
         </button>
-      </div> */}
+      </div>
     </div>
   );
 };

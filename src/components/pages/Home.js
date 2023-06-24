@@ -84,9 +84,6 @@ const Home = () => {
              <div className="services-content">
               <span>2</span>
               <div className="textAndImage">
-              <div className="image">
-                <img src={image2} alt="services" />
-              </div>
               <div className="text">
                 <p>
                   Borrowers with financial difficulties will be flagged up
@@ -95,8 +92,10 @@ const Home = () => {
                   credit risk management
                 </p>
               </div>
+              <div className="image">
+                <img src={image2} alt="services" />
               </div>
-
+              </div>
             </div>
 
             <div className="services-content">

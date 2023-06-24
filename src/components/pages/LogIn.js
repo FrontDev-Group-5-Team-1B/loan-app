@@ -4,8 +4,8 @@ import logimg from "../../assets/Rectangle 762-min.png";
 import fgpimg from "../../assets/Group 250.png";
 import fgpimgcheck from "../../assets/checked 1.png";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
-import { FaEnvelope } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
+// import { FaEnvelope } from "react-icons/fa";
+// import { FaApple } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
 import google from "../../assets/logos_google-icon.png";
 import { Link } from "react-router-dom";
@@ -16,10 +16,10 @@ import {
   useResetPassword,
   useGetToken,
 } from "../../services/query/query.service";
-import { useQuery } from "react-query";
+
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from "../loaders/Loader.component";
-import { GetToken } from "../../services/api/api.service";
+// import { GetToken } from "../../services/api/api.service";
 import { useMutation } from "react-query";
 import axios from "axios";
 
@@ -169,7 +169,7 @@ const LogIn = ({ auth, setAuth }) => {
         { fiveDigitToken: token.fiveDigitToken }
       );
       return response.data;
-      console.log(response.data);
+    
     } catch (error) {
       throw new Error(error.response.data.message);
     }
@@ -193,13 +193,14 @@ const LogIn = ({ auth, setAuth }) => {
       console.error(error);
     }
   };
+
   return (
     <>
       <div className="login-container">
         <div className="login-left-box">
           <p className="arrow">
             <Link to="/" className="">
-              <FaArrowLeft />
+              <FaArrowLeft size="20px"/>
             </Link>
           </p>
           <h2 className="logwel">Welcome Back</h2>
@@ -278,22 +279,22 @@ const LogIn = ({ auth, setAuth }) => {
               </div>
               {error && <p className="val-message">{errorMsg}</p>}
               <button className="log-btn">Log In</button>
-              {/* <div className="continue">
+              <div className="continue">
                 <hr />
                 <span>Or continue with</span>
                 <hr />
               </div>
-              <div className="login-icons">
-                <Link>
+             <div className="login-icons">
+                {/* <Link>
                   <FaEnvelope />
-                </Link>
+                </Link> */}
                 <Link>
                   <img src={google} alt="google" />
                 </Link>
-                <Link>
+                {/* <Link>
                   <FaApple />
-                </Link>
-              </div> */}
+                </Link> */}
+              </div>
             </form>
           )}
         </div>

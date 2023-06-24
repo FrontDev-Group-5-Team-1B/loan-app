@@ -2,35 +2,14 @@ import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
+import useBorrowersDataStore from "../../store/borowersDataStore";
+import { useMutation } from "react-query";
+import axios from "axios";
 
-const FullBProfile = ({ page, formData, ModalTwo }) => {
-  const [ModalIsopen, setModalIsOpen] = useState(ModalTwo);
-
-  // const {
-  //   fullname,
-  //   guarantor,
-  //   email,
-  //   address,
-  //   employmentType,
-  //   phoneNumber,
-  //   nationalIdentityNumber,
-  //   incomePerMonth,
-  //   loanAmount,
-  //   purposeOfLoan,
-  //   loanType,
-  //   collateralType,
-  //   age,
-  //   socialSecurityNumber,
-  //   otherSourcesOfIncome,
-  //   gender,
-  //   jobSector,
-  //   maritalStatus,
-  //   jobRole,
-  //   repaymentType,
-  //   collateralValue,
-  //   collateralInformation,
-  // } = formData;
-
+const FullBProfile = () => {
+  const [ModalIsopen, setModalisopen] = useState(false);
+  const { formData } = useBorrowersDataStore();
+ 
   const customStyles = {
     content: {
       top: "50%",
@@ -43,11 +22,36 @@ const FullBProfile = ({ page, formData, ModalTwo }) => {
     },
   };
 
+  const createLoan = async (formData) => {
+    console.log(formData);
+    try {
+      const response = await axios.post(
+        "https://nodebt-application.onrender.com/api/loans/create",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return response.data;
+      // console.log(response.data);
+    } catch (error) {
+      throw new Error(error.response.data.message);
+    }
+  };
+
+  const mutation = useMutation(createLoan);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    mutation.mutate(formData);
+    console.log("formData", formData);
+  };
+
   return (
-    <div
-      style={page === "preview" ? { display: "block" } : { display: "none" }}
-      // className="borrow-wrap"
-    >
+    <div className="borrow-wrap">
       <div>
         <div className="generated-flex">
           <Link
@@ -72,60 +76,49 @@ const FullBProfile = ({ page, formData, ModalTwo }) => {
               <div>
                 <input
                   type="text"
-                  name="fullname"
-                  value={formData.fullname}
-                  // onChange={handleChange}
                   placeholder="Mrs Tumise Anudolapo"
                   className="placeholder"
+                  value={formData.fullname}
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  name="email"
-                  value={formData.email}
                   placeholder="anu@yahoo.com"
                   className="placeholder"
+                  value={formData.email}
                 />
               </div>
               <div>
                 <input
                   type="text"
-                  name="address"
-                  value={formData.address}
                   placeholder="45 cresent Ikeja"
                   className="placeholder"
+                  value={formData.address}
                 />
               </div>
               <div>
                 <input
                   type="text"
-                  name="employmentType"
-                  value={formData.employmentType}
                   placeholder="Unemployed"
                   className="placeholder"
+                  value={formData.employmentType}
                 />
               </div>
-
               <div>
                 <input
                   type="text"
-                  name="maritalStatus"
-                  value={formData.maritalStatus}
-                  // onChange={handleChange}
                   placeholder="Marital Status"
                   className="placeholder"
+                  value={formData.maritalStatus}
                 />
               </div>
-
               <div>
                 <input
                   type="text"
-                  name="gender"
-                  value={formData.gender}
-                  // onChange={handleChange}
-                  placeholder="Gender"
+                  placeholder="Job Sector"
                   className="placeholder"
+                  value={formData.jobSector}
                 />
               </div>
             </div>
@@ -133,284 +126,251 @@ const FullBProfile = ({ page, formData, ModalTwo }) => {
               <div>
                 <input
                   type="text"
-                  name="phoneNumber"
-                  value={formData.phoneNumber}
                   placeholder="+2346587512520"
                   className="placeholder"
+                  value={formData.phoneNumber}
                 />
               </div>
               <div>
                 <input
-                  type="number"
-                  name="age"
+                  type="text"
+                  placeholder="Age"
+                  className="placeholder"
                   value={formData.age}
-                  placeholder="13th August 1986"
-                  className="placeholder"
                 />
               </div>
-
               <div>
-                {" "}
                 <input
                   type="text"
-                  name="jobRole"
-                  value={formData.jobRole}
-                  // onChange={handleChange}
-                  placeholder="Job Role"
+                  placeholder="********"
                   className="placeholder"
-                />
-              </div>
-              <div>
-                {" "}
-                <input
-                  type="text"
-                  name="jobSector"
-                  value={formData.jobSector}
-                  // onChange={handleChange}
-                  placeholder="Jod Sector"
-                  className="placeholder"
-                />
-              </div>
-              <div>
-                {" "}
-                <input
-                  type="number"
-                  name="nationalIdentityNumber"
                   value={formData.nationalIdentityNumber}
-                  // onChange={handleChange}
-                  placeholder="National Identity Number"
-                  className="placeholder"
                 />
               </div>
               <div>
                 <input
-                  type="number"
-                  name="incomePerMonth"
-                  value={formData.incomePerMonth}
+                  type="text"
                   placeholder="10,000"
                   className="placeholder"
+                  value={formData.incomePerMonth}
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  placeholder="Gender"
+                  className="placeholder"
+                  value={formData.gender}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="jobRole"
+                  className="placeholder"
+                  value={formData.jobRole}
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="l-fbp">
-        <p className="fbp-header2">Loan Information</p>
-        <div className="fbp-flex">
-          <div>
+      <form onSubmit={handleSubmit}>
+        <div className="l-fbp">
+          <p className="fbp-header2">Loan Information</p>
+          <div className="fbp-flex">
             <div>
-              {" "}
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Student Loan"
+                  className="placeholder"
+                  value={formData.loanType}
+                />
+              </div>
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Upload Credit report"
+                  className="placeholder"
+                  value={formData.loanAmount}
+                />
+              </div>
+            </div>
+            <div>
+              <div>
+                {" "}
+                <input
+                  type="text"
+                  placeholder="Repayment Term"
+                  className="placeholder"
+                  value={formData.repaymentType}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Upload credit score"
+                  className="placeholder"
+                />
+              </div>
+            </div>
+          </div>
+          <textarea className="fbp-text" value={formData.purposeOfLoan}>
+            Purpose of loan
+          </textarea>
+        </div>
+
+        <div className="c-fbp">
+          <p className="fbp-header2">Collateral Information</p>
+          <div className="fbp-flex">
+            <div>
               <input
                 type="text"
-                name="loanType"
-                value={formData.loanType}
-                placeholder="Student Loan"
+                placeholder="Type of Asset"
                 className="placeholder"
+                value={formData.collateralType}
+                name="colateralType"
               />
             </div>
-            {/* <div>
+            <div>
               {" "}
               <input
                 type="text"
-                placeholder="Upload Credit report"
+                placeholder="Collateral Value"
                 className="placeholder"
-              />
-            </div> */}
-
-            <div>
-              <input
-                type="text"
-                name="loanAmount"
-                value={formData.loanAmount}
-                placeholder="Loan Amount"
-                className="placeholder"
+                value={formData.collateralValue}
               />
             </div>
           </div>
-          <div>
+          <textarea className="fbp-text" value={formData.collateralInformation}>
+            Provide collateral information e.g location, car model, mileage
+            e.t.c
+          </textarea>
+        </div>
+
+        <div className="g-fbp">
+          <p className="fbp-header2">Guarantor's Information</p>
+          <div className="fbp-flex">
             <div>
-              {" "}
-              <input
-                type="text"
-                name="repaymentType"
-                value={formData.repaymentType}
-                placeholder="Repayment Type"
-                className="placeholder"
-              />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="placeholder"
+                  value={formData.guarantor.fullname}
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="placeholder"
+                  value={formData.guarantor.email}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  className="placeholder"
+                  value={formData.guarantor.address}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="relationship"
+                  className="placeholder"
+                  value={formData.guarantor.relationship}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Other sources of income"
+                  className="placeholder"
+                  value={formData.guarantor.otherSourcesOfIncome}
+                />
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="placeholder"
+                  value={formData.guarantor.phoneNumber}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="age"
+                  className="placeholder"
+                  value={formData.guarantor.age}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Social Security Number"
+                  className="placeholder"
+                  value={formData.guarantor.socialSecurityNumber}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="EmploymentType"
+                  className="placeholder"
+                  value={formData.guarantor.employmentType}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Income per month"
+                  className="placeholder"
+                  value={formData.guarantor.incomePerMonth}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <textarea
-          name="purposeOfLoan"
-          value={formData.purposeOfLoan}
-          className="fbp-text"
-        >
-          Purpose of loan
-        </textarea>
-      </div>
 
-      <div className="c-fbp">
-        <p className="fbp-header2">Collateral Information</p>
-        <div className="fbp-flex">
+        <div className="fbp-grade">
+          <p>
+            <i>
+              After carefully previewing the borrower's data form, go ahead to
+              upload and check loan eligibilty to predict loan default
+            </i>
+          </p>
+        </div>
+        <div className="fbp-admin">
+          <p>Admin in charge </p>
           <div>
-            {" "}
             <input
               type="text"
-              name="collateralType"
-              value={formData.collateralType}
-              placeholder="Type of Asset"
+              placeholder="Input Name"
               className="placeholder"
             />
           </div>
-
-          <div>
-            {" "}
-            <input
-              type="text"
-              name="collateralValue"
-              value={formData.collateralValue}
-              placeholder="Collateral Value"
-              className="placeholder"
-            />
-          </div>
         </div>
-        <textarea
-          name="collateralInformation"
-          value={formData.collateralInformation}
-          className="fbp-text"
-        >
-          Provide collateral information e.g location, car model, mileage e.t.c
-        </textarea>
-      </div>
 
-      <div className="g-fbp">
-        <p className="fbp-header2">Guarantor's Information</p>
-        <div className="fbp-flex">
-          <div>
-            <div>
-              <input
-                type="text"
-                name="fullname"
-                value={formData.guarantor.fullname}
-                placeholder="Name"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                value={formData.guarantor.email}
-                placeholder="Email"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="guarantor.address"
-                value={formData.guarantor.address}
-                placeholder="Address"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="relationship"
-                value={formData.guarantor.relationship}
-                placeholder="relationship"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="otherSourcesOfIncome"
-                value={formData.guarantor.otherSourcesOfIncome}
-                placeholder="Other sources of income"
-                className="placeholder"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <input
-                type="number"
-                name="phoneNumber"
-                value={formData.guarantor.phoneNumber}
-                placeholder="Phone Number"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="number"
-                name="age"
-                value={formData.guarantor.age}
-                placeholder="Age"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="socialSecurityNumber"
-                value={formData.guarantor.socialSecurityNumber}
-                placeholder="Social Security Number"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="employmentType"
-                value={formData.guarantor.employmentType}
-                placeholder="Employment Type"
-                className="placeholder"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                name="incomePerMonth"
-                value={formData.guarantor.incomePerMonth}
-                placeholder="Income per month"
-                className="placeholder"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="fbp-grade">
-        <p>
-          <i>
-            After carefully previewing the borrower's data form, go ahead to
-            upload and check loan eligibilty to predict loan default
-          </i>
-        </p>
-      </div>
-      <div className="fbp-admin">
-        <p>Admin in charge </p>
         <div>
-          <input type="text" name="fullname" value={formData.fullname} placeholder="Input Name" className="placeholder" />
-        </div>
-      </div>
-
-      <div>
-        <div className="f-btn-div">
-          {/* <button onClick={handleNext}>Preview</button>
-          <button>Cancel</button> */}
-          <button type="submit" className="f-btn">
-            Upload Data
-          </button>
+          <div className="f-btn-div">
+            <button style={{width: "140px", padding: "10px"}} type="submit" onClick={handleSubmit} className="f-btn">
+              Upload Data
+            </button>
+          </div>
           <Modal
-            isOpen={ModalTwo}
-            onRequestClose={() => setModalIsOpen(false)}
+            isOpen={ModalIsopen}
+            onRequestClose={() => setModalisopen(false)}
             style={customStyles}
           >
             <div className="bs-preview">
@@ -421,7 +381,7 @@ const FullBProfile = ({ page, formData, ModalTwo }) => {
             </div>
           </Modal>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

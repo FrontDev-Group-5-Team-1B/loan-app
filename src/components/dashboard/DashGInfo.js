@@ -3,22 +3,41 @@ import { RxDotFilled } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { useState } from "react";
+import useBorrowersDataStore from "../../store/borowersDataStore";
 
-const DashGInfo = ({
-  fullname,
-  phoneNumber,
-  email,
-  address,
-  socialSecurityNumber,
-  relationship,
-  incomePerMonth,
-  otherSourcesOfIncome,
-  age,
-  employmentType,
-  handleChange,
-  page,
-}) => {
+const DashGInfo = () => {
+  
   const [ModalIsopen, setModalisopen] = useState(false);
+  const { formData, setFormData } = useBorrowersDataStore();
+  const { guarantor } = formData;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    // Check if the input field is for the guarantor object
+    if (name.startsWith("guarantor.")) {
+      const guarantorField = name.split(".")[1];
+      let newValue;
+
+      if (guarantorField === "incomePerMonth") {
+        newValue = parseFloat(value);
+      } else if (guarantorField === "age") {
+        newValue = parseInt(value);
+      } else {
+        newValue = value;
+      }
+
+      setFormData({
+        ...formData,
+        guarantor: {
+          ...guarantor,
+          [guarantorField]: newValue,
+        },
+      });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -26,163 +45,203 @@ const DashGInfo = ({
     navigate(-1);
   };
 
-  // const customStyles = {
-  //   content: {
-  //     top: '50%',
-  //     left: '50%',
-  //     right: 'auto',
-  //     bottom: 'auto',
-  //     marginRight: '-50%',
-  //     transform: 'translate(-50%, -50%)',
-  //     padding: '50px'
-  //   },
-  // };
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      padding: "50px",
+    },
+  };
   return (
-    <div
-      style={
-        page === 4 || page === "modal"
-          ? { display: "block" }
-          : { display: "none" }
-      }
-      className="borrow-wrap"
-    >
+    <div className="borrow-wrap">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
       </div>
       <div className="bor-data">
         <h5>Guarantor's Information</h5>
-        
+    
+        <form>
           <div className="b-data">
             <div className="b-data1">
               <div>
                 <input
                   type="text"
-                  name="fullname"
-                  value={fullname}
-                  onChange={handleChange}
-                  placeholder="Full Name"
+                  placeholder="name"
                   className="placeholder"
-                />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  value={phoneNumber}
-                  onChange={handleChange}
-                  placeholder="Phone Number"
-                  className="placeholder"
+                  name="guarantor.fullname"
+                  value={guarantor.fullname}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
                 <input
                   type="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChange}
                   placeholder="Email"
                   className="placeholder"
+                  name="guarantor.email"
+                  value={guarantor.email}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Address"
-                  name="address"
-                  value={address}
-                  onChange={handleChange}
                   className="placeholder"
+                  name="guarantor.address"
+                  value={guarantor.address}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
                 <input
-                  type="number"
-                  name="socialSecurityNumber"
-                  value={socialSecurityNumber}
-                  onChange={handleChange}
-                  placeholder="Social Security Number"
+                  type="text"
+                  placeholder="Relationship"
                   className="placeholder"
+                  name="guarantor.relationship"
+                  value={guarantor.relationship}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Other sources of Income"
+                  className="placeholder"
+                  name="guarantor.otherSourcesOfIncome"
+                  value={guarantor.otherSourcesOfIncome}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
             <div className="b-data2">
               <div>
                 <input
-                  type="text"
-                  name="relationship"
-                  value={relationship}
-                  onChange={handleChange}
-                  placeholder="Relationship"
+                  type="tel"
+                  placeholder="Phone Number"
                   className="placeholder"
+                  name="guarantor.phoneNumber"
+                  value={guarantor.phoneNumber}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
                 <input
-                  type="number"
-                  name="incomePerMonth"
-                  value={incomePerMonth}
-                  onChange={handleChange}
-                  placeholder="Income Per Month"
-                  className="placeholder"
-                />
-              </div>
-             <div>
-                <input
                   type="text"
-                  name="otherSourcesOfIncome"
-                  value={otherSourcesOfIncome}
-                  onChange={handleChange}
-                  placeholder="Other Sources Of Income"
-                  className="placeholder"
-                />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  name="age"
-                  value={age}
-                  onChange={handleChange}
                   placeholder="Age"
                   className="placeholder"
+                  name="guarantor.age"
+                  value={guarantor.age}
+                  onChange={handleInputChange}
                 />
               </div>
               <div>
                 <input
-                  type="text"
-                  name="guarantor.employmentType"
-                  value={employmentType}
-                  onChange={handleChange}
-                  placeholder="Employment Type"
+                  type="number"
+                  placeholder="Social Security Number"
                   className="placeholder"
+                  name="guarantor.socialSecurityNumber"
+                  value={guarantor.socialSecurityNumber}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                  <select
+                  name="guarantor.employmentType"
+                  onChange={handleInputChange}
+                  value={guarantor.employmentType}
+                >
+                  <option value="">Employment Type</option>
+                  <option value="Self-Employed">Self-Employed</option>
+                  <option value="Employed">Employed</option>
+                  <option value="Freelancer">Freelancer</option>
+                  <option value="Intern">Intern</option>
+                  <option value="Voluteer">Voluteer</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Income per month"
+                  className="placeholder"
+                  name="guarantor.incomePerMonth"
+                  value={guarantor.incomePerMonth}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
           </div>
-          <div className='car-dot'>
-      <p><RxDotFilled size="25px"/></p>
-      <p><RxDotFilled size="25px" /></p>
-      {/* <Link to='/dashboard/collateral_info' style={{ textDecoration: "none" }}></Link> */}
-      <p><RxDotFilled size="25px" /></p>
-      <p className='p1'><RxDotFilled size="25px" /></p>
-    </div>
-        
+          <div className="car-dot">
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
+            <p>
+                <RxDotFilled size="25px" />
+              </p>
+
+            {/* <Link
+              to="/dashboard/collateral_info"
+              style={{ textDecoration: "none" }}
+            >
+             
+            </Link> */}
+            <p className="p1">
+              <RxDotFilled size="25px" />
+            </p>
+          </div>
+        </form>
       </div>
-      {/* <div className='d-btn'> */}
-      {/* <button className='l-btn'><Link to='/dashboard/collateral_info' style={{ textDecoration: "none", color: "blue" }}>Previous</Link></button> */}
+      <div className="d-btn">
+        <button className="l-btn">
+          <Link
+            to="/dashboard/collateral_info"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
+            Previous
+          </Link>
+        </button>
 
-      {/* <button  type='submit'onClick={() => setModalisopen(true)} className='g-btn'>Save Data</button> */}
-      {/* <Modal isOpen={ModalIsopen} onRequestClose={() => setModalisopen(false)}  style={customStyles}> */}
-
-      {/* <div className='bs-preview'> */}
-      {/* <h6>Borower's data has been saved. Kindly preview data</h6> */}
-      {/* <div className='btn-btn'>
-        <div><button><Link to='/dashboard/fullbprofile' style={{ textDecoration: "none", color: 'white'}}>Preview</Link></button></div>
-        <div><button  onClick={handleClick}>Cancel</button></div>
-        </div> */}
-      {/* </div> */}
-      {/* </Modal>  */}
-      {/* </div> */}
+        <button style={{cursor: "pointer", fontSize: "1.5rem", width: "140px"}}
+          type="submit"
+          onClick={() => setModalisopen(true)}
+          className="g-btn"
+        >
+          Save Data
+        </button>
+        <Modal
+          isOpen={ModalIsopen}
+          onRequestClose={() => setModalisopen(false)}
+          style={customStyles}
+        >
+          <div className="bs-preview">
+            <h6>Borower's data has been saved. Kindly preview data</h6>
+            <div className="btn-btn">
+              <div>
+                <button style={{fontSize: "18px"}}>
+                  <Link
+                    to="/dashboard/fullbprofile"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    Preview
+                  </Link>
+                </button>
+              </div>
+              <div>
+                <button onClick={handleClick} style={{color: "red", background: "none", fontSize: "18px", cursor: "pointer"}}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      </div>
     </div>
   );
 };
