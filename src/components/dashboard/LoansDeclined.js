@@ -78,6 +78,22 @@ const LoansDeclined = () => {
               </tr>
             </thead>
             <tbody>
+             
+             {declined?.data?.loans.length === 0 ? declined.message :
+             declined?.data?.loans.map((all) => {
+              return (
+                <tr key={all._id}>
+                  <td>{all.fullname}</td>
+                  <td>{all.createdAt}</td>
+                  <td className="generated-red">Declined</td>
+                  <td>{all.creditScore}</td>
+                  <td>{all.loanAmount}</td>
+                </tr>
+              );
+            })
+             }
+              
+
               {/* {DeclinedLoanData?.map((declinedData, index) => (
                 <tr key={index}>
                   <td>{declinedData.borrower_name}</td>
@@ -88,17 +104,18 @@ const LoansDeclined = () => {
                 </tr>
               ))} */}
 
-              {declined?.data.loans.map((all) => {
-                return (
-                  <tr key={all._id}>
-                    <td>{all.fullname}</td>
-                    <td>{all.createdAt}</td>
-                    <td className="generated-red">Declined</td>
-                    <td>{all.creditScore}</td>
-                    <td>{all.loanAmount}</td>
-                  </tr>
-                );
-              })}
+//               {declined?.data.loans.map((all) => {
+//                 return (
+//                   <tr key={all._id}>
+//                     <td>{all.fullname}</td>
+//                     <td>{all.createdAt}</td>
+//                     <td className="generated-red">Declined</td>
+//                     <td>{all.creditScore}</td>
+//                     <td>{all.loanAmount}</td>
+//                   </tr>
+//                 );
+//               })}
+
             </tbody>
           </table>
         </div>

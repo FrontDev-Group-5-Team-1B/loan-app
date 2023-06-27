@@ -1,13 +1,30 @@
-import React from "react";
-import GeneratedLoanData from "../../data/GeneratedLoanData";
+import React, {useState, useEffect} from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
 import "../../styles/dashPages.css";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
-import axios from "axios";
 
 const LoansGenerated = () => {
+  const [successful, setSuccessful] = useState();
+  const getToken = localStorage.getItem("token");
+
+  const getSuccessData = async () => {
+    const gethead = new Headers();
+    gethead.append("Authorization", `Bearer ${getToken}`);
+    const res = await fetch(
+      "https://nodebtdev.onrender.com/api/loans/success-loans/ascending",
+      {
+        method: "GET",
+        headers: gethead,
+      }
+    );
+    return res.json();
+  };
+  const { data } = useQuery("declinedAscend", getSuccessData);
+  useEffect(() => {
+    setSuccessful(data);
+  }, [data]);
   return (
     <>
       <div className="loansgener-wrapper">
@@ -53,15 +70,19 @@ const LoansGenerated = () => {
               </tr>
             </thead>
             <tbody>
-              {GeneratedLoanData?.map((generatedData, index) => (
-                <tr key={index}>
-                  <td>{generatedData.borrower_name}</td>
-                  <td>{generatedData.date}</td>
-                  <td className="generated-blue">{generatedData.status}</td>
-                  <td>{generatedData.credit_score}</td>
-                  <td>{generatedData.amount}</td>
+            {successful?.data?.loans.length === 0 ? successful.message :
+             successful?.data?.loans.map((all) => {
+              return (
+                <tr key={all._id}>
+                  <td>{all.fullname}</td>
+                  <td>{all.createdAt}</td>
+                  <td className="generated-blue">Successful</td>
+                  <td>{all.creditScore}</td>
+                  <td>{all.loanAmount}</td>
                 </tr>
-              ))}
+              );
+            })
+             }
             </tbody>
           </table>
         </div>
