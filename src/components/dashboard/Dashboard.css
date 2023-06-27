@@ -209,7 +209,10 @@ ul {
   background-color: #0267ff;
   color: #fff;
   border-style: none;
-  font-weight: 700;
+  margin-right: 30px;
+  font-weight: 750;
+  cursor: pointer;
+/*   font-weight: 700; */
 }
 
 .loan-info-flex {

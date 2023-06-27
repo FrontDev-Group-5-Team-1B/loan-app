@@ -91,7 +91,10 @@ function App() {
             <Route path="loansdeclined" element={<LoansDeclined />} />
             <Route path="loansrefunded" element={<LoansRefunded />} />
             <Route path="pendingloans" element={<PendingLoans />} />
-            <Route path="borrowerprofile" element={<BorrowerProfile />} />
+            <Route
+              path="borrowerprofile/:fullname"
+              element={<BorrowerProfile />}
+            />
             <Route path="settings" element={<Settings />}>
               <Route index element={<Profile />} />
               {/* <Route path="notification" element={<Notification />} /> */}

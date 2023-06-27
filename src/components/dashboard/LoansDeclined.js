@@ -28,11 +28,11 @@ const LoansDeclined = () => {
     setDeclined(data);
   }, [data]);
 
-//  if (declined.length === 0){
-//                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
-//                   {declined?.message}
-//                 </p>
-//    }
+  //  if (declined.length === 0){
+  //                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
+  //                   {declined?.message}
+  //                 </p>
+  //    }
   return (
     <>
       <div className="loansgener-wrapper">
@@ -78,6 +78,22 @@ const LoansDeclined = () => {
               </tr>
             </thead>
             <tbody>
+             
+             {declined?.data?.loans.length === 0 ? declined.message :
+             declined?.data?.loans.map((all) => {
+              return (
+                <tr key={all._id}>
+                  <td>{all.fullname}</td>
+                  <td>{all.createdAt}</td>
+                  <td className="generated-red">Declined</td>
+                  <td>{all.creditScore}</td>
+                  <td>{all.loanAmount}</td>
+                </tr>
+              );
+            })
+             }
+              
+
               {/* {DeclinedLoanData?.map((declinedData, index) => (
                 <tr key={index}>
                   <td>{declinedData.borrower_name}</td>
@@ -87,18 +103,19 @@ const LoansDeclined = () => {
                   <td>{declinedData.amount}</td>
                 </tr>
               ))} */}
-             
-              {declined?.data.loans.map((all) => {
-                return (
-                  <tr key={all._id}>
-                    <td>{all.fullname}</td>
-                    <td>{all.createdAt}</td>
-                    <td className="generated-red">Declined</td>
-                    <td>{all.creditScore}</td>
-                    <td>{all.loanAmount}</td>
-                  </tr>
-                );
-              })}
+
+//               {declined?.data.loans.map((all) => {
+//                 return (
+//                   <tr key={all._id}>
+//                     <td>{all.fullname}</td>
+//                     <td>{all.createdAt}</td>
+//                     <td className="generated-red">Declined</td>
+//                     <td>{all.creditScore}</td>
+//                     <td>{all.loanAmount}</td>
+//                   </tr>
+//                 );
+//               })}
+
             </tbody>
           </table>
         </div>

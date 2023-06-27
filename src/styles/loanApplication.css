@@ -64,8 +64,17 @@
   background: #fafcff;
 }
 
+/* Container for table and pagination */
+.db-loan-application-container {
+  position: relative;
+}
+
 /* Pagination container */
 .pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   margin: 20px 0;
@@ -114,4 +123,8 @@
 .pagination-button.next:hover {
   background-color: #0051cc;
   border-color: #0051cc;
+}
+
+.centered-spinner {
+  margin: 0 auto;
 }
