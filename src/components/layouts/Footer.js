@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
             <div className="footer-last-text">
           <p>
-            No debt unlock the potential of predictive modelng and credit risk
+            No debt unlock the potential of predictive modellng and credit risk
             management to optimize your loan portfolio and drives businesses
             growth
           </p>

@@ -97,7 +97,7 @@ const DashBoardContainer = ({ setAuth, auth }) => {
         <div>
           <NavLink className="db-link" onClick={() => setShowModal(true)}>
             <TbLogout />
-            LogOut
+            Logout
           </NavLink>
         </div>
         {showModal && (

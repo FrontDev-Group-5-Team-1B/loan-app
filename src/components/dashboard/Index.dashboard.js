@@ -80,7 +80,7 @@ const Dashboard = () => {
   });
 
   return (
-    <section className="main-wrap dash-wrapper">
+    <section>
       <div>
         <div className="dHead">
           <h2>Dashboard</h2>

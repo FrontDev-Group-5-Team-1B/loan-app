@@ -9,8 +9,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
-  /* padding: 30px 70px 18px; */
+  max-width: 1440px; 
   position: sticky;
   top: 0;
   left: 0;
@@ -52,13 +51,15 @@
 .profile-pic {
   height: 40px;
   width: 40px;
+  /* margin-right:-30px; */
 }
 
 .db-nav-icons {
-  display: flex;
+  /* display: flex;
   gap: 3rem;
   justify-content: center;
   align-items: center;
+   */
 }
 
 /* .db-mail {

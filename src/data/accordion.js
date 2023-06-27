@@ -1,8 +1,8 @@
 export default [
     {
         id: "1",
-       question: "How can I deternmine a Loan defaulter?",
-       answer: "Loan Defaulter: Can be determine when the borrower is financially incapable to pay back the loan. This can be because of his/her laon credit score or past history of loan defaulting. If you need further assistance ask a team member." 
+       question: "How can I determine a Loan defaulter?",
+       answer: "Loan Defaulter: Can be determined when the borrower is financially incapable to pay back the loan. This can be because of his/her loan credit score or past history of loan defaulting. If you need further assistance ask a team member." 
     },
     {
         id: "2",

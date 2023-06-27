@@ -20,6 +20,10 @@ ul {
   list-style: none;
   gap: 2.5rem;
 }
+.borrow-wrap{
+  margin: 0 auto;
+
+}
 
 .dHead {
   padding: 15px 0;
@@ -83,7 +87,7 @@ ul {
 
 .dash-wrapper {
   height: 86vh;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   width: 85%;
 }
 
@@ -117,7 +121,8 @@ ul {
   padding: 10px;
   border: 1px solid #cce1ff;
   background-color: #fafcff;
-  width: 600px;
+  margin: 0 auto;
+  width: 800px;
   border-radius: 25px 0 25px 0;
 }
 
@@ -150,16 +155,16 @@ ul {
 
 .b-data {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 15px;
+  /* flex-direction: row; */
+  justify-content: space-around; 
+  padding: 20px;
 }
 
 .b-data input {
   padding: 10px;
   margin: 10px;
   width: 250px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   border: 1px solid #0252cc;
   border-radius: 5px;
 }
@@ -209,7 +214,7 @@ ul {
 
 .loan-info-flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px;
 }
 
@@ -240,6 +245,9 @@ textarea {
   width: 500px;
   border: 1px solid #0252cc;
   border-radius: 5px;
+}
+.textarea-div{
+  padding-left: 20px;
 }
 
 .d-btn {

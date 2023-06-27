@@ -28,7 +28,7 @@ const Borrow = () => {
 
 
   return (
-    <div className="borrow-wrap dash-wrapper">
+    <div className="borrow-wrap">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
         <p>Carefully input the borrower's details</p>
