@@ -31,7 +31,7 @@ const DbNav = () => {
                   Welcome {parsedAdminData.firstName}
                 </h2>
               </div>
-              <Link to="settings">
+              <Link to="dashboard/settings">
                 {profileImageUrl ? (
                   <img src={profileImageUrl} className="profile-pic" />
                 ) : (

@@ -28,7 +28,7 @@ ul {
 .dHead h2 {
   color: #0267ff;
   padding: 15px 0;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .dHead h3 {
@@ -205,7 +205,9 @@ ul {
   color: #fff;
   border-style: none;
   margin-right: 30px;
-  font-weight: 700;
+  font-weight: 750;
+  cursor: pointer;
+/*   font-weight: 700; */
 }
 
 .loan-info-flex {
