@@ -28,11 +28,11 @@ const LoansDeclined = () => {
     setDeclined(data);
   }, [data]);
 
-//  if (declined.length === 0){
-//                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
-//                   {declined?.message}
-//                 </p>
-//    }
+  //  if (declined.length === 0){
+  //                 <p style={{ paddingTop: "1rem", fontSize: "4rem" }}>
+  //                   {declined?.message}
+  //                 </p>
+  //    }
   return (
     <>
       <div className="loansgener-wrapper">
@@ -87,7 +87,7 @@ const LoansDeclined = () => {
                   <td>{declinedData.amount}</td>
                 </tr>
               ))} */}
-             
+
               {declined?.data.loans.map((all) => {
                 return (
                   <tr key={all._id}>

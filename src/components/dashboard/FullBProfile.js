@@ -9,7 +9,7 @@ import axios from "axios";
 const FullBProfile = () => {
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData } = useBorrowersDataStore();
- 
+
   const customStyles = {
     content: {
       top: "50%",
@@ -42,7 +42,11 @@ const FullBProfile = () => {
     }
   };
 
-  const mutation = useMutation(createLoan);
+  const mutation = useMutation(createLoan, {
+    onSuccess: () => {
+      setModalisopen(true);
+    },
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -364,8 +368,14 @@ const FullBProfile = () => {
 
         <div>
           <div className="f-btn-div">
-            <button style={{width: "140px", padding: "10px"}} type="submit" onClick={handleSubmit} className="f-btn">
-              Upload Data
+            <button
+              style={{ width: "140px", padding: "10px" }}
+              type="submit"
+              onClick={handleSubmit}
+              className="f-btn"
+              disabled={mutation.isLoading}
+            >
+              {mutation.isLoading ? "Uploading..." : "Upload Data"}
             </button>
           </div>
           <Modal
