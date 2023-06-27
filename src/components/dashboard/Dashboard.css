@@ -28,7 +28,7 @@ ul {
 .dHead h2 {
   color: #0267ff;
   padding: 15px 0;
-  font-size: 1.5rem;
+  font-size: 22px;
 }
 
 .dHead h3 {
@@ -204,7 +204,6 @@ ul {
   background-color: #0267ff;
   color: #fff;
   border-style: none;
-  margin-right: 30px;
   font-weight: 700;
 }
 
