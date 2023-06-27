@@ -71,7 +71,7 @@ const Home = () => {
               <div className="text">
                 <p>
                   Help reduce the rate of loan default by using advanced
-                  algorithms to analyze the borrowers data and giving
+                  algorithms to analyze the borrower's data and giving
                   predictions of default possibilites.
                 </p>
               </div>
@@ -159,7 +159,7 @@ const Home = () => {
                   <span className="time">Friday 01 Feburary 2023 by 1PM</span>
               </div>
                 <p className="review">
-                  I could not lose my job because I was able to detect a loan defaulter earlier and faster
+                  I could not lose my job because I was able to detect a loan defaulter earlier and faster.
                 </p>
                 </div>
 
@@ -170,7 +170,7 @@ const Home = () => {
                   <span className="time">Friday 01 Feburary 2023 by 1PM</span>
               </div>
                 <p className="review">
-                  I was able to monitor my borrowers debt and avoid default from them.
+                  I was able to monitor my borrower's debt and avoid default from them.
                 </p>
                 </div>
           </div>
@@ -178,7 +178,7 @@ const Home = () => {
           <div className="media">
             <div className="media-content">
             <h3>3 Million + customers</h3>
-            <p>Since it's launch in 2020, more than 4,000,000 individuals have utilized No Debt to forecast laon outcomes and facilitate loan disbursement. This software has effeciently mitigated the elevated risk associated with lending by providing relaible predictions and enabling responsible loan allocation.</p>
+            <p>Since it's launch in 2020, more than 4,000,000 individuals have utilized No Debt to forecast loan outcomes and facilitate loan disbursement. This software has effeciently mitigated the elevated risk associated with lending, by providing relaible predictions and enabling responsible loan allocation.</p>
             <NavLink to="/signup">
              <button>Create free account</button>
             </NavLink>

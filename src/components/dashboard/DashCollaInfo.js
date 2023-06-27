@@ -49,13 +49,14 @@ const DashCollaInfo = () => {
               />
             </div>
           </div>
+          <div className="textarea-div">
           <textarea
             type="text"
             placeholder="Provide Collateral information e.g location, car model, mileage e.t.c"
             name="collateralInformation"
             value={formData.collateralInformation}
             onChange={handleInputChange}
-          />
+          /></div>
           <div className="car-dot">
             <p>
               <RxDotFilled size="25px" />
