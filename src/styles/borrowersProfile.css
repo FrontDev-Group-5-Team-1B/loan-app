@@ -103,6 +103,7 @@
   margin-left: 0px;
   font-size: 1.2rem;
   color: rgb(129, 127, 127);
+  width: 100%;
 }
 .fbp-admin {
   display: flex;
@@ -186,8 +187,9 @@
   color: #0267ff;
   padding: 10px;
   font-weight: 600;
+  display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   width: 300px;
 }
 .back-btn {

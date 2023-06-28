@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Base URLs
 const baseURI = "https://nodebt-application.onrender.com/api";
-const secondURI = "https://nodebtdev.onrender.com/api"
+const secondURI = "https://nodebtdev.onrender.com/api";
 
 const headers = {
   "Content-Type": "multipart/form-data;",
@@ -82,10 +82,21 @@ export const DownloadProfilePicture = ({}) => {
 
 // Get Eligibility email
 export const sendEmail = () => {
-  return axios.get(`${secondURI}/loans/send-eligibility-status?id=648359a9d79d9330ffc5df4d`)
-}
+  return axios.get(
+    `${secondURI}/loans/send-eligibility-status?id=${localStorage.getItem(
+      "borrowerId"
+    )}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+};
 
 // Check Eligibility Status
 export const checkEligibility = () => {
-  return axios.get(`${secondURI}/loans/eligibility?id=6483574dd79d9330ffc5df36`)
-}
+  return axios.get(
+    `${secondURI}/loans/eligibility?id=6483574dd79d9330ffc5df36`
+  );
+};
