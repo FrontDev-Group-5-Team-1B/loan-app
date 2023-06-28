@@ -6,7 +6,6 @@ import { useState } from "react";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const DashGInfo = () => {
-  
   const [ModalIsopen, setModalisopen] = useState(false);
   const { formData, setFormData } = useBorrowersDataStore();
   const { guarantor } = formData;
@@ -64,7 +63,7 @@ const DashGInfo = () => {
       </div>
       <div className="bor-data">
         <h5>Guarantor's Information</h5>
-    
+
         <form>
           <div className="b-data">
             <div className="b-data1">
@@ -132,7 +131,7 @@ const DashGInfo = () => {
               </div>
               <div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Age"
                   className="placeholder"
                   name="guarantor.age"
@@ -151,7 +150,7 @@ const DashGInfo = () => {
                 />
               </div>
               <div>
-                  <select
+                <select
                   name="guarantor.employmentType"
                   onChange={handleInputChange}
                   value={guarantor.employmentType}
@@ -167,7 +166,7 @@ const DashGInfo = () => {
               </div>
               <div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Income per month"
                   className="placeholder"
                   name="guarantor.incomePerMonth"
@@ -185,8 +184,8 @@ const DashGInfo = () => {
               <RxDotFilled size="25px" />
             </p>
             <p>
-                <RxDotFilled size="25px" />
-              </p>
+              <RxDotFilled size="25px" />
+            </p>
 
             {/* <Link
               to="/dashboard/collateral_info"
@@ -210,7 +209,8 @@ const DashGInfo = () => {
           </Link>
         </button>
 
-        <button style={{cursor: "pointer", fontSize: "1.5rem", width: "140px"}}
+        <button
+          style={{ cursor: "pointer", fontSize: "1.5rem", width: "140px" }}
           type="submit"
           onClick={() => setModalisopen(true)}
           className="g-btn"
@@ -226,7 +226,7 @@ const DashGInfo = () => {
             <h6>Borower's data has been saved. Kindly preview data</h6>
             <div className="btn-btn">
               <div>
-                <button style={{fontSize: "18px"}}>
+                <button style={{ fontSize: "18px" }}>
                   <Link
                     to="/dashboard/fullbprofile"
                     style={{ textDecoration: "none", color: "white" }}
@@ -236,7 +236,17 @@ const DashGInfo = () => {
                 </button>
               </div>
               <div>
-                <button onClick={handleClick} style={{color: "red", background: "none", fontSize: "18px", cursor: "pointer"}}>Cancel</button>
+                <button
+                  onClick={handleClick}
+                  style={{
+                    color: "red",
+                    background: "none",
+                    fontSize: "18px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>

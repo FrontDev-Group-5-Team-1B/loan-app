@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import { RxDotFilled } from "react-icons/rx";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
-
 const BorrowerLoanInfo = () => {
   const { formData, setFormData } = useBorrowersDataStore();
-  
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const newValue = name === "loanAmount" ? parseFloat(value) : value;
     setFormData({ ...formData, [name]: newValue });
   };
   return (
-
     <div className="borrow-wrap">
       <div className="b-header">
         <h3>Input Borrower's Data</h3>
@@ -38,7 +36,7 @@ const BorrowerLoanInfo = () => {
               </select>
 
               <input
-                type="text"
+                type="number"
                 placeholder="Loan Amount"
                 className="placeholder"
                 name="loanAmount"
@@ -81,7 +79,7 @@ const BorrowerLoanInfo = () => {
           /></div>
           <div className="car-dot">
             <p>
-              <RxDotFilled size="25px"/>
+              <RxDotFilled size="25px" />
             </p>
             <p className="p1">
               <RxDotFilled size="25px" />
@@ -89,11 +87,10 @@ const BorrowerLoanInfo = () => {
             {/* <Link
               to="/dashboard/collateral_info"
               style={{ textDecoration: "none" }}
-            ></Link> */}
-              {" "}
-              <p>
-                <RxDotFilled size="25px"/>
-              </p>
+            ></Link> */}{" "}
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
             <p>
               <RxDotFilled size="25px" />
             </p>
