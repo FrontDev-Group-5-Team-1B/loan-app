@@ -40,7 +40,7 @@ const DashCollaInfo = () => {
             </div>
             <div>
               <input
-                type="text"
+                type="number"
                 placeholder="Collateral Value"
                 className="placeholder"
                 name="collateralValue"
@@ -63,23 +63,19 @@ const DashCollaInfo = () => {
             </p>
             {/* <Link to="/dashboard/borrow" style={{ textDecoration: "none" }}> </Link>
               {" "} */}
-              <p>
-                <RxDotFilled size="25px" />
-              </p>
-           
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
             <p className="p1">
               <RxDotFilled size="25px" />
             </p>
             <p>
-                <RxDotFilled size="25px" />
-              </p>
-            
+              <RxDotFilled size="25px" />
+            </p>
             {/* <Link
               to="/dashboard/guarantor_info"
               style={{ textDecoration: "none" }}
-            ></Link> */}
-              {" "}
-              
+            ></Link> */}{" "}
           </div>
         </form>
       </div>

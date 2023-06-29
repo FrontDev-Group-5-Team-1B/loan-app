@@ -48,6 +48,7 @@ import ForgotPassword from "./components/pages/ForgotPassword";
 import FullBProfile from "./components/dashboard/FullBProfile";
 import EligibilityStatus from "./components/dashboard/EligibilityStatus";
 import StatusSender from "./components/dashboard/StatusSender";
+import SuccessStatus from "./components/dashboard/SuccessStatus";
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -102,6 +103,10 @@ function App() {
             </Route>
             <Route path="fullbprofile" element={<FullBProfile />} />
             <Route path="eligibilitystatus" element={<EligibilityStatus />} />
+            <Route
+              path="eligibilitystatus_success"
+              element={<SuccessStatus />}
+            />
             <Route path="statussender" element={<StatusSender />} />
             <Route path="help" element={<HelpSupport />} />
           </Route>
