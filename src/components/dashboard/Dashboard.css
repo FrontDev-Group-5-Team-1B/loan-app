@@ -22,11 +22,17 @@ ul {
 }
 .borrow-wrap{
   margin: 0 auto;
-
+  margin-top: 100px; 
+  margin-right: 150px;
+}
+.dbContainer{
+  margin-top: 90px ;
+  margin-left: 300px;
 }
 
 .dHead {
   padding: 15px 0;
+ 
 }
 
 .dHead h2 {
@@ -87,8 +93,7 @@ ul {
 
 .dash-wrapper {
   height: 86vh;
-  /* overflow-y: scroll; */
-  width: 85%;
+  width: 85%; 
 }
 
 .dash-chart p {
@@ -121,7 +126,7 @@ ul {
   padding: 10px;
   border: 1px solid #cce1ff;
   background-color: #fafcff;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 800px;
   border-radius: 25px 0 25px 0;
 }
@@ -168,6 +173,9 @@ ul {
   border: 1px solid #0252cc;
   border-radius: 5px;
 }
+.b-data input:-webkit-autofill{
+  border: 3px solid orange;
+}
 
 .b-data select {
   padding: 10px;
@@ -212,7 +220,7 @@ ul {
   margin-right: 30px;
   font-weight: 750;
   cursor: pointer;
-/*   font-weight: 700; */
+
 }
 
 .loan-info-flex {
@@ -298,6 +306,10 @@ textarea {
   background-color: #f9f9f96b;
   padding: 20px 0;
   margin: 20px 0;
+}
+.dbContainer h5{
+  font-size: 1.3rem;
+  padding: 10px 0;
 }
 
 .dash-flex {
