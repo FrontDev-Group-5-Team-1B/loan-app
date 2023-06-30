@@ -160,9 +160,9 @@ ul {
 
 .b-data {
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-around; 
   padding: 20px;
+  margin: 0 auto;
 }
 
 .b-data input {

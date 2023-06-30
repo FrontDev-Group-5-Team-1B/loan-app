@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 1440px;
   height: 105px;
+  background-color: white;
   border-bottom: 0.5px solid var(--border-color);
   position: fixed;
   top:0;

@@ -95,7 +95,7 @@ const Security = () => {
           <div className="sec-inputs">
             <div
               className="bod"
-              style={{ marginBottom: 0, marginTop: 0, background: "#fafcff" }}
+              // style={{ marginBottom: 0, marginTop: 0, background: "#fafcff" }}
             >
               <input
                 id="oldPassword"
@@ -114,13 +114,13 @@ const Security = () => {
               </p>
             </div>
             <div
-              className="pass"
-              style={{
-                marginBottom: 0,
-                marginTop: 0,
-                background: "#fafcff",
-                borderColor: "#666666",
-              }}
+              // className="pass"
+              // style={{
+              //   marginBottom: 0,
+              //   marginTop: 0,
+              //   background: "#fafcff",
+              //   borderColor: "#666666",
+              // }}
             >
               <input
                 id="newPassword"
@@ -152,13 +152,13 @@ const Security = () => {
               </p>
             </div>
             <div
-              className="pass"
-              style={{
-                marginBottom: 0,
-                marginTop: 0,
-                background: "#fafcff",
-                borderColor: "#666666",
-              }}
+              //className="pass"
+              // style={{
+              //   marginBottom: 0,
+              //   marginTop: 0,
+              //   background: "#fafcff",
+              //   borderColor: "#666666",
+              // }}
             >
               <input
                 id="confirmNewPassword"
