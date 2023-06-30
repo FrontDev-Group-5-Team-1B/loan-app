@@ -36,9 +36,9 @@ const DashBoardContainer = ({ setAuth, auth }) => {
   return (
     <main className="db-main">
       <aside className="db-s-nav">
-        <div className="toast">
+        {/* <div className="toast">
           <ToastContainer style={{ zIndex: "999999" }} />
-        </div>
+        </div> */}
         {/* <DbNav /> */}
         <nav className="db-links">
           <NavLink

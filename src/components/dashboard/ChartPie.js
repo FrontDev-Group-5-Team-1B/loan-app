@@ -25,7 +25,7 @@ const ChartPie = () => {
   return (
     <div>
         <div>
-       <Chart options={state.options} series={state.series} type="donut" width={500} height={320} />
+       <Chart options={state.options} series={state.series} type="donut" width={420} height={300} />
     </div>
 
     </div>

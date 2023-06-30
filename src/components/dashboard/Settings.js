@@ -9,7 +9,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="settings-wrapper dash-wrapper">
+    <div className="settings-wrapper dash-wrapper dbContainer">
       <h2 className="settings-heading">Settings</h2>
       <div className="settings-links">
         <NavLink

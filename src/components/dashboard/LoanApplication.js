@@ -67,7 +67,7 @@ const LoanApplication = () => {
   //PAGINATION LOGIC ENDS HERE / /////////////////
 
   return (
-    <div className="db-loan-application-container dash-wrapper">
+    <div className="db-loan-application-container dash-wrapper dbContainer">
       <div className="loan-app-title">
         <h2>Loan Applications</h2>
         {/* <div className="loan-app-filter-icon">

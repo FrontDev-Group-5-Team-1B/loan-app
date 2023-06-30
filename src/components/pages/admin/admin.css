@@ -10,6 +10,7 @@ html {
 
 .admin-container {
   padding-top: 4rem;
+  
 }
 
 .add-admin-link {
@@ -231,6 +232,9 @@ html {
   padding-top: 1.8rem;
   padding-bottom: 1.8rem;
   font-size: 1.2rem;
+}
+.admin-input:-webkit-autofill{
+  border: 3px solid purple;
 }
 .admin-label {
   width: 462px;

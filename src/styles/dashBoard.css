@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.db-main {
+  display: flex;
+  gap: 40px;
+  position: relative;
+ 
+
+}
 .db-nav-container {
   height: 102px;
   display: flex;
@@ -10,11 +17,11 @@
   align-items: center;
   width: 100%;
   max-width: 1440px; 
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 20px;
   left: 0;
-  z-index: 99999;
-  margin-left: 12rem;
+  z-index: 1; */
+
 }
 
 .db-logo img {
@@ -23,7 +30,7 @@
 }
 .db-search{
   margin: 0 auto;
-  /* margin-left: 120px; */
+
 }
 
 .db-search {
@@ -52,38 +59,24 @@
 .profile-pic {
   height: 40px;
   width: 40px;
-  /* margin-right:-30px; */
+  
 }
 
-.db-nav-icons {
-  /* display: flex;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
-   */
-}
 
-/* .db-mail {
-  height: 18px;
-}
-.db-bell {
-  height: 25px;
-} */
 
 /* DASHBOARD SIDENAV STYLES */
-.db-main {
-  display: flex;
-  gap: 40px;
-}
+
 
 .db-s-nav {
   display: flex;
   flex-direction: column;
   width: 250px;
   background: #fafcff;
-  height: 86vh;
-  width: 250px;
-  overflow: auto;
+  position: fixed;
+  top: 105px;
+  z-index: 1;
+  height: 100%;
+  overflow-y: hidden;  
 }
 
 .db-links {
