@@ -23,7 +23,7 @@ const DashCollaInfo = () => {
       <div className="bor-data">
         <h5>Collateral Information</h5>
         <form>
-          <div className="loan-info-flex">
+          <div className="b-data">
             <div>
               <select
                 name="collateralType"

@@ -93,10 +93,7 @@ const Security = () => {
       <div>
         <form className="sec-form">
           <div className="sec-inputs">
-            <div
-              className="bod"
-              // style={{ marginBottom: 0, marginTop: 0, background: "#fafcff" }}
-            >
+            <div>
               <input
                 id="oldPassword"
                 name="oldPassword"
@@ -113,15 +110,7 @@ const Security = () => {
                 {errors.oldPassword && errors.oldPassword.message}
               </p>
             </div>
-            <div
-              // className="pass"
-              // style={{
-              //   marginBottom: 0,
-              //   marginTop: 0,
-              //   background: "#fafcff",
-              //   borderColor: "#666666",
-              // }}
-            >
+            <div className="sec-c-pass">
               <input
                 id="newPassword"
                 name="newPassword"
@@ -139,27 +128,21 @@ const Security = () => {
                   },
                 })}
               />
-              <span className="eye">
+              <span className="eye-c">
                 {showPassword === false ? (
                   <BsEyeSlash size="20px" onClick={togglePassword} />
                 ) : (
                   <BsEye size="20px" onClick={togglePassword} />
                 )}
               </span>
+              </div>
 
               <p className="val-message">
                 {errors.newPassword && errors.newPassword.message}
               </p>
-            </div>
+           
             <div
-              //className="pass"
-              // style={{
-              //   marginBottom: 0,
-              //   marginTop: 0,
-              //   background: "#fafcff",
-              //   borderColor: "#666666",
-              // }}
-            >
+              className="sec-c-pass" >
               <input
                 id="confirmNewPassword"
                 name="confirmNewPassword"
@@ -177,17 +160,18 @@ const Security = () => {
                   },
                 })}
               />
-              <span className="eye">
+              <span className="eye-c">
                 {showPassword2 === false ? (
                   <BsEyeSlash size="20px" onClick={togglePassword2} />
                 ) : (
                   <BsEye size="20px" onClick={togglePassword2} />
                 )}
               </span>
+              </div>
               <p className="val-message">
                 {errors.confirmNewPassword && errors.confirmNewPassword.message}
               </p>
-            </div>
+           
 
             {/* {error?.response?.data?.message && (
               <p>{error.response.data.message}</p>

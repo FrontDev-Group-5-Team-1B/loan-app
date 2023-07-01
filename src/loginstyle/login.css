@@ -143,6 +143,7 @@ hr{
     justify-content: center;
     gap: 5rem;
     padding: 2rem 0;
+    margin-bottom: 20px;
 }
 .login-icons a{
     color: #ffffff;

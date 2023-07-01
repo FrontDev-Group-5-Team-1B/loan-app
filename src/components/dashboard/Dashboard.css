@@ -126,19 +126,18 @@ ul {
   padding: 10px;
   border: 1px solid #cce1ff;
   background-color: #fafcff;
-  /* margin: 0 auto; */
   width: 800px;
   border-radius: 25px 0 25px 0;
 }
 
 .loan-data {
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 10px;
   border: 1px solid #cce1ff;
   background-color: #fafcff;
   width: 600px;
   height: 350px;
-  border-radius: 25px 0 25px 0;
+  border-radius: 25px 0 25px 0; */
 }
 .loan-data h5 {
   color: #4d4d4d;
@@ -155,14 +154,15 @@ ul {
 .bor-data h5 {
   color: #4d4d4d;
   font-size: 1.5rem;
-  margin: 0 25px;
+  margin: 0 90px;
 }
 
 .b-data {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-between; 
   padding: 20px;
-  margin: 0 auto;
+  margin-left: 60px;
+  
 }
 
 .b-data input {
@@ -182,7 +182,6 @@ ul {
   margin: 10px;
   width: 250px;
   font-size: 1.3rem;
-  /* border-style: none; */
   border-radius: 5px;
   border: 1px solid #0252cc;
   color: #808080;
@@ -251,7 +250,7 @@ ul {
 
 textarea {
   padding: 20px;
-  margin: 10px;
+  margin: 10px 10px 10px 70px;
   font-size: 1.3rem;
   width: 500px;
   border: 1px solid #0252cc;

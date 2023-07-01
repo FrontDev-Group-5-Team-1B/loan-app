@@ -20,7 +20,7 @@ const BorrowerLoanInfo = () => {
       <div className="bor-data">
         <h5>Loan Information</h5>
         <form>
-          <div className="loan-info-flex">
+          <div className="b-data">
             <div>
               <select
                 name="loanType"
