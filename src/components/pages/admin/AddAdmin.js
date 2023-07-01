@@ -93,7 +93,7 @@ const AddAdmin = () => {
   };
 
   return (
-    <div className="add-admin-container dash-wrapper">
+    <div className="add-admin-container dash-wrapper dbContainer">
       <div class="indicator">
         <Link to="/dashboard/admin" className="add-admin-link">
           <p>Admin Dashboard</p>

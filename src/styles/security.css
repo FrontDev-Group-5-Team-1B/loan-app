@@ -14,11 +14,25 @@
 
 .sec-inputs {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 35px;
-  width: 50%;
+  width: 50%; 
 }
-
+.sec-inputs:-webkit-autofill{
+  border: 3px solid orange;
+}
+.sec-c-pass{
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+  position: relative;
+}
+.eye-c{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  cursor: pointer;
+}
 .setings-pwd-btn {
   width: 50%;
   background: #0267ff;

@@ -33,10 +33,13 @@
   width: 85%;
   height: 50px;
   background: #fafcff;
-  outline: none;
   padding-left: 3.3rem;
-  border: 0;
+  outline: none;
+  border: 1px solid grey;
   border-radius: 5px;
+}
+.profile-input:-webkit-autofill{
+  border: 3px solid orange;
 }
 .profile-input::placeholder {
   padding-top: 1.8rem;
@@ -50,8 +53,8 @@
   margin: 1rem 0 2rem;
 }
 .bod {
-  border: 1px solid #000;
-  border-radius: 5px;
+  /* border: 1px solid #000;
+  border-radius: 5px; */
 }
 .profile-change-btn {
   display: flex;
