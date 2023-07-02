@@ -27,12 +27,10 @@
     
     .services-content{
         width: 80%;
-        /* background-color: red; */
         padding: 30px 15px;
         gap: 5px;
     }
     .services-content .textAndImage .text{
-        /* background-color: blue */
         width: 100px;
         padding: 1px 10px;
 
@@ -147,6 +145,7 @@
     .services-content .text p {
         width: 40%;
         margin-top: 20px;
+        margin-left: 200px;
     }
     .services-content {
         display: block;
