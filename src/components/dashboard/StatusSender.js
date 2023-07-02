@@ -16,7 +16,7 @@ const StatusSender = () => {
 
   return (
     <div>
-      <div className="generated-flex">
+      <div className="generated-flex dbContainer">
         <Link
           to="/dashboard/borrow"
           style={{ textDecoration: "none", color: "#808080" }}
