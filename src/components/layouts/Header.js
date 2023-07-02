@@ -51,14 +51,6 @@ const Header = ({ auth }) => {
           </>
         )}
       </header>
-      <nav className="header-second">
-        <div className="btn-second">
-          <NavLink to="login">Log In</NavLink>
-          <NavLink to="signup" className="signup">
-            Sign Up
-          </NavLink>
-        </div>
-      </nav>
 
       <Outlet />
     </>
