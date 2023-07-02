@@ -5,8 +5,8 @@ import { TfiPieChart } from "react-icons/tfi";
 import { TbCoins, TbLogout } from "react-icons/tb";
 import { FiSettings, FiHelpCircle } from "react-icons/fi";
 import DbNav from "./DbNav";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+
 import Modal from "../Modal";
 import { useQueryClient } from "react-query";
 
@@ -37,7 +37,7 @@ const DashBoardContainer = ({ setAuth, auth }) => {
     <main className="db-main">
       <aside className="db-s-nav">
         <div className="toast">
-          <ToastContainer style={{ zIndex: "999999" }} />
+          {/* <ToastContainer style={{ zIndex: "999999" }} /> */}
         </div>
         {/* <DbNav /> */}
         <nav className="db-links">

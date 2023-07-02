@@ -11,6 +11,7 @@ const LoanApplication = () => {
   const [loanData, setLoanData] = useState();
 
   //  LOGIC FOR FETCHING ALL LOANS STARTS HERE //////////////
+
   const fetchCompanyLoans = async () => {
     try {
       const response = await axios.get(
