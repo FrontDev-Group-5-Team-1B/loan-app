@@ -67,17 +67,19 @@
 /* Container for table and pagination */
 .db-loan-application-container {
   position: relative;
+  margin-bottom: 220px;
 }
 
 /* Pagination container */
 .pagination {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin-top: 5rem;
+  /* margin: 20px 0; */
 }
 
 /* Pagination buttons */
