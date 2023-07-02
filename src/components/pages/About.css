@@ -109,14 +109,11 @@
     vertical-align: middle;
     fill: #012966;
   }
-  
 
 .meetUs{
-  /* height: 400px; */
   background-color: #F1FBF8;
   padding: 25px 25px;
   align-items: center;   
-  margin-top: 100px;
 }
 
 .meetUs h4{
@@ -126,29 +123,48 @@
   padding: 20px;
   font-size: 2rem;
   width: fit-content;
-  margin-left: 30px;
-  
+  margin-left: 30px;  
 }
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.developer .title {
+  text-align: center;
+}
+
 .team{
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Start with 2 columns */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
+
 .developer img{
   border-radius: 50%;
   height: 250px;
   width: 250px;
+  display: bock;
+  margin: 0 auto;
 }
 
 .devName{
   font-size: 20px;
-  letter-spacing: 7px;
+  letter-spacing: 2px;
+  margin-top: 10px;
 }
+
 .devTitle{
   font-size: 14px;
   font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 5px;
 }
+
 @media (max-width: 1120px) {
   .developer img{
     border-radius: 50%;

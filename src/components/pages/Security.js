@@ -8,11 +8,6 @@ import { useForm } from "react-hook-form";
 import fgpimg from "../../assets/5568706 1.png";
 
 const Security = () => {
-  // const [changePassword, setChangePassword] = useState({
-  //   oldPassword: "",
-  //   newPassword: "",
-  //   confirmNewPassword: "",
-  // });
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
@@ -59,21 +54,9 @@ const Security = () => {
       }
   );
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setChangePassword((prevData) => ({
-  //     ...prevData,
-  //     [name]: value,
-  //   }));
-  // };
-
   const onPasswordChange = (data) => {
     console.log(data);
 
-    // if (changePassword.newPassword !== changePassword.confirmNewPassword) {
-    //   // Handle password mismatch error
-    //   return;
-    // }
     const changePassword = {
       oldPassword: data.oldPassword,
     newPassword: data.newPassword,
@@ -105,11 +88,11 @@ const Security = () => {
                   required: "Old password Required",
                 })}
               />
-
               <p className="val-message">
                 {errors.oldPassword && errors.oldPassword.message}
               </p>
             </div>
+
             <div className="sec-c-pass">
               <input
                 id="newPassword"
