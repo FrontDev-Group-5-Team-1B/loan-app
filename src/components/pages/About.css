@@ -165,9 +165,6 @@
    }
 }
 @media (max-width: 660px) {
-  .aboutContain .topic{
-    margin-top: 50px;
-  }
   .team {
     grid-template-columns: repeat(2, 1fr); /* Change to 3 columns */
   }
