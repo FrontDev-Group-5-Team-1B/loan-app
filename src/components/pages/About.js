@@ -7,6 +7,7 @@ import anuli from '../../assets/anuli.jpg'
 import perpetual from '../../assets/perpetua.jpg'
 import elijah from '../../assets/elijah.jpg'
 import rachel from '../../assets/rachel.jpg'
+// import onyinye from '../../assets/onyinye.jpeg'
 
 const About = () => {
   return (
@@ -40,7 +41,7 @@ const About = () => {
         </div>
 
         <div className='meetUs'>
-            <h4>Meet The Developers</h4>
+            <h4>Meet Our Developers</h4>
             <div className='team'>
                 <div className='developer'>
                     <div>
@@ -48,7 +49,7 @@ const About = () => {
                     </div>
                     <div className='title'>
                         <h3 className='devName'>Blessing Dawodu</h3>
-                        <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
+                        <h5 className='devTitle'>Frontend Developer</h5>
                     </div>
                 </div>
                 <div className='developer'>
@@ -57,43 +58,57 @@ const About = () => {
                     </div>
                     <div className='title'>
                         <h3 className='devName'>Rachel Opuba</h3>
-                        <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
+                        <h5 className='devTitle'>Frontend Developer</h5>
                     </div>
                 </div>
+
                 <div className='developer'>
                     <div>
                         <img src={anuli} alt='chiamaka'/>
                     </div>
                     <div className='title'>
                         <h3 className='devName'>Anulika Nnedu</h3>
-                        <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
+                        <h5 className='devTitle'>Frontend Developer</h5>
                     </div>
                 </div>
+
                 <div className='developer'>
                     <div>
                         <img src={chiamaka} alt='chiamaka'/>
                     </div>
                     <div className='title'>
                         <h3 className='devName'>Chiamaka Onyia</h3>
-                        <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
+                        <h5 className='devTitle'>Frontend Developer</h5>
                     </div>
                 </div>
+
+                {/* <div className='developer'>
+                    <div>
+                        <img src={onyinye} alt='onyinye'/>
+                    </div>
+                    <div className='title'>
+                        <h3 className='devName'>Onyinye Chukwumee</h3>
+                        <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
+                    </div>
+                </div> */}
+
                 <div className='developer'>
                     <div>
                         <img src={perpetual} alt='chiamaka'/>
                     </div>
                     <div className='title'>
-                        <h3 className='devName'>Perpetua Meninwa</h3>
-                        <h5 className='devTitle'>BACKEND DEVELOPER</h5>
+                        <h3 className='devName'>Perpetual Meninwa</h3>
+                        <h5 className='devTitle'>Backend Developer</h5>
                     </div>
                 </div>
+
                 <div className='developer'>
                     <div>
                         <img src={elijah} alt='chiamaka'/>
                     </div>
                     <div className='title'>
                         <h3 className='devName'>Elijah Vande</h3>
-                        <h5 className='devTitle'>DATA SCIENTIST</h5>
+                        <h5 className='devTitle'>Data Scientist</h5>
                     </div>
                 </div>
                
