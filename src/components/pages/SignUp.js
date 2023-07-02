@@ -13,6 +13,7 @@ import { useSignup } from "../../services/query/query.service";
 import { ThreeDots } from "../loaders/Loader.component";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { GoogleLogin } from '@react-oauth/google';
 
 const SignUp = () => {
   const [errorMsg, setErrorMsg] = useState("");
@@ -20,6 +21,10 @@ const SignUp = () => {
   const [modalIsOpen, setModalisopen] = useState(false);
   const closeref = useRef();
   const modref = useRef();
+  const responseGoogle = (response) => {
+    console.log(response);
+    // Handle the response data here
+  };
   //form validation
   const {
     handleSubmit,
@@ -238,7 +243,14 @@ const SignUp = () => {
                 <FaEnvelope />
               </Link> */}
               <Link>
-                <img src={google} alt="google" />
+              <GoogleLogin
+                 clientId="971442954116-mo6drlr37kt7c5tadolni39jiki7eire.apps.googleusercontent.com"
+                 onSuccess={responseGoogle}
+                 onFailure={responseGoogle}
+                 buttonText={google}
+                 />
+                  {/* <img src={google} alt="google" /> */}
+               
               </Link>
               {/* <Link>
                 <FaApple />

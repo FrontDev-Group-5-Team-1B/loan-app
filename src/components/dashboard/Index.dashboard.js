@@ -30,7 +30,7 @@ const Dashboard = () => {
 
     return (
       <li key={loanFig.id}>
-        <div className="dContainer">
+        <div>
           <div className="dCards">
             <div className="fig-flex">
               <div>
@@ -80,7 +80,7 @@ const Dashboard = () => {
   });
 
   return (
-    <section>
+    <section className="dbContainer">
       <div>
         <div className="dHead">
           <h2>Dashboard</h2>

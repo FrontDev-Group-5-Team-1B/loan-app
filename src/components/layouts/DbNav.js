@@ -4,6 +4,7 @@ import logo from "../../assets/Loan logo 1.png";
 // import bell from "../../assets/bell-icon.svg";
 import profile from "../../assets/profile-pic.png";
 import { Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import useProfileImageStore from "../../store/profileImageStore";
 
@@ -18,6 +19,9 @@ const DbNav = () => {
   return (
     <>
       <div className="db-nav-container">
+      <div className="toast">
+          <ToastContainer style={{ zIndex: "999999" }} />
+        </div>
         <div className="db-search">
           <input type="text" placeholder="Search" className="db-input-search" />
         </div>

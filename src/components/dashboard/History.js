@@ -6,7 +6,7 @@ import { FiMenu } from "react-icons/fi";
 
 const History = () => {
   return (
-    <div className="db-history-container dash-wrapper">
+    <div className="db-history-container dash-wrapper dbContainer">
       <div className="history-title">
         <h2>History</h2>
         {/* <div className="filter-icon">

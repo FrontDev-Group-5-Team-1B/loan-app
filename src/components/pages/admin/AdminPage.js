@@ -45,7 +45,7 @@ const AdminPage = () => {
     );
   });
   return (
-    <div className="admin-container dash-wrapper">
+    <div className="admin-container dash-wrapper dbContainer">
       <div className="admin-heading">
         <h2 className="admin-heading-primary">Admin Dashboard</h2>
         <h3 className="admin-numbers">

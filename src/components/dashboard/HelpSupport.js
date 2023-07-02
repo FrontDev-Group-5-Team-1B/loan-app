@@ -14,7 +14,7 @@ const HelpSupport = () => {
     setSelected(idx);
   };
   return (
-    <div className="help-support-container dash-wrapper">
+    <div className="help-support-container dash-wrapper dbContainer">
       <section>
         <div className="help-support-row1">
           <h3>Help & Support</h3>
