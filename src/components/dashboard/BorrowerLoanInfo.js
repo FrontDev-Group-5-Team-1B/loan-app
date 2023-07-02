@@ -69,14 +69,16 @@ const BorrowerLoanInfo = () => {
               />
             </div>
           </div>
-          <div className="textarea-div">
-          <textarea
-            type="text"
-            placeholder="Purpose of Loan"
-            name="purposeOfLoan"
-            value={formData.purposeOfLoan}
-            onChange={handleInputChange}
-          /></div>
+          <div className="textarea-div ">
+            <textarea
+              type="text"
+              placeholder="Purpose of Loan"
+              name="purposeOfLoan"
+              value={formData.purposeOfLoan}
+              onChange={handleInputChange}
+              className="loan-textarea"
+            />
+          </div>
           <div className="car-dot">
             <p>
               <RxDotFilled size="25px" />

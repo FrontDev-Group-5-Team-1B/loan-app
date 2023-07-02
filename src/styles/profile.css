@@ -38,7 +38,7 @@
   border: 1px solid grey;
   border-radius: 5px;
 }
-.profile-input:-webkit-autofill{
+.profile-input:-webkit-autofill {
   border: 3px solid orange;
 }
 .profile-input::placeholder {

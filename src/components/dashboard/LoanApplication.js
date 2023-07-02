@@ -11,6 +11,7 @@ const LoanApplication = () => {
   const [loanData, setLoanData] = useState();
 
   //  LOGIC FOR FETCHING ALL LOANS STARTS HERE //////////////
+
   const fetchCompanyLoans = async () => {
     try {
       const response = await axios.get(
@@ -37,7 +38,7 @@ const LoanApplication = () => {
 
   //PAGINATION LOGIC STARTS HERE /////////////////
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 5;
+  const recordsPerPage = 10;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
   const [records, setRecords] = useState([]);
