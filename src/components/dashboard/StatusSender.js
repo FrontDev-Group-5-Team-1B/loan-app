@@ -61,7 +61,7 @@ const StatusSender = () => {
         <h5>Send Message</h5>
       </div>
 
-      <div className="b-header">
+      <div className="b-header eligible-wrap">
         <h2>Send Loan Eligibility Status To Borrower</h2>
         <p className="b-head1">
           <i>
@@ -71,7 +71,7 @@ const StatusSender = () => {
         </p>
       </div>
       <div className="m-btn">
-        <button onClick={sendEmailInfo} className="mb-btn">
+        <button onClick={sendEmailInfo} className="mb-btn eligible-wrap">
           {" "}
           {sendEmail.isLoading ? "Sending..." : "Send via Gmail"}{" "}
           <span>
