@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { FaEnvelope } from "react-icons/fa";
@@ -21,10 +21,7 @@ const StatusSender = () => {
     }
   };
 
-  useEffect ()=> {
-  const notify = () => toast("Successful"),
-  }
-  
+  const notify = () => toast("Successful");
 
   return (
     <div>
@@ -82,14 +79,16 @@ const StatusSender = () => {
             <FaEnvelope />
           </span>
         </button>
-        {sendEmail.isError && <div>Error sending email</div>}
-        {isEmailSent && notify()}
-        <button className="mb-btn">
+        {sendEmail.isError && (
+          <div style={{ color: "red" }}>Error sending email</div>
+        )}
+        {isEmailSent && toast("Email successfully sent")}
+        {/* <button className="mb-btn">
           Send via Text Message
           <span>
             <img src={google} alt="google" style={{ width: "12px" }} />
           </span>
-        </button>
+        </button> */}
       </div>
     </div>
   );
