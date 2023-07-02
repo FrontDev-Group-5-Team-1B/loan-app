@@ -23,6 +23,13 @@ const FullBProfile = () => {
       padding: "50px",
     },
   };
+  const errorMsgStyle = {
+    content: {
+      width: "100%",
+      border: "2px solid red",
+      color: "red",
+    },
+  };
   const createLoan = async (formData) => {
     console.log(formData);
     try {
@@ -384,6 +391,20 @@ const FullBProfile = () => {
               {mutation.isLoading ? "Uploading..." : "Upload Data"}
             </button>
           </div>
+          {mutation.isError && (
+            <div
+              className="submit-error"
+              style={{
+                color: "red",
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+                fontSize: "2rem",
+              }}
+            >
+              {mutation.error.message}
+            </div>
+          )}
           <Modal
             isOpen={ModalIsopen}
             onRequestClose={() => setModalisopen(false)}

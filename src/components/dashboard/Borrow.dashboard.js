@@ -4,7 +4,6 @@ import "./Dashboard.css";
 import { RxDotFilled } from "react-icons/rx";
 import useBorrowersDataStore from "../../store/borowersDataStore";
 
-
 const Borrow = () => {
   const { formData, setFormData } = useBorrowersDataStore();
 
@@ -26,7 +25,6 @@ const Borrow = () => {
     console.log("hello");
   };
 
-
   return (
     <div className="borrow-wrap">
       <div className="b-header">
@@ -38,12 +36,11 @@ const Borrow = () => {
         <form onSubmit={handleSubmit}>
           <div className="b-data">
             <div className="b-data1">
-
               <label htmlFor="name">
                 <input
                   type="text"
                   placeholder="name"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="fullname"
                   value={formData.fullname}
                   onChange={handleInputChange}
@@ -55,7 +52,7 @@ const Borrow = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
@@ -65,7 +62,7 @@ const Borrow = () => {
                 <input
                   type="text"
                   placeholder="Address"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="address"
                   value={formData.address}
                   onChange={handleInputChange}
@@ -76,7 +73,7 @@ const Borrow = () => {
                 <input
                   type="text"
                   placeholder="Employment"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="employmentType"
                   value={formData.employmentType}
                   onChange={handleInputChange}
@@ -84,7 +81,7 @@ const Borrow = () => {
               </label>
 
               <select
-                name="maritalStatus"
+                name="maritalStatus "
                 onChange={handleInputChange}
                 value={formData.maritalStatus}
               >
@@ -99,7 +96,7 @@ const Borrow = () => {
                 <input
                   type="text"
                   placeholder="Gender"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="gender"
                   value={formData.gender}
                   onChange={handleInputChange}
@@ -112,7 +109,7 @@ const Borrow = () => {
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
@@ -123,7 +120,7 @@ const Borrow = () => {
                 <input
                   type="number"
                   placeholder="Age"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="age"
                   value={formData.age}
                   onChange={handleInputChange}
@@ -134,7 +131,7 @@ const Borrow = () => {
                 <input
                   type="number"
                   placeholder="National Identity Number"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="nationalIdentityNumber"
                   value={formData.nationalIdentityNumber}
                   onChange={handleInputChange}
@@ -144,7 +141,7 @@ const Borrow = () => {
                 <input
                   type="number"
                   placeholder="Income per month"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="incomePerMonth"
                   value={formData.incomePerMonth}
                   onChange={handleInputChange}
@@ -180,7 +177,7 @@ const Borrow = () => {
                 <input
                   type="text"
                   placeholder="Job Role"
-                  className="placeholder"
+                  className="placeholder borowers-input"
                   name="jobRole"
                   value={formData.jobRole}
                   onChange={handleInputChange}
@@ -190,22 +187,21 @@ const Borrow = () => {
           </div>
           <div className="car-dot">
             <p className="p1">
-              <RxDotFilled size="25px"/>
+              <RxDotFilled size="25px" />
             </p>
             {/* <Link to="/dashboard/borrowerloan_info" style={{ textDecoration: "none" }}
-            ></Link> */}
-              {" "}
-              <p>
-                <RxDotFilled size="25px"/>
-              </p>
+            ></Link> */}{" "}
             <p>
-              <RxDotFilled size="25px"/>
+              <RxDotFilled size="25px" />
             </p>
             <p>
-              <RxDotFilled size="25px"/>
+              <RxDotFilled size="25px" />
+            </p>
+            <p>
+              <RxDotFilled size="25px" />
             </p>
           </div>
-          </form>
+        </form>
       </div>
       <div className="s-btn">
         <button type="submit" className="b-btn">
