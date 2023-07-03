@@ -19,7 +19,7 @@ const EligibilityStatus = () => {
 
   return (
     <div>
-      <div className="generated-flex">
+      <div className="generated-flex dbContainer">
         <Link
           to="/dashboard/borrow"
           style={{ textDecoration: "none", color: "#808080" }}
@@ -41,7 +41,7 @@ const EligibilityStatus = () => {
         </p>
         <h5>Loan Eligibility Status</h5>
       </div>
-      <div className="b-header">
+      <div className="b-header eligible-wrap">
         <h2>Borrower's Loan Eligibilty Status</h2>
         <p className="b-head1">
           <i>This borrower is eligible to the loan applied for</i>

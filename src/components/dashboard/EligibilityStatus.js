@@ -41,7 +41,7 @@ const EligibilityStatus = () => {
         </p>
         <h5>Loan Eligibility Status</h5>
       </div>
-      <div className="b-header">
+      <div className="b-header eligible-wrap">
         <h2>Borrower's Loan Eligibilty Status</h2>
         <p className="b-head1">
           <i>This borrower is not eligible to loan type</i>
@@ -65,7 +65,7 @@ const EligibilityStatus = () => {
           <i>Application for a lower amount of loan is advised</i>
         </p>
       </div>
-      <div className="can-btn">
+      <div className="can-btn eligible-wrap">
         <button
           type="submit"
           onClick={() => setModalisopen(true)}
@@ -92,7 +92,7 @@ const EligibilityStatus = () => {
         to="/dashboard/statussender"
         style={{ textDecoration: "none", color: "#808080" }}
       >
-        <button className="status-bor">
+        <button className="status-bor eligible-wrap">
           Send Eligibility Status to Borrower
         </button>
       </Link>
