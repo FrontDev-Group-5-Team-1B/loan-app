@@ -81,7 +81,7 @@ const Borrow = () => {
               </label>
 
               <select
-                name="maritalStatus "
+                name="maritalStatus"
                 onChange={handleInputChange}
                 value={formData.maritalStatus}
               >
