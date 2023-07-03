@@ -7,7 +7,7 @@ import anuli from '../../assets/anuli.jpg'
 import perpetual from '../../assets/perpetua.jpg'
 import elijah from '../../assets/elijah.jpg'
 import rachel from '../../assets/rachel.jpg'
-// import onyinye from '../../assets/onyinye.jpeg'
+import onyinye from '../../assets/onyinye.jpg'
 
 const About = () => {
   return (
@@ -82,7 +82,7 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* <div className='developer'>
+                <div className='developer'>
                     <div>
                         <img src={onyinye} alt='onyinye'/>
                     </div>
@@ -90,7 +90,7 @@ const About = () => {
                         <h3 className='devName'>Onyinye Chukwumee</h3>
                         <h5 className='devTitle'>FRONTEND DEVELOPER</h5>
                     </div>
-                </div> */}
+                </div>
 
                 <div className='developer'>
                     <div>
