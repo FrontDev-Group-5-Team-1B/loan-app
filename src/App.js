@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./components/pages/About.css";
 
-
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -69,47 +68,43 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+        </Route>
+        <Route
+          path="dashboard"
+          element={
+            <PrivateRoute auth={auth}>
+              <DashBoardContainer setAuth={setAuth} auth={auth} />
+            </PrivateRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="borrow" element={<Borrow />} />
+          <Route path="loan" element={<LoanApplication />} />
+          <Route path="history" element={<History />} />
+          <Route path="admin" element={<AdminPage />} />
+          <Route path="add_admin" element={<AddAdmin />} />
 
+          <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
+          <Route path="collateral_info" element={<DashCollaInfo />} />
+          <Route path="guarantor_info" element={<DashGInfo />} />
+          <Route path="loansgenerated" element={<LoansGenerated />} />
+          <Route path="loansdeclined" element={<LoansDeclined />} />
+          <Route path="loansrefunded" element={<LoansRefunded />} />
+          <Route path="pendingloans" element={<PendingLoans />} />
           <Route
-            path="dashboard"
-            element={
-              <PrivateRoute auth={auth}>
-                <DashBoardContainer setAuth={setAuth} auth={auth} />
-              </PrivateRoute>
-            }
-          >
-            <Route index element={<Dashboard />} />
-            <Route path="borrow" element={<Borrow />} />
-            <Route path="loan" element={<LoanApplication />} />
-            <Route path="history" element={<History />} />
-            <Route path="admin" element={<AdminPage />} />
-            <Route path="add_admin" element={<AddAdmin />} />
-
-            <Route path="borrowerloan_info" element={<BorrowerLoanInfo />} />
-            <Route path="collateral_info" element={<DashCollaInfo />} />
-            <Route path="guarantor_info" element={<DashGInfo />} />
-            <Route path="loansgenerated" element={<LoansGenerated />} />
-            <Route path="loansdeclined" element={<LoansDeclined />} />
-            <Route path="loansrefunded" element={<LoansRefunded />} />
-            <Route path="pendingloans" element={<PendingLoans />} />
-            <Route
-              path="borrowerprofile/:fullname"
-              element={<BorrowerProfile />}
-            />
-            <Route path="settings" element={<Settings />}>
-              <Route index element={<Profile />} />
-              {/* <Route path="notification" element={<Notification />} /> */}
-              <Route path="security" element={<Security />} />
-            </Route>
-            <Route path="fullbprofile" element={<FullBProfile />} />
-            <Route path="eligibilitystatus" element={<EligibilityStatus />} />
-            <Route
-              path="eligibilitystatus_success"
-              element={<SuccessStatus />}
-            />
-            <Route path="statussender" element={<StatusSender />} />
-            <Route path="help" element={<HelpSupport />} />
+            path="borrowerprofile/:fullname"
+            element={<BorrowerProfile />}
+          />
+          <Route path="settings" element={<Settings />}>
+            <Route index element={<Profile />} />
+            {/* <Route path="notification" element={<Notification />} /> */}
+            <Route path="security" element={<Security />} />
           </Route>
+          <Route path="fullbprofile" element={<FullBProfile />} />
+          <Route path="eligibilitystatus" element={<EligibilityStatus />} />
+          <Route path="eligibilitystatus_success" element={<SuccessStatus />} />
+          <Route path="statussender" element={<StatusSender />} />
+          <Route path="help" element={<HelpSupport />} />
         </Route>
 
         <Route path="*" element={<ErrorPage />} />
