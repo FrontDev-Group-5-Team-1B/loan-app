@@ -8,6 +8,7 @@ import DashBoardContainer from "../layouts/DashBoardContainer";
 import ChartComponent from "./ChartComponent";
 import ChartLineComponent from "./ChartLineComponent";
 import ChartPie from "./ChartPie";
+import "../../styles/mediaQueries.css";
 
 const loanData = [
   {
@@ -86,7 +87,7 @@ const Dashboard = () => {
           <h2>Dashboard</h2>
           <h3>Analysis</h3>
         </div>
-        <ul>{dataList}</ul>
+        <ul className="db-card-holder">{dataList}</ul>
       </div>
       <div className="dash-chart">
         <p>Loan Monthly Frequency</p>

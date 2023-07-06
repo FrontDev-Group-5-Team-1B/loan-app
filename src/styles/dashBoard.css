@@ -7,8 +7,8 @@
   display: flex;
   gap: 40px;
   position: relative;
- 
-
+  width: 100vw;
+  max-width: 1440px;
 }
 .db-nav-container {
   height: 102px;
@@ -16,30 +16,34 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1440px; 
-  /* position: sticky;
-  top: 20px;
+  max-width: 1440px;
+  position: fixed;
+  top: 0;
   left: 0;
-  z-index: 1; */
-
+  z-index: 1;
+  background: #fafcff;
+  padding: 0 40px;
 }
 
 .db-logo img {
-  height: 45px;
-  width: 35px;
-}
-.db-search{
-  margin: 0 auto;
-
+  height: 55px;
+  width: 45px;
 }
 
+.db-hamburger-menu {
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+  color: #0267ff;
+  display: none;
+}
 .db-search {
+  margin: 0 auto;
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 
 .db-input-search {
   background: #ffffff;
@@ -59,13 +63,9 @@
 .profile-pic {
   height: 40px;
   width: 40px;
-  
 }
 
-
-
 /* DASHBOARD SIDENAV STYLES */
-
 
 .db-s-nav {
   display: flex;
@@ -73,16 +73,27 @@
   width: 250px;
   background: #fafcff;
   position: fixed;
-  top: 105px;
+  top: 102px;
+  left: 0;
   z-index: 1;
   height: 100%;
-  overflow-y: hidden;  
+  overflow-y: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.db-s-nav-hidden {
+  transform: translateX(-100%);
+  /* transition: transform 0.3s ease-in-out; */
+}
+.db-s-nav-visible {
+  transform: translateX(0);
+  /* transition: transform 0.3s ease-in-out; */
 }
 
 .db-links {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .db-link {
@@ -145,7 +156,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2rem !important;
 }
 
 .welcome-msg {
