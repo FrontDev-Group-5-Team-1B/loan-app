@@ -54,6 +54,16 @@
     .admin-inputs {
         grid-template-columns: 1fr;
       }
+
+      .profile-modal2-content p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .indicator{
+        margin-top: 20px;
+      }
     
       .admin-input {
         width: 100%;
