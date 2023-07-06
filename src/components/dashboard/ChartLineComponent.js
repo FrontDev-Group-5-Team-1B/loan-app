@@ -28,7 +28,7 @@ const ChartLineComponent = () => {
   return (
     <div>
          <div>
-    <Chart options={state.options} series={state.series} type="area" width={400} height={320} />
+    <Chart options={state.options} series={state.series} type="area" />
     </div>
 
     </div>

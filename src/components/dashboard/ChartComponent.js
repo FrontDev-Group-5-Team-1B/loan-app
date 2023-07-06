@@ -30,7 +30,7 @@ const ChartComponent = () => {
   return (
     <div>
     <div>
-       <Chart options={state.options} series={state.series} type="bar" width={850}/>
+       <Chart options={state.options} series={state.series} type="bar"/>
     </div>
    
     </div>
