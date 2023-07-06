@@ -8,7 +8,7 @@ import DashBoardContainer from "../layouts/DashBoardContainer";
 import ChartComponent from "./ChartComponent";
 import ChartLineComponent from "./ChartLineComponent";
 import ChartPie from "./ChartPie";
-import "../../styles/mediaQueries.css";
+// import "../../styles/mediaQueries.css";
 
 const loanData = [
   {
