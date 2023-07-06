@@ -347,3 +347,30 @@ textarea {
 .percent-flex span {
   font-size: 1.2rem;
 }
+
+
+/* media query */
+@media screen and (max-width: 767px) {
+  ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .dHead h2 {
+    font-size: 20px;
+  }
+
+  .dHead h3 {
+    font-size: 1.3rem;
+  }
+
+  .dCards {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .dash-chart,
+  .area-chart,
+  .dash-pie {
+    width: 80%;
+  }
+}
