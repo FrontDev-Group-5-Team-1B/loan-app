@@ -5,28 +5,39 @@
 
 # Loan Prediction App
 ## Introduction
-A loan prediction application developed to aid financial service providers in thoroughly evaluating loan applicants with convenience, effectiveness, and precision.
-
-This readme file provides an overview of the app, its features, and instructions for installation and usage.
+The **Loan Prediction** application is developed to aid financial service providers to thoroughly evaluating loan applicants with convenience, effectiveness, and precision. This documentation provides an overview of the app's features, installation instructions and usage guidelines.
 
 ### Table of Contents
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Technologies](#technologies)
 - [Authors](#authors)
 - [Contributing](#contributing)
 - [License](#license)
 
 ### Features
-- **Data Input**: The app allows users to input relevant information about loan applicants, such as income, credit history, loan amount, and loan term.
+- **Admin Management**:
+- Register Admin: Admins can register new accounts with the app.
+- Login Admin: Registered admins can log in to the app using their credentials.
+Reset Password: Admins can reset their passwords if forgotten.
+- Update Admin Profile: Admins can update their profile information.
+- Update Admin Profile Picture: Admins can upload and manage their profile pictures.
+- Download Profile Image from AWS: Admins can download their profile images from AWS.
+- Delete Admin Profile Picture: Admins can delete their existing profile pictures.
+- Change Password: Admins can change their current password from the setting page.
+- Add an Admin: Superadmins can add new admins to the system.
+- Get a Single Admin: Superadmins can retrieve details of a specific admin.
+- Get All Admins: Superadmins can retrieve details of all admins.
 
-- **Prediction**: Based on the provided information, the app predicts whether the loan application is likely to be approved or not.
-
-- **User-Friendly Interface**: The app provides a simple and intuitive interface for users to interact with.
-
-- **Dashboard**: The dashboard should provide a high-level overview of loan application data, loan risk assessment, and other important metrics that help the user to make informed decisions.
-
-- **Data Visualization**: The interface should present data in a visually appealing and easy-to-understand format, such as charts or graphs, to help users better comprehend and interpret the data.
+- **Loan Management**:
+- Create a New Loan: Admins can create a new loan application.
+- Get a Single Loan: Admins can retrieve details of a specific loan application.
+- Check Eligibility: The app assesses loan eligibility based on predefined criteria.
+- Send Eligibility Status via Email: The app sends loan eligibility status to applicants via email.
+- Get All Loans: Admins can retrieve details of all loan applications.
+- Get All Successful Loans: Admins can retrieve details of all successfully approved loans both in ascending and descending order.
+- Get All Rejected Loans: Admins can retrieve details of all rejected loan applications both in ascending and descending order.
 
 ### Prerequisites
 Before installing and running the Loan Prediction App, ensure that you have the following prerequisites:
@@ -67,6 +78,21 @@ Open your browser and go to ['http://localhost:3000'] to access the Loan Predict
 
 Fill in the necessary information about the loan applicant in the provided input fields.
 
+### Technologies
+
+- Node.js
+- Express.js
+- MongoDB
+- AWS S3
+- React
+- React Query
+
+### Authors
+The following students/learners contributed to the development of this project
+<br/>
+<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=FrontDev-Group-5-Team-1B/loan-app"/>
+</a>
 
 ### Contributing
 We welcome contributions to enhance the Loan Prediction App. To contribute, please follow these steps:
@@ -82,4 +108,4 @@ We welcome contributions to enhance the Loan Prediction App. To contribute, plea
 - Submit a pull request detailing your changes and their benefits.
 
 ### License
-Project source code is licensed under the MIT license. You are free to fork this repository, edit the code, share and use it both for non-commercial and commercial purposes
+Project source code is licensed under the MIT license. You are free to fork this repository, edit the code, share and use it both for non-commercial and commercial purposes.

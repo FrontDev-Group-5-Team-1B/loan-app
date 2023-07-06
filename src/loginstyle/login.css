@@ -1,30 +1,364 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.login-container{
-    width: 100%;
-    display: flex;
-    /* align-items: center; */
-    background-color: #012966;
-    color: #ffffff;
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'Inter', sans-serif;
+.login-container {
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+  background-color: #012966;
+  color: #ffffff;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
 }
-.login-left-box{
-    width: 100%;
-    padding: 0 9%;
-    margin-top: 40px;
+.login-left-box {
+  width: 100%;
+  padding: 0 9%;
+  margin-top: 40px;
 }
-.login-right-box{
-    width: 100%;
+.login-right-box {
+  width: 100%;
+  height: 100%;
+}
+.login-right-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.logwel {
+  text-align: center;
+  color: #fffefe;
+  font-weight: 600;
+  font-size: 30px;
+}
+.logacc {
+  color: #e5e5e5;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 1rem;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+}
+
+.logsign {
+  color: #f2f2f2;
+  text-align: center;
+  font-size: 17px;
+  padding-top: 1rem;
+}
+.logsign a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+.loginput {
+  padding: 1.3rem 1rem;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+  font-size: 17px;
+  background-color: inherit;
+  color: #fffefe;
+  outline: none;
+}
+
+.loginput:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #012966 inset !important;
+  -webkit-text-fill-color: #fffefe;
+}
+.pa {
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  background-color: inherit;
+  padding: 1.3rem 0;
+  color: #dfdada;
+  border-radius: 4px;
+  text-indent: 1rem;
+  outline: none;
+}
+.loginput::placeholder,
+.pa::placeholder {
+  color: #fffdfd;
+}
+.pass {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+  position: relative;
+}
+.eye {
+  position: absolute;
+  top: 30%;
+  right: 4%;
+  cursor: pointer;
+}
+.forgot-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  font-size: 14px;
+}
+.forgot {
+  color: #fffefe;
+  font-size: 14px;
+  cursor: pointer;
+}
+.log-btn {
+  padding: 0.8rem 0;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #012966;
+  margin: 3rem 0 0 0;
+  cursor: pointer;
+}
+hr {
+  width: 100%;
+  height: 0;
+  border: 2px solid #013e99;
+}
+.continue {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+.continue span {
+  text-align: center;
+  width: 100%;
+}
+.login-icons {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 2rem 0;
+  margin-bottom: 20px;
+}
+.login-icons a {
+  color: #ffffff;
+  font-size: 35px;
+}
+.arrow {
+  padding-top: 1.5rem;
+}
+.arrow a {
+  color: #f2f2f2;
+}
+.signup-container {
+  width: 100%;
+  display: flex;
+  height: 120vh;
+  background-color: #012966;
+  color: #ffffff;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+.modal-container,
+.fgcontainer {
+  width: 100%;
+  background-color: rgba(1, 20, 46, 0.5);
+  position: absolute;
+  top: 0;
+  height: 140%;
+  flex-direction: column;
+  display: none;
+  align-items: center;
+}
+.fgcontainer {
+  height: 100%;
+}
+.modal-sign {
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: #fafcff;
+  text-align: center;
+  font-weight: 500;
+  box-sizing: border-box;
+  font-size: 22px;
+  color: #4d4d4d;
+  padding: 6rem 0;
+  border-radius: 10px;
+}
+.mod-img {
+  display: inline-flex;
+  justify-content: center;
+  width: 50%;
+}
+.fgimg {
+  width: 70px;
+}
+.mod-text {
+  width: 450px;
+  margin: auto;
+}
+.mod-btn,
+.fg-btn,
+.fg-btn2 {
+  width: 350px;
+  padding: 1rem 0;
+  border-radius: 4px;
+  background-color: #0267ff;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  margin: 2.5rem 0;
+  cursor: pointer;
+}
+.fg-btn {
+  width: 90%;
+  padding: 1rem 0;
+}
+.fg-btn2 {
+  width: 50%;
+  padding: 1rem 0;
+}
+.fptxt {
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  font-size: 16px;
+}
+.bk {
+  font-size: 16px;
+  text-decoration: none;
+  color: #0267ff;
+  cursor: pointer;
+}
+.pp {
+  color: #0267ff;
+}
+.close {
+  font-size: 30px;
+  font-weight: 600;
+  top: 15%;
+  right: 20%;
+  position: absolute;
+  color: #dfdada;
+  cursor: pointer;
+}
+.fgform {
+  width: 80%;
+  box-shadow: 0 0 5px #0267ff;
+  border-radius: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  background-color: #fafcff;
+}
+.fgform2 {
+  width: 80%;
+  box-shadow: 0 0 5px #0267ff;
+  border-radius: 15px 0;
+  background-color: #fafcff;
+  padding: 3rem 2rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+.inpt {
+  width: 90%;
+  padding: 1rem 1rem;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #0252cc;
+  margin-bottom: 2rem;
+}
+.inpt::placeholder {
+  color: #333333;
+}
+.inptc {
+  width: 50px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border-radius: 50%;
+  margin: 1rem;
+  border: 1px solid #0252cc;
+}
+.resend a {
+  color: #0252cc;
+  text-decoration: none;
+}
+.code {
+  font-size: 16px;
+}
+.tw {
+  width: 60%;
+}
+.val-message {
+  color: rgb(248, 83, 83);
+  font-size: 16px;
+}
+
+@media screen and (max-width: 380px) {
+
+  .login-container,
+  .signup-container {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .forgot {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .login-left-box .arrow {
+    margin-bottom: 20px;
+  }
+
+  .logwel {
+    font-size: 22px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 12px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 12px;
+  }
+
+  .forgot-box {
+    font-size: 10px;
+  }
+
+
+  .log-btn {
+    font-size: 14px;
+  }
+
+  .fgcontainer {
     height: 100%;
-}
-.login-right-box img{
-    width: 100%;
-    height: 100%;
+  }
+
     object-fit: cover;
 }
 form{
@@ -80,215 +414,97 @@ form{
 .loginput::placeholder, .pa::placeholder{
     color: #fffdfd;
 
-}
-.pass{
-    width: 100%;
-    border: 1px solid #F2F2F2;
-    border-radius: 4px;
-    margin-top: 2.5rem;
-    position: relative;
-}
-.eye{
-    position: absolute;
-    top: 30%;
-    right: 4%;
-}
-.forgot{
-    display: flex;
-    justify-content: end;
-    color: #FFFEFE;
-    margin-bottom: 2rem;
-    padding-top: 1rem;
-    font-size: 16px;
-    cursor: pointer;
-}
-.log-btn{
-    padding: 0.8rem 0;
-    border-radius: 4px;
-    border: none;
-    font-size: 18px;
-    font-weight: 600;
-    color: #012966;
-    margin: 3rem 0 0 0;
-}
-hr{
-    width: 100%;
-    height: 0;
-    border: 2px solid #013E99;
-}
-.continue{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 3rem;
-}
-.continue span{
-    text-align: center;
-    width: 100%;
-}
-.login-icons{
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    padding: 2rem 0;
-}
-.login-icons a{
-    color: #ffffff;
-    font-size: 35px;
-}
-.arrow{
-    padding-top: 1.5rem;
-}
-.arrow a{
-    color: #F2F2F2;
-}
-.signup-container{
-    width: 100%;
-    display: flex;
-    height: 120vh;
-    background-color: #012966;
-    color: #ffffff;
-    overflow: hidden;
-    font-family: 'Inter', sans-serif;
-}
-.modal-container, .fgcontainer{
-    width: 100%;
-    background-color: rgba(1, 20, 46, 0.5);
-    position: absolute;
-    top: 0;
-    height: 140%;
-    display: flex;
-    flex-direction: column;
-    display: none;
-    align-items: center;
-}
-.fgcontainer{
-    height: 100%;
-}
-.modal-sign{
-    width: 50%;
-    margin: auto;
-    margin-top: 5%;
-    background-color: #FAFCFF;
-    text-align: center;
-    font-weight: 500;
-    box-sizing: border-box;
-    font-size: 22px;
-    color: #4D4D4D;
-    padding: 6rem 0;
-    border-radius: 10px;
-}
-.mod-img{
-    display: inline-flex;
-    justify-content: center;
-    width: 50%;
-}
-.fgimg{
-    width: 70px;
-}
-.mod-text{
-    width: 450px;
-    margin: auto;
-}
-.mod-btn, .fg-btn, .fg-btn2{
-    width: 350px;
-    padding: 1rem 0;
-    border-radius: 4px;
-    background-color: #0267FF;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    margin: 2.5rem 0;
-    cursor: pointer;
-}
-.fg-btn{
+  .modal-sign {
     width: 90%;
-    padding: 1rem 0;
-}
-.fg-btn2{
-    width: 50%;
-    padding: 1rem 0;
+    font-size: 16px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 12px;
+  }
+
+  .fptxt {
+    font-size: 12px;
+  }
 }
 
-.fptxt{
-    width: 80%;
-    margin: auto;
-    padding: 1rem;
+
+@media screen and (max-width: 767px) {
+  .login-container,
+  .signup-container {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .logwel {
+    font-size: 24px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 14px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 14px;
+  }
+
+  .forgot-box {
+    font-size: 12px;
+  }
+
+  .log-btn {
     font-size: 16px;
-}
-.bk{
-    font-size: 16px;
-    text-decoration: none;
-    color: #0267FF;
-    cursor: pointer;
-}
-.pp{
-    color: #0267FF;
-}
-.close{
-    font-size: 30px;
-    font-weight: 600;
-    top:15%;
-    right: 20%;
-    position: absolute;
-    color: #dfdada;
-    cursor: pointer;
-}
-.fgform{
-    width: 80%;
-    box-shadow: 0 0 5px #0267FF;
-    border-radius: 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding:3rem 2rem;
-    margin: auto;
-    margin-top: 2rem;
-    background-color: #FAFCFF;
-}
-.fgform2{
-    width: 80%;
-    box-shadow: 0 0 5px #0267FF;
-    border-radius: 15px 0;
-    background-color: #FAFCFF;
-    padding: 3rem 2rem;
-    margin: auto;
-    margin-top: 2rem;
-}
-.inpt{
+  }
+
+  .fgcontainer {
+    height: 100%;
+  }
+
+  .modal-sign {
     width: 90%;
-    padding: 1rem 1rem;
+    font-size: 18px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
     font-size: 16px;
-    outline-color: #4e82d2;
-    outline-offset: 5px;
-    border-radius: 4px;
-    border: 1px solid #0252CC;
-    margin-bottom: 2rem;
-}
-.inpt::placeholder{
-    color: #333333;
-}
-.inptc{
-    width: 50px;
-    padding:1.5rem 1rem;
-    text-align: center;
-    border-radius: 50%;
-    margin: 1rem;
-    border: 1px solid #0252CC;
-    outline-color: #4e82d2;
-    outline-offset: 5px;
-}
-.resend a{
-    color: #0252CC;
-    text-decoration: none;
-}
-.code{
-    font-size: 16px;
-}
-.tw{
-    width: 60%;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 14px;
+  }
+
+  .fptxt {
+    font-size: 14px;
+  }
 }
 
 
@@ -354,5 +570,3 @@ hr{
         margin: 0.5rem;
         border: 1px solid #0252CC;
     }
-
-}

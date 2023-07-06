@@ -1,0 +1,97 @@
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 767px) {
+    html {
+      font-size: 50%;
+    }
+
+    body {
+        padding-right: 30px;
+      }
+  
+    .admin-card-holder {
+      grid-template-columns: 1fr;
+    }
+  
+    .admin-card {
+      max-width: none;
+      max-height: none;
+      width: 100%;
+    }
+
+    .add-admin-btn {
+        position: static;
+        margin-bottom: 20px;
+      }
+
+       .admin-activities-container{
+        padding-right: 5px;
+      }
+
+      .admin-activities-header {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 10px;
+        font-size: 14px;
+      }
+
+      .admin-activities-data {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 10px;
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+      
+     .admin-activities-data img {
+    margin-left: 0;
+    }
+
+    .admin-activities-data > :nth-child(1) {
+    text-align: center;
+    padding-left: 0;
+    } 
+
+
+    /* Addadmin query */
+    .admin-inputs {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-modal2-content p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .indicator{
+        margin-top: 20px;
+      }
+    
+      .admin-input {
+        width: 100%;
+        font-size: 16px;
+      }
+    
+      .admin-label {
+        width: 100%;
+      }
+    
+      .upload-h-s {
+        padding-top: 20px;
+      }
+    
+      ._btn-blue {
+        font-size: 20px;
+      }
+    
+      .upload-btn {
+        width: 100%;
+        margin-top: 3rem;
+      }
+    
+      .save-upload-btn {
+        bottom: -10rem;
+      }
+      
+      .admin-input::placeholder {
+        font-size: 16px;
+      }
+  }

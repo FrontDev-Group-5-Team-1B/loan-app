@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sec-text {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  color: #999999;
+  margin: -1rem 0 3rem;
+}
+
+.sec-inputs {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  width: 50%; 
+}
+
+.sec-inputs:-webkit-autofill{
+  border: 3px solid #0267ff;
+}
+
+.sec-c-pass{
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.eye-c{
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  cursor: pointer;
+}
+
+.setings-pwd-btn {
+  width: 50%;
+  background: #0267ff;
+  border-radius: 4px;
+  margin: 6rem 0 3rem;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #666666;
+  border-bottom: 2px solid #666666;
+}
+
+/* .settings-links .active {
+  font-weight: bold;
+  color: #666666;
+  border-bottom: 2px solid #666666;
+} */

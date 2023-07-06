@@ -1,27 +1,29 @@
 import React from 'react'
-import loanApplication from '../../data/loanApplication';
+import PendingLoanData from '../../data/PendingLoanData';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import {RiArrowDownSLine} from 'react-icons/ri';
+import  '../../styles/dashPages.css';
+import { Link } from 'react-router-dom';
 
 const PendingLoans = () => {
   return (
     <>
-    <div>
-        <div>
-            <p>Dashboard</p>
-            <MdKeyboardArrowRight/>
+    <div className='loansgener-wrapper'>
+        <div className='generated-flex'>
+        <Link to='/dashboard' style={{textDecoration: 'none', color: '#808080'}} ><p>Dashboard</p></Link>
+           <p className='arrowimg'> <MdKeyboardArrowRight/></p>
             <h3>Loans Pending</h3>
         </div>
-        <div>
-        <div>
-            <h4>Loans Pending</h4>
+        <div className='generatedboard-wrap'>
+        <h4>Loans Pending</h4>
+        <div className='loans-heading'>
             <div>
-            <p>Total Amount: 4,587,541.28</p>
-            <p>Sort by month<RiArrowDownSLine/><span>Month</span></p>
+            <p  className='generated-orange'>Total Amount:  842,458.25</p>
+            <h6>Last Month</h6>
             </div>
-            <p>Last Month</p>
+           <div  className='sort-div'> <p>Sort by month<span><RiArrowDownSLine/>Month</span></p></div>
         </div>
-        <table>
+        <table className='loans-table'>
         <thead>
           <tr>
             <th>Borrower's Name</th>
@@ -32,13 +34,13 @@ const PendingLoans = () => {
           </tr>
         </thead>
         <tbody>
-            {loanApplication?.map((application, index) => (
+            {PendingLoanData?.map((pendingData, index) => (
                 <tr key={index}>
-                <td>{application.borrower_name}</td>
-                <td>{application.date}</td>
-                <td>{application.status}</td>
-                <td>{application.credit_score}</td>
-                <td>{application.amount}</td>
+                <td>{pendingData.borrower_name}</td>
+                <td>{pendingData.date}</td>
+                <td className='generated-orange'>{pendingData.status}</td>
+                <td>{pendingData.credit_score}</td>
+                <td>{pendingData.amount}</td>
               </tr>
             ))}
 

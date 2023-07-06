@@ -1,3 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .profile-input {
-    display: flex;
+  display: flex;
+}
+
+.profile-hp {
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29px;
+
+  color: #4d4d4d;
+}
+
+.profile-hs {
+  font-size: 1.2rem;
+  padding-bottom: 2rem;
+}
+.profile-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding-bottom: 8rem;
+  border-bottom: 1px solid #b3b3b3;
+}
+
+.profile-input {
+  width: 85%;
+  height: 50px;
+  background: #fafcff;
+  padding-left: 3.3rem;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.profile-input:-webkit-autofill {
+  border: 3px solid orange;
+}
+.profile-input::placeholder {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  font-size: 1.2rem;
+  color: #b3b3b3;
+}
+
+.settings-profile-pic {
+  height: 150px;
+  margin: 1rem 0 2rem;
+}
+.bod {
+  /* border: 1px solid #000;
+  border-radius: 5px; */
+}
+.profile-change-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-pic-change {
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: #0267ff;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.profile-pic-remove {
+  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: #0267ff;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
+
+.change-pic-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
+}
+
+.cancle-save-btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cancle-save-btn button {
+  padding: 1rem 2rem;
+  width: 120px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.cancle {
+  border: 1px solid #ff2727;
+  background-color: transparent;
+  color: red;
+}
+
+.save {
+  color: #ffff;
+  border: 1px solid #0267ff;
+  background: #0267ff;
+}
+
+/* PROFILE MODAL STYLES */
+.profile-modal-content {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  font-size: 14px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+.yes_no {
+  display: flex;
+  gap: 30px;
+  padding: 16px 0;
+}
+
+.yes {
+  color: #ff2727;
+  cursor: pointer;
+}
+.no {
+  color: #0267ff;
+  cursor: pointer;
+}
+
+.profile-modal2-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 50px;
+}
+
+.spinner-container {
+  height: 200px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -6,8 +6,6 @@ import "./adminQueries.css";
 import adminData from "../../../adminData";
 
 import messageIcon from "../../../assets/message-icon.svg";
-import team from "../../../assets/team.svg";
-import adminOne from "../../../assets/admin-1.png";
 console.log(adminData);
 
 const AdminPage = () => {
@@ -39,47 +37,45 @@ const AdminPage = () => {
   const activityData = adminData.map((admin) => {
     return (
       <div className="admin-activities-data" key={admin.id}>
-        <p>{admin.name}</p>
-        <p>{admin.role}</p>
-        <p>Rejected a Loan Application</p>
-        <img src={admin.teamImg} />
-      </div>
+      <p className="admin-data-name">{admin.name}</p>
+      <p className="admin-data-role">{admin.role}</p>
+      <p className="admin-data-activity">Rejected a Loan Application</p>
+      <img className="admin-data-team-img" src={admin.teamImg} alt="Admin Team" />
+    </div>
     );
   });
   return (
-    <>
-      <div className="admin-container">
-        <div className="admin-heading">
-          <h2 className="admin-heading-primary">Admin Dashboard</h2>
-          <h3 className="admin-numbers">
-            Number of Admins <span>(6)</span>
-          </h3>
-        </div>
-        <button className="add-admin-btn">
-          <Link
-            to="/dashboard/add_admin"
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            <span className="admin-plus">+</span> Add Admin
-          </Link>
-        </button>
+    <div className="admin-container dash-wrapper dbContainer">
+      <div className="admin-heading">
+        <h2 className="admin-heading-primary">Admin Dashboard</h2>
+        <h3 className="admin-numbers">
+          Number of Admins <span>(6)</span>
+        </h3>
+      </div>
+      <button className="add-admin-btn">
+        <Link
+          to="/dashboard/add_admin"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <span className="admin-plus">+</span> Add Admin
+        </Link>
+      </button>
 
-        <div className="admin-card-holder">{adminInfo}</div>
+      <div className="admin-card-holder">{adminInfo}</div>
 
-        <div className="admin-activities-container">
-          <h3 className="admin-activities-headig">Admin Activities</h3>
-          <div className="admin-activities-holder">
-            <header className="admin-activities-header">
-              <h4 className="">Admin Name</h4>
-              <h4 className="">Role</h4>
-              <h4 className="">Last Activity</h4>
-              <h4 className="">Team</h4>
-            </header>
-            {activityData}
-          </div>
+      <div className="admin-activities-container">
+        <h3 className="admin-activities-headig">Admin Activities</h3>
+        <div className="admin-activities-holder">
+          <header className="admin-activities-header">
+            <h4 className="">Admin Name</h4>
+            <h4 className="">Role</h4>
+            <h4 className="">Last Activity</h4>
+            <h4 className="">Team</h4>
+          </header>
+          <div className="admin-activities-table">{activityData}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

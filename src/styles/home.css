@@ -1,64 +1,74 @@
 /* Hero page Section */
 .row {
-  display: flex;
-}
+    display: flex;
+  }
+  
+  .container {
+    width: 1140px;
+    height: 600px;
+    margin: 60px auto;
+    margin-top: 150px;
+    background: var(--container-color);
+    border-radius: 0 30px;
+    border: 1px solid var(--container-color)
+    
+  }
+  
+  .hero-page {
+    align-items: center;
+  }
+  
+  .hero-page>* {
+    flex-basis: 100%;
+  } 
+  
+  .hero-content {
+    flex-wrap: wrap;
+    margin-left: 79px;
+    /* margin-top: 120px; */
+  }
+  
+  .hero-title h1{
+    font-size: 40px;
+    color:var(--heading-color);
+    padding: 10px 0;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title p {
+    font-size: 24px;
+    height: 93px;
+    width: 437px;
+    color:  #4D4D4D;
+  }
+  
+  .hero-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--button-color);
+    padding: 6px 12px;
+    border: none;
+    text-transform: capitalize;
+    width: 317px;
+    height: 63px;
+    margin-top: 35px;
+    font-size: 25px;
+    color: var(--bg-color);
+    background: var(--button-color);
+    border-radius: 5px;
+    gap: 10px;
+    cursor: pointer;
+  }
 
-.container {
-  width: 1140px;
-  height: 600px;
-  margin: 0 auto;
-  background: var(--container-color);
-  border-radius: 0 30px;
-  border: 1px solid var(--container-color)
-}
+  .hero-btn a {
+    text-decoration: none;
+    color: inherit;
+  }
 
-.hero-page {
-  align-items: center;
-}
+  /* Services section */
 
-.hero-page>* {
-  flex-basis: 100%;
-} 
-
-.hero-content {
-  flex-wrap: wrap;
-  margin-left: 79px;
-}
-
-.hero-title h1{
-  font-size: 40px;
-  color:var(--heading-color);
-  padding: 10px 0;
-  line-height: 48px;
-  margin-bottom: 20px;
-}
-
-.hero-title p {
-  font-size: 24px;
-  height: 93px;
-  width: 437px;
-  color:  #4D4D4D;
-}
-
-.hero-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--button-color);
-  padding: 6px 12px;
-  border: none;
-  text-transform: capitalize;
-  width: 317px;
-  height: 63px;
-  margin-top: 35px;
-  font-size: 25px;
-  color: var(--bg-color);
-  background: var(--button-color);
-  border-radius: 5px;
-  gap: 10px;
-}
-
-/* services */
 .services {
   margin-left: 80px;
   background-color: #fafcff;
@@ -77,11 +87,13 @@
 }
 .textAndImage{
 display: flex;
+align-items: center;
+gap: 20px;
 }
+
 .services-container .image img{
-  width: 446px;
+  width: 400px;
   height: 400px;
-  margin-top: -30px;
   border-radius: 50px 0;
 }
 

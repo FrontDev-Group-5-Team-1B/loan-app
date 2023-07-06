@@ -6,39 +6,37 @@
   right: 60px;
 }
 
-/* .loan-app {
-    max-width: 1116px;
-    border-collapse: collapse;
-    margin-top: 100px;
-  } */
-
-  .loan-app-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.loan-app-table a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.loan-app-title h2{
-    font-size: 24px;
-    font-weight: 600;
-    color: #0267FF;
+/* .loan-app-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.loan-app-title h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0267ff;
+  padding: 50px 0px 0px 0px;
 }
 
-.loan-app-filter-icon {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* .loan-app-filter-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .loan-app-filter-icon h3 {
-    font-size: 20px;
-    color: #666666;
-}
-
-
+  font-size: 20px;
+  color: #666666;
+} */
 
 .loan-app-table {
-  width: 100%;
+  width: 92%;
   border-collapse: collapse;
   margin-top: 20px;
   color: #666666;
@@ -49,15 +47,86 @@
 .loan-app-table th,
 .loan-app-table td {
   border-top: 15px solid #fff;
-  padding: 12px;
+  padding: 10px;
   text-align: center;
 }
 
 .loan-app-table th {
-    background: #E6F0FF;
-    font-weight: 600;
-  }
+  background: #e6f0ff;
+  font-weight: 600;
+}
 
-  .loan-app-table tr {
-    background:  #FAFCFF;
-  }
+.loan-app-table tr:nth-child(even) {
+  background: #fafcff;
+}
+
+.loan-app-table tr:nth-child(odd) {
+  background: #fafcff;
+}
+
+/* Container for table and pagination */
+.db-loan-application-container {
+  position: relative;
+  margin-bottom: 220px;
+}
+
+/* Pagination container */
+.pagination {
+  position: fixed;
+  bottom: 0;
+  left: 60%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  /* margin: 20px 0; */
+}
+
+/* Pagination buttons */
+.pagination-button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 0 4px;
+  background-color: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Active pagination button */
+.pagination-button.active {
+  background-color: #0267ff;
+  color: #fff;
+}
+
+/* Hover effect on pagination buttons */
+.pagination-button:hover {
+  background-color: #ccc;
+}
+
+/* Disabled pagination button */
+.pagination-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Next and Previous buttons */
+.pagination-button.previous,
+.pagination-button.next {
+  background-color: #0267ff;
+  border-color: #0267ff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Hover effect on Next and Previous buttons */
+.pagination-button.previous:hover,
+.pagination-button.next:hover {
+  background-color: #0051cc;
+  border-color: #0051cc;
+}
+
+.centered-spinner {
+  margin: 0 auto;
+}

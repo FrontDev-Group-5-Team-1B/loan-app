@@ -1,56 +1,123 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
+import { RxDotFilled } from "react-icons/rx";
+import useBorrowersDataStore from "../../store/borowersDataStore";
 
 const BorrowerLoanInfo = () => {
+  const { formData, setFormData } = useBorrowersDataStore();
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    const newValue = name === "loanAmount" ? parseFloat(value) : value;
+    setFormData({ ...formData, [name]: newValue });
+  };
   return (
-
-    <>
-    <div  className='bor-data'>
-        <h5>
-        Loan Information
-        </h5>
+    <div className="borrow-wrap">
+      <div className="b-header">
+        <h3>Input Borrower's Data</h3>
+        <p>Carefully input the borrower's details</p>
+      </div>
+      <div className="bor-data">
+        <h5>Loan Information</h5>
         <form>
-        <div className='loan-info-flex'>
+          <div className="b-data">
+            <div>
+              <select
+                name="loanType"
+                onChange={handleInputChange}
+                value={formData.loanType}
+              >
+                <option value="">Loan Type</option>
+                <option value="Business Loan">Business Loan</option>
+                <option value="Student Loan">Student Loan</option>
+                <option Value="Agricultural Loan">Agricultural Loan</option>
+                <option Value="Housing Loan">Housing Loan</option>
+                <option Value="Others">Others</option>
+              </select>
 
-        <div>
-            <select>
-                <option>Loan Type</option>
-                <option>Business Loan</option>
-                <option>Student Loan</option>
-                <option>Agricultural Loan</option>
-                <option>Housing Loan</option>
-                <option>Others</option>
-            </select>
+              <input
+                type="number"
+                placeholder="Loan Amount"
+                className="placeholder"
+                name="loanAmount"
+                value={formData.loanAmount}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <select
+                name="repaymentType"
+                onChange={handleInputChange}
+                value={formData.repaymentType}
+              >
+                <option value="">Repayment Type</option>
+                <option value="Interest Only">Interest Only</option>
+                <option value="Principal $ Interest">
+                  Principal & Interest
+                </option>
+                <option value="Capitalized Interest">
+                  Capitaalized Interest
+                </option>
+                <option value="Housing Loan">Housing Loan</option>
+                <option value="Others">Others</option>
+              </select>
 
-            <input type='text' placeholder='Upload Credit report' className='placeholder' />
-
-        </div>
-        <div>
-            <select>
-                <option>Repayment Type</option>
-                <option>Interest Only</option>
-                <option>Principal & Interest</option>
-                <option>Capitaalized Interest</option>
-                <option>Housing Loan</option>
-                <option>Others</option>
-            </select>
-    
-            <input type='text' placeholder='Upload Credit score' className='placeholder' />
-
-        </div>
-        </div>
-        <textarea type='text' placeholder='Purpose of Loan' />
+              <input
+                type="text"
+                placeholder="Upload Credit score"
+                className="placeholder"
+              />
+            </div>
+          </div>
+          <div className="textarea-div ">
+            <textarea
+              type="text"
+              placeholder="Purpose of Loan"
+              name="purposeOfLoan"
+              value={formData.purposeOfLoan}
+              onChange={handleInputChange}
+              className="loan-textarea"
+            />
+          </div>
+          <div className="car-dot">
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
+            <p className="p1">
+              <RxDotFilled size="25px" />
+            </p>
+            {/* <Link
+              to="/dashboard/collateral_info"
+              style={{ textDecoration: "none" }}
+            ></Link> */}{" "}
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
+            <p>
+              <RxDotFilled size="25px" />
+            </p>
+          </div>
         </form>
-       
+      </div>
+      <div className="d-btn">
+        <button className="l-btn">
+          <Link
+            to="/dashboard/borrow"
+            style={{ textDecoration: "none", color: "blue" }}
+          >
+            Previous
+          </Link>
+        </button>
+        <button className="b-btn">
+          <Link
+            to="/dashboard/collateral_info"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Next
+          </Link>{" "}
+        </button>
+      </div>
     </div>
-     <div className='d-btn'>
-     <button className='l-btn'>Previous</button>
-     <button className='b-btn'>Next</button>
-
- </div>
- </>
-
-  )
-}
-
-export default BorrowerLoanInfo
+  );
+};
+export default BorrowerLoanInfo;
