@@ -163,7 +163,6 @@ ul {
 
 .b-data {
   display: flex;
-  /* justify-content: space-between; */
   gap: 3rem;
   padding: 20px;
   margin-left: 60px;
@@ -347,4 +346,11 @@ textarea {
 
 .percent-flex span {
   font-size: 1.2rem;
+}
+
+@media ( max-width: 600px){
+  .b-data, .bor-data{
+    width: 100%;
+  }
+
 }
