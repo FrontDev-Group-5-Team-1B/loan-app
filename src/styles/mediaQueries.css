@@ -1,189 +1,227 @@
 @media (max-width: 1208px) {
-    body{
-        overflow-x: hidden;
-    }
-    
-    .row{
-        flex-direction: column;
-        margin-bottom: 5rem;
-    }
-    .container{
-        width: 90%;
-    }
-    .hero-title h1{
-        font-size: 40px;
-        line-height: 38px;
-        margin-top: 3rem;
+  body {
+    overflow-x: hidden;
+  }
 
-    }
-   
-    .mainServices{
-        margin-top: 25rem;
-        margin-left: -50px;
-    }
-    .content h2{
-        margin-top: 15rem;
-    }
-    
-    .services-content{
-        width: 80%;
-        padding: 30px 15px;
-        gap: 5px;
-    }
-    .services-content .textAndImage .text{
-        width: 100px;
-        padding: 1px 10px;
+  .row {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+  .container {
+    width: 90%;
+  }
+  .hero-title h1 {
+    font-size: 40px;
+    line-height: 38px;
+    margin-top: 3rem;
+  }
 
-    }
-    .services-content .text p{
-        font-size: 20px;
-        width: 90%;
-    }
-    .services-container .image img{
-        width: 150px;
-        height: 150px;
-        margin-top: 30px;
+  .mainServices {
+    margin-top: 25rem;
+    margin-left: -50px;
+  }
+  .content h2 {
+    margin-top: 15rem;
+  }
 
-    }
-    .review{
-        flex-direction: column;
-    }
-    .review-content{
-        width: 90%;
-
-        
-    }
-    .review-subcontent{
-        flex-direction: column;
-        width: 90%;
-    }
-    .review-subcontent .reviewer {
-        font-size: 28px;
-        font-weight: 900;
-      }
-    .review-container p{
-        font-size: 22px;
-        margin-bottom: 35px;
-        width: 70%;
-        margin-left: 60px;
-        text-align: center;
-        line-height: 30px;
-    }
-    .review-subcontent .time{
-        font-size: 16px;
-        font-style: italic;
-    }
-    .media{
-        margin-left: 100px;
-    }
+  .services-content {
+    width: 80%;
+    padding: 30px 15px;
+    gap: 5px;
+  }
+  .services-content .textAndImage .text {
+    width: 100px;
+    padding: 1px 10px;
+  }
+  .services-content .text p {
+    font-size: 20px;
+    width: 90%;
+  }
+  .services-container .image img {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+  }
+  .review {
+    flex-direction: column;
+  }
+  .review-content {
+    width: 90%;
+  }
+  .review-subcontent {
+    flex-direction: column;
+    width: 90%;
+  }
+  .review-subcontent .reviewer {
+    font-size: 28px;
+    font-weight: 900;
+  }
+  .review-container p {
+    font-size: 22px;
+    margin-bottom: 35px;
+    width: 70%;
+    margin-left: 60px;
+    text-align: center;
+    line-height: 30px;
+  }
+  .review-subcontent .time {
+    font-size: 16px;
+    font-style: italic;
+  }
+  .media {
+    margin-left: 100px;
+  }
 }
 
 @media (max-width: 800px) {
-    .media{
-        width: 70%;
-    }
-    .media-content p{
-        margin-left: 10px;
-        width: 100%
-    }
-    .textAndImage{
-        flex-direction: column;
-    }
-    .review-container p{
-        font-size: 18px;
-        margin-bottom: 40px;
-    }
-    .services{
-        /* background-color: green; */
+  .media {
+    width: 70%;
+  }
+  .media-content p {
+    margin-left: 10px;
+    width: 100%;
+  }
+  .textAndImage {
+    flex-direction: column;
+  }
+  .review-container p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .services {
+    /* background-color: green; */
     width: 80%;
-        padding: 1rem;
-    }
-    .services-content .text p{
-        width: 60%;
-    }
-    .services-container .image img{
-        width: 250px;
-        height: 250px;
-        margin-top: 30px;
+    padding: 1rem;
+  }
+  .services-content .text p {
+    width: 60%;
+  }
+  .services-container .image img {
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
+  }
+  .content h2 {
+    margin-top: 8rem;
+  }
+  .form-field[type="text"] {
+    width: 60rem;
+  }
 
-    }
-    .content h2{
-        margin-top: 8rem;
-    }
-    .form-field[type="text"]{
-        width: 60rem;
-    }
+  .db-input-search {
+    width: 80% !important;
+    height: 32px !important;
+    margin-left: 2rem;
+  }
 }
 @media (max-width: 630px) {
-    .hero-title h1{
-        font-size: 26px;
-        line-height: 28px;
-        margin-top: 3rem;
-    }
-    .hero-title p {
-        font-size: 18px;
-        width: 80%;
-      }
-      .hero-content{
-        margin-left: 30px;
-      }
-     
-    .mainServices{
-        margin-top: 18rem;
-        width: 100%;
-    }
-    .review-content{
-        height: 400px;
-    }
-    .review-container p{
-        width: 100%;
-        margin-left: -20px;
-    }
-    .review-subcontent .time{
-        line-height: 30px;
-    }
-    .services-content .text p {
-        width: 40%;
-        margin-top: 20px;
-        margin-left: 200px;
-    }
-    .services-content {
-        display: block;
-    }
-    .services-content span{
-        margin-bottom: 5px;
-    }
-    .media-content .btn{
-        margin-left: 0
-    }
-   
-    .media-content{
-        margin: 70px 30px;
-    }
-    .media-content a button{
-        width: 20rem;
-        padding: 9px 4px;
-    }
+  .hero-title h1 {
+    font-size: 26px;
+    line-height: 28px;
+    margin-top: 3rem;
+  }
+  .hero-title p {
+    font-size: 18px;
+    width: 80%;
+  }
+  .hero-content {
+    margin-left: 30px;
+  }
+
+  .mainServices {
+    margin-top: 18rem;
+    width: 100%;
+  }
+  .review-content {
+    height: 400px;
+  }
+  .review-container p {
+    width: 100%;
+    margin-left: -20px;
+  }
+  .review-subcontent .time {
+    line-height: 30px;
+  }
+  .services-content .text p {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+  .services-content {
+    display: block;
+  }
+  .services-content span {
+    margin-bottom: 5px;
+  }
+  .media-content .btn {
+    margin-left: 0;
+  }
+
+  .media-content {
+    margin: 70px 30px;
+  }
+  .media-content a button {
+    width: 20rem;
+    padding: 9px 4px;
+  }
+
+  .db-logo {
+    display: none;
+  }
+  /* TOP AND SIDE NAV QUERIES BY RACHEL STARTS HERE*/
+
+  .db-nav-container {
+    /* height: 90px !important; */
+  }
+  .dbContainer {
+    margin: 90px auto !important;
+    width: 100%;
+  }
+  .db-hamburger-menu {
+    display: flex !important;
+  }
+
+  .db-input-search {
+    width: 80% !important;
+    height: 32px !important;
+    margin-left: 2rem;
+  }
+  .welcome {
+    gap: none;
+  }
+  .welcome-msg {
+    display: none !important;
+  }
+  .db-nav-container {
+    padding: 0 10px !important;
+    width: 100vw !important;
+  }
+
+  .db-card-holder {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  /* TOP AND SIDE NAV QUERIES BY RACHEL  ENDS HERE*/
 }
 @media (max-width: 400px) {
-    .hero-title h1{
-        font-size: 24px;
-        line-height: 34px;
-        margin-top: 3rem;
-    }
-    .hero-btn{
-        padding: 6px;
-        width: 200px;
-    }
+  .hero-title h1 {
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 3rem;
+  }
+  .hero-btn {
+    padding: 6px;
+    width: 200px;
+  }
 }
 @media (max-width: 363px) {
-    .review-content{
-        height: 550px;
-    }
-    .media-content h3{
-        font-size: 30px;
-    }
-    .media-content a button{
-        width: 15rem;
-    }
+  .review-content {
+    height: 550px;
+  }
+  .media-content h3 {
+    font-size: 30px;
+  }
+  .media-content a button {
+    width: 15rem;
+  }
 }
