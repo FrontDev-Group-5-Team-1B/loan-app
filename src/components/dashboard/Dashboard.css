@@ -348,6 +348,7 @@ width: 635px;
   font-size: 1.2rem;
 }
 
+/* anuli branch */
 @media only screen and (max-width: 767px) {
   .b-data{
     display: flex;
@@ -384,3 +385,47 @@ width: 635px;
   }
   
 }
+
+
+/* media query */
+@media screen and (max-width: 767px) {
+  ul {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 40px;
+    max-width: 80%;
+  }
+
+  .dash-wallet {
+    font-size: 14px;
+  }
+
+  .dHead h2 {
+    font-size: 20px;
+    margin-left: 40px;
+  }
+
+  .dbContainer {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .dHead h3 {
+    font-size: 1.3rem;
+    margin-left: 40px;
+  }
+
+  .dCards {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .dash-chart {
+    margin: 10px 0;
+  }
+
+  .area-chart,
+  .dash-pie {
+    width: 80%;
+  }
+}
+
