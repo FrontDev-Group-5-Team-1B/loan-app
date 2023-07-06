@@ -311,7 +311,149 @@ hr {
   font-size: 16px;
 }
 
-@media (max-width: 997px) {
+@media screen and (max-width: 380px) {
+
+  .login-container,
+  .signup-container {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .forgot {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .login-left-box .arrow {
+    margin-bottom: 20px;
+  }
+
+  .logwel {
+    font-size: 22px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 12px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 12px;
+  }
+
+  .forgot-box {
+    font-size: 10px;
+  }
+
+
+  .log-btn {
+    font-size: 14px;
+  }
+
+  .fgcontainer {
+    height: 100%;
+  }
+
+  .modal-sign {
+    width: 90%;
+    font-size: 16px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 12px;
+  }
+
+  .fptxt {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-container,
+  .signup-container {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .logwel {
+    font-size: 24px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 14px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 14px;
+  }
+
+  .forgot-box {
+    font-size: 12px;
+  }
+
+  .log-btn {
+    font-size: 16px;
+  }
+
+  .fgcontainer {
+    height: 100%;
+  }
+
+  .modal-sign {
+    width: 90%;
+    font-size: 18px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 14px;
+  }
+
+  .fptxt {
+    font-size: 14px;
+  }
+}
+
+
+/* @media (max-width: 997px) {
   .login-container,
   .signup-container {
     width: 100%;
@@ -382,4 +524,4 @@ hr {
     justify-content: space-between;
     padding: 2rem 0 0 0;
   }
-}
+} */
