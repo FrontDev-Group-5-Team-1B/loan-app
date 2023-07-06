@@ -199,3 +199,22 @@
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 767px){
+  .fbp-flex{
+    flex-direction: column;
+  }
+  .borrow-wrap{
+    padding-left: 20px;
+  }
+  .fbp-grade p{
+    font-size: 8px;
+  }
+  .f-btn{
+    margin-right: 350px;
+  }
+  .fbp-text{
+    width: 300px;
+  }
+  
+  
+}
