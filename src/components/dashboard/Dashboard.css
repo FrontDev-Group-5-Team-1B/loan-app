@@ -162,7 +162,7 @@ ul {
 
 .b-data {
   display: flex;
-  gap: 3rem;
+  /* gap: 3rem; */
   padding: 20px;
   margin-left: 60px;
 }
@@ -257,7 +257,7 @@ textarea {
   padding: 20px;
   margin: 10px 10px 10px 70px;
   font-size: 1.3rem;
-  width: 620px;
+  width: 620px; 
   border: 1px solid #0252cc;
   border-radius: 5px;
 }
@@ -266,13 +266,13 @@ textarea {
 }
 
 .loan-textarea {
-  width: 635px;
+width: 635px; 
 }
 
 .d-btn {
   display: flex;
   justify-content: space-around;
-  max-width: 60 0px;
+  /* max-width: 60 0px; */
   padding: 20px;
 }
 
@@ -310,6 +310,7 @@ textarea {
 }
 
 .dash-chart {
+  width: 100%;
   border: 1px solid #e6f0ff;
   background-color: #f9f9f96b;
   padding: 20px 0;
@@ -347,11 +348,39 @@ textarea {
   font-size: 1.2rem;
 }
 
-@media ( max-width: 768px){
-  .b-data .bor-data{
-    width: 100%;
-    margin-left: 300px;
+@media only screen and (max-width: 767px) {
+  .b-data{
+    display: flex;
+    flex-direction: column;
+    width:400px;
+  }
+  textarea, .loan-textarea{
+    width: 300px;
+  }
+  .d-btn{
+    width:500px ;
+  }
+  .car-dot{
+    margin-left: 200px;
+  }
+  .bor-data{
+    width: 480px;
+  }
+  .dash-flex{
+    flex-direction: column;
+  }
+  .dash-pie{
+    width: 300px;
+  }
+  .area-chart{
+    width: 420px;
+  }
+  .dbContainer{
+    padding: 20px;
+  }
+  .eligible-wrap{
+    margin: 0 auto;
+    padding: 10px;
   }
   
-
 }
