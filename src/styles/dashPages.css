@@ -90,3 +90,44 @@
     font-size: 30px;
     padding-top: 10px;
 }
+
+@media screen and (max-width: 767px) {
+    .loansgener-wrapper {
+      max-width: 99.7rem;
+      position: absolute;
+      top: 100px;
+      left: 270px;
+      right: 10px;
+    }
+
+    .loans-table {
+        margin-right: 15px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .loansgener-wrapper {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+  
+    .generated-flex {
+      font-size: 1.2rem;
+    }
+  
+    .generatedboard-wrap {
+      height: auto;
+    }
+  
+    .loans-table td,
+    .loans-table th {
+      padding: 10px 7px;
+    }
+  
+    .arrowimg {
+      font-size: 20px;
+    }
+  }
+  

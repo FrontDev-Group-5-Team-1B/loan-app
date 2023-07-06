@@ -230,7 +230,6 @@ hr {
   width: 50%;
   padding: 1rem 0;
 }
-
 .fptxt {
   width: 80%;
   margin: auto;
@@ -311,75 +310,263 @@ hr {
   font-size: 16px;
 }
 
-@media (max-width: 997px) {
+@media screen and (max-width: 380px) {
+
   .login-container,
   .signup-container {
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-  }
-  .login-left-box {
-    width: 100%;
+    width: 100vw;
     padding: 0;
-  }
-  .login-right-box {
-    display: none;
-  }
-  form {
-    padding: 0 1.5rem;
-  }
-  .arrow {
-    padding-left: 1rem;
-  }
-  .modal-container {
-    height: 115%;
-  }
-  .fgcontainer {
-    height: 109%;
-  }
-  .modal-sign {
-    width: 80%;
-  }
-  .mod-text {
-    width: 100%;
-  }
-  .mod-btn {
-    width: 90%;
-  }
-  .close {
-    right: 6%;
-  }
-  .fgform,
-  .fgform2 {
-    width: 90%;
-    padding: 3rem 2rem;
-  }
-  .inpt {
-    width: 100%;
-  }
-  .fptxt {
-    width: 100%;
-  }
-  .fg-btn {
-    width: 100%;
-  }
-  .fg-btn2 {
-    width: 90%;
+    overflow-x: hidden;
   }
 
-  .inptc {
-    width: 30px;
-    padding: 1rem 1.5rem;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0.5rem;
-    border: 1px solid #0252cc;
+  .forgot {
+    font-size: 10px;
+    white-space: nowrap;
   }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .login-left-box .arrow {
+    margin-bottom: 20px;
+  }
+
+  .logwel {
+    font-size: 22px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 12px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 12px;
+  }
+
   .forgot-box {
-    width: 100%;
+    font-size: 10px;
+  }
+
+
+  .log-btn {
+    font-size: 14px;
+  }
+
+  .fgcontainer {
+    height: 100%;
+  }
+
+    object-fit: cover;
+}
+form{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 0 0 0;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+.logwel{
+    text-align: center;
+    color: #FFFEFE;
+    font-weight: 600;
+    font-size: 30px;
+}
+.logacc{
+    color: #E5E5E5;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 1rem;
+}
+.logsign{
+    color: #F2F2F2;
+    text-align: center;
+    font-size: 17px;
+    padding-top: 1rem;
+}
+.logsign a{
+    color: #F2F2F2;
+    text-decoration: none;
+}
+.loginput{
+    padding: 1.3rem 1rem;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    margin-top: 2.5rem;
+    font-size: 17px;
+    outline-color: #4e82d2;
+    outline-offset: 5px;
+    background-color: inherit;
+    color: #FFFEFE;
+}
+.pa{
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    outline-color: #4e82d2;
+    outline-offset: 5px;
+    background-color: inherit;
+    padding: 1.3rem 0;
+    color: #dfdada;
+    border-radius: 4px;
+    text-indent: 1rem;
+}
+.loginput::placeholder, .pa::placeholder{
+    color: #fffdfd;
+
+  .modal-sign {
+    width: 90%;
+    font-size: 16px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 12px;
+  }
+
+  .fptxt {
+    font-size: 12px;
   }
 }
+
+
+@media screen and (max-width: 767px) {
+  .login-container,
+  .signup-container {
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .login-left-box {
+    padding: 0 5%;
+  }
+
+  .logwel {
+    font-size: 24px;
+  }
+
+  .logacc,
+  .logsign {
+    font-size: 14px;
+  }
+
+  .loginput,
+  .pa {
+    font-size: 14px;
+  }
+
+  .forgot-box {
+    font-size: 12px;
+  }
+
+  .log-btn {
+    font-size: 16px;
+  }
+
+  .fgcontainer {
+    height: 100%;
+  }
+
+  .modal-sign {
+    width: 90%;
+    font-size: 18px;
+    padding: 4rem 0;
+  }
+
+  .mod-text {
+    width: 80%;
+  }
+
+  .mod-btn,
+  .fg-btn,
+  .fg-btn2 {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .inpt,
+  .inptc {
+    font-size: 14px;
+  }
+
+  .fptxt {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width:997px) {
+    .login-container, .signup-container{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    .login-left-box{
+        width: 100%;
+        padding: 0;
+    }
+    .login-right-box{
+        display: none;
+    }
+    form{
+        padding: 0 1.5rem;
+    }
+    .arrow{
+        padding-left: 1rem;
+    }
+    .modal-container{
+        height: 115%;
+    }
+    .fgcontainer{
+        height: 109%;
+    }
+    .modal-sign{
+        width: 80%;
+    }
+    .mod-text{
+        width: 100%;
+    }
+    .mod-btn{
+        width: 90%;
+    }
+    .close{
+    right: 6%;
+    }
+    .fgform, .fgform2{
+        width: 90%;
+    padding: 3rem 2rem;
+    }
+    .inpt{
+        width: 100%;
+    }
+    .fptxt{
+        width: 100%;
+    }
+    .fg-btn{
+        width: 100%;
+    }
+    .fg-btn2{
+        width: 90%;
+    }
+   
+    .inptc{
+        width: 30px;
+        padding:1rem 1.5rem;
+        text-align: center;
+        border-radius: 50%;
+        margin: 0.5rem;
+        border: 1px solid #0252CC;
+    }
