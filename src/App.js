@@ -49,22 +49,8 @@ import EligibilityStatus from "./components/dashboard/EligibilityStatus";
 import StatusSender from "./components/dashboard/StatusSender";
 import SuccessStatus from "./components/dashboard/SuccessStatus";
 
-
 function App() {
   const [auth, setAuth] = useState(false);
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-
-    <>
-      <Route path="/" element={<Header />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Route>
-
-      <Route path="login" element={<LogIn />} />
-      <Route path="signup" element={<SignUp />} />
 
   const router = createBrowserRouter(
     createRoutesFromElements(
