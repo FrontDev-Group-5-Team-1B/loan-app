@@ -3,47 +3,54 @@
 * {
   box-sizing: border-box;
 }
+
 .login-container {
   width: 100%;
   display: flex;
-  /* align-items: center; */
   background-color: #012966;
   color: #ffffff;
   height: 100vh;
   overflow: hidden;
   font-family: "Inter", sans-serif;
 }
+
 .login-left-box {
   width: 100%;
   padding: 0 9%;
   margin-top: 40px;
 }
+
 .login-right-box {
   width: 100%;
   height: 100%;
 }
+
 .login-right-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 form {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
+
 .logwel {
   text-align: center;
   color: #fffefe;
   font-weight: 600;
   font-size: 30px;
 }
+
 .logacc {
   color: #e5e5e5;
   text-align: center;
   font-size: 18px;
   padding-top: 1rem;
 }
+
 .dots {
   display: flex;
   justify-content: center;
@@ -58,10 +65,12 @@ form {
   font-size: 17px;
   padding-top: 1rem;
 }
+
 .logsign a {
   color: #f2f2f2;
   text-decoration: none;
 }
+
 .loginput {
   padding: 1.3rem 1rem;
   border: 1px solid #f2f2f2;
@@ -77,6 +86,7 @@ form {
   -webkit-box-shadow: 0 0 0 1000px #012966 inset !important;
   -webkit-text-fill-color: #fffefe;
 }
+
 .pa {
   width: 100%;
   border: none;
@@ -88,10 +98,12 @@ form {
   text-indent: 1rem;
   outline: none;
 }
+
 .loginput::placeholder,
 .pa::placeholder {
   color: #fffdfd;
 }
+
 .pass {
   width: 100%;
   border: 1px solid #f2f2f2;
@@ -99,12 +111,14 @@ form {
   margin-top: 2.5rem;
   position: relative;
 }
+
 .eye {
   position: absolute;
   top: 30%;
   right: 4%;
   cursor: pointer;
 }
+
 .forgot-box {
   width: 100%;
   display: flex;
@@ -113,11 +127,13 @@ form {
   padding: 2rem 0;
   font-size: 14px;
 }
+
 .forgot {
   color: #fffefe;
   font-size: 14px;
   cursor: pointer;
 }
+
 .log-btn {
   padding: 0.8rem 0;
   border-radius: 4px;
@@ -128,21 +144,25 @@ form {
   margin: 3rem 0 0 0;
   cursor: pointer;
 }
+
 hr {
   width: 100%;
   height: 0;
   border: 2px solid #013e99;
 }
+
 .continue {
   width: 100%;
   display: flex;
   align-items: center;
   margin-top: 3rem;
 }
+
 .continue span {
   text-align: center;
   width: 100%;
 }
+
 .login-icons {
   display: flex;
   justify-content: center;
@@ -154,12 +174,15 @@ hr {
   color: #ffffff;
   font-size: 35px;
 }
+
 .arrow {
   padding-top: 1.5rem;
 }
+
 .arrow a {
   color: #f2f2f2;
 }
+
 .signup-container {
   width: 100%;
   display: flex;
@@ -169,6 +192,7 @@ hr {
   overflow: hidden;
   font-family: "Inter", sans-serif;
 }
+
 .modal-container,
 .fgcontainer {
   width: 100%;
@@ -180,9 +204,11 @@ hr {
   display: none;
   align-items: center;
 }
+
 .fgcontainer {
   height: 100%;
 }
+
 .modal-sign {
   width: 50%;
   margin: auto;
@@ -196,11 +222,13 @@ hr {
   padding: 6rem 0;
   border-radius: 10px;
 }
+
 .mod-img {
   display: inline-flex;
   justify-content: center;
   width: 50%;
 }
+
 .fgimg {
   width: 70px;
 }
@@ -208,6 +236,7 @@ hr {
   width: 450px;
   margin: auto;
 }
+
 .mod-btn,
 .fg-btn,
 .fg-btn2 {
@@ -222,10 +251,12 @@ hr {
   margin: 2.5rem 0;
   cursor: pointer;
 }
+
 .fg-btn {
   width: 90%;
   padding: 1rem 0;
 }
+
 .fg-btn2 {
   width: 50%;
   padding: 1rem 0;
@@ -237,15 +268,18 @@ hr {
   padding: 1rem;
   font-size: 16px;
 }
+
 .bk {
   font-size: 16px;
   text-decoration: none;
   color: #0267ff;
   cursor: pointer;
 }
+
 .pp {
   color: #0267ff;
 }
+
 .close {
   font-size: 30px;
   font-weight: 600;
@@ -255,6 +289,7 @@ hr {
   color: #dfdada;
   cursor: pointer;
 }
+
 .fgform {
   width: 80%;
   box-shadow: 0 0 5px #0267ff;
@@ -268,6 +303,7 @@ hr {
   margin-top: 2rem;
   background-color: #fafcff;
 }
+
 .fgform2 {
   width: 80%;
   box-shadow: 0 0 5px #0267ff;
@@ -277,6 +313,7 @@ hr {
   margin: auto;
   margin-top: 2rem;
 }
+
 .inpt {
   width: 90%;
   padding: 1rem 1rem;
@@ -285,9 +322,11 @@ hr {
   border: 1px solid #0252cc;
   margin-bottom: 2rem;
 }
+
 .inpt::placeholder {
   color: #333333;
 }
+
 .inptc {
   width: 50px;
   padding: 1.5rem 1rem;
@@ -296,16 +335,20 @@ hr {
   margin: 1rem;
   border: 1px solid #0252cc;
 }
+
 .resend a {
   color: #0252cc;
   text-decoration: none;
 }
+
 .code {
   font-size: 16px;
 }
+
 .tw {
   width: 60%;
 }
+
 .val-message {
   color: rgb(248, 83, 83);
   font-size: 16px;
