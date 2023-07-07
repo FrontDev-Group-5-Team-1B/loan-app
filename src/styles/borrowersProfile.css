@@ -239,6 +239,9 @@
   .fbp-text{
     width: 280px;
   }
+  .bs-preview{
+    margin: 0;
+  }
   
   
 }

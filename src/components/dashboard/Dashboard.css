@@ -297,7 +297,7 @@ width: 635px;
   color: #839fc9;
   font-size: 15px;
   margin: 0 auto;
-  width: 50px;
+  width: 100%;
 }
 
 .car-dot .p1 {
@@ -355,15 +355,18 @@ width: 635px;
     display: flex;
     flex-direction: column;
     width:400px;
+    margin: 0 auto;
   }
   textarea, .loan-textarea{
     width: 300px;
+    margin: 0;
   }
   .d-btn{
     width:500px ;
   }
   .car-dot{
-    margin-left: 200px;
+    width: 100%;
+    margin-right: 200px;
   }
   .bor-data{
     width: 480px;
@@ -385,5 +388,58 @@ width: 635px;
     font-size: 8px;
     padding: 10px;
   }
+  
+}
+@media only screen and (max-width: 320px) {
+  .b-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;  
+  }
+  .b-data input{
+    width: 200px;
+  }
+  .b-data select{
+    width: 200px;
+  }
+  textarea, .loan-textarea{
+    width: 250px;
+    margin-right:0px;
+  }
+  .d-btn{
+    width:500px ;
+    flex-direction: column;
+    margin: 0 30px;
+  }
+  .l-btn{
+    margin-bottom: 10px;
+  }
+  .bor-data{
+    padding: 10px;
+    width: 320px;
+  }
+  .dash-flex{
+    flex-direction: column;
+  }
+  .dash-pie{
+    width: 300px;
+  }
+  .dash-chart{
+    width: 300px;
+  }
+  .area-chart{
+    width: 300px;
+  }
+  .dbContainer{
+    padding: 20px;
+  }
+  .eligible-wrap{
+    margin: 0 auto;
+    font-size: 8px;
+    padding: 10px;
+    width: 300px;
+  }
+  
   
 }
