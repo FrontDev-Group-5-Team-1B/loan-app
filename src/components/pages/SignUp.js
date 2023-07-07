@@ -77,57 +77,6 @@ const SignUp = () => {
           <p className="arrow">
             <Link to="/" className="">
               <FaArrowLeft size="20px" />
-
-    <div className="signup-container">
-      <div className="login-left-box">
-        <p className="arrow">
-        <Link to="/" className=""><FaArrowLeft /></Link>
-        </p>
-        <h2 className="logwel">Create an account</h2>
-        <p className="logacc">Sign up to get an account</p>
-        <p className="logsign">
-          Already have an account?{" "}
-          <span>
-            <Link to="/login"><b>Log in</b></Link>
-          </span>
-        </p>
-        <form>
-          <input
-            type="text"
-            placeholder="Name:"
-            className="loginput"
-          />
-          <input
-            type="email"
-            placeholder="Email address:"
-            className="loginput"
-          />
-          <div className="pass">
-            <input type="password" placeholder="Password:" className=" pa" />
-            <span className="eye">
-              <BsEyeSlash />
-            </span>
-          </div>
-          <div className="pass">
-            <input type="password" placeholder="Confirm Password:" className=" pa" />
-            <span className="eye">
-              <BsEyeSlash />
-            </span>
-          </div>
-
-          <button className="log-btn">Sign Up</button>
-          <div className="continue">
-            <hr />
-            <span>Or continue with</span>
-            <hr />
-          </div>
-          <div className="login-icons">
-            <Link>
-            <FaEnvelope/>
-            </Link>
-            <Link>
-            <img src={google} alt="google"/>
-
             </Link>
           </p>
           <h2 className="logwel">Create an account</h2>
