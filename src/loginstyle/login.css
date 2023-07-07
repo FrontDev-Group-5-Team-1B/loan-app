@@ -430,7 +430,6 @@ hr {
   }
 }
 
-
 @media screen and (max-width: 767px) {
   .login-container,
   .signup-container {
@@ -496,206 +495,75 @@ hr {
   }
 }
 
-
-@media (max-width:997px) {
-    .login-container, .signup-container{
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-    }
-    .login-left-box{
-        width: 100%;
-        padding: 0;
-    }
-    .login-right-box{
-        display: none;
-    }
-    form{
-        padding: 0 1.5rem;
-    }
-    .arrow{
-        padding-left: 1rem;
-    }
-    .modal-container{
-        height: 115%;
-    }
-    .fgcontainer{
-        height: 109%;
-    }
-    .modal-sign{
-        width: 80%;
-    }
-    .mod-text{
-        width: 100%;
-    }
-    .mod-btn{
-        width: 90%;
-    }
-    .close{
+@media (max-width: 997px) {
+  .login-container,
+  .signup-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .login-left-box {
+    width: 100%;
+    padding: 0;
+  }
+  .login-right-box {
+    display: none;
+  }
+  form {
+    padding: 0 1.5rem;
+  }
+  .arrow {
+    padding-left: 1rem;
+  }
+  .modal-container {
+    height: 115%;
+  }
+  .fgcontainer {
+    height: 109%;
+  }
+  .modal-sign {
+    width: 80%;
+  }
+  .mod-text {
+    width: 100%;
+  }
+  .mod-btn {
+    width: 90%;
+  }
+  .close {
     right: 6%;
-    }
-    .fgform, .fgform2{
-        width: 90%;
+  }
+  .fgform,
+  .fgform2 {
+    width: 90%;
     padding: 3rem 2rem;
-    }
-    .inpt{
-        width: 100%;
-    }
-    .fptxt{
-        width: 100%;
-    }
-    .fg-btn{
-        width: 100%;
-    }
-    .fg-btn2{
-        width: 90%;
-    }
-   
-    .inptc{
-        width: 30px;
-        padding:1rem 1.5rem;
-        text-align: center;
-        border-radius: 50%;
-        margin: 0.5rem;
-        border: 1px solid #0252CC;
-    }
+  }
+  .inpt {
+    width: 100%;
+  }
+  .fptxt {
+    width: 100%;
+  }
+  .fg-btn {
+    width: 100%;
+  }
+  .fg-btn2 {
+    width: 90%;
   }
 
-  @media screen and (max-width: 767px) {
-    .login-container,
-    .signup-container {
-      width: 100vw;
-      padding: 0;
-      overflow-x: hidden;
-    }
-  
-    .login-left-box {
-      padding: 0 5%;
-    }
-  
-    .logwel {
-      font-size: 24px;
-    }
-  
-    .logacc,
-    .logsign {
-      font-size: 14px;
-    }
-  
-    .loginput,
-    .pa {
-      font-size: 14px;
-    }
-  
-    .forgot-box {
-      font-size: 12px;
-    }
-  
-    .log-btn {
-      font-size: 16px;
-    }
-  
-    .fgcontainer {
-      height: 100%;
-    }
-  
-    .modal-sign {
-      width: 90%;
-      font-size: 18px;
-      padding: 4rem 0;
-    }
-  
-    .mod-text {
-      width: 80%;
-    }
-  
-    .mod-btn,
-    .fg-btn,
-    .fg-btn2 {
-      width: 80%;
-      font-size: 16px;
-    }
-  
-    .inpt,
-    .inptc {
-      font-size: 14px;
-    }
-  
-    .fptxt {
-      font-size: 14px;
-    }
+  .inptc {
+    width: 30px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0.5rem;
+    border: 1px solid #0252cc;
   }
-  
-  
-  @media (max-width: 997px) {
-    .login-container,
-    .signup-container {
-      width: 100%;
-      height: 100%;
-      flex-direction: column;
-    }
-    .login-left-box {
-      width: 100%;
-      padding: 0;
-    }
-    .login-right-box {
-      display: none;
-    }
-    form {
-      padding: 0 1.5rem;
-    }
-    .arrow {
-      padding-left: 1rem;
-    }
-    .modal-container {
-      height: 115%;
-    }
-    .fgcontainer {
-      height: 109%;
-    }
-    .modal-sign {
-      width: 80%;
-    }
-    .mod-text {
-      width: 100%;
-    }
-    .mod-btn {
-      width: 90%;
-    }
-    .close {
-      right: 6%;
-    }
-    .fgform,
-    .fgform2 {
-      width: 90%;
-      padding: 3rem 2rem;
-    }
-    .inpt {
-      width: 100%;
-    }
-    .fptxt {
-      width: 100%;
-    }
-    .fg-btn {
-      width: 100%;
-    }
-    .fg-btn2 {
-      width: 90%;
-    }
-  
-    .inptc {
-      width: 30px;
-      padding: 1rem 1.5rem;
-      text-align: center;
-      border-radius: 50%;
-      margin: 0.5rem;
-      border: 1px solid #0252cc;
-    }
-    .forgot-box {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 2rem 0 0 0;
-    }
+  .forgot-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0 0 0;
   }
+}
