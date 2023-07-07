@@ -497,7 +497,7 @@ hr {
 }
 
 
-@media (max-width:997px) {
+/* @media (max-width:997px) {
     .login-container, .signup-container{
         width: 100%;
         height: 100%;
@@ -559,9 +559,9 @@ hr {
         margin: 0.5rem;
         border: 1px solid #0252CC;
     }
-  }
+  } */
 
-  @media screen and (max-width: 767px) {
+  /* @media screen and (max-width: 767px) {
     .login-container,
     .signup-container {
       width: 100vw;
@@ -624,10 +624,10 @@ hr {
     .fptxt {
       font-size: 14px;
     }
-  }
+  } */
   
   
-  @media (max-width: 997px) {
+  /* @media (max-width: 997px) {
     .login-container,
     .signup-container {
       width: 100%;
@@ -698,4 +698,4 @@ hr {
       justify-content: space-between;
       padding: 2rem 0 0 0;
     }
-  }
+  } */
