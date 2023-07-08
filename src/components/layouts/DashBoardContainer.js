@@ -19,10 +19,12 @@ const DashBoardContainer = ({ setAuth, auth }) => {
   const [activeLink, setActiveLink] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [sidebarVisible, setSidebarVisible] = useState(false);
+  const [switchHamburger, setSwitchHamburger] = useState(false);
   // const sidebarVisible = useSidebarStore((state) => state.sidebarVisible);
   const handleLinkClick = (pageId) => {
     setActiveLink(pageId);
     setSidebarVisible(!sidebarVisible);
+    setSwitchHamburger(false);
   };
 
   console.log(activeLink);
@@ -81,6 +83,8 @@ const DashBoardContainer = ({ setAuth, auth }) => {
       <DbNav
         sidebarVisible={sidebarVisible}
         setSidebarVisible={setSidebarVisible}
+        switchHamburger={switchHamburger}
+        setSwitchHamburger={setSwitchHamburger}
       />
       <main className="db-main ">
         <aside

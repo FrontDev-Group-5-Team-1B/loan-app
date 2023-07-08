@@ -16,11 +16,16 @@ import useProfileImageStore from "../../store/profileImageStore";
 import "../../styles/dashBoard.css";
 import "../../styles/mediaQueries.css";
 
-const DbNav = ({ sidebarVisible, setSidebarVisible }) => {
+const DbNav = ({
+  sidebarVisible,
+  setSidebarVisible,
+  switchHamburger,
+  setSwitchHamburger,
+}) => {
   const storedAdminData = localStorage.getItem("adminData");
   const parsedAdminData = JSON.parse(storedAdminData);
   const { profileImageUrl, setProfileImageUrl } = useProfileImageStore();
-  const [switchHamburger, setSwitchHamburger] = useState(false);
+
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
     setSwitchHamburger(!switchHamburger);
