@@ -31,7 +31,7 @@
 }
 
 .db-hamburger-menu {
-  font-size: 3rem;
+  font-size: 3.5rem;
   justify-content: center;
   align-items: center;
   color: #0267ff;
@@ -79,15 +79,6 @@
   height: 100%;
   overflow-y: hidden;
   transition: all 0.5s ease-in-out;
-}
-
-.db-s-nav-hidden {
-  transform: translateX(-100%);
-  /* transition: transform 0.3s ease-in-out; */
-}
-.db-s-nav-visible {
-  transform: translateX(0);
-  /* transition: transform 0.3s ease-in-out; */
 }
 
 .db-links {

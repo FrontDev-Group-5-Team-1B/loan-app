@@ -201,6 +201,16 @@
     display: grid;
     grid-template-columns: 1fr;
   }
+
+  .db-s-nav-visible {
+    transform: translateX(0);
+    /* transition: transform 0.3s ease-in-out; */
+  }
+  .db-s-nav-hidden {
+    transform: translateX(-100%);
+    /* transition: transform 0.3s ease-in-out; */
+  }
+
   /* TOP AND SIDE NAV QUERIES BY RACHEL  ENDS HERE*/
 }
 @media (max-width: 400px) {
