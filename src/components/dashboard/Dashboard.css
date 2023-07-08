@@ -297,7 +297,7 @@ width: 635px;
   color: #839fc9;
   font-size: 15px;
   margin: 0 auto;
-  width: 50px;
+  width: 100%;
 }
 
 .car-dot .p1 {
@@ -311,6 +311,7 @@ width: 635px;
 
 .dash-chart {
   width: 100%;
+  width: 850px;
   border: 1px solid #e6f0ff;
   background-color: #f9f9f96b;
   padding: 20px 0;
@@ -348,21 +349,24 @@ width: 635px;
   font-size: 1.2rem;
 }
 
-/* anuli branch */
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 768px) {
   .b-data{
     display: flex;
     flex-direction: column;
     width:400px;
+    margin: 0 auto;
   }
   textarea, .loan-textarea{
     width: 300px;
+    margin: 0;
   }
   .d-btn{
     width:500px ;
   }
   .car-dot{
-    margin-left: 200px;
+    width: 100%;
+    margin-right: 200px;
   }
   .bor-data{
     width: 480px;
@@ -381,51 +385,61 @@ width: 635px;
   }
   .eligible-wrap{
     margin: 0 auto;
+    font-size: 8px;
     padding: 10px;
   }
   
 }
-
-
-/* media query */
-@media screen and (max-width: 767px) {
-  ul {
-    grid-template-columns: repeat(1, 1fr);
-    margin-left: 40px;
-    max-width: 80%;
+@media only screen and (max-width: 320px) {
+  .b-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;  
   }
-
-  .dash-wallet {
-    font-size: 14px;
+  .b-data input{
+    width: 200px;
   }
-
-  .dHead h2 {
-    font-size: 20px;
-    margin-left: 40px;
+  .b-data select{
+    width: 200px;
   }
-
-  .dbContainer {
-    margin-top: 0;
-    margin-left: 0;
+  textarea, .loan-textarea{
+    width: 250px;
+    margin-right:0px;
   }
-
-  .dHead h3 {
-    font-size: 1.3rem;
-    margin-left: 40px;
+  .d-btn{
+    width:500px ;
+    flex-direction: column;
+    margin: 0 30px;
   }
-
-  .dCards {
-    width: 80%;
-    margin-bottom: 20px;
+  .l-btn{
+    margin-bottom: 10px;
   }
-
-  .dash-chart {
-    margin: 10px 0;
+  .bor-data{
+    padding: 10px;
+    width: 320px;
   }
-
-  .area-chart,
-  .dash-pie {
-    width: 80%;
+  .dash-flex{
+    flex-direction: column;
   }
+  .dash-pie{
+    width: 300px;
+  }
+  .dash-chart{
+    width: 300px;
+  }
+  .area-chart{
+    width: 300px;
+  }
+  .dbContainer{
+    padding: 20px;
+  }
+  .eligible-wrap{
+    margin: 0 auto;
+    font-size: 8px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  
 }
-

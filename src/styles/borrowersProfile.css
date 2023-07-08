@@ -199,21 +199,48 @@
   display: flex;
   justify-content: center;
 }
-@media only screen and (max-width: 767px){
+
+/* FullBProfile responsive page */
+@media only screen and (max-width: 768px){
   .fbp-flex{
     flex-direction: column;
   }
   .borrow-wrap{
     padding-left: 20px;
+    margin-left: 250px;
   }
   .fbp-grade p{
     font-size: 8px;
   }
   .f-btn{
-    margin-right: 350px;
+    margin-right: 400px;
   }
   .fbp-text{
     width: 300px;
+  }
+  
+  
+}
+@media only screen and (max-width: 320px){
+  .fbp-flex{
+    flex-direction: column;
+  }
+  .borrow-wrap{
+    padding-left: 20px;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+  .fbp-grade p{
+    font-size: 6px;
+  }
+  .f-btn{
+    margin-right: 550px;
+  }
+  .fbp-text{
+    width: 280px;
+  }
+  .bs-preview{
+    margin: 0;
   }
   
   
