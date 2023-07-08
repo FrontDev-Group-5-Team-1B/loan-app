@@ -162,8 +162,7 @@ ul {
 
 .b-data {
   display: flex;
-  /* justify-content: space-between; */
-  gap: 3rem;
+  /* gap: 3rem; */
   padding: 20px;
   margin-left: 60px;
 }
@@ -258,7 +257,7 @@ textarea {
   padding: 20px;
   margin: 10px 10px 10px 70px;
   font-size: 1.3rem;
-  width: 620px;
+  width: 620px; 
   border: 1px solid #0252cc;
   border-radius: 5px;
 }
@@ -267,13 +266,13 @@ textarea {
 }
 
 .loan-textarea {
-  width: 635px;
+width: 635px; 
 }
 
 .d-btn {
   display: flex;
   justify-content: space-around;
-  max-width: 60 0px;
+  /* max-width: 60 0px; */
   padding: 20px;
 }
 
@@ -298,7 +297,7 @@ textarea {
   color: #839fc9;
   font-size: 15px;
   margin: 0 auto;
-  width: 50px;
+  width: 100%;
 }
 
 .car-dot .p1 {
@@ -311,6 +310,8 @@ textarea {
 }
 
 .dash-chart {
+  width: 100%;
+  width: 850px;
   border: 1px solid #e6f0ff;
   background-color: #f9f9f96b;
   padding: 20px 0;
@@ -346,4 +347,99 @@ textarea {
 
 .percent-flex span {
   font-size: 1.2rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .b-data{
+    display: flex;
+    flex-direction: column;
+    width:400px;
+    margin: 0 auto;
+  }
+  textarea, .loan-textarea{
+    width: 300px;
+    margin: 0;
+  }
+  .d-btn{
+    width:500px ;
+  }
+  .car-dot{
+    width: 100%;
+    margin-right: 200px;
+  }
+  .bor-data{
+    width: 480px;
+  }
+  .dash-flex{
+    flex-direction: column;
+  }
+  .dash-pie{
+    width: 300px;
+  }
+  .area-chart{
+    width: 420px;
+  }
+  .dbContainer{
+    padding: 20px;
+  }
+  .eligible-wrap{
+    margin: 0 auto;
+    font-size: 8px;
+    padding: 10px;
+  }
+  
+}
+@media only screen and (max-width: 320px) {
+  .b-data{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 250px;  
+  }
+  .b-data input{
+    width: 200px;
+  }
+  .b-data select{
+    width: 200px;
+  }
+  textarea, .loan-textarea{
+    width: 250px;
+    margin-right:0px;
+  }
+  .d-btn{
+    width:500px ;
+    flex-direction: column;
+    margin: 0 30px;
+  }
+  .l-btn{
+    margin-bottom: 10px;
+  }
+  .bor-data{
+    padding: 10px;
+    width: 320px;
+  }
+  .dash-flex{
+    flex-direction: column;
+  }
+  .dash-pie{
+    width: 300px;
+  }
+  .dash-chart{
+    width: 300px;
+  }
+  .area-chart{
+    width: 300px;
+  }
+  .dbContainer{
+    padding: 20px;
+  }
+  .eligible-wrap{
+    margin: 0 auto;
+    font-size: 8px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  
 }

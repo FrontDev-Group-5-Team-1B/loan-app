@@ -9,10 +9,10 @@ const ChartPie = () => {
             type: 'donut',
           },
           responsive: [{
-            breakpoint: 480,
+            breakpoint: 360,
             options: {
               chart: {
-                width: 150
+                width: 250
               },
               legend: {
                 position: 'bottom'
@@ -24,9 +24,9 @@ const ChartPie = () => {
 
   return (
     <div>
-        <div>
-       <Chart options={state.options} series={state.series} type="donut" width={420} height={300} />
-    </div>
+        
+       <Chart options={state.options} series={state.series} type="donut"  height={300} />
+  
 
     </div>
   )

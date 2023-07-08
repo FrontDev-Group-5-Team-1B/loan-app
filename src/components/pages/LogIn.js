@@ -149,18 +149,6 @@ const LogIn = ({ auth, setAuth }) => {
     }
   }, [auth]);
 
-  // const HandleVerifyToken = (e) => {
-  //   e.preventDefault();
-  //   const fiveDigitToken = Number(
-  //     `${token1}${token2}${token3}${token4}${token5}`
-  //   );
-  //   console.log(fiveDigitToken);
-
-  //   if (fiveDigitToken) {
-  //     verify({ email, fiveDigitToken });
-  //   }
-  // };
-
   const tokenverify = async (token) => {
     try {
       const response = await axios.post(
@@ -286,9 +274,6 @@ const LogIn = ({ auth, setAuth }) => {
                 <hr />
               </div>
              <div className="login-icons">
-                {/* <Link>
-                  <FaEnvelope />
-                </Link> */}
                 <Link>
                 <GoogleLogin
                   onSuccess={credentialResponse => {
@@ -299,9 +284,6 @@ const LogIn = ({ auth, setAuth }) => {
 
                   {/* <img src={google} alt="google" /> */}
                 </Link>
-                {/* <Link>
-                  <FaApple />
-                </Link> */}
               </div>
             </form>
           )}
@@ -328,9 +310,6 @@ const LogIn = ({ auth, setAuth }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              {/* <button className="fg-btn" onClick={handleTwo}>
-              Send
-            </button> */}
               <p className="val-message" ref={pp}>
                 {errorMsg}
               </p>
@@ -409,12 +388,6 @@ const LogIn = ({ auth, setAuth }) => {
                 style={{ marginTop: "3rem", padding: "1rem" }}
               >
                 Verify
-                {/* <button
-              className="fg-btn"
-              onClick={handleThree}
-              style={{ marginTop: "3rem", padding: "1rem" }}
-            >
-              Verify */}
               </button>
             </form>
           </div>
@@ -457,13 +430,6 @@ const LogIn = ({ auth, setAuth }) => {
               >
                 Change Password
               </button>
-              {/* <button
-              className="fg-btn"
-              onClick={handleFour}
-              style={{ marginTop: "3rem", padding: "1rem" }}
-            >
-              Change Password
-            </button> */}
             </form>
           </div>
         </div>

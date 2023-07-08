@@ -37,11 +37,11 @@ const AdminPage = () => {
   const activityData = adminData.map((admin) => {
     return (
       <div className="admin-activities-data" key={admin.id}>
-        <p>{admin.name}</p>
-        <p>{admin.role}</p>
-        <p>Rejected a Loan Application</p>
-        <img src={admin.teamImg} />
-      </div>
+      <p className="admin-data-name">{admin.name}</p>
+      <p className="admin-data-role">{admin.role}</p>
+      <p className="admin-data-activity">Rejected a Loan Application</p>
+      <img className="admin-data-team-img" src={admin.teamImg} alt="Admin Team" />
+    </div>
     );
   });
   return (
@@ -72,7 +72,7 @@ const AdminPage = () => {
             <h4 className="">Last Activity</h4>
             <h4 className="">Team</h4>
           </header>
-          {activityData}
+          <div className="admin-activities-table">{activityData}</div>
         </div>
       </div>
     </div>
