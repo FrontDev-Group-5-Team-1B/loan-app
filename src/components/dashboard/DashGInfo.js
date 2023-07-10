@@ -98,14 +98,17 @@ const DashGInfo = () => {
                 />
               </div>
               <div>
-                <input
-                  type="text"
-                  placeholder="Relationship"
-                  className="placeholder"
+                <select
                   name="guarantor.relationship"
-                  value={guarantor.relationship}
                   onChange={handleInputChange}
-                />
+                  value={guarantor.relationship}
+                >
+                  <option value="">Relationship</option>
+                  <option value="Sister">Sister</option>
+                  <option value="Brother">Brother</option>
+                  <option value="Parent">Parent</option>
+                  <option Value="Spouse">Spouse</option>
+                </select>
               </div>
               <div>
                 <input
@@ -157,10 +160,10 @@ const DashGInfo = () => {
                 >
                   <option value="">Employment Type</option>
                   <option value="Self-Employed">Self-Employed</option>
-                  <option value="Employed">Employed</option>
-                  <option value="Freelancer">Freelancer</option>
-                  <option value="Intern">Intern</option>
-                  <option value="Voluteer">Voluteer</option>
+                  <option value="Unemployed">Umemployed</option>
+                  <option value="Contract">Contact</option>
+                  <option value="Full-Time">Full-Time</option>
+                  <option value="Part-Time">Part-Time</option>
                   <option value="Others">Others</option>
                 </select>
               </div>
