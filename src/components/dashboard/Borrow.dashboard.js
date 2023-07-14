@@ -68,17 +68,18 @@ const Borrow = () => {
                   onChange={handleInputChange}
                 />
               </label>
-
-              <label htmlFor="employment_type">
-                <input
-                  type="text"
-                  placeholder="Employment"
-                  className="placeholder borowers-input"
-                  name="employmentType"
-                  value={formData.employmentType}
-                  onChange={handleInputChange}
-                />
-              </label>
+              <select
+                name="employmentType"
+                onChange={handleInputChange}
+                value={formData.employmentType}
+              >
+                <option value="">Employment</option>
+                <option value="Contract">Contract</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Full-Time">Full-Time</option>
+                <option Value="Part-Time">Part-Time</option>
+                <option Value="Unemployed">Unemployed</option>
+              </select>
 
               <select
                 name="maritalStatus"
@@ -92,16 +93,15 @@ const Borrow = () => {
                 <option Value="Divorced">Divorced</option>
                 <option Value="Separated">Separated</option>
               </select>
-              <label htmlFor="Gender">
-                <input
-                  type="text"
-                  placeholder="Gender"
-                  className="placeholder borowers-input"
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleInputChange}
-                />
-              </label>
+              <select
+                name="gender"
+                onChange={handleInputChange}
+                value={formData.gender}
+              >
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
             </div>
 
             <div className="b-data2">
